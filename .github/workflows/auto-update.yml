@@ -113,6 +113,8 @@ jobs:
               FILE_CONTENT+=""$'\n'
             fi
 
+            rule_count=0
+            
             for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
               egern_type="${RULE_MAP[$rule_type]}"
               grep "^[- ]*$rule_type," tmp/current_work.tmp | \
@@ -128,12 +130,17 @@ jobs:
               }' | sort -u > tmp/values.tmp
 
               if [ -s tmp/values.tmp ]; then
+                type_count=$(wc -l < tmp/values.tmp)
+                rule_count=$((rule_count + type_count))
+                
                 FILE_CONTENT+="$egern_type:"$'\n'
                 FILE_CONTENT+="$(sed 's/^/  - /' tmp/values.tmp)"$'\n'
                 FILE_CONTENT+=""$'\n'
               fi
             done
 
+            FILE_CONTENT="# 规则名称: $base_name"$'\n'"# 规则统计: $rule_count"$'\n'$'\n'"$(echo "$FILE_CONTENT" | tail -n +3)"
+            
             echo "$FILE_CONTENT" > "$output_file"
           done
 
@@ -147,6 +154,7 @@ jobs:
           for yaml_file in Egern/Rule/*.yaml; do
             [ -e "$yaml_file" ] || continue
             
+
             NEW_CONTENT=$(cat "$yaml_file" | sed '/^#/d' | grep -v '^$')
             
             if git cat-file -e HEAD:"$yaml_file" 2>/dev/null; then
