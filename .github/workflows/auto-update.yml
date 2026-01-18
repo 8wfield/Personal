@@ -160,20 +160,27 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-          NEW_OR_CHANGED_FILES=0
+          RULE_CHANGES=0
           for yaml_file in Egern/Rule/*.yaml; do
             [ -e "$yaml_file" ] || continue
             if ! git diff --quiet -- "$yaml_file" 2>/dev/null; then
               git add "$yaml_file"
-              NEW_OR_CHANGED_FILES=1
-              echo "添加/更新文件: $yaml_file"
+              RULE_CHANGES=1
+              echo "检测到规则文件变化: $yaml_file"
             fi
           done
 
-          if [ $NEW_OR_CHANGED_FILES -eq 1 ]; then
+          OTHER_CHANGES=$(git status --porcelain | grep -v '^.. Egern/Rule/')
+          
+          if [ $RULE_CHANGES -eq 1 ]; then
             echo "检测到规则内容变化，正在更新..."
             git commit --amend --no-edit --allow-empty 2>/dev/null || git commit -m "Egern Rules - Auto Updated"
             git push --force
+          elif [ -n "$OTHER_CHANGES" ]; then
+            echo "检测到工作流文件或其他非规则文件变化，正在创建独立提交..."
+            git add -A
+            git commit -m "Update workflow configuration"
+            git push
           else
-            echo "规则内容无变化，跳过提交。"
+            echo "无任何文件变化，跳过提交。"
           fi
