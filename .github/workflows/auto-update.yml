@@ -13,10 +13,30 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
       - name: Prepare Directories
         run: |
           mkdir -p Egern/Rule
           mkdir -p tmp
+          
+      - name: Get Changed Rules
+        id: changed_rules
+        run: |
+          CHANGED_RULES=""
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "手动触发，检查变更..."
+            CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
+            for file in $CHANGED_FILES; do
+              if [[ "$file" == *.yml || "$file" == *.yaml ]]; then
+                echo "检测到配置文件变更: $file"
+                CHANGED_RULES="all"
+              fi
+            done
+          fi
+          echo "changed_rules=${CHANGED_RULES}" >> $GITHUB_OUTPUT
+          
       - name: Download and Convert Rules
         run: |
           RULE=(
@@ -42,8 +62,6 @@ jobs:
             "HttpDns https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.list"
             "AI https://gist.githubusercontent.com/ddgksf2013/cb4121e8b5c5d865cc949cb8120320c4/raw/Ai.yaml"
           )
-
-          CURRENT_TIME=$(TZ='Asia/Shanghai' date '+%Y/%m/%d')
 
           for item in "${RULE[@]}"; do
             url=$(echo "$item" | xargs)
@@ -95,6 +113,13 @@ jobs:
             base_name=$(basename "$list_file" .list)
             output_file="Egern/Rule/$base_name.yaml"
 
+            if [[ "${{ steps.changed_rules.outputs.changed_rules }}" != "all" && "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+              if git diff --quiet HEAD~1 HEAD -- "Egern/Rule/$base_name.yaml" 2>/dev/null; then
+                echo "跳过未变化的规则: $base_name"
+                continue
+              fi
+            fi
+
             grep -E '^[- ]*(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-WILDCARD|IP-CIDR|IP-CIDR6|IP-ASN|URL-REGEX|DEST-PORT|GEOIP|USER-AGENT),' "$list_file" | sed 's/,no-resolve$//' > tmp/current_work.tmp
 
             no_resolve_flag="false"
@@ -104,8 +129,6 @@ jobs:
 
             FILE_CONTENT=""
             FILE_CONTENT+="# 规则名称: $base_name"$'\n'
-            FILE_CONTENT+="# 规则统计: 0"$'\n'
-            FILE_CONTENT+="# 更新时间: PLACEHOLDER"$'\n'
             FILE_CONTENT+=""$'\n'
 
             if [ "$no_resolve_flag" = "true" ]; then
@@ -134,24 +157,6 @@ jobs:
               fi
             done
 
-            total_rules=$(echo "$FILE_CONTENT" | grep -c '^  - ')
-            FILE_CONTENT=$(echo "$FILE_CONTENT" | sed "2s|# 规则统计: 0|# 规则统计: $total_rules|")
-
-            FINAL_DATE="$CURRENT_TIME"
-            if git ls-tree --name-only HEAD "Egern/Rule/$base_name.yaml" &>/dev/null; then
-              OLD_CONTENT=$(git show HEAD:"Egern/Rule/$base_name.yaml" 2>/dev/null)
-              if [ -n "$OLD_CONTENT" ]; then
-                OLD_DATE_LINE=$(echo "$OLD_CONTENT" | grep -m 1 "^# 更新时间:")
-                OLD_DATE=$(echo "$OLD_DATE_LINE" | sed 's|# 更新时间: ||')
-                OLD_RULES=$(echo "$OLD_CONTENT" | tail -n +4 | grep -v '^no_resolve: true$' | grep -v '^$')
-                NEW_RULES=$(echo "$FILE_CONTENT" | tail -n +4 | grep -v '^no_resolve: true$' | grep -v '^$')
-                if [ "$OLD_RULES" = "$NEW_RULES" ]; then
-                  FINAL_DATE="$OLD_DATE"
-                fi
-              fi
-            fi
-
-            FILE_CONTENT=$(echo "$FILE_CONTENT" | sed "3s|# 更新时间: PLACEHOLDER|# 更新时间: $FINAL_DATE|")
             echo "$FILE_CONTENT" > "$output_file"
           done
 
@@ -173,11 +178,10 @@ jobs:
           OTHER_CHANGES=$(git status --porcelain | grep -v '^.. Egern/Rule/')
           
           if [ $RULE_CHANGES -eq 1 ]; then
-            echo "检测到规则内容变化，正在更新..."
-            git commit --amend --no-edit --allow-empty 2>/dev/null || git commit -m "Egern Rules - Auto Updated"
-            git push --force
+            git add Egern/Rule/
+            git commit -m "Egern Rules - Auto Updated"
+            git push
           elif [ -n "$OTHER_CHANGES" ]; then
-            echo "检测到工作流文件或其他非规则文件变化，正在创建独立提交..."
             git add -A
             git commit -m "Update workflow configuration"
             git push
