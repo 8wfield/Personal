@@ -14,28 +14,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2
           
       - name: Prepare Directories
         run: |
           mkdir -p Egern/Rule
           mkdir -p tmp
-          
-      - name: Get Changed Rules
-        id: changed_rules
-        run: |
-          CHANGED_RULES=""
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            echo "手动触发，检查变更..."
-            CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
-            for file in $CHANGED_FILES; do
-              if [[ "$file" == *.yml || "$file" == *.yaml ]]; then
-                echo "检测到配置文件变更: $file"
-                CHANGED_RULES="all"
-              fi
-            done
-          fi
-          echo "changed_rules=${CHANGED_RULES}" >> $GITHUB_OUTPUT
           
       - name: Download and Convert Rules
         run: |
@@ -113,13 +97,6 @@ jobs:
             base_name=$(basename "$list_file" .list)
             output_file="Egern/Rule/$base_name.yaml"
 
-            if [[ "${{ steps.changed_rules.outputs.changed_rules }}" != "all" && "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-              if git diff --quiet HEAD~1 HEAD -- "Egern/Rule/$base_name.yaml" 2>/dev/null; then
-                echo "跳过未变化的规则: $base_name"
-                continue
-              fi
-            fi
-
             grep -E '^[- ]*(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-WILDCARD|IP-CIDR|IP-CIDR6|IP-ASN|URL-REGEX|DEST-PORT|GEOIP|USER-AGENT),' "$list_file" | sed 's/,no-resolve$//' > tmp/current_work.tmp
 
             no_resolve_flag="false"
@@ -160,31 +137,37 @@ jobs:
             echo "$FILE_CONTENT" > "$output_file"
           done
 
-      - name: Commit Changes
+      - name: Compare and Commit Changes
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-          RULE_CHANGES=0
+          HAS_CHANGES=false
+          
           for yaml_file in Egern/Rule/*.yaml; do
             [ -e "$yaml_file" ] || continue
-            if ! git diff --quiet -- "$yaml_file" 2>/dev/null; then
+            
+            NEW_CONTENT=$(cat "$yaml_file" | sed '/^#/d' | grep -v '^$')
+            
+            if git cat-file -e HEAD:"$yaml_file" 2>/dev/null; then
+              OLD_CONTENT=$(git show HEAD:"$yaml_file" | sed '/^#/d' | grep -v '^$')
+            else
+              OLD_CONTENT=""
+            fi
+            
+            if [ "$NEW_CONTENT" != "$OLD_CONTENT" ]; then
               git add "$yaml_file"
-              RULE_CHANGES=1
-              echo "检测到规则文件变化: $yaml_file"
+              HAS_CHANGES=true
+              echo "检测到规则内容变化: $(basename "$yaml_file")"
+            else
+              echo "规则内容未变化: $(basename "$yaml_file")"
             fi
           done
-
-          OTHER_CHANGES=$(git status --porcelain | grep -v '^.. Egern/Rule/')
           
-          if [ $RULE_CHANGES -eq 1 ]; then
-            git add Egern/Rule/
+          if [ "$HAS_CHANGES" = true ]; then
+            echo "正在提交规则更新..."
             git commit -m "Egern Rules - Auto Updated"
             git push
-          elif [ -n "$OTHER_CHANGES" ]; then
-            git add -A
-            git commit -m "Update workflow configuration"
-            git push
           else
-            echo "无任何文件变化，跳过提交。"
+            echo "所有规则文件均无实际内容变化，跳过提交。"
           fi
