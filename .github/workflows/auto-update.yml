@@ -38,7 +38,7 @@ jobs:
           )
 
           RULES=(
-            "BanAD https://anti-ad.net/surge.txt https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
+            "BanAD https://anti-ad.net/surge.txt https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockloon.list"
             "ChinaDirect https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
             "GFWList https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/gfw.txt https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list"
             "Apple https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/Apple.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/AppleNews.list"
