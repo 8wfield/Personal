@@ -1,0 +1,61 @@
+# 规则名称: Google
+# 规则统计: 25
+# 域名关键词: 2
+# 域名后缀: 21
+# IPv4 CIDR: 2
+
+no_resolve: true
+
+domain_set:
+  - cloud.oracle.com
+  - steambroadcast.akamaized.net
+  - steamcommunity-a.akamaihd.net
+  - steampipe.akamaized.net
+  - steamstore-a.akamaihd.net
+  - steamusercontent-a.akamaihd.net
+  - steamuserimages-a.akamaihd.net
+
+domain_keyword_set:
+  - gmail
+  - google
+
+domain_suffix_set:
+  - 1e100.net
+  - 2mdn.net
+  - app-measurement.net
+  - c.gle
+  - g.co
+  - ggpht.com
+  - goo.gl
+  - googleapis.cn
+  - googleapis.com
+  - gstatic.cn
+  - gstatic.com
+  - gvt0.com
+  - gvt1.com
+  - gvt2.com
+  - gvt3.com
+  - xn--ngstr-lra8j.com
+  - youtu.be
+  - youtube-nocookie.com
+  - youtube.com
+  - yt.be
+  - ytimg.com
+
+ip_cidr_set:
+  - 173.194.0.0/16
+  - 74.125.0.0/16
+
+ip_cidr6_set:
+  - 2001:67c:4e8::/48
+  - 2001:b28:f23d::/48
+  - 2001:b28:f23f::/48
+
+user_agent_set:
+  - AppleNews*
+  - com.apple.news*
+
+asn_set:
+  - 132203
+
+
