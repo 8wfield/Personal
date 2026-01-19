@@ -1,0 +1,19 @@
+# 规则名称: Spotify
+# 规则统计: 9
+
+domain_keyword_set:
+  - -spotify-
+  - spotify.com
+
+domain_suffix_set:
+  - pscdn.co
+  - scdn.co
+  - spoti.fi
+  - spotify.com
+  - spotifycdn.com
+  - spotifycdn.net
+
+user_agent_set:
+  - Spotify*
+
+
