@@ -94,17 +94,17 @@ jobs:
           )
 
           declare -A TYPE_NAMES_ZH=(
-            ["domain_set"]="域名规则"
-            ["domain_keyword_set"]="域名关键词规则"
-            ["domain_suffix_set"]="域名后缀规则"
-            ["domain_wildcard_set"]="域名通配符规则"
-            ["geoip_set"]="地理位置IP规则"
-            ["ip_cidr_set"]="IPv4 CIDR规则"
-            ["ip_cidr6_set"]="IPv6 CIDR规则"
-            ["url_regex_set"]="URL正则规则"
-            ["user_agent_set"]="用户代理规则"
-            ["asn_set"]="ASN规则"
-            ["dest_port_set"]="目标端口规则"
+            ["domain_set"]="域名"
+            ["domain_keyword_set"]="域名关键词"
+            ["domain_suffix_set"]="域名后缀"
+            ["domain_wildcard_set"]="域名通配符"
+            ["geoip_set"]="区域代码"
+            ["ip_cidr_set"]="IPv4 CIDR"
+            ["ip_cidr6_set"]="IPv6 CIDR"
+            ["url_regex_set"]="URL正则"
+            ["user_agent_set"]="域名正则"
+            ["asn_set"]="ASN"
+            ["dest_port_set"]="目标端口"
           )
 
           for list_file in tmp/*.list; do
@@ -120,10 +120,14 @@ jobs:
             fi
 
             rule_count=0
-            
             declare -A TYPE_COUNTS
             declare -A TYPE_VALUES
             
+            for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
+              egern_type="${RULE_MAP[$rule_type]}"
+              TYPE_COUNTS[$egern_type]=0
+            done
+
             for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
               egern_type="${RULE_MAP[$rule_type]}"
               grep "^[- ]*$rule_type," tmp/current_work.tmp | \
@@ -146,15 +150,15 @@ jobs:
               fi
             done
 
-            FILE_CONTENT=""
-            FILE_CONTENT+="# 规则名称: $base_name"$'\n'
+            FILE_CONTENT="# 规则名称: $base_name"$'\n'
             FILE_CONTENT+="# 规则统计: $rule_count"$'\n'
             
             for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
               egern_type="${RULE_MAP[$rule_type]}"
-              if [ -n "${TYPE_COUNTS[$egern_type]}" ]; then
-                type_name_zh="${TYPE_NAMES_ZH[$egern_type]}"
-                FILE_CONTENT+="# ${type_name_zh}: ${TYPE_COUNTS[$egern_type]}"$'\n'
+              type_name_zh="${TYPE_NAMES_ZH[$egern_type]}"
+              type_count="${TYPE_COUNTS[$egern_type]}"
+              if [ $type_count -gt 0 ]; then
+                FILE_CONTENT+="# ${type_name_zh}: ${type_count}"$'\n'
               fi
             done
             
