@@ -1,5 +1,32 @@
 # 规则名称: Alibaba
 # 规则统计: 41
+# 域名规则: 23
+# 域名后缀规则: 41
+
+domain_set:
+  - ai.google.dev
+  - api.msn.com
+  - api.statsig.com
+  - assets.msn.com
+  - browser-intake-datadoghq.com
+  - cdn.usefathom.com
+  - copilot.microsoft.com
+  - gateway.bingviz.microsoft.net
+  - gateway.bingviz.microsoftapp.net
+  - in.appcenter.ms
+  - location.microsoft.com
+  - makersuite.google.com
+  - odc.officeapps.live.com
+  - openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+  - openaicomproductionae4b.blob.core.windows.net
+  - pplx-res.cloudinary.com
+  - production-openaicom-storage.azureedge.net
+  - r.bing.com
+  - self.events.data.microsoft.com
+  - services.bingapis.com
+  - static.cloudflareinsights.com
+  - sydney.bing.com
+  - www.bing.com
 
 domain_suffix_set:
   - 1688.com
@@ -43,3 +70,5 @@ domain_suffix_set:
   - xiami.net
   - ykimg.com
   - youku.com
+
+

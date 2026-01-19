@@ -1,5 +1,15 @@
 # 规则名称: Twitter
 # 规则统计: 12
+# 域名规则: 1
+# 域名关键词规则: 1
+# 域名后缀规则: 11
+# IPv4 CIDR规则: 4
+# IPv6 CIDR规则: 3
+# 用户代理规则: 1
+# ASN规则: 1
+
+domain_set:
+  - netflix.com.edgesuite.net
 
 domain_keyword_set:
   - twitter
@@ -16,3 +26,22 @@ domain_suffix_set:
   - twitter.jp
   - vine.co
   - x.com
+
+ip_cidr_set:
+  - 109.239.140.0/24
+  - 149.154.160.0/20
+  - 91.108.0.0/16
+  - 95.161.64.0/20
+
+ip_cidr6_set:
+  - 2001:67c:4e8::/48
+  - 2001:b28:f23d::/48
+  - 2001:b28:f23f::/48
+
+user_agent_set:
+  - TikTok*
+
+asn_set:
+  - 32934
+
+

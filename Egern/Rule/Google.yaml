@@ -1,7 +1,23 @@
 # 规则名称: Google
 # 规则统计: 25
+# 域名规则: 7
+# 域名关键词规则: 2
+# 域名后缀规则: 21
+# IPv4 CIDR规则: 2
+# IPv6 CIDR规则: 3
+# 用户代理规则: 2
+# ASN规则: 1
 
 no_resolve: true
+
+domain_set:
+  - cloud.oracle.com
+  - steambroadcast.akamaized.net
+  - steamcommunity-a.akamaihd.net
+  - steampipe.akamaized.net
+  - steamstore-a.akamaihd.net
+  - steamusercontent-a.akamaihd.net
+  - steamuserimages-a.akamaihd.net
 
 domain_keyword_set:
   - gmail
@@ -33,3 +49,17 @@ domain_suffix_set:
 ip_cidr_set:
   - 173.194.0.0/16
   - 74.125.0.0/16
+
+ip_cidr6_set:
+  - 2001:67c:4e8::/48
+  - 2001:b28:f23d::/48
+  - 2001:b28:f23f::/48
+
+user_agent_set:
+  - AppleNews*
+  - com.apple.news*
+
+asn_set:
+  - 132203
+
+

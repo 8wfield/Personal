@@ -1,7 +1,17 @@
 # 规则名称: Telegram
 # 规则统计: 14
+# 域名规则: 1
+# 域名关键词规则: 1
+# 域名后缀规则: 6
+# IPv4 CIDR规则: 4
+# IPv6 CIDR规则: 3
+# 用户代理规则: 1
+# ASN规则: 1
 
 no_resolve: true
+
+domain_set:
+  - netflix.com.edgesuite.net
 
 domain_keyword_set:
   - telegram
@@ -24,3 +34,11 @@ ip_cidr6_set:
   - 2001:67c:4e8::/48
   - 2001:b28:f23d::/48
   - 2001:b28:f23f::/48
+
+user_agent_set:
+  - Spotify*
+
+asn_set:
+  - 32934
+
+

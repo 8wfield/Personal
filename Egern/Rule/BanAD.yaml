@@ -1,5 +1,10 @@
 # 规则名称: BanAD
 # 规则统计: 166401
+# 域名规则: 885
+# 域名关键词规则: 5
+# 域名后缀规则: 165511
+# IPv4 CIDR规则: 10
+# 用户代理规则: 2
 
 domain_set:
   - 1500020991.vodplayer.wxamedia.com
@@ -166407,3 +166412,21 @@ domain_suffix_set:
   - zzzjvqzzlavew.top
   - zzzmjfixezere.site
   - zzzoraclecloudsupportp03e10-app-trk.eloquademos.com
+
+ip_cidr_set:
+  - 139.178.128.0/18
+  - 144.178.0.0/19
+  - 144.178.36.0/22
+  - 144.178.48.0/20
+  - 17.0.0.0/8
+  - 192.35.50.0/24
+  - 198.183.17.0/24
+  - 205.180.175.0/24
+  - 63.92.224.0/19
+  - 65.199.22.0/23
+
+user_agent_set:
+  - AppleNews*
+  - com.apple.news*
+
+
