@@ -93,20 +93,6 @@ jobs:
             ["DEST-PORT"]="dest_port_set"
           )
 
-          declare -A TYPE_NAMES_ZH=(
-            ["domain_set"]="域名"
-            ["domain_keyword_set"]="域名关键词"
-            ["domain_suffix_set"]="域名后缀"
-            ["domain_wildcard_set"]="域名通配符"
-            ["geoip_set"]="区域代码"
-            ["ip_cidr_set"]="IPv4 CIDR"
-            ["ip_cidr6_set"]="IPv6 CIDR"
-            ["url_regex_set"]="URL正则"
-            ["user_agent_set"]="域名正则"
-            ["asn_set"]="ASN"
-            ["dest_port_set"]="目标端口"
-          )
-
           for list_file in tmp/*.list; do
             [ -e "$list_file" ] || break
             base_name=$(basename "$list_file" .list)
@@ -119,15 +105,11 @@ jobs:
               no_resolve_flag="true"
             fi
 
-            rule_count=0
-            declare -A TYPE_COUNTS
-            declare -A TYPE_VALUES
+            FILE_CONTENT=""
+            FILE_CONTENT+="# 规则名称: $base_name"$'\n'
             
-            for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
-              egern_type="${RULE_MAP[$rule_type]}"
-              TYPE_COUNTS[$egern_type]=0
-            done
-
+            rule_count=0
+            
             for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
               egern_type="${RULE_MAP[$rule_type]}"
               grep "^[- ]*$rule_type," tmp/current_work.tmp | \
@@ -144,25 +126,12 @@ jobs:
 
               if [ -s tmp/values.tmp ]; then
                 type_count=$(wc -l < tmp/values.tmp)
-                TYPE_COUNTS[$egern_type]=$type_count
-                TYPE_VALUES[$egern_type]="$(cat tmp/values.tmp)"
                 rule_count=$((rule_count + type_count))
               fi
             done
 
-            FILE_CONTENT="# 规则名称: $base_name"$'\n'
             FILE_CONTENT+="# 规则统计: $rule_count"$'\n'
-            
-            for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
-              egern_type="${RULE_MAP[$rule_type]}"
-              type_name_zh="${TYPE_NAMES_ZH[$egern_type]}"
-              type_count="${TYPE_COUNTS[$egern_type]}"
-              if [ $type_count -gt 0 ]; then
-                FILE_CONTENT+="# ${type_name_zh}: ${type_count}"$'\n'
-              fi
-            done
-            
-            FILE_CONTENT+=$'\n'
+            FILE_CONTENT+=""$'\n'
 
             if [ "$no_resolve_flag" = "true" ]; then
               FILE_CONTENT+="no_resolve: true"$'\n'
@@ -171,9 +140,21 @@ jobs:
 
             for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
               egern_type="${RULE_MAP[$rule_type]}"
-              if [ -n "${TYPE_VALUES[$egern_type]}" ]; then
+              grep "^[- ]*$rule_type," tmp/current_work.tmp | \
+              awk -F',' -v rule_type="$rule_type" '{
+                value=$2;
+                if (rule_type == "URL-REGEX" || rule_type == "DOMAIN-WILDCARD") {
+                  value="\"" value "\""
+                }
+                if (rule_type == "USER-AGENT" && value ~ /^\*.*\*$/) {
+                  value="\047" value "\047"
+                }
+                print value
+              }' | sort -u > tmp/values.tmp
+
+              if [ -s tmp/values.tmp ]; then
                 FILE_CONTENT+="$egern_type:"$'\n'
-                FILE_CONTENT+="$(echo "${TYPE_VALUES[$egern_type]}" | sed 's/^/  - /')"$'\n'
+                FILE_CONTENT+="$(sed 's/^/  - /' tmp/values.tmp)"$'\n'
                 FILE_CONTENT+=""$'\n'
               fi
             done
@@ -194,13 +175,11 @@ jobs:
             NEW_CONTENT=$(cat "$yaml_file" | sed '/^#/d' | grep -v '^$')
             
             if git cat-file -e HEAD:"$yaml_file" 2>/dev/null; then
-              # 只获取规则部分，不包含注释
               OLD_CONTENT=$(git show HEAD:"$yaml_file" | sed '/^#/d' | grep -v '^$')
             else
               OLD_CONTENT=""
             fi
             
-            # 比较实际规则内容（忽略注释和格式差异）
             if [ "$NEW_CONTENT" != "$OLD_CONTENT" ]; then
               git add "$yaml_file"
               HAS_CHANGES=true
