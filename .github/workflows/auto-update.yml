@@ -107,14 +107,26 @@ jobs:
 
             FILE_CONTENT=""
             FILE_CONTENT+="# 规则名称: $base_name"$'\n'
-            FILE_CONTENT+=""$'\n'
-
-            if [ "$no_resolve_flag" = "true" ]; then
-              FILE_CONTENT+="no_resolve: true"$'\n'
-              FILE_CONTENT+=""$'\n'
-            fi
-
+            
+            # 统计总规则数
             rule_count=0
+            
+            # 收集每个类型的规则和数量
+            declare -A TYPE_COUNTS=()
+            declare -A TYPE_VALUES=()
+            declare -A TYPE_NAMES_ZH=(
+              ["domain_set"]="域名规则"
+              ["domain_keyword_set"]="域名关键词规则"
+              ["domain_suffix_set"]="域名后缀规则"
+              ["domain_wildcard_set"]="域名通配符规则"
+              ["geoip_set"]="地理位置IP规则"
+              ["ip_cidr_set"]="IPv4 CIDR规则"
+              ["ip_cidr6_set"]="IPv6 CIDR规则"
+              ["url_regex_set"]="URL正则规则"
+              ["user_agent_set"]="用户代理规则"
+              ["asn_set"]="ASN规则"
+              ["dest_port_set"]="目标端口规则"
+            )
             
             for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
               egern_type="${RULE_MAP[$rule_type]}"
@@ -132,16 +144,38 @@ jobs:
 
               if [ -s tmp/values.tmp ]; then
                 type_count=$(wc -l < tmp/values.tmp)
+                TYPE_COUNTS[$egern_type]=$type_count
+                TYPE_VALUES[$egern_type]="$(cat tmp/values.tmp)"
                 rule_count=$((rule_count + type_count))
-                
+              fi
+            done
+
+            FILE_CONTENT+="# 规则统计: $rule_count"$'\n'
+            
+            for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
+              egern_type="${RULE_MAP[$rule_type]}"
+              if [ -n "${TYPE_COUNTS[$egern_type]}" ]; then
+                type_name_zh="${TYPE_NAMES_ZH[$egern_type]}"
+                FILE_CONTENT+="# ${type_name_zh}: ${TYPE_COUNTS[$egern_type]}"$'\n'
+              fi
+            done
+            
+            FILE_CONTENT+=$'\n'
+
+            if [ "$no_resolve_flag" = "true" ]; then
+              FILE_CONTENT+="no_resolve: true"$'\n'
+              FILE_CONTENT+=""$'\n'
+            fi
+
+            for rule_type in "${ORDERED_RULE_TYPES[@]}"; do
+              egern_type="${RULE_MAP[$rule_type]}"
+              if [ -n "${TYPE_VALUES[$egern_type]}" ]; then
                 FILE_CONTENT+="$egern_type:"$'\n'
-                FILE_CONTENT+="$(sed 's/^/  - /' tmp/values.tmp)"$'\n'
+                FILE_CONTENT+="$(echo "${TYPE_VALUES[$egern_type]}" | sed 's/^/  - /')"$'\n'
                 FILE_CONTENT+=""$'\n'
               fi
             done
 
-            FILE_CONTENT="# 规则名称: $base_name"$'\n'"# 规则统计: $rule_count"$'\n'$'\n'"$(echo "$FILE_CONTENT" | tail -n +3)"
-            
             echo "$FILE_CONTENT" > "$output_file"
           done
 
@@ -155,7 +189,6 @@ jobs:
           for yaml_file in Egern/Rule/*.yaml; do
             [ -e "$yaml_file" ] || continue
             
-
             NEW_CONTENT=$(cat "$yaml_file" | sed '/^#/d' | grep -v '^$')
             
             if git cat-file -e HEAD:"$yaml_file" 2>/dev/null; then
