@@ -303,7 +303,7 @@ function operator(pro) {
     if (p._subDisplayName) subName = p._subDisplayName;
     if (!subName && p._subName) subName = p._subName;
 
-    const prefix = subName ? `${subName}-` : "";
+    const prefix = subName ? subName + "-" : "";
     const cleanRegion = p.name.replace(/^\S+\s-\s/, "").replace(/\s\d{2}$/, "").trim();
 
     const key = prefix + cleanRegion;
