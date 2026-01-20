@@ -76,7 +76,10 @@ jobs:
             fi
 
             headers=$(grep '^#' "$merged" || true)
-            update_time_raw=$(echo "$headers" | grep -i -E 'updated|update time|UPDATED|Update time' | head -1 | sed 's/.*: *//; s/[^0-9- :UTC+0-9]*//g' || true)
+
+            update_time_raw=$(echo "$headers" | grep -iE '(UPDATED|Update time|updated):' | \
+              sed -E 's/.*(UPDATED|Update time|updated): *//i; s/[^0-9 :-]//g; s/UTC\+8//i' | \
+              sort -r | head -1 || true) 
 
             if [ -z "$update_time_raw" ]; then
               update_time="$(date '+%Y-%m-%d %H:%M:%S')"
@@ -132,6 +135,7 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
           HAS_CHANGES=false
+          changed_files=()
 
           for yaml in Egern/Rule/*.yaml; do
             [ -f "$yaml" ] || continue
@@ -144,6 +148,7 @@ jobs:
             if [ "$NEW" != "$OLD" ]; then
               git add "$yaml"
               HAS_CHANGES=true
+              changed_files+=("$(basename "$yaml")")
               echo "检测到变更: $(basename "$yaml")"
             else
               echo "无变更: $(basename "$yaml")"
@@ -151,7 +156,7 @@ jobs:
           done
 
           if [ "$HAS_CHANGES" = true ]; then
-            echo "有规则更新，提交 commit"
+            echo "有规则更新: ${changed_files[*]}"
             git commit -m "Egern Rules - Auto Update $(date '+%Y-%m-%d %H:%M')"
             git push
           else
