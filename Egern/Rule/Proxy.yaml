@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6728 条
+# 规则统计: 6720 条
 # 更新时间: 2026-01-20 02:08:18
 
 no_resolve: true
@@ -6733,14 +6733,4 @@ ip_cidr6_set:
   - 2001:b28:f23d::/48
   - 2001:b28:f23f::/48
   - 2a0a:f280::/32
-
-user_agent_set:
-  - 'Duolingo*'
-  - 'OneDrive*'
-  - 'PayPal*'
-  - 'Roam*'
-  - 'WhatsApp*'
-  - 'battleroyale*'
-  - 'com.apple.trustd*'
-  - 'hearthstone*'
 
