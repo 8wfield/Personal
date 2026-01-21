@@ -1589,6 +1589,6 @@ ip_cidr_set:
   - 65.199.22.0/23
 
 user_agent_set:
-  -  val 
+  -  value 
   - com.apple.Maps
 
