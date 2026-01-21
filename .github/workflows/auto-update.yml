@@ -121,13 +121,19 @@ jobs:
                 [ -z "$trules" ] && continue
                 echo "$etype:"
                 echo "$trules" | awk -F',' -v rt="$type" '{
-                  v=$2
-                  if (rt=="URL-REGEX" || rt=="DOMAIN-WILDCARD") v="\"" v "\""
-                  else if (rt=="IP-ASN") v="'" v "'"
-                  else if (rt=="USER-AGENT") {
-                    if (v ~ /[^a-zA-Z0-9._-]/) v="'" v "'"
+                  val = $2
+                  if (rt == "URL-REGEX" || rt == "DOMAIN-WILDCARD") {
+                    val = "\"" val "\""
                   }
-                  print v
+                  else if (rt == "IP-ASN") {
+                    val = "'" val "'"
+                  }
+                  else if (rt == "USER-AGENT") {
+                    if (val ~ /[^a-zA-Z0-9._-]/) {
+                      val = "'" val "'"
+                    }
+                  }
+                  print val
                 }' | sort -u | sed 's/^/  - /'
                 echo ""
               done
