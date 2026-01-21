@@ -22,11 +22,13 @@ jobs:
       - name: Generate Egern Rules
         run: |
           set +e
-
+          
+          echo "开始生成Egern规则..."
+          echo "当前时间: $(date)"
+          
           mkdir -p Egern/Rule || true
-
           OUTPUT_DIR="$(pwd)/Egern/Rule"
-
+          
           RULES=(
             "Telegram https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram.list"
             "Alibaba https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Alibaba/Alibaba.list"
@@ -49,40 +51,49 @@ jobs:
             "HttpDns https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.list"
             "AI https://gist.githubusercontent.com/ddgksf2013/cb4121e8b5c5d865cc949cb8120320c4/raw/Ai.yaml"
           )
-
+          
           declare -A RULE_MAP=(
             [DOMAIN]=domain_set [DOMAIN-KEYWORD]=domain_keyword_set [DOMAIN-SUFFIX]=domain_suffix_set
             [DOMAIN-WILDCARD]=domain_wildcard_set [GEOIP]=geoip_set [IP-CIDR]=ip_cidr_set
             [IP-CIDR6]=ip_cidr6_set [URL-REGEX]=url_regex_set [USER-AGENT]=user_agent_set
             [IP-ASN]=asn_set [DEST-PORT]=dest_port_set
           )
-
+          
           ORDERED_RULE_TYPES=(DOMAIN DOMAIN-KEYWORD DOMAIN-SUFFIX DOMAIN-WILDCARD GEOIP IP-CIDR IP-CIDR6 URL-REGEX USER-AGENT IP-ASN DEST-PORT)
-
+          
+          echo "开始处理 ${#RULES[@]} 个规则组..."
+          
           for group in "${RULES[@]}"; do
             read -r name urls <<< "$group"
+            echo "正在处理规则组: $name"
+            
             merged=$(mktemp)
             downloaded=false
+            
             for url in $urls; do
+              echo "  下载: $url"
               if curl -sL -f "$url" >> "$merged" 2>/dev/null; then
                 downloaded=true
                 echo "" >> "$merged"
+                echo "  下载成功"
+              else
+                echo "  下载失败: $url"
               fi
             done
-
+            
             if [ "$downloaded" != "true" ]; then
-              echo "下载失败: $name"
+              echo "错误: 规则组 $name 所有URL下载失败"
               rm -f "$merged"
               continue
             fi
-
+            
             headers=$(grep '^#' "$merged" || true)
-
+            
             time_candidates=$(echo "$headers" | \
               grep -iE '(UPDATED|Update time|VER|version|last updated):' | \
               sed -E 's/^# *//; s/ *(UPDATED|Update time|VER|version|last updated): *//i; s/UTC.*//i; s/[^0-9 :-]//g' | \
               grep -E '[0-9]{4}' | sort -u || true)
-
+            
             if [ -n "$time_candidates" ]; then
               latest=$(echo "$time_candidates" | sort -r | head -1)
               if [[ $latest =~ ^[0-9]{14}$ ]]; then
@@ -92,35 +103,37 @@ jobs:
               fi
             else
               update_time="$(date '+%Y-%m-%d %H:%M:%S')"
+              echo "  警告: 未找到更新时间，使用当前时间"
             fi
-
+            
             sorted=$(sort -u "$merged" | grep -v '^$' || true)
             rm -f "$merged"
-
+            
             output="$OUTPUT_DIR/$name.yaml"
-
+            
             rules=$(echo "$sorted" | grep -E '^[- ]*(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-WILDCARD|IP-CIDR|IP-CIDR6|IP-ASN|URL-REGEX|DEST-PORT|GEOIP|USER-AGENT),' | sed 's/,no-resolve$//' || true)
-
+            
             if [ -z "$rules" ]; then
-              echo "无有效规则: $name"
+              echo "警告: 规则组 $name 无有效规则，跳过"
               continue
             fi
-
+            
             no_resolve=$(echo "$sorted" | grep -qE '^[- ]*(IP-(ASN|CIDR|CIDR6)),.*,no-resolve$' && echo true || echo false)
-
+            
             rule_count=$(echo "$rules" | wc -l | xargs)
-
+            
             {
               echo "# 规则名称: $name"
               echo "# 规则统计: $rule_count 条"
               echo "# 更新时间: $update_time"
               echo ""
               [ "$no_resolve" = true ] && echo "no_resolve: true" && echo ""
-
+              
               for type in "${ORDERED_RULE_TYPES[@]}"; do
                 etype=${RULE_MAP[$type]}
                 trules=$(echo "$rules" | grep "^[- ]*$type," || true)
                 [ -z "$trules" ] && continue
+                
                 echo "$etype:"
                 echo "$trules" | awk -F',' -v rt="$type" '{
                   value = $2
@@ -128,45 +141,67 @@ jobs:
                     value = "\"" value "\""
                   }
                   else if (rt == "IP-ASN") {
-                    value = "'" value "'"
+                    value = "'\''" value "'\''"
                   }
                   else if (rt == "USER-AGENT") {
-                    if (value ~ /[^a-zA-Z0-9._-]/) {
-                      value = "'" value "'"
-                    }
+                    value = "'\''" value "'\''"
                   }
                   print value
                 }' | sort -u | sed 's/^/  - /'
                 echo ""
               done
-            } > "$output" || echo "写入失败: $name"
-
-            echo "生成: $name.yaml (时间: $update_time, 数量: $rule_count)"
-
+            } > "$output"
+            
+            if [ $? -eq 0 ]; then
+              echo "成功: 生成 $name.yaml (时间: $update_time, 数量: $rule_count)"
+            else
+              echo "错误: 写入文件失败: $name.yaml"
+            fi
           done
+          
+          echo "规则生成完成"
+          echo "生成的文件列表:"
+          ls -la "$OUTPUT_DIR/"*.yaml 2>/dev/null || echo "无生成文件"
 
       - name: Commit Changes if Any
         run: |
+          echo "开始检查文件变更..."
+          
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-
+          
           HAS_CHANGES=false
-
+          
           for yaml in Egern/Rule/*.yaml; do
             [ -f "$yaml" ] || continue
+            
+            echo "检查文件: $yaml"
+            
             NEW=$(sed '/^#/d;/^$/d' "$yaml" | sort || true)
+            
             if git cat-file -e HEAD:"$yaml" 2>/dev/null; then
               OLD=$(git show HEAD:"$yaml" | sed '/^#/d;/^$/d' | sort || true)
+              echo "  找到历史版本"
             else
               OLD=""
+              echo "  新文件"
             fi
+            
             if [ "$NEW" != "$OLD" ]; then
+              echo "  文件有变更，添加到git"
               git add "$yaml"
               HAS_CHANGES=true
+            else
+              echo "  文件无变更"
             fi
           done
-
+          
           if [ "$HAS_CHANGES" = true ]; then
-            git commit -m "Egern Rules - Auto Update $(date '+%Y-%m-%d %H:%M')"
+            COMMIT_MSG="Egern Rules - Auto Update $(date '+%Y-%m-%d %H:%M')"
+            echo "提交变更: $COMMIT_MSG"
+            git commit -m "$COMMIT_MSG"
             git push
+            echo "变更已推送"
+          else
+            echo "无变更，跳过提交"
           fi
