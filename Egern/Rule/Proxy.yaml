@@ -6735,12 +6735,5 @@ ip_cidr6_set:
   - 2a0a:f280::/32
 
 user_agent_set:
-  - Duolingo*
-  - OneDrive*
-  - PayPal*
-  - Roam*
-  - WhatsApp*
-  - battleroyale*
-  - com.apple.trustd*
-  - hearthstone*
+  -  v 
 

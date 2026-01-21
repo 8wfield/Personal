@@ -1589,27 +1589,6 @@ ip_cidr_set:
   - 65.199.22.0/23
 
 user_agent_set:
-  - '*WeatherFoundation*'
-  - *FindMyiPhone?
-  - *Music?
-  - *com.apple.Maps?
-  - *com.apple.mobileme.fmip1
-  - AppleNews*
-  - AppleTV*
-  - FMDClient*
-  - FMFD*
-  - FindMyFriends*
-  - FindMyiPhone*
-  - Maps*
-  - Music*
-  - Wallet*
+  -  v 
   - com.apple.Maps
-  - com.apple.appstored*
-  - com.apple.news*
-  - com.apple.trustd*
-  - com.apple.tv*
-  - fmflocatord*
-  - geod*
-  - locationd*
-  - passd*
 
