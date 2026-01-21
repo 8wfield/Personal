@@ -71,6 +71,7 @@ jobs:
             done
 
             if [ "$downloaded" != "true" ]; then
+              echo "下载失败: $name"
               rm -f "$merged"
               continue
             fi
@@ -101,6 +102,7 @@ jobs:
             rules=$(echo "$sorted" | grep -E '^[- ]*(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-WILDCARD|IP-CIDR|IP-CIDR6|IP-ASN|URL-REGEX|DEST-PORT|GEOIP|USER-AGENT),' | sed 's/,no-resolve$//' || true)
 
             if [ -z "$rules" ]; then
+              echo "无有效规则: $name"
               continue
             fi
 
@@ -129,6 +131,7 @@ jobs:
                     val = "'" val "'"
                   }
                   else if (rt == "USER-AGENT") {
+
                     if (val ~ /[^a-zA-Z0-9._-]/) {
                       val = "'" val "'"
                     }
@@ -137,7 +140,9 @@ jobs:
                 }' | sort -u | sed 's/^/  - /'
                 echo ""
               done
-            } > "$output"
+            } > "$output" || echo "写入失败: $name"
+
+            echo "生成: $name.yaml (时间: $update_time, 数量: $rule_count)"
 
           done
 
@@ -147,7 +152,6 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
           HAS_CHANGES=false
-          changed_files=()
 
           for yaml in Egern/Rule/*.yaml; do
             [ -f "$yaml" ] || continue
@@ -160,7 +164,6 @@ jobs:
             if [ "$NEW" != "$OLD" ]; then
               git add "$yaml"
               HAS_CHANGES=true
-              changed_files+=("$(basename "$yaml")")
             fi
           done
 
