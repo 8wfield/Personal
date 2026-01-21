@@ -55,10 +55,11 @@ jobs:
           declare -A RULE_MAP=(
             [DOMAIN]=domain_set [DOMAIN-KEYWORD]=domain_keyword_set [DOMAIN-SUFFIX]=domain_suffix_set
             [DOMAIN-REGEX]=domain_regex_set [GEOIP]=geoip_set [IP-CIDR]=ip_cidr_set
-            [IP-CIDR6]=ip_cidr6_set [URL-REGEX]=url_regex_set [IP-ASN]=asn_set
+            [IP-CIDR6]=ip_cidr6_set [URL-REGEX]=url_regex_set [USER-AGENT]=user_agent_set
+            [IP-ASN]=asn_set
           )
           
-          ORDERED_RULE_TYPES=(DOMAIN DOMAIN-KEYWORD DOMAIN-SUFFIX DOMAIN-REGEX GEOIP IP-CIDR IP-CIDR6 URL-REGEX IP-ASN)
+          ORDERED_RULE_TYPES=(DOMAIN DOMAIN-KEYWORD DOMAIN-SUFFIX DOMAIN-REGEX GEOIP IP-CIDR IP-CIDR6 URL-REGEX USER-AGENT IP-ASN)
           
           echo "开始处理 ${#RULES[@]} 个规则组..."
           
@@ -110,7 +111,7 @@ jobs:
             
             output="$OUTPUT_DIR/$name.yaml"
             
-            rules=$(echo "$sorted" | grep -E '^[- ]*(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-REGEX|IP-CIDR|IP-CIDR6|IP-ASN|URL-REGEX|GEOIP),' | sed 's/,no-resolve$//' || true)
+            rules=$(echo "$sorted" | grep -E '^[- ]*(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-REGEX|IP-CIDR|IP-CIDR6|IP-ASN|URL-REGEX|GEOIP|USER-AGENT),' | sed 's/,no-resolve$//' || true)
             
             if [ -z "$rules" ]; then
               echo "警告: 规则组 $name 无有效规则，跳过"
@@ -136,8 +137,8 @@ jobs:
                 echo "$etype:"
                 echo "$trules" | awk -F',' -v rt="$type" '{
                   value = $2
-                  if (rt == "URL-REGEX" || rt == "DOMAIN-REGEX") {
-                    value = "\"" value "\""
+                  if (rt == "URL-REGEX" || rt == "DOMAIN-REGEX" || rt == "USER-AGENT") {
+                    value = "'\''" value "'\''"
                   }
                   else if (rt == "IP-ASN") {
                     value = "'\''" value "'\''"
