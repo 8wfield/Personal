@@ -308,28 +308,35 @@ function jxh(e) {
   return e;
 }
 
-// oneP 函数：清理单个节点的末尾 "1"
+// oneP：只有一个节点时，去掉末尾的序号 "1"（支持带 [] 的情况）
 function oneP(e) {
-  const t = e.reduce((acc, proxy) => {
-    const bracketRegex = /(\[.*\]$)/; // 匹配末尾 [] 
-    const numRegex = /\d+$/; // 匹配末尾数字
+  const groups = e.reduce((acc, proxy) => {
+    // 先提取纯地区基名（去掉末尾数字 + [] 部分）
     let base = proxy.name;
-    if (bracketRegex.test(base)) {
-      base = base.replace(bracketRegex, '').trim();
-    }
-    base = base.replace(numRegex, '').trim();
+    
+    // 去掉 [] 部分（如果有）
+    const bracketMatch = base.match(/(\[.*\]$)/);
+    const bracket = bracketMatch ? bracketMatch[0] : "";
+    base = base.replace(/\[.*\]$/, "").trim();
+    
+    // 去掉末尾数字（比如香港1 → 香港）
+    base = base.replace(/\d+$/, "").trim();
+    
     if (!acc[base]) acc[base] = [];
-    acc[base].push(proxy);
+    acc[base].push({ proxy, bracket });
     return acc;
   }, {});
 
-  for (const base in t) {
-    if (t[base].length === 1 && t[base][0].name.endsWith('1')) {
-      // 如果只有一个，去掉末尾 "1" （但保留 []）
-      const proxy = t[base][0];
-      proxy.name = proxy.name.replace(/1(\[.*\]$)?$/, '$1');
+  for (const base in groups) {
+    if (groups[base].length === 1) {
+      const item = groups[base][0];
+      const p = item.proxy;
+      // 重新拼接：基名 + []（如果有），不加任何数字
+      p.name = base + item.bracket;
     }
   }
+  return e;
+}
 
   return e;
 }
