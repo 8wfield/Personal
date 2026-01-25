@@ -119,6 +119,7 @@ const rurekey = {
   Esnc: /esnc/gi,
 };
 
+
 let GetK = false, AMK = []
 function ObjKA(i) {
   GetK = true
@@ -159,7 +160,6 @@ function operator(pro) {
     let ens = e.name;
     let retainKey = "";
 
-    // 预处理地区名替换
     Object.keys(rurekey).forEach((ikey) => {
       if (rurekey[ikey].test(e.name)) {
         e.name = e.name.replace(rurekey[ikey], ikey);
@@ -174,8 +174,6 @@ function operator(pro) {
       delete e["block-quic"];
     }
 
-    // 处理 blkey 保留/替换
-    let bktf = false;
     if (BLKEY) {
       let BLKEY_REPLACE = "";
       let re = false;
@@ -192,27 +190,18 @@ function operator(pro) {
       });
       if (re) retainKey = BLKEY_REPLACE;
       else retainKey = BLKEYS.filter((item) => e.name.includes(item)).join(" ");
-      if (retainKey) bktf = true;
     }
 
-    let rate = "";      // 倍率 [2𝕏]
-    let extras = [];    // 其他保留词 [IPLC Game 家宽]
+    let bracketItems = [];
 
-    // blgd 匹配的词 → extras
     if (blgd) {
       regexArray.forEach((regex, index) => {
         if (regex.test(e.name) && valueArray[index] !== undefined) {
-          const val = valueArray[index];
-          if (/^\d+𝕏$/.test(val)) {
-            rate = val;           // 倍率单独处理
-          } else {
-            extras.push(val);
-          }
+          bracketItems.push(valueArray[index]);
         }
       });
     }
 
-    // bl 正则匹配倍率（优先级高于 blgd 的倍率）
     if (bl) {
       const match = e.name.match(
         /((倍率|X|x|×)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x|×)/
@@ -220,7 +209,7 @@ function operator(pro) {
       if (match) {
         const rev = match[0].match(/(\d[\d.]*)/)[0];
         if (rev !== "1") {
-          rate = rev + "𝕏";
+          bracketItems.push(rev + "𝕏");
         }
       }
     }
@@ -240,21 +229,14 @@ function operator(pro) {
         }
       }
 
-      // 国旗紧贴地区名
       let regionPart = (usflag || "") + findKeyValue;
 
-      // 收集所有 [] 内容
-      let brackets = [];
-      if (rate) brackets.push(rate);
-      if (extras.length > 0) brackets.push(extras.join(" "));
-      if (retainKey) brackets.push(retainKey.trim());
-
       let bracketStr = "";
-      if (brackets.length > 0) {
-        bracketStr = "[" + brackets.join("][") + "]";
+      if (bracketItems.length > 0 || retainKey) {
+        const allInBracket = [...bracketItems, retainKey.trim()].filter(Boolean).join(" ");
+        bracketStr = `[${allInBracket}]`;
       }
 
-      // 最终拼接： name - 地区(带旗) [内容] （序号稍后添加）
       let parts = [];
       if (FNAME) parts.push(FNAME);
       parts.push("-" + regionPart);
@@ -271,34 +253,32 @@ function operator(pro) {
 
   pro = pro.filter((e) => e.name !== null);
 
-  // 序号处理：去掉前导0，个位数直接显示1、2...
   jxh(pro);
-  numone && oneP(pro);
+  if (numone) oneP(pro);
 
-  blpx && (pro = fampx(pro));
-  key && (pro = pro.filter((e) => !keyb.test(e.name)));
+  if (blpx) pro = fampx(pro);
+  if (key) pro = pro.filter((e) => !keyb.test(e.name));
 
   return pro;
 }
 
-// 修改 jxh 函数：序号不补0，个位数直接显示1、2、3... 加在地区后 [] 前
 function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
-    const bracketRegex = /(\[.*\]$)/; // 匹配末尾的 [] 部分
-    const baseName = proxy.name.replace(bracketRegex, '').trim(); // 去掉[]部分用于分组
-    const bracketStr = proxy.name.match(bracketRegex) ? proxy.name.match(bracketRegex)[0] : '';
+    const bracketRegex = /(\[.*\])?$/;
+    let baseName = proxy.name.replace(bracketRegex, '').trim();
+    const bracketStr = proxy.name.match(bracketRegex)?.[0] || '';
     if (!acc[baseName]) {
       acc[baseName] = { count: 0, items: [] };
     }
     acc[baseName].count++;
-    acc[baseName].items.push({ ...proxy, bracketStr }); // 保存 bracketStr
+    acc[baseName].items.push({ ...proxy, bracketStr });
     return acc;
   }, {});
 
   const result = [];
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
-      const num = idx + 1;                    // 从1开始，不补0
+      const num = idx + 1;
       const newName = item.name.replace(item.bracketStr, '') + num + item.bracketStr;
       result.push({ ...item, name: newName });
     });
@@ -308,36 +288,24 @@ function jxh(e) {
   return e;
 }
 
-// oneP：只有一个节点时，去掉末尾的序号 "1"（支持带 [] 的情况）
 function oneP(e) {
   const groups = e.reduce((acc, proxy) => {
-    // 先提取纯地区基名（去掉末尾数字 + [] 部分）
-    let base = proxy.name;
-    
-    // 去掉 [] 部分（如果有）
-    const bracketMatch = base.match(/(\[.*\]$)/);
-    const bracket = bracketMatch ? bracketMatch[0] : "";
-    base = base.replace(/\[.*\]$/, "").trim();
-    
-    // 去掉末尾数字（比如香港1 → 香港）
+    let base = proxy.name.replace(/\[.*\]$/, "").trim();
     base = base.replace(/\d+$/, "").trim();
     
     if (!acc[base]) acc[base] = [];
-    acc[base].push({ proxy, bracket });
+    acc[base].push(proxy);
     return acc;
   }, {});
 
   for (const base in groups) {
     if (groups[base].length === 1) {
-      const item = groups[base][0];
-      const p = item.proxy;
-      // 重新拼接：基名 + []（如果有），不加任何数字
-      p.name = base + item.bracket;
+      const p = groups[base][0];
+      const bracketMatch = p.name.match(/(\[.*\])?$/);
+      const bracket = bracketMatch ? bracketMatch[0] : "";
+      p.name = base + bracket;
     }
   }
-  return e;
-}
-
   return e;
 }
 
@@ -356,19 +324,14 @@ function fampx(pro) {
     /IPLC|IEPL|Kern|Edge|Pro|Std|Exp|Biz|Fam|Game|Buy|Zx|LB|Game/,
   ];
 
-  const wis = [];
-  const wnout = [];
-  for (const proxy of pro) {
-    const fan = specialRegex.some((regex) => regex.test(proxy.name));
-    if (fan) wis.push(proxy);
-    else wnout.push(proxy);
-  }
+  const wis = pro.filter(proxy => specialRegex.some(regex => regex.test(proxy.name)));
+  const wnout = pro.filter(proxy => !specialRegex.some(regex => regex.test(proxy.name)));
 
-  const sps = wis.map((proxy) =>
-    specialRegex.findIndex((regex) => regex.test(proxy.name))
+  const sps = wis.map(proxy => 
+    specialRegex.findIndex(regex => regex.test(proxy.name))
   );
 
-  wis.sort((a, b) =>
+  wis.sort((a, b) => 
     sps[wis.indexOf(a)] - sps[wis.indexOf(b)] ||
     a.name.localeCompare(b.name)
   );
