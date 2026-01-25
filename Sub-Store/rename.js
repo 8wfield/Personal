@@ -254,12 +254,12 @@ function operator(pro) {
         bracketStr = "[" + brackets.join("][") + "]";
       }
 
-      // 最终拼接： name - 地区(带旗) 序号 [内容]
+      // 最终拼接： name - 地区(带旗) [内容] （序号稍后添加）
       let parts = [];
       if (FNAME) parts.push(FNAME);
       parts.push("-" + regionPart);
 
-      e.name = parts.join("") + (bracketStr ? bracketStr : "");
+      e.name = parts.join("") + bracketStr;
     } else {
       if (nm) {
         e.name = (FNAME ? FNAME + "-" : "") + e.name;
@@ -281,24 +281,26 @@ function operator(pro) {
   return pro;
 }
 
-// 修改 jxh 函数：序号不补0，个位数直接显示1、2、3...
+// 修改 jxh 函数：序号不补0，个位数直接显示1、2、3... 加在地区后 [] 前
 function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
-    const baseName = proxy.name.replace(/\[\s*.*?\]/g, '').trim(); // 去掉[]部分用于分组
+    const bracketRegex = /(\[.*\]$)/; // 匹配末尾的 [] 部分
+    const baseName = proxy.name.replace(bracketRegex, '').trim(); // 去掉[]部分用于分组
+    const bracketStr = proxy.name.match(bracketRegex) ? proxy.name.match(bracketRegex)[0] : '';
     if (!acc[baseName]) {
       acc[baseName] = { count: 0, items: [] };
     }
     acc[baseName].count++;
-    acc[baseName].items.push(proxy);
+    acc[baseName].items.push({ ...proxy, bracketStr }); // 保存 bracketStr
     return acc;
   }, {});
 
   const result = [];
   Object.values(groups).forEach(group => {
-    group.items.forEach((proxy, idx) => {
+    group.items.forEach((item, idx) => {
       const num = idx + 1;                    // 从1开始，不补0
-      const newName = proxy.name + num;
-      result.push({ ...proxy, name: newName });
+      const newName = item.name.replace(item.bracketStr, '') + num + item.bracketStr;
+      result.push({ ...item, name: newName });
     });
   });
 
@@ -306,19 +308,26 @@ function jxh(e) {
   return e;
 }
 
-// oneP 函数保持原样（清理单个节点的01，但因为我们已不补0，此函数影响变小）
+// oneP 函数：清理单个节点的末尾 "1"
 function oneP(e) {
   const t = e.reduce((acc, proxy) => {
-    const base = proxy.name.replace(/\d+$/, "").trim();
+    const bracketRegex = /(\[.*\]$)/; // 匹配末尾 [] 
+    const numRegex = /\d+$/; // 匹配末尾数字
+    let base = proxy.name;
+    if (bracketRegex.test(base)) {
+      base = base.replace(bracketRegex, '').trim();
+    }
+    base = base.replace(numRegex, '').trim();
     if (!acc[base]) acc[base] = [];
     acc[base].push(proxy);
     return acc;
   }, {});
 
   for (const base in t) {
-    if (t[base].length === 1) {
-      // 如果只有一个，去掉末尾数字（因为我们不想要 香港1 → 香港）
-      t[base][0].name = base;
+    if (t[base].length === 1 && t[base][0].name.endsWith('1')) {
+      // 如果只有一个，去掉末尾 "1" （但保留 []）
+      const proxy = t[base][0];
+      proxy.name = proxy.name.replace(/1(\[.*\]$)?$/, '$1');
     }
   }
 
