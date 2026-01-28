@@ -1,6 +1,6 @@
 # 规则名称: BanAD
-# 规则统计: 103865 条
-# 更新时间: 2026-01-15 22:37:28 
+# 规则统计: 103874 条
+# 更新时间: 2026-01-28 09:50:13 
 
 domain_set:
   - 1500020991.vodplayer.wxamedia.com
@@ -38,6 +38,7 @@ domain_set:
   - ad.tencentmusic.com
   - ad.toutiao.com
   - ad.v3mh.com
+  - ad.weibo.com
   - ad.winrar.com.cn
   - ad.ximalaya.com
   - ad.xunkids.com
@@ -60,6 +61,7 @@ domain_set:
   - adexpo.tencentmusic.com
   - adfilter.imtt.qq.com
   - adguanggao.eee114.com
+  - adimg.uve.weibo.com
   - adjust.cn
   - adjust.com
   - adks.hpplay.cn
@@ -77,6 +79,7 @@ domain_set:
   - ads-video-al.xhscdn.com
   - ads-video-qc.xhscdn.com
   - ads.95516.com
+  - ads.auctions.yahoo.com
   - ads.cup.com.cn
   - ads.google.cn
   - ads.huan.tv
@@ -126,12 +129,14 @@ domain_set:
   - adstats.tencentmusic.com
   - adstore-1252524079.file.myqcloud.com
   - adstore-index-1252524079.file.myqcloud.com
+  - adstrategy.biz.weibo.com
   - adstudio-assets.scdn.co
   - adstudio.spotify.com
   - adtago.s3.amazonaws.com
   - adtech.yahooinc.com
   - adtrack.quark.cn
   - adtracker.medproad.com
+  - adui.tg.meitu.com
   - adv-api.shenshiads.com
   - adv.sec.intl.miui.com
   - adv.sec.miui.com
@@ -152,6 +157,7 @@ domain_set:
   - adx-open-service.youku.com
   - adx-os.anythinktech.com
   - adx-saas.advlion.com
+  - adx-strategy-api-cn.statisticslinks.com
   - adx.ads.heytapmobi.com
   - adx.ads.oppomobile.com
   - adx.appsdk.com.cn
@@ -229,7 +235,6 @@ domain_set:
   - applog.uc.cn
   - applog.zijieapi.com
   - applovin.com
-  - appversion.115.com
   - aqyad.com
   - aspect-upush.umeng.com
   - auction.unityads.unity3d.com
@@ -551,6 +556,7 @@ domain_set:
   - monitor.music.qq.com
   - monitor.uu.qq.com
   - monsetting.toutiao.com
+  - mores.toponad.com
   - ms.applovin.com
   - ms.applvn.com
   - ms4.applovin.com
@@ -673,6 +679,7 @@ domain_set:
   - sdk.markmedia.com.cn
   - sdk.mobads.adwangmai.com
   - sdkapi.cloooud.com
+  - sdkapp.uve.weibo.com
   - sdkauth.hpplay.cn
   - sdkconf.avlyun.com
   - sdkconfig.ad.intl.xiaomi.com
@@ -737,6 +744,7 @@ domain_set:
   - t2.fancyapi.com
   - t3.a.market.xiaomi.com
   - t7z.cupid.ptqy.gitv.tv
+  - tagtic.cn
   - tangram.e.qq.com
   - target.ads.jihuoniao.com
   - tdc.qq.com
@@ -789,6 +797,7 @@ domain_set:
   - tracker.gitee.com
   - tracking.miui.com
   - tracking.rus.miui.com
+  - tuiguang.meitu.com
   - tvapp.hpplay.cn
   - tvuser-ch.cedock.com
   - tx-ad.a.yximgs.com
