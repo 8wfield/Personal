@@ -1,6 +1,6 @@
 # 规则名称: Proxy
-# 规则统计: 26642 条
-# 更新时间: 2026-01-28 10:35:40
+# 规则统计: 26655 条
+# 更新时间: 2026-01-29 11:09:00
 
 domain_set:
   - 1password.drift.click
@@ -291,6 +291,7 @@ domain_set:
   - ood.opsource.net
   - openaiapi-site.azureedge.net
   - openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+  - openaicom.imgix.net
   - openaicomproductionae4b.blob.core.windows.net
   - opgg-static.akamaized.net
   - origin-a.akamaihd.net
@@ -2830,6 +2831,8 @@ domain_suffix_set:
   - aria.ms
   - ark.to
   - arlingtoncemetery.mil
+  - arma3.com
+  - armaplatform.com
   - armovs.com
   - arnoldrenderer.com
   - arphic.com
@@ -3410,6 +3413,7 @@ domain_suffix_set:
   - babyzone.com
   - backchina.com
   - backdoorlesbians.com
+  - backend-v2.crixet.com
   - backpackers.com.tw
   - backroomcastingcouch.com
   - backtotiananmen.com
@@ -3509,6 +3513,7 @@ domain_suffix_set:
   - battlefront2.com
   - battlefrontii.com
   - battlelog.com
+  - battleye.com
   - baxsound.com
   - bayareabmw.com
   - bayvoice.net
@@ -4187,6 +4192,7 @@ domain_suffix_set:
   - bird.so
   - bisq.io
   - bisq.network
+  - bistudio.com
   - bisyoujyogyaruge.topaz.ne.jp
   - bit-z.com
   - bit.do
@@ -4870,6 +4876,7 @@ domain_suffix_set:
   - bodog88.com
   - bodyandsoul.com.au
   - bodyfluids-jav.com
+  - bohemia.net
   - boj.or.jp
   - bokep.net
   - bokepseks.org
@@ -6565,6 +6572,7 @@ domain_suffix_set:
   - cristyli.com
   - crit-staging.com
   - critiquebrainz.org
+  - crixet.com
   - crmdynint-gcc.com
   - crmdynint.com
   - crocotube.com
@@ -6850,6 +6858,7 @@ domain_suffix_set:
   - daylife.com
   - daytonbmw.com
   - daytontrucktires.com
+  - dayz.com
   - dazn-api.com
   - dazn.com
   - dazndn.com
@@ -15013,6 +15022,7 @@ domain_suffix_set:
   - maizhong.org
   - makaan.com
   - makeanything.com
+  - makearmanotwar.com
   - makebettercode.com
   - makecode.org
   - makeeu.com
@@ -21030,6 +21040,7 @@ domain_suffix_set:
   - sijihuisuo.club
   - sijihuisuo.com
   - sikiswap.com
+  - silicagame.com
   - silicon-mobility.com
   - siliconmobility.com
   - silkbook.com
@@ -23998,6 +24009,7 @@ domain_suffix_set:
   - viewerswives.net
   - viewgals.com
   - viewpointsfromfacebook.com
+  - vigorgame.com
   - vijayatemple.org
   - vikiporn.com
   - vilanet.me
@@ -26109,6 +26121,7 @@ domain_suffix_set:
   - yiqiedoushiganggangkaishi.org
   - yizhihongxing.com
   - yjcontentdelivery.com
+  - ylands.com
   - ymail.com
   - ymhsf.top
   - ymhsf1.top
