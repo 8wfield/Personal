@@ -1,6 +1,6 @@
 # 规则名称: Proxy
-# 规则统计: 26655 条
-# 更新时间: 2026-01-29 11:09:00
+# 规则统计: 26662 条
+# 更新时间: 2026-01-30 11:10:23
 
 domain_set:
   - 1password.drift.click
@@ -2958,10 +2958,12 @@ domain_suffix_set:
   - atgfw.org
   - athenaeizou.com
   - atkgallery.com
+  - atl-paas.net
   - atlanta168.com
   - atlantaminidealers.com
   - atlasdmt.com
   - atlasonepoint.com
+  - atlassian-dev.net
   - atlassian.com
   - atlassian.net
   - atnext.com
@@ -9632,6 +9634,9 @@ domain_suffix_set:
   - fotolja.com
   - fotoscaserasx.com
   - foundationdb.org
+  - foundationdns.com
+  - foundationdns.net
+  - foundationdns.org
   - fountmedia.io
   - fourthinternational.org
   - fourthns.systems
@@ -13773,6 +13778,7 @@ domain_suffix_set:
   - jinrizhiyi.news
   - jintian.net
   - jinx.com
+  - jira.com
   - jitouch.com
   - jitsi.org
   - jiuse.ai
@@ -21606,6 +21612,7 @@ domain_suffix_set:
   - srebrenica360.com
   - srtcdn.net
   - srttu.edu
+  - ss-inf.net
   - ss-link.com
   - ss.pythonic.life
   - ss2.us
