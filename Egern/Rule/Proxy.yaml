@@ -1,6 +1,6 @@
 # 规则名称: Proxy
-# 规则统计: 26662 条
-# 更新时间: 2026-01-30 11:10:23
+# 规则统计: 26663 条
+# 更新时间: 2026-01-31 11:04:57
 
 domain_set:
   - 1password.drift.click
@@ -21059,6 +21059,7 @@ domain_suffix_set:
   - simcity.com
   - simg.jp
   - simgbb.com
+  - simianx.ai
   - similar-porn.fun
   - simility.com
   - simonsgirls.com
