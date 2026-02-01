@@ -1,6 +1,6 @@
 # 规则名称: Proxy
-# 规则统计: 26663 条
-# 更新时间: 2026-01-31 11:04:57
+# 规则统计: 26667 条
+# 更新时间: 2026-02-01 11:36:04
 
 domain_set:
   - 1password.drift.click
@@ -3531,6 +3531,7 @@ domain_suffix_set:
   - bbc.in
   - bbc.mp-pxcdn.com
   - bbc.net.uk
+  - bbc.pdn.tritondigital.com
   - bbcchinese.com
   - bbchat.tv
   - bbci.co.uk
@@ -6876,6 +6877,7 @@ domain_suffix_set:
   - dcard.tw
   - dclk
   - dcmilitary.com
+  - dcs-spotify.megaphone.fm
   - dctbeatsbydre.com
   - ddc.com.tw
   - ddd-smart.net
@@ -11423,6 +11425,7 @@ domain_suffix_set:
   - hellouk.org
   - hellporno.com
   - hellven.net
+  - help.byspotify.com
   - helpeachpeople.com
   - helpster.de
   - helpzhuling.org
@@ -14787,6 +14790,7 @@ domain_suffix_set:
   - lotcrap.com
   - lotsawahouse.org
   - lotuslight.org.tw
+  - louisvuitton.com
   - lovart.ai
   - love-sextoys.co.uk
   - love4porn.com
