@@ -1,0 +1,76 @@
+name: Icons JSON
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate icons.json
+        run: |
+          python - << 'PY'
+          import json, os, re, datetime
+          from pathlib import Path
+
+          ROOT = Path("Icons")
+          OUT = ROOT / "Icons-all.json"
+
+          repo = os.getenv("GITHUB_REPOSITORY", "8wfield/Personal")
+          owner, repo_name = repo.split("/", 1)
+          branch = os.getenv("GITHUB_REF_NAME", "main")
+
+          def natural_sort_key(s):
+              return [int(c) if c.isdigit() else c.lower() for c in re.split(r'(\d+)', s)]
+
+          pngs = sorted(ROOT.rglob("*.png"), key=lambda p: natural_sort_key(str(p.relative_to(ROOT))))
+
+          icons = []
+          for p in pngs:
+              rel = p.relative_to(ROOT).as_posix()
+              icons.append({
+                  "name": p.stem,
+                  "filename": p.name,
+                  "path": rel,
+                  "url": f"https://raw.githubusercontent.com/{owner}/{repo_name}/{branch}/Icons/{rel}"
+              })
+
+          now = (datetime.datetime.utcnow() + datetime.timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S')
+          data = {
+              "name": "8w自用图标",
+              "description": f"数量{len(icons)}个，更新日期：{now}",
+              "icons": icons
+          }
+
+          OUT.parent.mkdir(parents=True, exist_ok=True)
+          with open(OUT, "w", encoding="utf-8") as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+
+          print(f"Generated {len(icons)} icons")
+          PY
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          FILE="Icons/Icons-all.json"
+          git add "$FILE" || true
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update Icons-all.json [skip ci]"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
