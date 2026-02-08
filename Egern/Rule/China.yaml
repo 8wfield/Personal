@@ -1,6 +1,6 @@
 # 规则名称: China
-# 规则统计: 116508 条
-# 更新时间: 2026-02-06 11:14:40
+# 规则统计: 116506 条
+# 更新时间: 2026-02-08 11:41:57
 
 domain_set:
   - 265.com
@@ -2378,7 +2378,6 @@ domain_suffix_set:
   - 125yan.com
   - 126.com
   - 126.fm
-  - 126.link
   - 126.net
   - 126blog.com
   - 126disk.com
@@ -2656,7 +2655,6 @@ domain_suffix_set:
   - 163hubei.com
   - 163hunan.com
   - 163img.com
-  - 163industry.com
   - 163jiasu.com
   - 163k.cc
   - 163k.com
