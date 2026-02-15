@@ -1,0 +1,35 @@
+name: Clear Main History
+
+on:
+  workflow_dispatch:
+
+jobs:
+  clear:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Rebuild main branch with single commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          git checkout --orphan temp_branch
+          git add .
+          git commit -m "Rebuild"
+
+          git branch -D main
+          git branch -m main
+
+          git push -f origin main
+
+      - name: Cleanup workflow runs
+        uses: Mattraks/delete-workflow-runs@main
+        with:
+          retain_days: 0
+          keep_minimum_runs: 0
