@@ -1,0 +1,22 @@
+wildcard:
+  - *.baidu.com             # 百度核心、搜索、网盘、地图等
+  - *.baidubce.com          # 百度云/百度智能云
+  - *.bdimg.com             # 百度图片/静态资源CDN
+  - *.bdstatic.com          # 百度静态资源/CDN
+  - *.bdupload.com          # 百度上传/网盘相关
+  - *.bcebos.com            # 百度云对象存储/BOS
+  - *.iqiyi.com             # 爱奇艺（百度系视频）
+  - *.qiyi.com              # 爱奇艺短域
+  - *.iqiyipic.com          # 爱奇艺图片CDN
+  - *.map.baidu.com         # 百度地图（子域覆盖）
+  - *.tieba.baidu.com       # 百度贴吧
+  - *.wenku.baidu.com       # 百度文库
+  - *.zhidao.baidu.com      # 百度知道
+  - *.jingyan.baidu.com     # 百度经验
+  - *.fanyi.baidu.com       # 百度翻译
+  - *.pan.baidu.com         # 百度网盘
+  - *.yun.baidu.com         # 百度云（旧/部分）
+  - *.nuomi.com             # 百度糯米（旧，但仍活跃）
+  - *.baidustatic.com       # 备用静态CDN
+  - *.bdimg.org             # 备用图片CDN
+  - *.baidupcs.com          # 百度网盘PCS下载
