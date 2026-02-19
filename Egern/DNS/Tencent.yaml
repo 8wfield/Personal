@@ -1,0 +1,26 @@
+wildcard:
+  - *.qq.com                # QQ主域、登录、空间
+  - *.weixin.qq.com         # 微信主域、小程序
+  - *.tencent.com           # 集团核心、通用
+  - *.qpic.cn               # 图片CDN
+  - *.qlogo.cn              # 头像CDN
+  - *.qzone.com             # QQ空间
+  - *.video.qq.com          # 腾讯视频
+  - *.v.qq.com              # 腾讯视频短域
+  - *.myqcloud.com          # 腾讯云CDN/存储
+  - *.qcloud.com            # 腾讯云主域
+  - *.qcloudimg.com         # 云图片/静态CDN
+  - *.music.qq.com          # QQ音乐
+  - *.y.qq.com              # QQ音乐短域
+  - *.tenpay.com            # 财付通/微信支付
+  - *.mp.qq.com             # 小程序/公众号
+  - *.wx.qq.com             # 微信短域
+  - *.gtimg.com             # 游戏/图片CDN
+  - *.pvp.qq.com            # 王者荣耀
+  - *.game.qq.com           # 腾讯游戏平台
+  - *.cdn-go.cn             # 游戏CDN
+  - *.qpic.ws               # 图片备用CDN
+  - *.mmocdn.com            # 游戏/社区CDN
+  - *.report.qq.com         # 上报/统计
+  - *.beacon.qq.com         # 埋点上报
+  - *.wximg.com             # 微信图片CDN
