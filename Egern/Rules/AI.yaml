@@ -1,9 +1,10 @@
 # 规则名称: AI
-# 规则统计: 77
+# 规则统计: 84
 
 no_resolve: true
 
 domain_set:
+  -  ai-gateway.vercel.sh
   -  ai.google.dev
   -  aida.googleapis.com
   -  aiplatform.googleapis.com
@@ -31,19 +32,23 @@ domain_set:
   -  generativelanguage.googleapis.com
   -  host.livekit.cloud
   -  imagine.meta.com
+  -  integrate.api.nvidia.com
   -  jules.google
   -  jules.google.com
   -  labs.google
   -  makersuite.google.com
+  -  models.inference.ai.azure.com
   -  notebooklm.google
   -  notebooklm.google.com
   -  openai.com.cdn.cloudflare.net
   -  openaiapi-site.azureedge.net
+  -  openaicom.imgix.net
   -  openaicomproductionae4b.blob.core.windows.net
   -  pplx-res.cloudinary.com
   -  proactivebackend-pa.googleapis.com
   -  production-openaicom-storage.azureedge.net
   -  robinfrontend-pa.googleapis.com
+  -  router.huggingface.co
   -  sydney.bing.com
   -  trae-api-sg.mchost.guru
   -  turn.livekit.cloud
@@ -53,10 +58,12 @@ domain_suffix_set:
   -  anthropic.com
   -  antigravity-unleash.goog
   -  antigravity.google
+  -  cerebras.ai
   -  chat.com
   -  chatgpt.com
   -  claude.ai
   -  claudeusercontent.com
+  -  crixet.com
   -  fireworks.ai
   -  grazie.ai
   -  grazie.aws.intellij.net
