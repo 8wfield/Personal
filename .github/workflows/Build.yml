@@ -148,7 +148,7 @@ jobs:
           for f in raw/*.clean; do
             [ -s "$f" ] || continue
             name=$(basename "$f" .clean)
-            rules=$(grep -E '^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-REGEX|IP-CIDR|IP-CIDR6|GEOIP|USER-AGENT|URL-REGEX|IP-ASN),' "$f" | sed 's/,[[:space:]]*no-resolve[[:space:]]*$//' || true)
+            rules=$(grep -E '^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-REGEX|DOMAIN-WILDCARD|IP-CIDR|IP-CIDR6|GEOIP|USER-AGENT|URL-REGEX|IP-ASN|DEST-PORT|PROTOCOL),' "$f" | sed 's/,[[:space:]]*no-resolve[[:space:]]*$//' || true)
             count=$(echo "$rules" | grep -c '^' || echo 0)
             [ "$count" -eq 0 ] && continue
 
@@ -165,15 +165,18 @@ jobs:
                 [DOMAIN-SUFFIX]=domain_suffix_set
                 [DOMAIN-KEYWORD]=domain_keyword_set
                 [DOMAIN-REGEX]=domain_regex_set
+                [DOMAIN-WILDCARD]=domain_wildcard_set
                 [IP-CIDR]=ip_cidr_set
                 [IP-CIDR6]=ip_cidr6_set
                 [GEOIP]=geoip_set
                 [USER-AGENT]=user_agent_set
                 [URL-REGEX]=url_regex_set
                 [IP-ASN]=asn_set
+                [DEST-PORT]=dest_port_set
+                [PROTOCOL]=protocol_set
               )
 
-              ORDERED_RULE_TYPES=(DOMAIN DOMAIN-SUFFIX DOMAIN-KEYWORD DOMAIN-REGEX IP-CIDR IP-CIDR6 GEOIP USER-AGENT URL-REGEX IP-ASN)
+              ORDERED_RULE_TYPES=(DOMAIN DOMAIN-SUFFIX DOMAIN-KEYWORD DOMAIN-REGEX DOMAIN-WILDCARD IP-CIDR IP-CIDR6 GEOIP USER-AGENT URL-REGEX IP-ASN DEST-PORT PROTOCOL)
 
               for type in "${ORDERED_RULE_TYPES[@]}"; do
                 etype="${RULE_MAP[$type]}"
