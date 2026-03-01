@@ -34,47 +34,42 @@ jobs:
               raw_json="Icons/raw/${category}_source_${i}.json"
               echo "Downloading JSON: $url → $raw_json"
 
-              if ! curl -sL --fail --connect-timeout 15 --retry 3 --retry-delay 2 "$url" -o "$raw_json"; then
-                echo "!!! curl failed for $url"
+              if ! curl -sL --fail --connect-timeout 20 --retry 4 --retry-delay 3 "$url" -o "$raw_json"; then
+                echo "curl 下载失败: $url"
                 rm -f "$raw_json"
                 ((i++))
                 continue
               fi
 
               file_size=$(stat -c %s "$raw_json" 2>/dev/null || echo 0)
-              if [ "$file_size" -lt 200 ]; then
-                echo "!!! File too small ($file_size bytes): $raw_json"
-                head -n 10 "$raw_json" || true
-                rm -f "$raw_json"
-                ((i++))
-                continue
-              fi
-
-              if ! grep -q '^{' "$raw_json"; then
-                echo "!!! Not looks like JSON: $raw_json"
-                head -n 5 "$raw_json" || true
-                rm -f "$raw_json"
-                ((i++))
-                continue
-              fi
-
               echo "Downloaded size: $file_size bytes"
-              head -n 3 "$raw_json" || true
 
-              jq 'if type == "object" and has("icons") then .icons elif type == "array" then . else [] end' "$raw_json" > icons_temp.jsonl 2> jq_err.log
+              if [ "$file_size" -lt 10000 ]; then
+                echo "文件太小，疑似无效: $raw_json"
+                head -n 10 "$raw_json" || cat "$raw_json"
+                rm -f "$raw_json"
+                ((i++))
+                continue
+              fi
+
+              jq 'if type == "object" and has("icons") then .icons elif type == "array" then . else [] end' "$raw_json" > icons_temp.jsonl 2> jq_err.log || {
+                echo "jq 解析失败 (很可能 JSON 截断): $raw_json"
+                cat jq_err.log
+                rm -f icons_temp.jsonl jq_err.log "$raw_json"
+                ((i++))
+                continue
+              }
 
               if [ -s jq_err.log ]; then
-                echo "jq parse error for $raw_json:"
+                echo "jq 有警告/错误，但继续尝试: $raw_json"
                 cat jq_err.log
-                rm -f icons_temp.jsonl jq_err.log
-                ((i++))
-                continue
               fi
+              rm -f jq_err.log
 
               cat icons_temp.jsonl >> raw_icons.jsonl
-              rm -f icons_temp.jsonl jq_err.log
+              rm -f icons_temp.jsonl
 
-              while IFS= read -r icon_line; do
+              jq -c '.[]? // empty' "$raw_json" 2>/dev/null | while IFS= read -r icon_line; do
                 [ -z "$icon_line" ] && continue
                 icon_url=$(echo "$icon_line" | jq -r '.url // empty' 2>/dev/null)
                 [[ -z "$icon_url" || ! "$icon_url" =~ \.(png|jpg|jpeg|svg|gif)$ ]] && continue
@@ -83,15 +78,15 @@ jobs:
                 target_dir="Icons/${category}"
                 target_file="${target_dir}/${filename}"
 
-                echo "Downloading icon: $icon_url → $target_file"
-                curl -sL --fail --connect-timeout 10 --retry 1 "$icon_url" -o "$target_file" || echo "Icon failed: $icon_url"
-              done < <(jq -c '.[]?' "$raw_json" 2>/dev/null || true)
+                echo "Downloading icon: $icon_url"
+                curl -sL --fail --connect-timeout 10 --retry 2 "$icon_url" -o "$target_file" || echo "图标下载失败: $icon_url"
+              done
 
               ((i++))
             done
 
             if [ ! -s raw_icons.jsonl ]; then
-              echo "No icons collected for $category → skipping JSON output"
+              echo "No valid icons for $category - skipping JSON"
               continue
             fi
 
@@ -104,17 +99,16 @@ jobs:
                 description: (. | length | tostring + "个图标"),
                 icons: .
               }
-            ' raw_icons.jsonl > "$output_file" 2> gen_err.log
+            ' raw_icons.jsonl > "$output_file" 2> gen_err.log || true
 
             if [ -s gen_err.log ]; then
-              echo "Generation error for $output_file:"
+              echo "生成最终 JSON 时出错:"
               cat gen_err.log
             fi
+            rm -f gen_err.log raw_icons.jsonl
 
             count=$(jq '.icons | length' "$output_file" 2>/dev/null || echo 0)
-            echo "Generated ${category}.json → $count icons"
-
-            rm -f raw_icons.jsonl gen_err.log
+            echo "Generated ${category}.json with $count icons"
 
             jq . "$output_file" > temp.json 2>/dev/null && mv temp.json "$output_file" || true
           done
