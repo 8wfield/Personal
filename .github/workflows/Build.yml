@@ -83,10 +83,10 @@ jobs:
                 fi
               done
 
-              jq --arg cat "$category" '
+              jq --arg repo "${{ github.repository }}" --arg branch "main" --arg cat "$category" '
                 map(
                   if .url? | test("\\.(png|jpg|jpeg|gif|svg)$") then
-                    .url = "./" + $cat + "/" + (.url | split("/")[-1])
+                    .url = "https://raw.githubusercontent.com/\($repo)/\($branch)/Icons/" + $cat + "/" + (.url | split("/")[-1])
                   else . end
                 )
               ' icons_temp.jsonl >> raw_icons.jsonl
