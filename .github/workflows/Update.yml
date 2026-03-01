@@ -1,6 +1,6 @@
 name: Icons Update
 
-on:
+于:
   workflow_dispatch:
   schedule:
     - cron: '45 1 * * *'
