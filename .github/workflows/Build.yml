@@ -31,7 +31,7 @@ jobs:
             "Spotify https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.list"
             "Netflix https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.list"
             "ChinaIPs https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/cncidr.txt"
-            "BanAD https://anti-ad.net/surge.txt https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
+            "BanAD https://anti-ad.net/surge.txt https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list https://adrules.top/adrules.list"
             "China https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt"
             "Proxy https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/proxy.txt https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/gfw.txt"
             "Apple https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Apple/Apple_All_No_Resolve.list"
@@ -56,7 +56,7 @@ jobs:
 
       - name: Icons
         run: |
-          mkdir -p Icons
+          mkdir -p Icons/raw Icons/Icons-all Icons/Emby
 
           sources=(
             "Icons-all https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-All.json https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json"
@@ -65,14 +65,28 @@ jobs:
 
           for line in "${sources[@]}"; do
             read -r category urls <<< "$line"
-            output_file="Icons/${category}.json"
 
+            output_file="Icons/${category}.json"
             > raw_icons.jsonl
 
+            i=0
             for url in $urls; do
-              curl -sL --fail --connect-timeout 10 "$url" -o temp.json || continue
-              jq 'if type == "object" and has("icons") then .icons else if type == "array" then . else [] end end' temp.json >> raw_icons.jsonl || true
-              rm -f temp.json
+              raw_json="Icons/raw/${category}_source_${i}.json"
+              curl -sL --fail --connect-timeout 10 "$url" -o "$raw_json" || echo "Failed to download JSON: $url"
+
+              jq 'if type == "object" and has("icons") then .icons else if type == "array" then . else [] end end' "$raw_json" >> raw_icons.jsonl 2>/dev/null || true
+
+              while IFS= read -r icon_line; do
+                icon_url=$(echo "$icon_line" | jq -r '.url // empty' 2>/dev/null)
+                if [ -n "$icon_url" ] && [[ "$icon_url" =~ \.(png|jpg|jpeg|svg|gif)$ ]]; then
+                  filename=$(basename "$icon_url")
+                  target_dir="Icons/${category}"
+                  target_file="${target_dir}/${filename}"
+                  curl -sL --fail --connect-timeout 10 "$icon_url" -o "$target_file" || echo "Failed to download icon: $icon_url"
+                fi
+              done < <(jq -c '.[]?' "$raw_json" 2>/dev/null || true)
+
+              ((i++))
             done
 
             jq -s --arg category "$category" '
@@ -87,7 +101,6 @@ jobs:
             ' raw_icons.jsonl > "$output_file"
 
             count=$(jq '.icons | length' "$output_file" 2>/dev/null || echo 0)
-
             echo "Generated ${category}.json with $count icons"
 
             rm -f raw_icons.jsonl
@@ -168,39 +181,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Loon/Rules/*.list Egern/Rules/*.yaml Icons/*.json 2>/dev/null || true
+          git add Loon/Rules/*.list Egern/Rules/*.yaml Icons/*.json Icons/raw/*.json Icons/Icons-all/*.png Icons/Emby/*.png 2>/dev/null || true
           git diff --cached --quiet || {
             git commit -m "Auto update rules and icons"
             git push
           }
-
-  clear:
-    runs-on: windows-latest
-    needs: build
-
-    steps:
-      - name: Checkout main
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-
-      - name: Rebuild main branch with single commit
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-          git checkout --orphan temp_branch
-          git add .
-          git commit -m "Rebuild"
-
-          git branch -D main
-          git branch -m main
-
-          git push -f origin main
-
-      - name: Cleanup workflow runs
-        uses: Mattraks/delete-workflow-runs@main
-        with:
-          retain_days: 0
-          keep_minimum_runs: 0
