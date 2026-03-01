@@ -1,5 +1,5 @@
 # 规则名称: Google
-# 规则统计: 702
+# 规则统计: 705
 
 no_resolve: true
 
@@ -714,4 +714,9 @@ ip_cidr_set:
 
 ip_cidr6_set:
   - 2620:120:e000::/40
+
+user_agent_set:
+  - '%E4%BA%91%E7%AB%AF%E7%A1%AC%E7%9B%98*'
+  - '*com.google.Drive*'
+  - 'Google.Drive*'
 

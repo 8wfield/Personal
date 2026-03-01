@@ -1,5 +1,5 @@
 # 规则名称: ByteDance
-# 规则统计: 370
+# 规则统计: 371
 
 DOMAIN-SUFFIX,2333333333333.com
 DOMAIN-SUFFIX,365yg.com
@@ -371,3 +371,4 @@ DOMAIN-SUFFIX,zjurl.cn
 DOMAIN-SUFFIX,zlinkurl.cn
 DOMAIN-SUFFIX,zlinkurl.com
 IP-CIDR,114.246.10.65/32,no-resolve
+USER-AGENT,TikTok*

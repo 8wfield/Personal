@@ -1,5 +1,5 @@
 # 规则名称: YouTube
-# 规则统计: 183
+# 规则统计: 190
 
 no_resolve: true
 
@@ -193,4 +193,13 @@ ip_cidr_set:
 
 ip_cidr6_set:
   - 2620:120:e000::/40
+
+user_agent_set:
+  - '*YouTubeMusic*'
+  - '*com.google.ios.youtubemusic*'
+  - '*youtube*'
+  - 'YouTube*'
+  - 'YouTubeMusic*'
+  - 'com.google.ios.youtube*'
+  - 'com.google.ios.youtubemusic*'
 

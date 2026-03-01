@@ -1,5 +1,5 @@
 # 规则名称: TikTok
-# 规则统计: 31
+# 规则统计: 32
 
 DOMAIN,lf16-effectcdn.byteeffecttos-g.com
 DOMAIN,lf16-pkgcdn.pitaya-clientai.com
@@ -32,3 +32,4 @@ DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,tiktokv.us
 DOMAIN-SUFFIX,trae.ai
 DOMAIN-SUFFIX,ttwebview.com
+USER-AGENT,TikTok*
