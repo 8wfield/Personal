@@ -1,0 +1,134 @@
+name: Icons Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 1 * * *'
+
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Icons Download and Process
+        run: |
+          mkdir -p Icons/raw Icons/Icons-all Icons/Emby
+
+          sources=(
+            "Icons-all https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-All.json https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json"
+            "Emby https://raw.githubusercontent.com/baiitang/Sakura/main/Fileball/Yuan/tubiao.json"
+          )
+
+          for line in "${sources[@]}"; do
+            read -r category urls <<< "$line"
+
+            output_file="Icons/${category}.json"
+            > raw_icons.jsonl
+
+            i=0
+            for url in $urls; do
+              raw_json="Icons/raw/${category}_source_${i}.json"
+              echo "Downloading JSON: $url → $raw_json"
+
+              if ! curl -sL --fail --connect-timeout 15 --retry 3 --retry-delay 2 "$url" -o "$raw_json"; then
+                echo "!!! curl failed for $url"
+                rm -f "$raw_json"
+                ((i++))
+                continue
+              fi
+
+              file_size=$(stat -c %s "$raw_json" 2>/dev/null || echo 0)
+              if [ "$file_size" -lt 200 ]; then
+                echo "!!! File too small ($file_size bytes): $raw_json"
+                head -n 10 "$raw_json" || true
+                rm -f "$raw_json"
+                ((i++))
+                continue
+              fi
+
+              if ! grep -q '^{' "$raw_json"; then
+                echo "!!! Not looks like JSON: $raw_json"
+                head -n 5 "$raw_json" || true
+                rm -f "$raw_json"
+                ((i++))
+                continue
+              fi
+
+              echo "Downloaded size: $file_size bytes"
+              head -n 3 "$raw_json" || true
+
+              jq 'if type == "object" and has("icons") then .icons elif type == "array" then . else [] end' "$raw_json" > icons_temp.jsonl 2> jq_err.log
+
+              if [ -s jq_err.log ]; then
+                echo "jq parse error for $raw_json:"
+                cat jq_err.log
+                rm -f icons_temp.jsonl jq_err.log
+                ((i++))
+                continue
+              fi
+
+              cat icons_temp.jsonl >> raw_icons.jsonl
+              rm -f icons_temp.jsonl jq_err.log
+
+              while IFS= read -r icon_line; do
+                [ -z "$icon_line" ] && continue
+                icon_url=$(echo "$icon_line" | jq -r '.url // empty' 2>/dev/null)
+                [[ -z "$icon_url" || ! "$icon_url" =~ \.(png|jpg|jpeg|svg|gif)$ ]] && continue
+
+                filename=$(basename "$icon_url")
+                target_dir="Icons/${category}"
+                target_file="${target_dir}/${filename}"
+
+                echo "Downloading icon: $icon_url → $target_file"
+                curl -sL --fail --connect-timeout 10 --retry 1 "$icon_url" -o "$target_file" || echo "Icon failed: $icon_url"
+              done < <(jq -c '.[]?' "$raw_json" 2>/dev/null || true)
+
+              ((i++))
+            done
+
+            if [ ! -s raw_icons.jsonl ]; then
+              echo "No icons collected for $category → skipping JSON output"
+              continue
+            fi
+
+            jq -s --arg category "$category" '
+              add |
+              group_by(.name) |
+              map(.[0]) |
+              {
+                name: $category,
+                description: (. | length | tostring + "个图标"),
+                icons: .
+              }
+            ' raw_icons.jsonl > "$output_file" 2> gen_err.log
+
+            if [ -s gen_err.log ]; then
+              echo "Generation error for $output_file:"
+              cat gen_err.log
+            fi
+
+            count=$(jq '.icons | length' "$output_file" 2>/dev/null || echo 0)
+            echo "Generated ${category}.json → $count icons"
+
+            rm -f raw_icons.jsonl gen_err.log
+
+            jq . "$output_file" > temp.json 2>/dev/null && mv temp.json "$output_file" || true
+          done
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add Icons/*.json Icons/raw/*.json Icons/Icons-all/* Icons/Emby/* 2>/dev/null || true
+          
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto update icons and icon files"
+            git push
+          fi
