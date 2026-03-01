@@ -72,22 +72,57 @@ jobs:
             i=0
             for url in $urls; do
               raw_json="Icons/raw/${category}_source_${i}.json"
-              curl -sL --fail --connect-timeout 10 "$url" -o "$raw_json" || echo "Failed to download JSON: $url"
+              echo "Downloading $url → $raw_json"
+              if ! curl -sL --fail --connect-timeout 15 --retry 2 "$url" -o "$raw_json"; then
+                echo "!!! Failed to download $url"
+                rm -f "$raw_json"
+                ((i++))
+                continue
+              fi
 
-              jq 'if type == "object" and has("icons") then .icons else if type == "array" then . else [] end end' "$raw_json" >> raw_icons.jsonl 2>/dev/null || true
+              if [ ! -s "$raw_json" ]; then
+                echo "!!! Empty file after download: $raw_json"
+                rm -f "$raw_json"
+                ((i++))
+                continue
+              fi
+
+              echo "Downloaded size: $(stat -c %s "$raw_json") bytes"
+              head -n 5 "$raw_json" || true
+
+              jq 'if type == "object" and has("icons") then .icons elif type == "array" then . else [] end' "$raw_json" > icons_temp.jsonl 2> jq_err.log
+
+              if [ -s jq_err.log ]; then
+                echo "jq error for $raw_json:"
+                cat jq_err.log
+                rm -f icons_temp.jsonl jq_err.log
+                ((i++))
+                continue
+              fi
+
+              cat icons_temp.jsonl >> raw_icons.jsonl
+              rm -f icons_temp.jsonl jq_err.log
 
               while IFS= read -r icon_line; do
+                if [ -z "$icon_line" ]; then continue; fi
                 icon_url=$(echo "$icon_line" | jq -r '.url // empty' 2>/dev/null)
-                if [ -n "$icon_url" ] && [[ "$icon_url" =~ \.(png|jpg|jpeg|svg|gif)$ ]]; then
-                  filename=$(basename "$icon_url")
-                  target_dir="Icons/${category}"
-                  target_file="${target_dir}/${filename}"
-                  curl -sL --fail --connect-timeout 10 "$icon_url" -o "$target_file" || echo "Failed to download icon: $icon_url"
+                if [ -z "$icon_url" ] || [[ ! "$icon_url" =~ \.(png|jpg|jpeg|svg|gif)$ ]]; then
+                  continue
                 fi
+                filename=$(basename "$icon_url")
+                target_dir="Icons/${category}"
+                target_file="${target_dir}/${filename}"
+                echo "Downloading icon: $icon_url → $target_file"
+                curl -sL --fail --connect-timeout 10 "$icon_url" -o "$target_file" || echo "Icon download failed: $icon_url"
               done < <(jq -c '.[]?' "$raw_json" 2>/dev/null || true)
 
               ((i++))
             done
+
+            if [ ! -s raw_icons.jsonl ]; then
+              echo "No valid icons collected for $category - skipping JSON generation"
+              continue
+            fi
 
             jq -s --arg category "$category" '
               add |
@@ -98,14 +133,19 @@ jobs:
                 description: (. | length | tostring + "个图标"),
                 icons: .
               }
-            ' raw_icons.jsonl > "$output_file"
+            ' raw_icons.jsonl > "$output_file" 2> gen_err.log
+
+            if [ -s gen_err.log ]; then
+              echo "Error generating $output_file:"
+              cat gen_err.log
+            fi
 
             count=$(jq '.icons | length' "$output_file" 2>/dev/null || echo 0)
             echo "Generated ${category}.json with $count icons"
 
-            rm -f raw_icons.jsonl
+            rm -f raw_icons.jsonl gen_err.log
 
-            jq . "$output_file" > temp.json && mv temp.json "$output_file" || true
+            jq . "$output_file" > temp.json 2>/dev/null && mv temp.json "$output_file" || true
           done
 
       - name: Loon
@@ -181,7 +221,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Loon/Rules/*.list Egern/Rules/*.yaml Icons/*.json Icons/raw/*.json Icons/Icons-all/*.png Icons/Emby/*.png 2>/dev/null || true
+          git add Loon/Rules/*.list Egern/Rules/*.yaml Icons/*.json Icons/raw/*.json Icons/Icons-all/* Icons/Emby/* 2>/dev/null || true
           git diff --cached --quiet || {
             git commit -m "Auto update rules and icons"
             git push
