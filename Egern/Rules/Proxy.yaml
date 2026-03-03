@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 25270
+# 规则统计: 25272
 
 domain_set:
   - 1password.drift.click
@@ -13006,6 +13006,7 @@ domain_suffix_set:
   - jav.la
   - jav.land
   - jav.place
+  - jav.sb
   - jav.si
   - jav.wine
   - jav01.cc
@@ -13079,6 +13080,7 @@ domain_suffix_set:
   - javher.com
   - javheroine.com
   - javhihi.com
+  - javhub.com
   - javhub.me
   - javhub.net
   - javhuge.com
@@ -13114,6 +13116,7 @@ domain_suffix_set:
   - javpub.me
   - javpush.com
   - javqd.com
+  - javquick.com
   - javrank.com
   - javrate.com
   - javrave.club
@@ -23887,7 +23890,6 @@ domain_suffix_set:
   - www.hoyolab.com
   - www.hustlercash.com
   - www.idlcoyote.com
-  - www.imdb.com
   - www.kindleren.com
   - www.lorenzetti.com.br
   - www.m-sport.co.uk
