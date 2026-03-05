@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 25278
+# 规则统计: 25279
 
 domain_set:
   - 1password.drift.click
@@ -13186,6 +13186,7 @@ domain_suffix_set:
   - jessicaturner.co.uk
   - jessicaturner.com
   - jetbrains.ai
+  - jetbrains.cloud
   - jetbrains.com
   - jetbrains.net
   - jetbrains.space
