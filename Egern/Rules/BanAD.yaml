@@ -1,5 +1,5 @@
 # 规则名称: BanAD
-# 规则统计: 105082
+# 规则统计: 105081
 
 domain_set:
   - 1500020991.vodplayer.wxamedia.com
@@ -75653,7 +75653,6 @@ domain_suffix_set:
   - sare25.com
   - sarov.ws
   - sarrowgrivois.com
-  - sas.com
   - sas.nsm-corp.com
   - sas15k01.com
   - sasc.solidworks.com
