@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 25279
+# 规则统计: 25284
 
 domain_set:
   - 1password.drift.click
@@ -7465,6 +7465,7 @@ domain_suffix_set:
   - dowjoneson.com
   - download.aircrack-ng.org
   - download.com
+  - download.dappcdn.com
   - download.qatp1.net
   - downloadpass.com
   - downloadsforipod.com
@@ -17911,6 +17912,10 @@ domain_suffix_set:
   - pleasurebabe.com
   - pleasuregirl.net
   - pleasuremore.com
+  - plex.com
+  - plex.services
+  - plex.tv
+  - plexapp.com
   - plexvpn.pro
   - plos.org
   - plug-into.com
