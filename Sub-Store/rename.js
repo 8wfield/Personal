@@ -13,20 +13,26 @@
 
  * [out=]   输出节点名可选参数: (cn或zh ，us或en ，gq或flag ，quan) 对应：(中文，英文缩写 ，国旗 ，英文全称) 默认中文 例如 [out=en] 或 out=us 输出英文缩写
  *** 分隔符参数（本版本已强制使用空格，不再受fgf/sn影响）
- * [one]    清理只有一个节点的地区的01（已改为不加前导0）
+ * [one]    开启后：只有一个节点的地区不加角标¹²³⁴⁵⁶⁷⁸⁹
  * [flag]   给节点前面加国旗（国旗紧贴地区名）
  *** 前缀参数
- * [name=]  节点添加机场名称前缀；（放在最前面，后面跟-）
+ * [name=]  节点添加机场名称前缀；（现在放在角标后面，用[]括起来；没加此参数则不显示）
  *** 保留参数
  * [blkey=iplc+gpt+NF+IPLC] 用+号添加多个关键词 保留节点名的自定义字段 需要区分大小写!
  * 如果需要修改 保留的关键词 替换成别的 可以用 > 分割
- * [blgd]   保留: 家宽 IPLC ˣ² 等（全部用[]括起来，多个词空格分隔）
  * [bl]     正则匹配保留倍率（显示为[数字𝕏]，放在最前）
  * [nx]     保留1倍率与不显示倍率的
  * [blnx]   只保留高倍率
  * [clear]  清理乱名
  * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
  * [blockquic] blockquic=on 阻止; blockquic=off 不阻止
+ * 
+ * 当前修改后示例格式（开启 flag + name + bl + blkey 时）：
+ * 🇭🇰香港¹[小机场][1𝕏][IPLC GPT]
+ * 🇭🇰香港²[小机场][2𝕏][家宽]
+ * 🇯🇵日本¹[小机场][Game]
+ * 🇭🇰香港¹⁰[小机场][3𝕏][专线]
+ * （没加 name 参数时：[小机场] 部分不出现）
  */
 
 const inArg = $arguments;
@@ -124,6 +130,13 @@ let GetK = false, AMK = []
 function ObjKA(i) {
   GetK = true
   AMK = Object.entries(i)
+}
+
+const superscripts = ['⁰','¹','²','³','⁴','⁵','⁶','⁷','⁸','⁹'];
+
+function getSuperNum(n) {
+  if (n < 10) return superscripts[n];
+  return String(n).split('').map(d => superscripts[parseInt(d)]).join('');
 }
 
 function operator(pro) {
@@ -238,10 +251,12 @@ function operator(pro) {
       }
 
       let parts = [];
-      if (FNAME) parts.push(FNAME);
       parts.push("-" + regionPart);
 
       e.name = parts.join("") + bracketStr;
+      e._baseName = (usflag || "") + findKeyValue;  // 只保留地区部分用于分组
+      e._bracket = bracketStr;
+      e._hasName = !!FNAME;  // 标记是否有 name 参数
     } else {
       if (nm) {
         e.name = (FNAME ? FNAME + "-" : "") + e.name;
@@ -265,8 +280,8 @@ function operator(pro) {
 function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
     const bracketRegex = /(\[.*\])?$/;
-    let baseName = proxy.name.replace(bracketRegex, '').trim();
-    const bracketStr = proxy.name.match(bracketRegex)?.[0] || '';
+    let baseName = proxy._baseName || proxy.name.replace(bracketRegex, '').trim();
+    const bracketStr = proxy._bracket || proxy.name.match(bracketRegex)?.[0] || '';
     if (!acc[baseName]) {
       acc[baseName] = { count: 0, items: [] };
     }
@@ -279,7 +294,17 @@ function jxh(e) {
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
       const num = idx + 1;
-      const newName = item.name.replace(item.bracketStr, '') + num + item.bracketStr;
+      const sup = getSuperNum(num);
+      let newName;
+      let namePart = "";
+      if (item._hasName && FNAME) {
+        namePart = `[${FNAME}]`;
+      }
+      if (group.items.length === 1 && numone) {
+        newName = item._baseName + namePart + item.bracketStr;
+      } else {
+        newName = item._baseName + sup + namePart + item.bracketStr;
+      }
       result.push({ ...item, name: newName });
     });
   });
@@ -289,23 +314,6 @@ function jxh(e) {
 }
 
 function oneP(e) {
-  const groups = e.reduce((acc, proxy) => {
-    let base = proxy.name.replace(/\[.*\]$/, "").trim();
-    base = base.replace(/\d+$/, "").trim();
-    
-    if (!acc[base]) acc[base] = [];
-    acc[base].push(proxy);
-    return acc;
-  }, {});
-
-  for (const base in groups) {
-    if (groups[base].length === 1) {
-      const p = groups[base][0];
-      const bracketMatch = p.name.match(/(\[.*\])?$/);
-      const bracket = bracketMatch ? bracketMatch[0] : "";
-      p.name = base + bracket;
-    }
-  }
   return e;
 }
 
