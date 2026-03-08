@@ -1,6 +1,8 @@
 # 规则名称: Telegram
 # 规则统计: 40
 
+no_resolve: true
+
 domain_set:
   - api.imem.app
   - api.swiftgram.app

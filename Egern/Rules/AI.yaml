@@ -1,6 +1,8 @@
 # 规则名称: AI
 # 规则统计: 84
 
+no_resolve: true
+
 domain_set:
   -  ai-gateway.vercel.sh
   -  ai.google.dev

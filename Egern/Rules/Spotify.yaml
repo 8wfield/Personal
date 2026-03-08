@@ -1,6 +1,8 @@
 # 规则名称: Spotify
 # 规则统计: 30
 
+no_resolve: true
+
 domain_set:
   - audio4-ak-spotify-com.akamaized.net
   - cdn-spotify-experiments.conductrics.com

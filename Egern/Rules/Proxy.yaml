@@ -1,6 +1,8 @@
 # 规则名称: Proxy
 # 规则统计: 6720
 
+no_resolve: true
+
 domain_set:
   - api.waqi.info
   - aqi.aqicn.org

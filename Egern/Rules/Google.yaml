@@ -1,6 +1,8 @@
 # 规则名称: Google
 # 规则统计: 705
 
+no_resolve: true
+
 domain_set:
   - voice.telephony.goog
 

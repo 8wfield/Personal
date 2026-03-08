@@ -1,6 +1,8 @@
 # 规则名称: Lan
 # 规则统计: 8
 
+no_resolve: true
+
 domain_suffix_set:
   - local
 

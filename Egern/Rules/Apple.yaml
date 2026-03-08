@@ -1,6 +1,8 @@
 # 规则名称: Apple
 # 规则统计: 1603
 
+no_resolve: true
+
 domain_set:
   - apple-events.akamaized.net
   - appleworldwidedeveloper.hb-api.omtrdc.net

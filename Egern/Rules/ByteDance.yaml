@@ -1,6 +1,8 @@
 # 规则名称: ByteDance
 # 规则统计: 371
 
+no_resolve: true
+
 domain_suffix_set:
   - 2333333333333.com
   - 365yg.com

@@ -1,6 +1,8 @@
 # 规则名称: China
 # 规则统计: 130013
 
+no_resolve: true
+
 domain_set:
   - 1-fss24-s0.streamhoster.com
   - 14033.live.streamtheworld.com
