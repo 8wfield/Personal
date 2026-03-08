@@ -370,5 +370,5 @@ DOMAIN-SUFFIX,zjgslb.com
 DOMAIN-SUFFIX,zjurl.cn
 DOMAIN-SUFFIX,zlinkurl.cn
 DOMAIN-SUFFIX,zlinkurl.com
-IP-CIDR,114.246.10.65/32
+IP-CIDR,114.246.10.65/32,no-resolve
 USER-AGENT,TikTok*
