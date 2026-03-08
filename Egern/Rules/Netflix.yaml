@@ -1,8 +1,6 @@
 # 规则名称: Netflix
 # 规则统计: 1157
 
-no_resolve: true
-
 domain_set:
   - e13252.dscg.akamaiedge.net
   - h-netflix.online-metrix.net

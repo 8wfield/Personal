@@ -1,8 +1,6 @@
 # 规则名称: HttpDns
 # 规则统计: 63
 
-no_resolve: true
-
 domain_set:
   - dns.jd.com
   - dns.weibo.cn

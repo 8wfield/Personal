@@ -1,8 +1,6 @@
 # 规则名称: Alibaba
 # 规则统计: 57
 
-no_resolve: true
-
 domain_suffix_set:
   - alibaba
   - taobao

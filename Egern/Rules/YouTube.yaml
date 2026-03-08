@@ -1,8 +1,6 @@
 # 规则名称: YouTube
 # 规则统计: 190
 
-no_resolve: true
-
 domain_suffix_set:
   - ggpht.cn
   - ggpht.com
