@@ -133,9 +133,18 @@ jobs:
           for f in raw/*.clean; do
             [[ -s "$f" ]] || continue
             name=$(basename "$f" .clean)
-            processed=$(grep -vE '^(PROCESS-NAME|SCRIPT)' "$f" | \
-              sed 's/,[[:space:]]*no-resolve[[:space:]]*$//' | \
-              sed -E '/^(IP-CIDR|IP-CIDR6|IP-ASN),/ s/$/,no-resolve/')
+
+            has_geoip=$(grep -c '^GEOIP,' "$f" || echo 0)
+
+            if [ "$has_geoip" -eq 0 ]; then
+              processed=$(grep -vE '^(PROCESS-NAME|SCRIPT)' "$f" | \
+                sed 's/,[[:space:]]*no-resolve[[:space:]]*$//' | \
+                sed -E '/^(IP-CIDR|IP-CIDR6|IP-ASN),/ s/$/,no-resolve/')
+            else
+              processed=$(grep -vE '^(PROCESS-NAME|SCRIPT)' "$f" | \
+                sed 's/,[[:space:]]*no-resolve[[:space:]]*$//')
+            fi
+
             count=$(echo "$processed" | grep -cvE '^($|#)')
             {
               echo "# 规则名称: $name"
@@ -158,14 +167,13 @@ jobs:
             has_geoip=$(echo "$rules" | grep -E '^GEOIP,' | wc -l)
             has_ip_cidr=$(echo "$rules" | grep -E '^(IP-CIDR|IP-CIDR6),' | wc -l)
             has_ip_asn=$(echo "$rules" | grep -E '^IP-ASN,' | wc -l)
-            has_domain=$(echo "$rules" | grep -E '^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-REGEX|DOMAIN-WILDCARD),' | wc -l)
 
             {
               echo "# 规则名称: $name"
               echo "# 规则统计: $count"
               echo ""
 
-              if [ "$has_geoip" -eq 0 ] && [ "$has_domain" -eq 0 ] && [ "$((has_ip_cidr + has_ip_asn))" -gt 0 ]; then
+              if [ "$has_geoip" -eq 0 ] && [ "$((has_ip_cidr + has_ip_asn))" -gt 0 ]; then
                 echo "no_resolve: true"
                 echo ""
               fi
