@@ -133,14 +133,13 @@ jobs:
           for f in raw/*.clean; do
             [[ -s "$f" ]] || continue
             name=$(basename "$f" .clean)
-            has_geoip=$(grep -c '^GEOIP,' "$f" || echo 0)
-            if [ "$has_geoip" -eq 0 ]; then
+            if [[ "$name" == "GeoipCN" || "$name" == "Lan" ]]; then
+              processed=$(grep -vE '^(PROCESS-NAME|SCRIPT)' "$f" | \
+                sed 's/,[[:space:]]*no-resolve[[:space:]]*$//')
+            else
               processed=$(grep -vE '^(PROCESS-NAME|SCRIPT)' "$f" | \
                 sed 's/,[[:space:]]*no-resolve[[:space:]]*$//' | \
                 sed -E '/^(IP-CIDR|IP-CIDR6|IP-ASN),/ s/$/,no-resolve/')
-            else
-              processed=$(grep -vE '^(PROCESS-NAME|SCRIPT)' "$f" | \
-                sed 's/,[[:space:]]*no-resolve[[:space:]]*$//')
             fi
             count=$(echo "$processed" | grep -cvE '^($|#)')
             {
@@ -160,14 +159,13 @@ jobs:
             rules=$(grep -E '^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-REGEX|DOMAIN-WILDCARD|IP-CIDR|IP-CIDR6|GEOIP|USER-AGENT|URL-REGEX|IP-ASN|DEST-PORT|PROTOCOL),' "$f" | sed 's/,[[:space:]]*no-resolve[[:space:]]*$//' || true)
             count=$(echo "$rules" | grep -c '^' || echo 0)
             [ "$count" -eq 0 ] && continue
-            has_geoip=$(echo "$rules" | grep -E '^GEOIP,' | wc -l)
             has_ip_cidr=$(echo "$rules" | grep -E '^(IP-CIDR|IP-CIDR6),' | wc -l)
             has_ip_asn=$(echo "$rules" | grep -E '^IP-ASN,' | wc -l)
             {
               echo "# 规则名称: $name"
               echo "# 规则统计: $count"
               echo ""
-              if [ "$has_geoip" -eq 0 ] && [ "$((has_ip_cidr + has_ip_asn))" -gt 0 ]; then
+              if [[ "$name" != "GeoipCN" && "$name" != "Lan" ]] && [ "$((has_ip_cidr + has_ip_asn))" -gt 0 ]; then
                 echo "no_resolve: true"
                 echo ""
               fi
