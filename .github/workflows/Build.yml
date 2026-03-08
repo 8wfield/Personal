@@ -133,9 +133,7 @@ jobs:
           for f in raw/*.clean; do
             [[ -s "$f" ]] || continue
             name=$(basename "$f" .clean)
-
             has_geoip=$(grep -c '^GEOIP,' "$f" || echo 0)
-
             if [ "$has_geoip" -eq 0 ]; then
               processed=$(grep -vE '^(PROCESS-NAME|SCRIPT)' "$f" | \
                 sed 's/,[[:space:]]*no-resolve[[:space:]]*$//' | \
@@ -144,7 +142,6 @@ jobs:
               processed=$(grep -vE '^(PROCESS-NAME|SCRIPT)' "$f" | \
                 sed 's/,[[:space:]]*no-resolve[[:space:]]*$//')
             fi
-
             count=$(echo "$processed" | grep -cvE '^($|#)')
             {
               echo "# 规则名称: $name"
@@ -163,21 +160,17 @@ jobs:
             rules=$(grep -E '^(DOMAIN|DOMAIN-SUFFIX|DOMAIN-KEYWORD|DOMAIN-REGEX|DOMAIN-WILDCARD|IP-CIDR|IP-CIDR6|GEOIP|USER-AGENT|URL-REGEX|IP-ASN|DEST-PORT|PROTOCOL),' "$f" | sed 's/,[[:space:]]*no-resolve[[:space:]]*$//' || true)
             count=$(echo "$rules" | grep -c '^' || echo 0)
             [ "$count" -eq 0 ] && continue
-
             has_geoip=$(echo "$rules" | grep -E '^GEOIP,' | wc -l)
             has_ip_cidr=$(echo "$rules" | grep -E '^(IP-CIDR|IP-CIDR6),' | wc -l)
             has_ip_asn=$(echo "$rules" | grep -E '^IP-ASN,' | wc -l)
-
             {
               echo "# 规则名称: $name"
               echo "# 规则统计: $count"
               echo ""
-
               if [ "$has_geoip" -eq 0 ] && [ "$((has_ip_cidr + has_ip_asn))" -gt 0 ]; then
                 echo "no_resolve: true"
                 echo ""
               fi
-
               declare -A RULE_MAP=(
                 [DOMAIN]=domain_set
                 [DOMAIN-SUFFIX]=domain_suffix_set
@@ -193,16 +186,12 @@ jobs:
                 [DEST-PORT]=dest_port_set
                 [PROTOCOL]=protocol_set
               )
-
               ORDERED_RULE_TYPES=(DOMAIN DOMAIN-SUFFIX DOMAIN-KEYWORD DOMAIN-REGEX DOMAIN-WILDCARD IP-CIDR IP-CIDR6 GEOIP USER-AGENT URL-REGEX IP-ASN DEST-PORT PROTOCOL)
-
               for type in "${ORDERED_RULE_TYPES[@]}"; do
                 etype="${RULE_MAP[$type]}"
                 [ -z "$etype" ] && continue
-
                 trules=$(echo "$rules" | grep "^$type," || true)
                 [ -z "$trules" ] && continue
-
                 echo "$etype:"
                 if [[ $type =~ ^(DOMAIN-REGEX|USER-AGENT|URL-REGEX|IP-ASN)$ ]]; then
                   echo "$trules" | awk -F, '{printf "  - '\''%s'\''\n", $2}' | sort -u
