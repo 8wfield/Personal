@@ -1,6 +1,6 @@
 name: Build
 
-on:
+于:
   workflow_dispatch:
   schedule:
     - cron: '0 */8 * * *'
@@ -73,7 +73,7 @@ jobs:
 
           sources=(
             "Icons-all https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-All.json https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json"
-            "Emby https://raw.githubusercontent.com/baiitang/Sakura/main/Fileball/Yuan/tubiao.json"
+            "Emby https://emby-icon.vercel.app/TFEL-Emby.json"
           )
 
           for line in "${sources[@]}"; do
