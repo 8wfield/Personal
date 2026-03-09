@@ -18,9 +18,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: Icons
-          key: icons-cache-v2-${{ hashFiles('Icons/**/*.json') }}
+          key: icons-cache-v4-${{ hashFiles('Icons/**/*.json', 'Icons/**/updated.flag') }}
           restore-keys: |
-            icons-cache-v2-
+            icons-cache-v4-
 
       - name: Download Rules
         run: |
@@ -82,6 +82,9 @@ jobs:
           for line in "${sources[@]}"; do
             read -r category urls <<< "$line"
             output_file="Icons/${category}.json"
+            target_dir="Icons/${category}"
+
+            mkdir -p "$target_dir"
 
             > raw_icons.jsonl
 
@@ -92,20 +95,28 @@ jobs:
 
               jq -c '.[]' icons_temp.jsonl | while read -r icon; do
                 icon_url=$(echo "$icon" | jq -r '.url // empty')
-                if [[ -n "$icon_url" && "$icon_url" =~ \.(png|jpg|jpeg|gif|svg)$ ]]; then
-                  filename=$(basename "$icon_url")
-                  target="Icons/${category}/${filename}"
-                  if [ ! -f "$target" ]; then
-                    curl -sL --fail --connect-timeout 8 --max-time 30 --retry 2 "$icon_url" -o "$target" || true
+                if [[ -n "$icon_url" ]]; then
+                  lower_url=$(echo "$icon_url" | tr '[:upper:]' '[:lower:]')
+                  if [[ "$lower_url" =~ \.(png|jpg|jpeg|gif|svg)$ ]]; then
+                    filename=$(basename "$icon_url")
+                    target="$target_dir/$filename"
+                    if [ ! -f "$target" ]; then
+                      curl -sL --fail --connect-timeout 8 --max-time 60 --retry 3 "$icon_url" -o "$target" || true
+                    fi
                   fi
                 fi
               done
 
               jq --arg repo "$repo" --arg branch "$branch" --arg cat "$category" '
                 map(
-                  if .url? | test("\\.(png|jpg|jpeg|gif|svg)$") then
-                    .url = "https://raw.githubusercontent.com/\($repo)/\($branch)/Icons/" + $cat + "/" + (.url | split("/")[-1])
-                  else . end
+                  if .url? then
+                    (.url | ascii_downcase) as $lower |
+                    if $lower | test("\\.(png|jpg|jpeg|gif|svg)$") then
+                      .url = "https://raw.githubusercontent.com/\($repo)/\($branch)/Icons/" + $cat + "/" + (.url | split("/")[-1])
+                    else .
+                    end
+                  else .
+                  end
                 )
               ' icons_temp.jsonl >> raw_icons.jsonl
 
@@ -124,6 +135,8 @@ jobs:
             ' raw_icons.jsonl > "$output_file"
 
             jq . "$output_file" > temp.json && mv temp.json "$output_file" || true
+
+            touch "$target_dir/updated.flag"
 
             rm -f raw_icons.jsonl
           done
