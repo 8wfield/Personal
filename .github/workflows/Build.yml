@@ -76,6 +76,9 @@ jobs:
             "Emby https://emby-icon.vercel.app/TFEL-Emby.json"
           )
 
+          repo="${{ github.repository }}"
+          branch="main"
+
           for line in "${sources[@]}"; do
             read -r category urls <<< "$line"
             output_file="Icons/${category}.json"
@@ -88,18 +91,17 @@ jobs:
               jq 'if type == "object" and has("icons") then .icons else if type == "array" then . else [] end end' temp.json > icons_temp.jsonl
 
               jq -c '.[]' icons_temp.jsonl | while read -r icon; do
-                icon_url=$(echo "$icon" | jq -r '.url')
-                if [[ "$icon_url" =~ \.(png|jpg|jpeg|gif|svg)$ ]]; then
+                icon_url=$(echo "$icon" | jq -r '.url // empty')
+                if [[ -n "$icon_url" && "$icon_url" =~ \.(png|jpg|jpeg|gif|svg)$ ]]; then
                   filename=$(basename "$icon_url")
                   target="Icons/${category}/${filename}"
                   if [ ! -f "$target" ]; then
-                    echo "Downloading missing icon: $filename"
-                    curl -sL --fail --connect-timeout 8 --max-time 30 --retry 2 "$icon_url" -o "$target" || echo "Failed: $filename"
+                    curl -sL --fail --connect-timeout 8 --max-time 30 --retry 2 "$icon_url" -o "$target" || true
                   fi
                 fi
               done
 
-              jq --arg repo "${{ github.repository }}" --arg branch "main" --arg cat "$category" '
+              jq --arg repo "$repo" --arg branch "$branch" --arg cat "$category" '
                 map(
                   if .url? | test("\\.(png|jpg|jpeg|gif|svg)$") then
                     .url = "https://raw.githubusercontent.com/\($repo)/\($branch)/Icons/" + $cat + "/" + (.url | split("/")[-1])
@@ -116,17 +118,14 @@ jobs:
               map(.[0]) |
               {
                 name: $category,
-                description: (. | length | tostring + "个图标"),
+                description: (. | length | tostring + " 个图标"),
                 icons: .
               }
             ' raw_icons.jsonl > "$output_file"
 
-            count=$(jq '.icons | length' "$output_file" 2>/dev/null || echo 0)
-            echo "Generated ${category}.json with $count icons"
+            jq . "$output_file" > temp.json && mv temp.json "$output_file" || true
 
             rm -f raw_icons.jsonl
-
-            jq . "$output_file" > temp.json && mv temp.json "$output_file" || true
           done
 
       - name: Loon
