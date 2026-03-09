@@ -129,7 +129,7 @@ jobs:
               map(.[0]) |
               {
                 name: $category,
-                description: (. | length | tostring + " 个图标"),
+                description: (. | length | tostring + " 图标"),
                 icons: .
               }
             ' raw_icons.jsonl > "$output_file"
