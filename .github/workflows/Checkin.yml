@@ -24,8 +24,6 @@ jobs:
           TGID:    ${{ secrets.TGID    }}
         with:
           script: |
-            const core = require('@actions/core');
-
             const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36';
 
             const domainRaw = process.env.DOMAIN || '';
@@ -52,10 +50,12 @@ jobs:
                 }
               } else {
                 const raw = headers.get('set-cookie');
-                if (raw) raw.split(/,\s*(?=[a-zA-Z0-9_-]+\s*=)/).forEach(c => {
-                  const pair = c.split(';')[0].trim();
-                  if (pair.includes('=')) list.push(pair);
-                });
+                if (raw) {
+                  raw.split(/,\s*(?=[a-zA-Z0-9_-]+\s*=)/).forEach(c => {
+                    const pair = c.split(';')[0].trim();
+                    if (pair.includes('=')) list.push(pair);
+                  });
+                }
               }
               return list;
             }
@@ -75,12 +75,18 @@ jobs:
               try {
                 const r = await fetch(url, {
                   method: 'POST',
-                  headers: {'Content-Type': 'application/json'},
-                  body: JSON.stringify({chat_id: ChatID, text, parse_mode: 'HTML'})
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    chat_id: ChatID,
+                    text,
+                    parse_mode: 'HTML'
+                  })
                 });
-                if (!r.ok) console.warn('TG fail:', await r.text());
+                if (!r.ok) {
+                  core.warning(`TG 推送失敗: ${await r.text()}`);
+                }
               } catch (e) {
-                console.warn('TG error:', e.message);
+                core.warning(`TG 異常: ${e.message}`);
               }
             }
 
@@ -90,7 +96,7 @@ jobs:
 
               for (let attempt = 1; attempt <= maxRetry; attempt++) {
                 try {
-                  console.log(`[嘗試 ${attempt}/${maxRetry}] 開始`);
+                  core.info(`[嘗試 ${attempt}/${maxRetry}] 開始`);
 
                   const login = await fetch(`${domain}/auth/login`, {
                     method: 'POST',
@@ -101,34 +107,51 @@ jobs:
                       'Origin': domain,
                       'Referer': `${domain}/auth/login`
                     },
-                    body: JSON.stringify({email: user, passwd: pass, remember_me: 'on', code: ''})
+                    body: JSON.stringify({
+                      email: user,
+                      passwd: pass,
+                      remember_me: 'on',
+                      code: ''
+                    })
                   });
 
-                  if (!login.ok) throw new Error(`login http ${login.status}`);
+                  if (!login.ok) {
+                    throw new Error(`登入請求失敗 HTTP ${login.status}`);
+                  }
 
                   const j = await login.json();
-                  if (j.ret !== 1) throw new Error(`login fail: ${j.msg || '未知'}`);
+                  if (j.ret !== 1) {
+                    throw new Error(`登入失敗：${j.msg || '未知錯誤'}`);
+                  }
 
-                  console.log('✓ 登入成功');
+                  core.info('✓ 登入成功');
+
                   cookies = getSetCookies(login.headers);
-                  if (!cookies.length) throw new Error('沒有拿到 cookie');
+                  if (cookies.length === 0) {
+                    throw new Error('未獲取到任何 Cookie');
+                  }
 
                   // 簡單驗證 session
-                  let ok = false;
-                  for (let i = 0; i < 4; i++) {
+                  let sessionOk = false;
+                  for (let i = 0; i < 5; i++) {
                     const res = await fetch(`${domain}/user`, {
                       headers: {
                         'User-Agent': UA,
-                        'Accept': 'text/html,*/*;q=0.8',
-                        'Referer': domain + '/',
+                        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                        'Referer': `${domain}/`,
                         'Cookie': cookies.join('; ')
                       }
                     });
                     cookies = mergeCookies(cookies, getSetCookies(res.headers));
-                    if (res.ok) { ok = true; break; }
-                    await sleep(800);
+                    if (res.ok) {
+                      sessionOk = true;
+                      break;
+                    }
+                    await sleep(1000);
                   }
-                  if (!ok) console.log('⚠ session 驗證不完整，但繼續');
+                  if (!sessionOk) {
+                    core.warning('⚠ session 驗證未完全成功，仍嘗試簽到');
+                  }
 
                   const check = await fetch(`${domain}/user/checkin`, {
                     method: 'POST',
@@ -142,23 +165,27 @@ jobs:
                     }
                   });
 
-                  if (!check.ok) throw new Error(`checkin http ${check.status}`);
+                  if (!check.ok) {
+                    throw new Error(`簽到請求失敗 HTTP ${check.status}`);
+                  }
 
                   const result = await check.json().catch(() => ({}));
                   const msg = result.msg || result.message || JSON.stringify(result);
 
-                  console.log('簽到結果：', msg);
+                  core.info(`簽到結果：${msg}`);
                   await sendTG(msg);
 
-                  return {success: true, msg};
+                  return { success: true, message: msg };
                 } catch (e) {
-                  console.log(`失敗 ${attempt}: ${e.message}`);
-                  if (attempt < maxRetry) await sleep(5000);
-                  else {
-                    const errMsg = `簽到最終失敗: ${e.message}`;
-                    await sendTG(errMsg);
-                    core.setFailed(errMsg);
-                    return {success: false, msg: errMsg};
+                  core.error(`第 ${attempt} 次失敗: ${e.message}`);
+                  if (attempt < maxRetry) {
+                    core.info(`等待 5 秒後重試...`);
+                    await sleep(5000);
+                  } else {
+                    const failMsg = `簽到最終失敗：${e.message}`;
+                    await sendTG(failMsg);
+                    core.setFailed(failMsg);
+                    return { success: false, message: failMsg };
                   }
                 }
               }
