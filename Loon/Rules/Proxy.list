@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6721
+# 规则统计: 6722
 
 DOMAIN,api.waqi.info
 DOMAIN,aqi.aqicn.org
@@ -6336,6 +6336,7 @@ DOMAIN-SUFFIX,xcity.jp
 DOMAIN-SUFFIX,xclient.info
 DOMAIN-SUFFIX,xcritic.com
 DOMAIN-SUFFIX,xda-developers.com
+DOMAIN-SUFFIX,xdaforums.com
 DOMAIN-SUFFIX,xeeno.com
 DOMAIN-SUFFIX,xerotica.com
 DOMAIN-SUFFIX,xfiles.to
