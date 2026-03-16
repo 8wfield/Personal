@@ -1,9 +1,9 @@
-name: Airport Checkin
+name: Daily Check-in
 
 on:
   schedule:
-    # 每天北京时间 9:00（UTC 01:00）执行，可自行改
-    - cron: "0 1 * * *​"
+    # 每天 UTC 01:00 → 北京时间 09:00
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 jobs:
@@ -12,178 +12,191 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Run checkin script
-        uses: actions/github-script@v7
-        env:
-          DOMAIN: ${{ secrets.DOMAIN }}     # 机场域名，如 https://xxx.com
-          USER: ${{ secrets.USER }}         # 邮箱
-          PASS: ${{ secrets.PASS }}         # 密码
-          TGTOKEN: ${{ secrets.TGTOKEN }}   # 可选
-          TGID: ${{ secrets.TGID }}         # 可选
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          script: |
-            const domainRaw = process.env.DOMAIN || process.env.JC;
-            const user = process.env.USER || process.env.ZH;
-            const pass = process.env.PASS || process.env.MM;
-            const BotToken = process.env.TGTOKEN || "";
-            const ChatID = process.env.TGID || "";
+          node-version: '20'
 
-            if (!domainRaw || !user || !pass) {
-              core.setFailed("缺少必要参数：DOMAIN/USER/PASS（或 JC/ZH/MM）");
-              return;
-            }
+      - name: Run checkin script
+        env:
+          DOMAIN: ${{ secrets.DOMAIN }}
+          USER: ${{ secrets.USER }}
+          PASS: ${{ secrets.PASS }}
+          TGTOKEN: ${{ secrets.TGTOKEN }}
+          TGID: ${{ secrets.TGID }}
+        run: |
+          #!/usr/bin/env node
+          const core = require('@actions/core');
+          const fetch = require('node-fetch').default;
 
-            const domain = domainRaw.includes("//") ? domainRaw : `https://${domainRaw}`;
-            const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36";
+          const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36';
 
-            const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+          const domainRaw = process.env.DOMAIN || '';
+          const user     = process.env.USER   || '';
+          const pass     = process.env.PASS   || '';
+          const BotToken = process.env.TGTOKEN || '';
+          const ChatID   = process.env.TGID    || '';
 
-            function extractCookies(headers) {
-              // Node fetch in Actions: set-cookie may be merged string
-              const raw = headers.get("set-cookie");
-              if (!raw) return [];
-              const parts = raw.split(/,\s*(?=[a-zA-Z0-9_-]+\s*=)/);
-              return parts
-                .map(x => x.split(";")[0]?.trim())
-                .filter(Boolean)
-                .filter(x => x.includes("="));
-            }
+          if (!domainRaw || !user || !pass) {
+            core.setFailed('缺少必要参数：DOMAIN / USER / PASS');
+            process.exit(1);
+          }
 
-            function mergeCookies(existing, next) {
-              const map = new Map();
-              for (const p of existing) {
-                const i = p.indexOf("=");
-                if (i > 0) map.set(p.slice(0, i), p);
+          const domain = domainRaw.includes('//') ? domainRaw : `https://${domainRaw}`;
+
+          const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+          function getSetCookies(headers) {
+            const list = [];
+            if (typeof headers.getSetCookie === 'function') {
+              for (const cookie of headers.getSetCookie()) {
+                const pair = cookie.split(';')[0].trim();
+                if (pair && pair.includes('=')) list.push(pair);
               }
-              for (const p of next) {
-                const i = p.indexOf("=");
-                if (i > 0) map.set(p.slice(0, i), p);
+            } else {
+              const raw = headers.get('set-cookie');
+              if (raw) {
+                raw.split(/,\s*(?=[a-zA-Z0-9_-]+\s*=)/).forEach(c => {
+                  const pair = c.split(';')[0].trim();
+                  if (pair && pair.includes('=')) list.push(pair);
+                });
               }
-              return Array.from(map.values());
             }
+            return list;
+          }
 
-            async function sendTelegram(text) {
-              if (!BotToken || !ChatID) return { ok: false, skip: true };
-              const url = `https://api.telegram.org/bot${BotToken}/sendMessage`;
-              const r = await fetch(url, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ chat_id: ChatID, text }),
+          function mergeCookies(existing, incoming) {
+            const map = new Map();
+            for (const pair of existing) {
+              const i = pair.indexOf('=');
+              if (i > 0) map.set(pair.slice(0, i), pair);
+            }
+            for (const pair of incoming) {
+              const i = pair.indexOf('=');
+              if (i > 0) map.set(pair.slice(0, i), pair);
+            }
+            return Array.from(map.values());
+          }
+
+          async function sendTelegram(text) {
+            if (!BotToken || !ChatID) return;
+            const url = `https://api.telegram.org/bot${BotToken}/sendMessage`;
+            try {
+              const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: ChatID, text, parse_mode: 'HTML' }),
               });
-              return { ok: r.ok, body: await r.text() };
+              if (!res.ok) {
+                console.warn(`Telegram 发送失败: ${await res.text()}`);
+              }
+            } catch (err) {
+              console.warn(`Telegram 异常: ${err.message}`);
             }
+          }
 
-            async function runCheckin() {
-              const maxRetries = 3;
-              const retryDelay = 5000;
-              let logs = [];
+          async function performCheckin() {
+            const maxRetries = 3;
+            const retryDelay = 5000;
+            const logs = [];
+            const log = msg => { logs.push(msg); console.log(msg); };
 
-              const log = (m) => {
-                logs.push(m);
-                console.log(m);
-              };
+            for (let attempt = 1; attempt <= maxRetries; attempt++) {
+              try {
+                log(`[第 ${attempt}/${maxRetries} 次尝试] 开始`);
 
-              for (let attempt = 1; attempt <= maxRetries; attempt++) {
-                try {
-                  log(`[第 ${attempt}/${maxRetries} 次尝试] 开始执行`);
+                const loginRes = await fetch(`${domain}/auth/login`, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'User-Agent': UA,
+                    'Accept': 'application/json, text/plain, */*',
+                    'Origin': domain,
+                    'Referer': `${domain}/auth/login`,
+                  },
+                  body: JSON.stringify({
+                    email: user,
+                    passwd: pass,
+                    remember_me: 'on',
+                    code: '',
+                  }),
+                });
 
-                  // 1) 登录
-                  const loginRes = await fetch(`${domain}/auth/login`, {
-                    method: "POST",
+                if (!loginRes.ok) {
+                  throw new Error(`登录失败 HTTP ${loginRes.status}`);
+                }
+
+                const loginJson = await loginRes.json();
+                if (loginJson.ret !== 1) {
+                  throw new Error(`登录失败：${loginJson.msg || '未知错误'}`);
+                }
+                log('✓ 登录成功');
+
+                let cookies = getSetCookies(loginRes.headers);
+                if (cookies.length === 0) throw new Error('未获取到任何 Cookie');
+
+                // 尝试验证会话
+                let sessionOk = false;
+                for (let i = 1; i <= 5; i++) {
+                  const chk = await fetch(`${domain}/user`, {
                     headers: {
-                      "Content-Type": "application/json",
-                      "User-Agent": UA,
-                      "Accept": "application/json, text/plain, */*​",
-                      "Origin": domain,
-                      "Referer": `${domain}/auth/login`,
-                    },
-                    body: JSON.stringify({
-                      email: user,
-                      passwd: pass,
-                      remember_me: "on",
-                      code: "",
-                    }),
-                  });
-
-                  if (!loginRes.ok) {
-                    throw new Error(`登录失败 HTTP ${loginRes.status}: ${await loginRes.text()}`);
-                  }
-
-                  const loginJson = await loginRes.json();
-                  if (loginJson.ret !== 1) {
-                    throw new Error(`登录校验失败: ${loginJson.msg || "未知错误"}`);
-                  }
-                  log("✓ 登录成功");
-
-                  // 2) Cookie
-                  let cookies = extractCookies(loginRes.headers);
-                  if (cookies.length === 0) throw new Error("未获取到 Cookie");
-                  log(`Cookie 数量: ${cookies.length}`);
-
-                  // 3) 会话验证（可选）
-                  let sessionOk = false;
-                  for (let i = 1; i <= 5; i++) {
-                    const chk = await fetch(`${domain}/user`, {
-                      method: "GET",
-                      headers: {
-                        "User-Agent": UA,
-                        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                        "Referer": `${domain}/`,
-                        "Cookie": cookies.join("; "),
-                      },
-                    });
-                    cookies = mergeCookies(cookies, extractCookies(chk.headers));
-                    if (chk.ok) {
-                      sessionOk = true;
-                      break;
-                    }
-                    await sleep(1000);
-                  }
-                  if (!sessionOk) log("⚠ 会话验证未明确通过，继续尝试签到");
-
-                  // 4) 签到
-                  const checkinRes = await fetch(`${domain}/user/checkin`, {
-                    method: "POST",
-                    headers: {
-                      "User-Agent": UA,
-                      "Accept": "application/json, text/plain, */*​",
-                      "Origin": domain,
-                      "Referer": `${domain}/user`,
-                      "X-Requested-With": "XMLHttpRequest",
-                      "Cookie": cookies.join("; "),
+                      'User-Agent': UA,
+                      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                      'Referer': `${domain}/`,
+                      'Cookie': cookies.join('; '),
                     },
                   });
-
-                  if (!checkinRes.ok) {
-                    throw new Error(`签到请求失败 HTTP ${checkinRes.status}: ${await checkinRes.text()}`);
+                  cookies = mergeCookies(cookies, getSetCookies(chk.headers));
+                  if (chk.ok) {
+                    sessionOk = true;
+                    break;
                   }
+                  await sleep(1000);
+                }
+                if (!sessionOk) log('⚠ 会话验证未完全成功，仍尝试签到');
 
-                  const checkinJson = await checkinRes.json().catch(() => ({}));
-                  const msg = checkinJson.msg || checkinJson.message || JSON.stringify(checkinJson);
-                  log(`✅ 签到结果: ${msg}`);
+                const checkRes = await fetch(`${domain}/user/checkin`, {
+                  method: 'POST',
+                  headers: {
+                    'User-Agent': UA,
+                    'Accept': 'application/json, text/plain, */*',
+                    'Origin': domain,
+                    'Referer': `${domain}/user`,
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Cookie': cookies.join('; '),
+                  },
+                });
 
-                  return { success: true, result: msg, logs };
-                } catch (e) {
-                  log(`❌ 第 ${attempt} 次失败: ${e.message}`);
-                  if (attempt < maxRetries) {
-                    log(`等待 ${retryDelay / 1000}s 后重试...`);
-                    await sleep(retryDelay);
-                  } else {
-                    return { success: false, result: `签到失败: ${e.message}`, logs };
-                  }
+                if (!checkRes.ok) {
+                  throw new Error(`签到请求失败 HTTP ${checkRes.status}`);
+                }
+
+                const checkJson = await checkRes.json().catch(() => ({}));
+                const msg = checkJson.msg || checkJson.message || JSON.stringify(checkJson);
+                log(`签到结果: ${msg}`);
+
+                return { success: true, result: msg, logs };
+              } catch (err) {
+                log(`❌ 第 ${attempt} 次失败: ${err.message}`);
+                if (attempt < maxRetries) {
+                  log(`等待 ${retryDelay/1000}s 后重试...`);
+                  await sleep(retryDelay);
+                } else {
+                  return { success: false, result: `签到失败: ${err.message}`, logs };
                 }
               }
             }
+          }
 
-            const res = await runCheckin();
-            console.log("最终结果:", res.result);
-
-            // TG推送（可选）
-            if (BotToken && ChatID) {
-              const tg = await sendTelegram(res.result);
-              if (!tg.ok) console.log("TG 发送失败:", tg.body || "");
-            }
+          (async () => {
+            const res = await performCheckin();
+            await sendTelegram(res.result);
+            console.log('最终结果：', res.result);
 
             if (!res.success) {
               core.setFailed(res.result);
             }
+          })();
