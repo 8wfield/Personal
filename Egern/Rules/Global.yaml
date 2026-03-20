@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 33232
+# 规则统计: 33237
 
 no_resolve: true
 
@@ -28343,6 +28343,11 @@ domain_suffix_set:
   - tiktokv.us
   - tiktokw.eu
   - tiktokw.us
+  - tilda.cc
+  - tilda.ru
+  - tilda.ws
+  - tildaapi.com
+  - tildacdn.com
   - tilehill.ac.uk
   - tiltbrush.com
   - timdir.com
