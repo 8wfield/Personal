@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "421 图标",
+  "description": "422 图标",
   "icons": [
     {
       "name": "105°",
@@ -109,6 +109,10 @@
     {
       "name": "Ask",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Ask.PNG"
+    },
+    {
+      "name": "Ask_Lite",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Ask_Lite.PNG"
     },
     {
       "name": "Ask_Premium",
