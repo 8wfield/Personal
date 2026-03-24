@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "422 图标",
+  "description": "436 图标",
   "icons": [
     {
       "name": "105°",
@@ -97,6 +97,10 @@
     {
       "name": "Anisaga_3",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Anisaga3.PNG"
+    },
+    {
+      "name": "AppleTV+",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/AppleTV+.PNG"
     },
     {
       "name": "Ash",
@@ -279,6 +283,18 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Daobi.PNG"
     },
     {
+      "name": "Disney",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Disney.PNG"
+    },
+    {
+      "name": "Disney+",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Disney+.PNG"
+    },
+    {
+      "name": "Disney+_1",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Disney+1.PNG"
+    },
+    {
       "name": "Donghua",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Donghua.PNG"
     },
@@ -447,6 +463,10 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_Youqibing.PNG"
     },
     {
+      "name": "FY_Youqibing1",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_Youqibing1.PNG"
+    },
+    {
       "name": "Fanzui",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Fanzui.PNG"
     },
@@ -531,6 +551,10 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Gousheng1.PNG"
     },
     {
+      "name": "HBO Max",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/HBO Max.PNG"
+    },
+    {
       "name": "HG",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/HG.PNG"
     },
@@ -593,6 +617,10 @@
     {
       "name": "Holivator",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Holivator.PNG"
+    },
+    {
+      "name": "HuLu",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/HuLu.PNG"
     },
     {
       "name": "Ichinose",
@@ -807,6 +835,10 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Marmot.PNG"
     },
     {
+      "name": "Marvel",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Marvel.PNG"
+    },
+    {
       "name": "McDonald",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/McDonald.PNG"
     },
@@ -901,6 +933,10 @@
     {
       "name": "Msky_1",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Msky1.PNG"
+    },
+    {
+      "name": "NETFLIX",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/NETFLIX.PNG"
     },
     {
       "name": "NSFW",
@@ -1027,16 +1063,16 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/PaoLu1.PNG"
     },
     {
+      "name": "Paramount",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Paramount.PNG"
+    },
+    {
       "name": "Paramount+",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Paramount+.PNG"
     },
     {
       "name": "Paramount+_1",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Paramount+1.PNG"
-    },
-    {
-      "name": "Paramount+_2",
-      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Paramount+2.PNG"
     },
     {
       "name": "Paul",
@@ -1109,6 +1145,10 @@
     {
       "name": "Potdot",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Potdot.PNG"
+    },
+    {
+      "name": "Prime Video",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Prime Video.PNG"
     },
     {
       "name": "Pumpkin",
@@ -1407,6 +1447,10 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Unbound.PNG"
     },
     {
+      "name": "Universal",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Universal.PNG"
+    },
+    {
       "name": "V",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/V.PNG"
     },
@@ -1461,6 +1505,14 @@
     {
       "name": "Vvebo_1",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Vvebo1.PNG"
+    },
+    {
+      "name": "Warner Bros",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Warner Bros.PNG"
+    },
+    {
+      "name": "Warner Bros_1",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Warner Bros1.PNG"
     },
     {
       "name": "WeEmby",
@@ -1685,6 +1737,10 @@
     {
       "name": "ZhiPianRen",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/ZhiPianRen.PNG"
+    },
+    {
+      "name": "ZhiPianRen1",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/ZhiPianRen1.PNG"
     },
     {
       "name": "Zoxfree",
