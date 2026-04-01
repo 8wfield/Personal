@@ -1,7 +1,6 @@
 name: Kelee For Egern
 description: |
-
-  可莉插件中心：https://hub.kelee.one
+ 可莉插件中心：https://hub.kelee.one
 homepage: https://hub.kelee.one
 body_rewrites:
   - response_regex:
