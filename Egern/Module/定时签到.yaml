@@ -50,7 +50,7 @@ env_schema:
 
   EnableBiliScan:
     name: 哔哩哔哩[扫码] 获取Cookie
-    description: 打开后运行获取Cookie脚本（获取完建议关闭）
+    description: 打开后运行获取Cookie脚本（获取完建议关闭，推荐与APP二选一）
     options:
       - "true"
       - "false"
@@ -58,7 +58,7 @@ env_schema:
 
   EnableBiliApp:
     name: 哔哩哔哩[APP] 获取Cookie
-    description: 打开后运行获取Cookie脚本（获取完建议关闭，推荐与扫码二选一）
+    description: 打开后运行获取Cookie脚本（获取完建议关闭）
     options:
       - "true"
       - "false"
