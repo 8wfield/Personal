@@ -53,6 +53,7 @@ jobs:
             "GeoipCN https://raw.githubusercontent.com/Repcz/Tool/X/Surge/Custom/FILTER_REGION.list"
             "SpeedtestChina https://git.repcz.link/kelee.one/Tool/Loon/Lsr/SpeedtestChina.lsr"
             "SpeedtestInternational https://git.repcz.link/kelee.one/Tool/Loon/Lsr/SpeedtestInternational.lsr"
+            "PikPak https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/PikPak/PikPak.list"
           )
 
           for line in "${groups[@]}"; do
