@@ -105,98 +105,91 @@ env_schema:
     default_value: "false"
 
 scriptings:
-  - cron:
-      name: 哔哩每日任务
-      cron: "{{{哔哩哔哩Cron}}}"
-      script_url: https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/BiliBili.js
-      timeout: 15
-      wake_system: true
+  - name: 哔哩每日任务
+    type: cron
+    cron: "{{{哔哩哔哩Cron}}}"
+    script_url: https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/BiliBili.js
+    timeout: 15
+    wake_system: true
 
-  - http_response:
-      name: 哔哩哔哩[扫码]
-      match: ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?
-      script_url: https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/BiliBili.js
-      body_required: false
-      timeout: 30
-      when: "{{{EnableBiliScan}}} == \"true\""
+  - name: 哔哩哔哩[扫码]
+    type: http-response
+    match: ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?
+    script_url: https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/BiliBili.js
+    body_required: false
+    timeout: 30
 
-  - http_request:
-      name: 哔哩哔哩[APP]
-      match: ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?
-      script_url: https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/BiliBili.js
-      body_required: false
-      when: "{{{EnableBiliApp}}} == \"true\""
+  - name: 哔哩哔哩[APP]
+    type: http-request
+    match: ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?
+    script_url: https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/BiliBili.js
+    body_required: false
 
-  - cron:
-      name: 蜜雪冰城签到
-      cron: "{{{蜜雪冰城Cron}}}"
-      script_url: https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/Mixue.js
-      timeout: 60
+  - name: 蜜雪冰城签到
+    type: cron
+    cron: "{{{蜜雪冰城Cron}}}"
+    script_url: https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/Mixue.js
+    timeout: 60
 
-  - http_response:
-      name: 蜜雪冰城
-      match: ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info
-      script_url: https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/Mixue.js
-      body_required: true
-      timeout: 60
-      when: "{{{EnableMixue}}} == \"true\""
+  - name: 蜜雪冰城
+    type: http-response
+    match: ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info
+    script_url: https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/Mixue.js
+    body_required: true
+    timeout: 60
 
-  - cron:
-      name: 小蚕霸王餐签到
-      cron: "{{{小蚕霸王餐Cron}}}"
-      script_url: https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw
-      timeout: 60
+  - name: 小蚕霸王餐签到
+    type: cron
+    cron: "{{{小蚕霸王餐Cron}}}"
+    script_url: https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw
+    timeout: 60
 
-  - http_response:
-      name: 小蚕霸王餐
-      match: ^https:\/\/gw\.xiaocantech\.com\/rpc
-      script_url: https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw
-      body_required: true
-      timeout: 60
-      when: "{{{EnableXiaocan}}} == \"true\""
+  - name: 小蚕霸王餐
+    type: http-response
+    match: ^https:\/\/gw\.xiaocantech\.com\/rpc
+    script_url: https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw
+    body_required: true
+    timeout: 60
 
-  - cron:
-      name: 晓晓优选签到
-      cron: "{{{晓晓优选Cron}}}"
-      script_url: https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js
-      timeout: 60
+  - name: 晓晓优选签到
+    type: cron
+    cron: "{{{晓晓优选Cron}}}"
+    script_url: https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js
+    timeout: 60
 
-  - http_response:
-      name: 晓晓优选
-      match: ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my
-      script_url: https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js
-      body_required: true
-      timeout: 60
-      when: "{{{EnableXxyx}}} == \"true\""
+  - name: 晓晓优选
+    type: http-response
+    match: ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my
+    script_url: https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js
+    body_required: true
+    timeout: 60
 
-  - cron:
-      name: 歪麦每日任务
-      cron: "{{{歪麦霸王餐Cron}}}"
-      script_url: https://gist.githubusercontent.com/Sliverkiss/49a9ffb2169a2becc33bf4fdbf6eb99a/raw/wmbwc.js
-      timeout: 15
-      wake_system: true
+  - name: 歪麦每日任务
+    type: cron
+    cron: "{{{歪麦霸王餐Cron}}}"
+    script_url: https://gist.githubusercontent.com/Sliverkiss/49a9ffb2169a2becc33bf4fdbf6eb99a/raw/wmbwc.js
+    timeout: 15
+    wake_system: true
 
-  - http_request:
-      name: 歪麦霸王餐
-      match: ^https:\/\/wmapp-api\.waimaimingtang\.com\/api\/api\/v2\/user\/api_user_info_one
-      script_url: https://gist.githubusercontent.com/Sliverkiss/49a9ffb2169a2becc33bf4fdbf6eb99a/raw/wmbwc.js
-      body_required: true
-      max_size: -1
-      timeout: 60
-      when: "{{{EnableWaimai}}} == \"true\""
+  - name: 歪麦霸王餐
+    type: http-request
+    match: ^https:\/\/wmapp-api\.waimaimingtang\.com\/api\/api\/v2\/user\/api_user_info_one
+    script_url: https://gist.githubusercontent.com/Sliverkiss/49a9ffb2169a2becc33bf4fdbf6eb99a/raw/wmbwc.js
+    body_required: true
+    max_size: -1
+    timeout: 60
 
-  - cron:
-      name: 支付有优惠金币获取
-      cron: "{{{微信支付有优惠Cron}}}"
-      script_url: https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js
-      timeout: 60
+  - name: 支付有优惠金币获取
+    type: cron
+    cron: "{{{微信支付有优惠Cron}}}"
+    script_url: https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js
+    timeout: 60
 
-  - http_response:
-      name: 微信支付有优惠
-      match: https:\/\/payapp\.weixin\.qq\.com\/(coupon-center-user\/home\/login|coupon-center-award\/award\/detail)
-      script_url: https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js
-      body_required: true
-      when: "{{{EnableWechatPay}}} == \"true\""
+  - name: 微信支付有优惠
+    type: http-response
+    match: https:\/\/payapp\.weixin\.qq\.com\/(coupon-center-user\/home\/login|coupon-center-award\/award\/detail)
+    script_url: https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js
+    body_required: true
 
 mitm:
   hostnames:
