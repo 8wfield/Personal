@@ -1,6 +1,4 @@
 name: 定时签到合集
-description: 支持每个任务独立开启/关闭和自定义 Cron。\n首次使用需打开对应 App/小程序获取 Cookie。
-author: FoKit, Sliverkiss, ClydeTime, wish, ZenmoFeiShi, chavyleung
 
 compat_arguments:
   歪麦霸王餐: 获取Cookie
@@ -8,21 +6,23 @@ compat_arguments:
 
 compat_arguments_schema:
   歪麦霸王餐:
-    name: '歪麦霸王餐'
-    description: '获取Cookie'
+    name: 歪麦霸王餐
+    description: 获取Cookie
     default_value: 'false'
     options:
     - 'true'
     - 'false'
 
-
 scriptings:
-- schedule:
-    name: 歪麦霸王餐签到
-    歪麦霸王餐cron: 99 99 31 2 7
-    script_url: https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw
 - http_response:
     name: 歪麦霸王餐获取Cookie
     match: ^https:\/\/gw\.xiaocantech\.com\/
     env:
       _compat.$argument: '{"歪麦霸王餐":false}'
+- schedule:
+    name: 歪麦霸王餐
+    cron: 99 99 31 2 7
+    script_url: https://gist.githubusercontent.com/Sliverkiss/49a9ffb2169a2becc33bf4fdbf6eb99a/raw/wmbwc.js
+    env:
+      歪麦霸王餐Cron: 99 99 31 2 7
+    timeout: 15
