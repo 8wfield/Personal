@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6728
+# 规则统计: 6729
 
 DOMAIN,api.waqi.info
 DOMAIN,aqi.aqicn.org
@@ -4125,6 +4125,7 @@ DOMAIN-SUFFIX,orn.jp
 DOMAIN-SUFFIX,orzistic.org
 DOMAIN-SUFFIX,osfoora.com
 DOMAIN-SUFFIX,osha.gov
+DOMAIN-SUFFIX,osmand.net
 DOMAIN-SUFFIX,osxdaily.com
 DOMAIN-SUFFIX,otcbtc.com
 DOMAIN-SUFFIX,otnd.org
