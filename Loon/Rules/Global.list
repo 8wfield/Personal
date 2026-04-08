@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 25591
+# 规则统计: 25590
 
 DOMAIN,1password.drift.click
 DOMAIN,3dns-1.adobe.com
@@ -6435,6 +6435,7 @@ DOMAIN-SUFFIX,crabporn.com
 DOMAIN-SUFFIX,crackle.com
 DOMAIN-SUFFIX,craigslist.org
 DOMAIN-SUFFIX,crankplayer.com
+DOMAIN-SUFFIX,crashlytics.com
 DOMAIN-SUFFIX,crates.io
 DOMAIN-SUFFIX,crazy-amateurs.com
 DOMAIN-SUFFIX,crazyav.xyz
@@ -9196,7 +9197,6 @@ DOMAIN-SUFFIX,finlitsummit.org
 DOMAIN-SUFFIX,fiotolia.com
 DOMAIN-SUFFIX,fire-emblem-heroes.com
 DOMAIN-SUFFIX,firearmsworld.net
-DOMAIN-SUFFIX,firebase-settings.crashlytics.com
 DOMAIN-SUFFIX,firebase.com
 DOMAIN-SUFFIX,firebase.io
 DOMAIN-SUFFIX,firebaseapp.com
@@ -22594,7 +22594,6 @@ DOMAIN-SUFFIX,uoherald.com
 DOMAIN-SUFFIX,up.audio
 DOMAIN-SUFFIX,up01.cc
 DOMAIN-SUFFIX,upbit.com
-DOMAIN-SUFFIX,update.crashlytics.com
 DOMAIN-SUFFIX,updates.tdesktop.com
 DOMAIN-SUFFIX,updatetube.com
 DOMAIN-SUFFIX,upfrontcfd.com

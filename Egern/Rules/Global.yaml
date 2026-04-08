@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 25591
+# 规则统计: 25590
 
 domain_set:
   - 1password.drift.click
@@ -6438,6 +6438,7 @@ domain_suffix_set:
   - crackle.com
   - craigslist.org
   - crankplayer.com
+  - crashlytics.com
   - crates.io
   - crazy-amateurs.com
   - crazyav.xyz
@@ -9199,7 +9200,6 @@ domain_suffix_set:
   - fiotolia.com
   - fire-emblem-heroes.com
   - firearmsworld.net
-  - firebase-settings.crashlytics.com
   - firebase.com
   - firebase.io
   - firebaseapp.com
@@ -22597,7 +22597,6 @@ domain_suffix_set:
   - up.audio
   - up01.cc
   - upbit.com
-  - update.crashlytics.com
   - updates.tdesktop.com
   - updatetube.com
   - upfrontcfd.com

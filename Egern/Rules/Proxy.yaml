@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6729
+# 规则统计: 6733
 
 no_resolve: true
 
@@ -416,6 +416,7 @@ domain_suffix_set:
   - appsto.re
   - aptoide.com
   - arcgis.com
+  - archive-it.org
   - archive.fo
   - archive.is
   - archive.li
@@ -1472,6 +1473,7 @@ domain_suffix_set:
   - dmm.com
   - dns-dns.com
   - dns-stuff.com
+  - dns.sb
   - dns04.com
   - dns05.com
   - dns1.us
@@ -1491,6 +1493,7 @@ domain_suffix_set:
   - doctorvoice.org
   - documentingreality.com
   - dogfartnetwork.com
+  - doh.sb
   - dojin.com
   - dok-forum.net
   - dolc.de
@@ -1508,6 +1511,7 @@ domain_suffix_set:
   - doosho.com
   - doourbest.org
   - dorjeshugden.com
+  - dot.sb
   - dotgov.gov
   - dotplane.com
   - dotsub.com
