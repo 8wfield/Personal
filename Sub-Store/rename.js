@@ -37,7 +37,7 @@
  * [clear]  清理乱名
  * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
  * [blockquic] blockquic=on 阻止; blockquic=off 不阻止
- * 最终格式示例：🇭🇰 香港-01 name [2X 家宽 IPLC]
+ * 最终格式示例：🇭🇰 香港-01 69云 [2X 家宽 IPLC]
  */
 
 const inArg = $arguments;
@@ -281,18 +281,18 @@ function jxh(e) {
 
       let newName = item._baseName + numStr;
 
-      // 先拼接 bracket（[2X 家宽]
-      if (item.bracketStr) {
-        newName += " " + item.bracketStr;
-      }
-
-      // 再拼接 name 参数（放在 bracket 前面）
+      // name 参数放在 bracket 前面
       if (item._hasName && FNAME) {
         if (nf) {
           newName = FNAME + " " + newName;
         } else {
-          newName = newName + " " + FNAME;
+          newName += " " + FNAME;
         }
+      }
+
+      // 最后加上 [bl / blkey]
+      if (item.bracketStr) {
+        newName += " " + item.bracketStr;
       }
 
       result.push({ ...item, name: newName });
