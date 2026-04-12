@@ -173,9 +173,13 @@ function operator(pro) {
       }
     });
 
-    if (blockquic == "on") e["block-quic"] = "on";
-    else if (blockquic == "off") e["block-quic"] = "off";
-    else delete e["block-quic"];
+    if (blockquic == "on") {
+      e["block-quic"] = "on";
+    } else if (blockquic == "off") {
+      e["block-quic"] = "off";
+    } else {
+      delete e["block-quic"];
+    }
 
     if (BLKEY) {
       let re = false;
@@ -277,10 +281,12 @@ function jxh(e) {
 
       let newName = item._baseName + numStr;
 
+      // 先拼接 bracket（[2X 家宽]
       if (item.bracketStr) {
         newName += " " + item.bracketStr;
       }
 
+      // 再拼接 name 参数（放在 bracket 前面）
       if (item._hasName && FNAME) {
         if (nf) {
           newName = FNAME + " " + newName;
