@@ -37,7 +37,7 @@
  * [clear]  清理乱名
  * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
  * [blockquic] blockquic=on 阻止; blockquic=off 不阻止
- * 最终格式示例：🇭🇰 香港-01 机场名 [2X 家宽 IPLC]
+ * 最终格式示例：🇭🇰 香港-01 name [2X 家宽 IPLC]
  */
 
 const inArg = $arguments;
@@ -173,13 +173,9 @@ function operator(pro) {
       }
     });
 
-    if (blockquic == "on") {
-      e["block-quic"] = "on";
-    } else if (blockquic == "off") {
-      e["block-quic"] = "off";
-    } else {
-      delete e["block-quic"];
-    }
+    if (blockquic == "on") e["block-quic"] = "on";
+    else if (blockquic == "off") e["block-quic"] = "off";
+    else delete e["block-quic"];
 
     if (BLKEY) {
       let re = false;
@@ -208,14 +204,10 @@ function operator(pro) {
     }
 
     if (bl) {
-      const match = e.name.match(
-        /((倍率|X|x|×)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x|×)/
-      );
+      const match = e.name.match(/((倍率|X|x|×)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x|×)/);
       if (match) {
         const rev = match[0].match(/(\d[\d.]*)/)[0];
-        if (rev !== "1") {
-          bracketItems.push(rev + "X");
-        }
+        if (rev !== "1") bracketItems.push(rev + "X");
       }
     }
 
@@ -234,7 +226,7 @@ function operator(pro) {
         }
       }
 
-      let regionPart = (usflag || "") + findKeyValue;
+      let regionPart = (usflag ? usflag + " " : "") + findKeyValue;
 
       let allBracket = [];
       if (bracketItems.length > 0) allBracket = allBracket.concat(bracketItems);
@@ -291,7 +283,7 @@ function jxh(e) {
 
       if (item._hasName && FNAME) {
         if (nf) {
-          newName = FNAME + "-" + newName;
+          newName = FNAME + " " + newName;
         } else {
           newName = newName + " " + FNAME;
         }
