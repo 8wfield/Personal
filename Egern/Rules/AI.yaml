@@ -1,5 +1,5 @@
 # 规则名称: AI
-# 规则统计: 84
+# 规则统计: 85
 
 no_resolve: true
 
@@ -72,6 +72,7 @@ domain_suffix_set:
   -  hyperbolic.ai
   -  jetbrains.ai
   -  jina.ai
+  -  kiro.dev
   -  meta.ai
   -  mistral.ai
   -  oaistatic.com
