@@ -6,7 +6,7 @@ compat_arguments:
 compat_arguments_schema:
   脚本引擎:
     name: 脚本引擎
-    description: 请选择选择脚本引擎，默认auto。
+    description: 请选择脚本引擎，默认auto。
     default_value: auto
     options:
     - auto
