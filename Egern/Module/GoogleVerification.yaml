@@ -3,13 +3,25 @@ description: Google搜索内容时并发使用多个策略/策略组，以避免
 compat_arguments:
   脚本引擎: auto/webview/jsc，默认auto。
   策略正则: 策略/策略组正则表达式
+compat_arguments_schema:
+  脚本引擎:
+    name: 脚本引擎
+    description: 选择脚本引擎
+    default_value: auto
+    options:
+    - auto
+    - webview
+    - jsc
+  策略正则:
+    name: 策略/策略组名正则表达式
+    description: 示例:^(🇸🇬|🇭🇰)\s.*\d+$ 如需同时使用所有策略/策略组可使用 .+ 表示。
+    default_value: ''
 scriptings:
   - http_request:
       name: GoogleCAPTCHA
       match: ^https?:\/\/www\.google\.(com\.hk|com)\/(search\?|$)
       script_url: https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Google_CAPTCHA.js
       body_required: true
-      timeout: 5
       env:
         _compat.$argument: "engine={{{脚本引擎}}}&argument={{{策略正则}}}"
 mitm:
