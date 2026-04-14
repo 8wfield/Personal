@@ -6,15 +6,15 @@ compat_arguments:
 compat_arguments_schema:
   脚本引擎:
     name: 脚本引擎
-    description: 选择脚本引擎
+    description: 请选择选择脚本引擎，默认auto。
     default_value: auto
     options:
     - auto
     - webview
     - jsc
   策略正则:
-    name: 策略/策略组名正则表达式
-    description: 示例:^(🇸🇬|🇭🇰)\s.*\d+$ 如需同时使用所有策略/策略组可使用 .+ 表示。
+    name: 正则表达式
+    description: 策略/策略组名的正则表达式。 示例:^(🇸🇬|🇭🇰)\s.*\d+$ 如需同时使用所有策略/策略组可使用 .+ 表示。
     default_value: ''
 scriptings:
   - http_request:
