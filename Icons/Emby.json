@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "446 图标",
+  "description": "451 图标",
   "icons": [
     {
       "name": "105°",
@@ -115,6 +115,10 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Ask.PNG"
     },
     {
+      "name": "Ask_1",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/ASK1.PNG"
+    },
+    {
       "name": "Ask_Lite",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Ask_Lite.PNG"
     },
@@ -123,8 +127,20 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Ask_Premium.PNG"
     },
     {
+      "name": "Ask_Premium1",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/ASK_Premium1.PNG"
+    },
+    {
+      "name": "Ask_Premium2",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/ASK_Premium2.PNG"
+    },
+    {
       "name": "Ask_Ultra",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Ask_ultra.PNG"
+    },
+    {
+      "name": "Ask_Ultra1",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/ASK_Ultra1.PNG"
     },
     {
       "name": "BCXC",
@@ -1045,6 +1061,10 @@
     {
       "name": "Origami",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Origami.PNG"
+    },
+    {
+      "name": "Origami_1",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Origami1.PNG"
     },
     {
       "name": "PL_Hualu",
