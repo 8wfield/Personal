@@ -1,5 +1,5 @@
 # 规则名称: AI
-# 规则统计: 85
+# 规则统计: 87
 
 no_resolve: true
 
@@ -74,6 +74,7 @@ domain_suffix_set:
   -  jina.ai
   -  kiro.dev
   -  meta.ai
+  -  minimax.io
   -  mistral.ai
   -  oaistatic.com
   -  oaiusercontent.com
@@ -89,6 +90,7 @@ domain_suffix_set:
   -  trae.ai
   -  voyageai.com
   -  x.ai
+  -  z.ai
 
 ip_cidr_set:
   -  160.79.104.0/23

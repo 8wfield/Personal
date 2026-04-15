@@ -1,5 +1,5 @@
 # 规则名称: AI
-# 规则统计: 92
+# 规则统计: 90
 
 AND, ((DOMAIN-KEYWORD, antigravity-auto-updater-), (DOMAIN-SUFFIX, run.app))
 AND, ((DOMAIN-KEYWORD, chatgpt-async-webps-prod-), (DOMAIN-SUFFIX, webpubsub.azure.com))
@@ -72,6 +72,7 @@ DOMAIN-SUFFIX, jetbrains.ai
 DOMAIN-SUFFIX, jina.ai
 DOMAIN-SUFFIX, kiro.dev
 DOMAIN-SUFFIX, meta.ai
+DOMAIN-SUFFIX, minimax.io
 DOMAIN-SUFFIX, mistral.ai
 DOMAIN-SUFFIX, oaistatic.com
 DOMAIN-SUFFIX, oaiusercontent.com
@@ -87,9 +88,6 @@ DOMAIN-SUFFIX, tokenflux.ai
 DOMAIN-SUFFIX, trae.ai
 DOMAIN-SUFFIX, voyageai.com
 DOMAIN-SUFFIX, x.ai
+DOMAIN-SUFFIX, z.ai
 IP-CIDR, 160.79.104.0/23,no-resolve
 IP-CIDR6, 2607:6bc0::/48,no-resolve
-aws.amazon.com
-cerebras.ai
-minimax.io
-z.ai
