@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6736
+# 规则统计: 6737
 
 DOMAIN,api.waqi.info
 DOMAIN,aqi.aqicn.org
@@ -4101,6 +4101,7 @@ DOMAIN-SUFFIX,oopsforum.com
 DOMAIN-SUFFIX,ooyala.com
 DOMAIN-SUFFIX,open.com.hk
 DOMAIN-SUFFIX,openallweb.com
+DOMAIN-SUFFIX,openart.ai
 DOMAIN-SUFFIX,openbase.com
 DOMAIN-SUFFIX,opencritic.com
 DOMAIN-SUFFIX,opendemocracy.net

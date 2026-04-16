@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6736
+# 规则统计: 6737
 
 no_resolve: true
 
@@ -4080,6 +4080,7 @@ domain_suffix_set:
   - ooyala.com
   - open.com.hk
   - openallweb.com
+  - openart.ai
   - openbase.com
   - opencritic.com
   - opendemocracy.net
