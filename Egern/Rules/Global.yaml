@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26120
+# 规则统计: 26121
 
 domain_set:
   - 1password.drift.click
@@ -1432,6 +1432,7 @@ domain_suffix_set:
   - adguard.io
   - adguard.org
   - adguardaccount.com
+  - adguardcdn.com
   - adguardvpn.com
   - adhelpnews.com
   - adidas-archive.org
