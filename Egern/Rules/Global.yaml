@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26121
+# 规则统计: 26123
 
 domain_set:
   - 1password.drift.click
@@ -15578,6 +15578,7 @@ domain_suffix_set:
   - minilondon.co
   - minimarkham.ca
   - minimarkham.com
+  - minimax.io
   - minimoncton.ca
   - minimoncton.com
   - minimontrealcentre.ca
@@ -20031,6 +20032,7 @@ domain_suffix_set:
   - scolle.net
   - scoop.sh
   - scopus.com
+  - scorecardresearch.com
   - scoreclassics.com
   - scorediscounts.club
   - scoregroup.com
