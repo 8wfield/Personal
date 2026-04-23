@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26124
+# 规则统计: 26134
 
 domain_set:
   - 1password.drift.click
@@ -2501,6 +2501,7 @@ domain_suffix_set:
   - app-store.wang
   - app.box.com
   - app.cloudcone.com
+  - app.element.io
   - app.smartmailcloud.com
   - app0le.com
   - app756.com
@@ -2978,6 +2979,7 @@ domain_suffix_set:
   - asianwifeporn.com
   - asianxxxvideos.cc
   - asiaone.com
+  - asiasociety.org
   - asjmapihost.cc
   - ask.com
   - askfacebook.net
@@ -3965,6 +3967,7 @@ domain_suffix_set:
   - bell.wiki
   - bellebound.com
   - bellesa.co
+  - bellingcat.com
   - bellotube.com
   - bellsouth.net
   - benaughty.fun
@@ -6526,6 +6529,7 @@ domain_suffix_set:
   - crececonebay.com
   - creditcardsbay.com
   - creditkarma.com
+  - crewai.com
   - cricketcountry.com
   - cristyli.com
   - crit-staging.com
@@ -13154,6 +13158,7 @@ domain_suffix_set:
   - issitedownrightnow.com
   - issquaredown.com
   - issquareup.com
+  - issues.chromium.org
   - issuu.com
   - istent.co.kr
   - istorytell.com
@@ -14084,6 +14089,7 @@ domain_suffix_set:
   - lamnia.co.uk
   - lanasbigboobs.com
   - landofhope.tv
+  - langchain.com
   - langsuirs.com
   - lanik.us
   - lanmdh.net
@@ -14393,6 +14399,7 @@ domain_suffix_set:
   - lmm167.shop
   - lmmbtc.com
   - lms01.com
+  - lmstudio.ai
   - lnkd.in
   - lnstagram-help.com
   - loanbuilder.com
@@ -17378,6 +17385,7 @@ domain_suffix_set:
   - olevod.tv
   - olevodtv.com
   - oli-school.com
+  - ollama.com
   - olumpo.com
   - omafotze.com
   - omakase.in
@@ -19318,6 +19326,7 @@ domain_suffix_set:
   - raw.githack.com
   - rawgit.com
   - rawgithub.com
+  - rawstory.com
   - rayark.download
   - rayark.net
   - razer.com
@@ -19452,6 +19461,7 @@ domain_suffix_set:
   - recoiljs.org
   - reconinstruments.com
   - reconjet.com
+  - recordedfuture.com
   - recoveryversion.com.tw
   - red-lang.org
   - redamateurtube.com
@@ -21021,7 +21031,6 @@ domain_suffix_set:
   - soyinyj.top
   - soyjak.party
   - soyjak.st
-  - soylentnews.org
   - sp.cool
   - spaceexplored.com
   - spacely.com.au
@@ -22113,6 +22122,7 @@ domain_suffix_set:
   - thieme-connect.de
   - thieme.de
   - thinkboxsoftware.com
+  - thinkchina.sg
   - thinkdifferent.us
   - thinkgeek.com
   - thinkingtaiwan.com
