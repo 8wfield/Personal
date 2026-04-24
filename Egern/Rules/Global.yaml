@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26134
+# 规则统计: 26137
 
 domain_set:
   - 1password.drift.click
@@ -1686,6 +1686,7 @@ domain_suffix_set:
   - agefans.com
   - agemys.org
   - agendaweek.com
+  - agentclientprotocol.com
   - agilebits.com
   - agnesb.fr
   - agoogleaday.com
@@ -18310,6 +18311,7 @@ domain_suffix_set:
   - placesdocs.com
   - planetminecraft.com
   - planetsuzy.org
+  - plannotator.ai
   - plansondemand.com
   - plantsvszombies2.com
   - plasticlabs.com
@@ -22784,6 +22786,7 @@ domain_suffix_set:
   - twistys.com
   - twitch.tv
   - twitchcdn.net
+  - twitchcon.com
   - twitchsvc.net
   - twitcomike.jp
   - twitiq.com

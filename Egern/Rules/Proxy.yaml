@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6738
+# 规则统计: 6746
 
 no_resolve: true
 
@@ -403,6 +403,7 @@ domain_suffix_set:
   - apkpure.net
   - aplusvpn.com
   - app-measurement.net
+  - app.element.io
   - app.heywire.com
   - app.tutanota.com
   - appadvice.com
@@ -457,6 +458,7 @@ domain_suffix_set:
   - asianspiss.com
   - asianwomensfilm.de
   - asiaone.com
+  - asiasociety.org
   - asiatgp.com
   - asiatoday.us
   - ask.com
@@ -602,6 +604,7 @@ domain_suffix_set:
   - beijingzx.org
   - belamionline.com
   - bell.wiki
+  - bellingcat.com
   - bemywife.cc
   - beric.me
   - berlinerbericht.de
@@ -3188,6 +3191,7 @@ domain_suffix_set:
   - lamnia.co.uk
   - lamrim.com
   - landofhope.tv
+  - lantern.io
   - lantosfoundation.org
   - laogai.org
   - laogairesearch.org
@@ -4554,6 +4558,7 @@ domain_suffix_set:
   - rateyourmusic.com
   - rationalwiki.org
   - rawgit.com
+  - rawstory.com
   - razyboard.com
   - rcinet.ca
   - rd.com
@@ -4572,6 +4577,7 @@ domain_suffix_set:
   - reason.com
   - rebatesrule.net
   - recaptcha.net
+  - recordedfuture.com
   - recordhistory.org
   - recovery.org.tw
   - recoveryversion.com.tw
@@ -4635,6 +4641,7 @@ domain_suffix_set:
   - rmjdw.com
   - rmjdw132.info
   - roadshow.hk
+  - roblox.com
   - roboforex.com
   - robustnessiskey.com
   - rocket-inc.net
@@ -5374,6 +5381,7 @@ domain_suffix_set:
   - thewgo.org
   - thewirechina.com
   - theync.com
+  - thinkchina.sg
   - thinkgeek.com
   - thinkingtaiwan.com
   - thirdmill.org
