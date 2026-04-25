@@ -37,7 +37,7 @@
  * [clear]  清理乱名
  * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
  * [blockquic] blockquic=on 阻止; blockquic=off 不阻止
- * 最终格式示例：🇭🇰 name-美国¹ X0.1 [家宽 IPLC]
+ * 最终格式示例：🇺🇸 name-美国¹ X0.1 [家宽 IPLC]
  */
 
 const inArg = $arguments;
@@ -88,15 +88,54 @@ const namenx = /(高倍|(?!1)(0\.|\d)+(x|倍)|ˣ²|ˣ³|ˣ⁴|ˣ⁵|ˣ¹⁰)/i;
 const keya = /港|Hong|HK|新加坡|SG|Singapore|日本|Japan|JP|美国|United States|US|韩|土耳其|TR|Turkey|Korea|KR|🇸🇬|🇭🇰|🇯🇵|🇺🇸|🇰🇷|🇹🇷/i;
 const keyb = /(((1|2|3|4)\d)|(香港|Hong|HK) 0[5-9]|((新加坡|SG|Singapore|日本|Japan|JP|美国|United States|US|韩|土耳其|TR|Turkey|Korea|KR) 0[3-9]))/i;
 
-const rurekey = { /* ... 保持原样不变 ... */ 
-  // (这里省略了 rurekey 对象，实际使用时请保留你原脚本中的完整 rurekey)
-  // 如果你需要完整 rurekey，可以从之前的版本复制
+const rurekey = {
+  GB: /UK/g,
+  "B-G-P": /BGP/g,
+  "Russia Moscow": /Moscow/g,
+  "Korea Chuncheon": /Chuncheon|Seoul/g,
+  "Hong Kong": /Hongkong|HONG KONG/gi,
+  "United Kingdom London": /London|Great Britain/g,
+  "Dubai United Arab Emirates": /United Arab Emirates/g,
+  "Taiwan TW 台湾 🇹🇼": /(台|Tai\s?wan|TW).*?🇨🇳|🇨🇳.*?(台|Tai\s?wan|TW)/g,
+  "United States": /USA|Los Angeles|San Jose|Silicon Valley|Michigan/g,
+  澳大利亚: /澳洲|墨尔本|悉尼|土澳|(深|沪|呼|京|广|杭)澳/g,
+  德国: /(深|沪|呼|京|广|杭)德(?!.*(I|线))|法兰克福|滬德/g,
+  香港: /(深|沪|呼|京|广|杭)港(?!.*(I|线))/g,
+  日本: /(深|沪|呼|京|广|杭|中|辽)日(?!.*(I|线))|东京|大坂/g,
+  新加坡: /狮城|(深|沪|呼|京|广|杭)新/g,
+  美国: /(深|沪|呼|京|广|杭)美|波特兰|芝加哥|哥伦布|纽约|硅谷|俄勒冈|西雅图|芝加哥/g,
+  波斯尼亚和黑塞哥维那: /波黑共和国/g,
+  印尼: /印度尼西亚|雅加达/g,
+  印度: /孟买/g,
+  阿联酋: /迪拜|阿拉伯联合酋酋国/g,
+  孟加拉国: /孟加拉/g,
+  捷克: /捷克共和国/g,
+  台湾: /新台|新北|台(?!.*线)/g,
+  Taiwan: /Taipei/g,
+  韩国: /春川|韩|首尔/g,
+  Japan: /Tokyo|Osaka/g,
+  英国: /伦敦/g,
+  India: /Mumbai/g,
+  Germany: /Frankfurt/g,
+  Switzerland: /Zurich/g,
+  俄罗斯: /莫斯科/g,
+  土耳其: /伊斯坦布尔/g,
+  泰国: /泰國|曼谷/g,
+  法国: /巴黎/g,
+  G: /\d\s?GB/gi,
+  Esnc: /esnc/gi,
 };
 
 let GetK = false, AMK = []
 function ObjKA(i) {
   GetK = true
   AMK = Object.entries(i)
+}
+
+// 将数字转为上标角标（支持10以上）
+function toSuperscript(n) {
+  const sup = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+  return n.toString().split('').map(c => sup[c] || c).join('');
 }
 
 function operator(pro) {
@@ -244,28 +283,22 @@ function jxh(e) {
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
       const num = idx + 1;
-      let numStr = (group.items.length === 1 && numone) ? "" : String(num);
-
-      const sup = ["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹"][parseInt(numStr)] || numStr;
+      let superscript = (group.items.length === 1 && numone) ? "" : toSuperscript(num);
 
       let newName = "";
 
-      // 国旗
-      if (item.flagStr) newName += item.flagStr + " ";
+      if (item._flag) newName += item._flag + " ";
 
-      // name-地区¹
       if (item._hasName && FNAME) {
-        newName += FNAME + "-" + item._baseName + sup;
+        newName += FNAME + "-" + item._baseName + superscript;
       } else {
-        newName += item._baseName + sup;
+        newName += item._baseName + superscript;
       }
 
-      // X倍率
-      if (item.blRate) {
-        newName += " " + item.blRate;
+      if (item._blRate) {
+        newName += " " + item._blRate;
       }
 
-      // [blkey]
       if (item.bracketStr) {
         newName += " " + item.bracketStr;
       }
@@ -276,6 +309,11 @@ function jxh(e) {
 
   e.splice(0, e.length, ...result);
   return e;
+}
+
+function toSuperscript(n) {
+  const map = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+  return String(n).split('').map(char => map[char] || char).join('');
 }
 
 function oneP(e) {
