@@ -37,7 +37,7 @@
  * [clear]  清理乱名
  * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
  * [blockquic] blockquic=on 阻止; blockquic=off 不阻止
- * 最终格式示例：🇭🇰 香港-01 69云 [2X 家宽 IPLC]
+ * 最终格式示例：🇭🇰 name-美国¹ X0.1 [家宽 IPLC]
  */
 
 const inArg = $arguments;
@@ -198,6 +198,7 @@ function operator(pro) {
     }
 
     let bracketItems = [];
+    let blRate = "";
 
     if (blgd) {
       regexArray.forEach((regex, index) => {
@@ -211,7 +212,9 @@ function operator(pro) {
       const match = e.name.match(/((倍率|X|x|×)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x|×)/);
       if (match) {
         const rev = match[0].match(/(\d[\d.]*)/)[0];
-        if (rev !== "1") bracketItems.push(rev + "X");
+        if (rev !== "1") {
+          blRate = "X" + rev;
+        }
       }
     }
 
@@ -230,7 +233,7 @@ function operator(pro) {
         }
       }
 
-      let regionPart = (usflag ? usflag + " " : "") + findKeyValue;
+      let regionPart = findKeyValue;
 
       let allBracket = [];
       if (bracketItems.length > 0) allBracket = allBracket.concat(bracketItems);
@@ -240,6 +243,7 @@ function operator(pro) {
       e.name = regionPart;
       e._baseName = regionPart;
       e._bracket = bracketStr;
+      e._blRate = blRate;
       e._hasName = !!FNAME;
     } else {
       if (nm) {
@@ -265,11 +269,12 @@ function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
     let baseName = proxy._baseName || proxy.name;
     const bracketStr = proxy._bracket || "";
+    const blRate = proxy._blRate || "";
     if (!acc[baseName]) {
       acc[baseName] = { count: 0, items: [] };
     }
     acc[baseName].count++;
-    acc[baseName].items.push({ ...proxy, bracketStr });
+    acc[baseName].items.push({ ...proxy, bracketStr, blRate });
     return acc;
   }, {});
 
@@ -277,20 +282,27 @@ function jxh(e) {
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
       const num = idx + 1;
-      let numStr = (group.items.length === 1 && numone) ? "" : "-" + String(num).padStart(2, '0');
+      let numStr = (group.items.length === 1 && numone) ? "" : String(num);
 
-      let newName = item._baseName + numStr;
+      const superscriptMap = ["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹"];
+      let superscript = numStr ? superscriptMap[parseInt(numStr) % 10] || numStr : "";
 
-      // name 参数放在 bracket 前面
+      let newName = "";
+
       if (item._hasName && FNAME) {
         if (nf) {
-          newName = FNAME + " " + newName;
+          newName = FNAME + "-" + item._baseName + superscript;
         } else {
-          newName += " " + FNAME;
+          newName = FNAME + "-" + item._baseName + superscript;
         }
+      } else {
+        newName = item._baseName + superscript;
       }
 
-      // 最后加上 [bl / blkey]
+      if (item._blRate) {
+        newName += " " + item._blRate;
+      }
+
       if (item.bracketStr) {
         newName += " " + item.bracketStr;
       }
