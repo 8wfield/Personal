@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6746
+# 规则统计: 6747
 
 DOMAIN,api.waqi.info
 DOMAIN,aqi.aqicn.org
@@ -5311,6 +5311,7 @@ DOMAIN-SUFFIX,tdm.com.mo
 DOMAIN-SUFFIX,teachparentstech.org
 DOMAIN-SUFFIX,teamamericany.com
 DOMAIN-SUFFIX,teamviewer.com
+DOMAIN-SUFFIX,techbang.com
 DOMAIN-SUFFIX,techcrunch.com
 DOMAIN-SUFFIX,technews.tw
 DOMAIN-SUFFIX,technorati.com
