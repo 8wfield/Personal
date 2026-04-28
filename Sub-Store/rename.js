@@ -37,7 +37,7 @@
  * [clear]  清理乱名
  * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
  * [blockquic] blockquic=on 阻止; blockquic=off 不阻止
- * 最终格式示例：🇭🇰机场-香港¹[×0.1][家宽 IPLC]
+ * 最终格式示例：🇺🇸name 美国¹ X0.1 家宽 IPLC
  */
 
 const inArg = $arguments;
@@ -136,8 +136,11 @@ function operator(pro) {
   const Allmap = {};
   const outList = getList(outputName);
   let inputList;
-  if (inname !== "") inputList = [getList(inname)];
-  else inputList = [ZH, FG, QC, EN];
+  if (inname !== "") {
+    inputList = [getList(inname)];
+  } else {
+    inputList = [ZH, FG, QC, EN];
+  }
 
   inputList.forEach((arr) => {
     arr.forEach((value, valueIndex) => {
@@ -148,10 +151,11 @@ function operator(pro) {
   if (clear || nx || blnx || key) {
     pro = pro.filter((res) => {
       const resname = res.name;
-      const shouldKeep = !(clear && nameclear.test(resname)) &&
-                        !(nx && namenx.test(resname)) &&
-                        !(blnx && !nameblnx.test(resname)) &&
-                        !(key && !(keya.test(resname) && /2|4|6|7/i.test(resname)));
+      const shouldKeep =
+        !(clear && nameclear.test(resname)) &&
+        !(nx && namenx.test(resname)) &&
+        !(blnx && !nameblnx.test(resname)) &&
+        !(key && !(keya.test(resname) && /2|4|6|7/i.test(resname)));
       return shouldKeep;
     });
   }
@@ -193,7 +197,9 @@ function operator(pro) {
 
     if (blgd) {
       regexArray.forEach((regex, index) => {
-        if (regex.test(e.name) && valueArray[index]) bracketItems.push(valueArray[index]);
+        if (regex.test(e.name) && valueArray[index] !== undefined) {
+          bracketItems.push(valueArray[index]);
+        }
       });
     }
 
@@ -201,7 +207,7 @@ function operator(pro) {
       const match = e.name.match(/((倍率|X|x|×)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x|×)/);
       if (match) {
         const rev = match[0].match(/(\d[\d.]*)/)[0];
-        if (rev !== "1") blRate = "×" + rev;
+        if (rev !== "1") blRate = "X" + rev;
       }
     }
 
@@ -221,20 +227,26 @@ function operator(pro) {
       }
 
       let regionPart = findKeyValue;
-      let allBracket = [];
-      if (bracketItems.length > 0) allBracket = allBracket.concat(bracketItems);
-      if (retainKey.trim()) allBracket.push(retainKey.trim());
-      let bracketStr = allBracket.length > 0 ? `[${allBracket.join(" ")}]` : "";
+
+      let blkeyStr = "";
+      if (bracketItems.length > 0 || retainKey.trim()) {
+        let allItems = bracketItems.slice();
+        if (retainKey.trim()) allItems.push(retainKey.trim());
+        blkeyStr = allItems.join(" ");
+      }
 
       e.name = regionPart;
       e._baseName = regionPart;
       e._flag = flagStr;
-      e._bracket = bracketStr;
       e._blRate = blRate;
+      e._blkeyStr = blkeyStr;
       e._hasName = !!FNAME;
     } else {
-      if (nm) e.name = (FNAME ? FNAME + "-" : "") + e.name;
-      else e.name = null;
+      if (nm) {
+        e.name = (FNAME ? FNAME + "-" : "") + e.name;
+      } else {
+        e.name = null;
+      }
     }
   });
 
@@ -242,6 +254,7 @@ function operator(pro) {
 
   jxh(pro);
   if (numone) oneP(pro);
+
   if (blpx) pro = fampx(pro);
   if (key) pro = pro.filter((e) => !keyb.test(e.name));
 
@@ -251,12 +264,14 @@ function operator(pro) {
 function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
     let baseName = proxy._baseName || proxy.name;
-    const bracketStr = proxy._bracket || "";
     const blRate = proxy._blRate || "";
+    const blkeyStr = proxy._blkeyStr || "";
     const flagStr = proxy._flag || "";
-    if (!acc[baseName]) acc[baseName] = { count: 0, items: [] };
+    if (!acc[baseName]) {
+      acc[baseName] = { count: 0, items: [] };
+    }
     acc[baseName].count++;
-    acc[baseName].items.push({ ...proxy, bracketStr, blRate, flagStr });
+    acc[baseName].items.push({ ...proxy, blRate, blkeyStr, flagStr });
     return acc;
   }, {});
 
@@ -271,17 +286,17 @@ function jxh(e) {
       if (item._flag) newName += item._flag;
 
       if (item._hasName && FNAME) {
-        newName += FNAME + "-" + item._baseName + superscript;
+        newName += FNAME + " " + item._baseName + superscript;
       } else {
         newName += item._baseName + superscript;
       }
 
       if (item._blRate) {
-        newName += "[" + item._blRate + "]";
+        newName += " " + item._blRate;
       }
 
-      if (item.bracketStr) {
-        newName += item.bracketStr;
+      if (item._blkeyStr) {
+        newName += " " + item._blkeyStr;
       }
 
       result.push({ ...item, name: newName });
@@ -297,7 +312,9 @@ function toSuperscript(n) {
   return String(n).split('').map(c => map[c] || c).join('');
 }
 
-function oneP(e) { return e; }
+function oneP(e) {
+  return e;
+}
 
 function getList(arg) {
   switch (arg) {
@@ -309,11 +326,22 @@ function getList(arg) {
 }
 
 function fampx(pro) {
-  const specialRegex = [ /(\d\.)?\d+X/, /IPLC|IEPL|Kern|Edge|Pro|Std|Exp|Biz|Fam|Game|Buy|Zx|LB|Game/ ];
-  const wis = pro.filter(p => specialRegex.some(r => r.test(p.name)));
-  const wnout = pro.filter(p => !specialRegex.some(r => r.test(p.name)));
-  const sps = wis.map(p => specialRegex.findIndex(r => r.test(p.name)));
-  wis.sort((a,b) => sps[wis.indexOf(a)] - sps[wis.indexOf(b)] || a.name.localeCompare(b.name));
-  wnout.sort((a,b) => pro.indexOf(a) - pro.indexOf(b));
+  const specialRegex = [
+    /(\d\.)?\d+X/,
+    /IPLC|IEPL|Kern|Edge|Pro|Std|Exp|Biz|Fam|Game|Buy|Zx|LB|Game/,
+  ];
+
+  const wis = pro.filter(proxy => specialRegex.some(regex => regex.test(proxy.name)));
+  const wnout = pro.filter(proxy => !specialRegex.some(regex => regex.test(proxy.name)));
+
+  const sps = wis.map(proxy => specialRegex.findIndex(regex => regex.test(proxy.name)));
+
+  wis.sort((a, b) =>
+    sps[wis.indexOf(a)] - sps[wis.indexOf(b)] ||
+    a.name.localeCompare(b.name)
+  );
+
+  wnout.sort((a, b) => pro.indexOf(a) - pro.indexOf(b));
+
   return wnout.concat(wis);
 }
