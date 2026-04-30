@@ -284,7 +284,7 @@ function jxh(e) {
       newName += item._baseName + superscript;
 
       if (item._hasName && FNAME) {
-        newName += "｢" + FNAME + "｣";
+        newName += "[" + FNAME + "]";
       }
 
       if (item.bracketStr) {
