@@ -37,7 +37,7 @@
  * [clear]  清理乱名
  * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
  * [blockquic] blockquic=on 阻止; blockquic=off 不阻止
- * 最终格式示例：🇺🇸name 美国¹ X0.1 家宽 IPLC
+ * 最终格式示例：🇭🇰香港-01[name][X0.1 家宽 IPLC]
  */
 
 const inArg = $arguments;
@@ -228,18 +228,17 @@ function operator(pro) {
 
       let regionPart = findKeyValue;
 
-      let blkeyStr = "";
-      if (bracketItems.length > 0 || retainKey.trim()) {
-        let allItems = bracketItems.slice();
-        if (retainKey.trim()) allItems.push(retainKey.trim());
-        blkeyStr = allItems.join(" ");
-      }
+      let insideBracket = [];
+      if (bracketItems.length > 0) insideBracket = insideBracket.concat(bracketItems);
+      if (retainKey.trim()) insideBracket.push(retainKey.trim());
+      if (blRate) insideBracket.unshift(blRate);   // 把倍率放在最前面
+
+      let bracketStr = insideBracket.length > 0 ? `[${insideBracket.join(" ")}]` : "";
 
       e.name = regionPart;
       e._baseName = regionPart;
       e._flag = flagStr;
-      e._blRate = blRate;
-      e._blkeyStr = blkeyStr;
+      e._bracket = bracketStr;
       e._hasName = !!FNAME;
     } else {
       if (nm) {
@@ -264,14 +263,13 @@ function operator(pro) {
 function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
     let baseName = proxy._baseName || proxy.name;
-    const blRate = proxy._blRate || "";
-    const blkeyStr = proxy._blkeyStr || "";
+    const bracketStr = proxy._bracket || "";
     const flagStr = proxy._flag || "";
     if (!acc[baseName]) {
       acc[baseName] = { count: 0, items: [] };
     }
     acc[baseName].count++;
-    acc[baseName].items.push({ ...proxy, blRate, blkeyStr, flagStr });
+    acc[baseName].items.push({ ...proxy, bracketStr, flagStr });
     return acc;
   }, {});
 
@@ -279,24 +277,20 @@ function jxh(e) {
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
       const num = idx + 1;
-      let superscript = (group.items.length === 1 && numone) ? "" : toSuperscript(num);
+      let numStr = (group.items.length === 1 && numone) ? "" : "-" + String(num).padStart(2, '0');
 
       let newName = "";
 
       if (item._flag) newName += item._flag;
 
       if (item._hasName && FNAME) {
-        newName += FNAME + " " + item._baseName + superscript;
+        newName += FNAME + "-" + item._baseName + numStr;
       } else {
-        newName += item._baseName + superscript;
+        newName += item._baseName + numStr;
       }
 
-      if (item._blRate) {
-        newName += " " + item._blRate;
-      }
-
-      if (item._blkeyStr) {
-        newName += " " + item._blkeyStr;
+      if (item.bracketStr) {
+        newName += item.bracketStr;
       }
 
       result.push({ ...item, name: newName });
@@ -305,11 +299,6 @@ function jxh(e) {
 
   e.splice(0, e.length, ...result);
   return e;
-}
-
-function toSuperscript(n) {
-  const map = "⁰¹²³⁴⁵⁶⁷⁸⁹";
-  return String(n).split('').map(c => map[c] || c).join('');
 }
 
 function oneP(e) {
@@ -334,7 +323,9 @@ function fampx(pro) {
   const wis = pro.filter(proxy => specialRegex.some(regex => regex.test(proxy.name)));
   const wnout = pro.filter(proxy => !specialRegex.some(regex => regex.test(proxy.name)));
 
-  const sps = wis.map(proxy => specialRegex.findIndex(regex => regex.test(proxy.name)));
+  const sps = wis.map(proxy =>
+    specialRegex.findIndex(regex => regex.test(proxy.name))
+  );
 
   wis.sort((a, b) =>
     sps[wis.indexOf(a)] - sps[wis.indexOf(b)] ||
