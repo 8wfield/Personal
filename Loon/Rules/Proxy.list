@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6747
+# 规则统计: 6748
 
 DOMAIN,api.waqi.info
 DOMAIN,aqi.aqicn.org
@@ -5881,6 +5881,7 @@ DOMAIN-SUFFIX,uploader.jp
 DOMAIN-SUFFIX,uploadstation.com
 DOMAIN-SUFFIX,upmedia.mg
 DOMAIN-SUFFIX,uproxy.org
+DOMAIN-SUFFIX,upsangel.com
 DOMAIN-SUFFIX,uptodown.com
 DOMAIN-SUFFIX,upwill.org
 DOMAIN-SUFFIX,upwork.com
