@@ -1,10 +1,14 @@
 # 规则名称: SpeedtestChina
-# 规则统计: 7
+# 规则统计: 11
 
 DOMAIN, 4gsuzhou1.speedtest.jsinfo.net
+DOMAIN, 4gsuzhou1.speedtest.jsinfo.net.prod.hosts.ooklaserver.net
 DOMAIN, 5gzhenjiang.speedtest.jsinfo.net
+DOMAIN, 5gzhenjiang.speedtest.jsinfo.net.prod.hosts.ooklaserver.net
 DOMAIN, beijing.unicomtest.com
 DOMAIN, cesu-hz.zjtelecom.com.cn
 DOMAIN, cesu-nb.zjtelecom.com.cn
+DOMAIN, cesu-nb.zjtelecom.com.cn.prod.hosts.ooklaserver.net
 DOMAIN, mobile.shunicomtest.com
+DOMAIN, mobile.shunicomtest.com.prod.hosts.ooklaserver.net
 DOMAIN, speedtest.jsqiuying.com
