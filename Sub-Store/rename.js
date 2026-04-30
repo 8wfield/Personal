@@ -37,7 +37,7 @@
  * [clear]  清理乱名
  * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
  * [blockquic] blockquic=on 阻止; blockquic=off 不阻止
- * 最终格式示例：🇭🇰香港-01[name][X0.1 家宽 IPLC]
+ * 最终格式示例：🇭🇰香港¹｢name｣[bl blkey]
  */
 
 const inArg = $arguments;
@@ -226,17 +226,15 @@ function operator(pro) {
         }
       }
 
-      let regionPart = findKeyValue;
+      let inside = [];
+      if (blRate) inside.push(blRate);
+      if (bracketItems.length > 0) inside = inside.concat(bracketItems);
+      if (retainKey.trim()) inside.push(retainKey.trim());
 
-      let insideBracket = [];
-      if (bracketItems.length > 0) insideBracket = insideBracket.concat(bracketItems);
-      if (retainKey.trim()) insideBracket.push(retainKey.trim());
-      if (blRate) insideBracket.unshift(blRate);   // 把倍率放在最前面
+      let bracketStr = inside.length > 0 ? `[${inside.join(" ")}]` : "";
 
-      let bracketStr = insideBracket.length > 0 ? `[${insideBracket.join(" ")}]` : "";
-
-      e.name = regionPart;
-      e._baseName = regionPart;
+      e.name = findKeyValue;
+      e._baseName = findKeyValue;
       e._flag = flagStr;
       e._bracket = bracketStr;
       e._hasName = !!FNAME;
@@ -277,16 +275,16 @@ function jxh(e) {
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
       const num = idx + 1;
-      let numStr = (group.items.length === 1 && numone) ? "" : "-" + String(num).padStart(2, '0');
+      let superscript = (group.items.length === 1 && numone) ? "" : toSuperscript(num);
 
       let newName = "";
 
       if (item._flag) newName += item._flag;
 
+      newName += item._baseName + superscript;
+
       if (item._hasName && FNAME) {
-        newName += FNAME + "-" + item._baseName + numStr;
-      } else {
-        newName += item._baseName + numStr;
+        newName += "｢" + FNAME + "｣";
       }
 
       if (item.bracketStr) {
@@ -299,6 +297,11 @@ function jxh(e) {
 
   e.splice(0, e.length, ...result);
   return e;
+}
+
+function toSuperscript(n) {
+  const map = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+  return String(n).split('').map(c => map[c] || c).join('');
 }
 
 function oneP(e) {
@@ -323,9 +326,7 @@ function fampx(pro) {
   const wis = pro.filter(proxy => specialRegex.some(regex => regex.test(proxy.name)));
   const wnout = pro.filter(proxy => !specialRegex.some(regex => regex.test(proxy.name)));
 
-  const sps = wis.map(proxy =>
-    specialRegex.findIndex(regex => regex.test(proxy.name))
-  );
+  const sps = wis.map(proxy => specialRegex.findIndex(regex => regex.test(proxy.name)));
 
   wis.sort((a, b) =>
     sps[wis.indexOf(a)] - sps[wis.indexOf(b)] ||
