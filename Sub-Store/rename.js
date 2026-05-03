@@ -37,7 +37,7 @@
  * [clear]  清理乱名
  * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
  * [blockquic] blockquic=on 阻止; blockquic=off 不阻止
- * 最终格式示例：🇭🇰香港¹｢name｣[bl blkey]
+ * 最终格式示例：🇭🇰香港-01[name]X0.1 家宽 IPLC
  */
 
 const inArg = $arguments;
@@ -275,13 +275,13 @@ function jxh(e) {
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
       const num = idx + 1;
-      let superscript = (group.items.length === 1 && numone) ? "" : toSuperscript(num);
+      let numStr = (group.items.length === 1 && numone) ? "" : "-" + String(num).padStart(2, '0');
 
       let newName = "";
 
       if (item._flag) newName += item._flag;
 
-      newName += item._baseName + superscript;
+      newName += item._baseName + numStr;
 
       if (item._hasName && FNAME) {
         newName += "[" + FNAME + "]";
@@ -297,11 +297,6 @@ function jxh(e) {
 
   e.splice(0, e.length, ...result);
   return e;
-}
-
-function toSuperscript(n) {
-  const map = "⁰¹²³⁴⁵⁶⁷⁸⁹";
-  return String(n).split('').map(c => map[c] || c).join('');
 }
 
 function oneP(e) {
@@ -326,7 +321,9 @@ function fampx(pro) {
   const wis = pro.filter(proxy => specialRegex.some(regex => regex.test(proxy.name)));
   const wnout = pro.filter(proxy => !specialRegex.some(regex => regex.test(proxy.name)));
 
-  const sps = wis.map(proxy => specialRegex.findIndex(regex => regex.test(proxy.name)));
+  const sps = wis.map(proxy =>
+    specialRegex.findIndex(regex => regex.test(proxy.name))
+  );
 
   wis.sort((a, b) =>
     sps[wis.indexOf(a)] - sps[wis.indexOf(b)] ||
