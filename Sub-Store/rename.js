@@ -226,17 +226,17 @@ function operator(pro) {
         }
       }
 
-      let inside = [];
-      if (blRate) inside.push(blRate);
-      if (bracketItems.length > 0) inside = inside.concat(bracketItems);
-      if (retainKey.trim()) inside.push(retainKey.trim());
+      let extra = [];
+      if (blRate) extra.push(blRate);
+      if (bracketItems.length > 0) extra = extra.concat(bracketItems);
+      if (retainKey.trim()) extra.push(retainKey.trim());
 
-      let bracketStr = inside.length > 0 ? `[${inside.join(" ")}]` : "";
+      let extraStr = extra.length > 0 ? extra.join(" ") : "";
 
       e.name = findKeyValue;
       e._baseName = findKeyValue;
       e._flag = flagStr;
-      e._bracket = bracketStr;
+      e._extra = extraStr;
       e._hasName = !!FNAME;
     } else {
       if (nm) {
@@ -261,13 +261,13 @@ function operator(pro) {
 function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
     let baseName = proxy._baseName || proxy.name;
-    const bracketStr = proxy._bracket || "";
+    const extra = proxy._extra || "";
     const flagStr = proxy._flag || "";
     if (!acc[baseName]) {
       acc[baseName] = { count: 0, items: [] };
     }
     acc[baseName].count++;
-    acc[baseName].items.push({ ...proxy, bracketStr, flagStr });
+    acc[baseName].items.push({ ...proxy, extra, flagStr });
     return acc;
   }, {});
 
@@ -287,8 +287,8 @@ function jxh(e) {
         newName += "[" + FNAME + "]";
       }
 
-      if (item.bracketStr) {
-        newName += item.bracketStr;
+      if (item.extra) {
+        newName += item.extra;
       }
 
       result.push({ ...item, name: newName });
@@ -321,9 +321,7 @@ function fampx(pro) {
   const wis = pro.filter(proxy => specialRegex.some(regex => regex.test(proxy.name)));
   const wnout = pro.filter(proxy => !specialRegex.some(regex => regex.test(proxy.name)));
 
-  const sps = wis.map(proxy =>
-    specialRegex.findIndex(regex => regex.test(proxy.name))
-  );
+  const sps = wis.map(proxy => specialRegex.findIndex(regex => regex.test(proxy.name)));
 
   wis.sort((a, b) =>
     sps[wis.indexOf(a)] - sps[wis.indexOf(b)] ||
