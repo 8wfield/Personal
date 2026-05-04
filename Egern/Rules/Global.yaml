@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26141
+# 规则统计: 26138
 
 domain_set:
   - 1password.drift.click
@@ -7214,6 +7214,7 @@ domain_suffix_set:
   - digitaldesire.com
   - digitalhub.com
   - digitalid.ch
+  - digitalocean-ui.com
   - digitalocean.com
   - digitaloceanspaces.com
   - digitalpack.com
@@ -19986,9 +19987,6 @@ domain_suffix_set:
   - sc-cdn.net
   - sc.com
   - sca-tolo.info
-  - scache.vzw.com
-  - scache1.vzw.com
-  - scache2.vzw.com
   - scala-lang.org
   - scala-sbt.org
   - scaleflex.com
@@ -21153,7 +21151,6 @@ domain_suffix_set:
   - ss-link.com
   - ss2.us
   - ss7.app
-  - ss7.vzw.com
   - ssdevrd.com
   - ssglobal.co
   - sshs.club
