@@ -37,7 +37,7 @@
  * [clear]  清理乱名
  * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
  * [blockquic] blockquic=on 阻止; blockquic=off 不阻止
- * 最终格式示例：🇭🇰香港-01[name]X0.1 家宽 IPLC
+ * 最终格式示例：🇭🇰 [69] 香港 01 [X0.1 家宽 IPLC]
  */
 
 const inArg = $arguments;
@@ -226,17 +226,17 @@ function operator(pro) {
         }
       }
 
-      let extra = [];
-      if (blRate) extra.push(blRate);
-      if (bracketItems.length > 0) extra = extra.concat(bracketItems);
-      if (retainKey.trim()) extra.push(retainKey.trim());
+      let inside = [];
+      if (blRate) inside.push(blRate);
+      if (bracketItems.length > 0) inside = inside.concat(bracketItems);
+      if (retainKey.trim()) inside.push(retainKey.trim());
 
-      let extraStr = extra.length > 0 ? extra.join(" ") : "";
+      let bracketStr = inside.length > 0 ? `[${inside.join(" ")}]` : "";
 
       e.name = findKeyValue;
       e._baseName = findKeyValue;
       e._flag = flagStr;
-      e._extra = extraStr;
+      e._bracket = bracketStr;
       e._hasName = !!FNAME;
     } else {
       if (nm) {
@@ -261,13 +261,13 @@ function operator(pro) {
 function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
     let baseName = proxy._baseName || proxy.name;
-    const extra = proxy._extra || "";
+    const bracketStr = proxy._bracket || "";
     const flagStr = proxy._flag || "";
     if (!acc[baseName]) {
       acc[baseName] = { count: 0, items: [] };
     }
     acc[baseName].count++;
-    acc[baseName].items.push({ ...proxy, extra, flagStr });
+    acc[baseName].items.push({ ...proxy, bracketStr, flagStr });
     return acc;
   }, {});
 
@@ -275,20 +275,20 @@ function jxh(e) {
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
       const num = idx + 1;
-      let numStr = (group.items.length === 1 && numone) ? "" : "-" + String(num).padStart(2, '0');
+      let numStr = (group.items.length === 1 && numone) ? "" : " " + String(num).padStart(2, '0');
 
       let newName = "";
 
-      if (item._flag) newName += item._flag;
+      if (item._flag) newName += item._flag + " ";
+
+      if (item._hasName && FNAME) {
+        newName += "[" + FNAME + "] ";
+      }
 
       newName += item._baseName + numStr;
 
-      if (item._hasName && FNAME) {
-        newName += "[" + FNAME + "]";
-      }
-
-      if (item.extra) {
-        newName += item.extra;
+      if (item.bracketStr) {
+        newName += " " + item.bracketStr;
       }
 
       result.push({ ...item, name: newName });
