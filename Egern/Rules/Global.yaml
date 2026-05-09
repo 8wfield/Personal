@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26294
+# 规则统计: 26295
 
 domain_set:
   - 1password.drift.click
@@ -23941,6 +23941,7 @@ domain_suffix_set:
   - vodafone.com.tr
   - vodafone.de
   - vodafone.it
+  - vodafone.nl
   - voicettank.org
   - vokevr.com
   - vol.moe
