@@ -1,5 +1,5 @@
 # 规则名称: SpeedtestInternational
-# 规则统计: 16095
+# 规则统计: 16387
 
 no_resolve: true
 
@@ -125,6 +125,7 @@ domain_set:
   -  arslantel.online
   -  as149665.ookla.pku.pw
   -  asanet1.brsserver.com.br
+  -  asbn-speedtest.northstate.net
   -  ash-sharq-speedtest.saudi.net.sa
   -  ash.speedtest.clouvider.net
   -  ashbn-va.speedtest.shentel.net
@@ -141,6 +142,7 @@ domain_set:
   -  ath-speedtest.isp.htb.systems
   -  athn-speedtest-02.brightspeed.com
   -  ativadccentury01t.ativatelecom.net.br
+  -  atl-speedtest.northstate.net
   -  atl-speedtest.shifthosting.com
   -  atl.mega.host.speedtest.net
   -  atl.speedtest.clouvider.net
@@ -170,6 +172,7 @@ domain_set:
   -  b2.speedtest.gslnetworks.com
   -  backbone.pdx.fiberfi.net
   -  bacoor-speedtest.dnsfibersolution.com
+  -  badarpiplan.badarnetworks.online
   -  baguiocity.smart.com.ph
   -  bah.myspeed.net.sa
   -  baha-speedtest.saudi.net.sa
@@ -197,6 +200,7 @@ domain_set:
   -  barcelona.tecnonet.com.ve
   -  bardolispeedtest.smartlinkindia.in
   -  barquisimeto.somosthunder.net
+  -  barranquilla.speedtest.intercaribe.co
   -  barroalto.total.psi.br
   -  baservers.nettlinx.com
   -  basn-speedtest-02.brightspeed.com
@@ -230,6 +234,7 @@ domain_set:
   -  bgo-speedtest.globe.com.ph
   -  bgsspeedtest.allrede.net.br
   -  bgv-speedtest01.brasiltecpar.com.br
+  -  bgwspeedtest.iqsts.com
   -  bhangoo.radiuspk.online
   -  bhe.i-systems.com
   -  bhilai.x3m.in
@@ -377,6 +382,7 @@ domain_set:
   -  cba-speedtest01.brasiltecpar.com.br
   -  cba.allrede.tec.br
   -  cbj-speedtest.ebb.my
+  -  cbpuspeed.aspensmart.net
   -  cbr1.speedtest.telstra.net
   -  ccd-spdtst-srv.convergeict.com
   -  ccsspeedtest.reddotech.com
@@ -431,6 +437,7 @@ domain_set:
   -  chy11-speedtest01.as15108.com
   -  chynwy-speedtest-ookla-01.st.charter.com
   -  ciamis.signall.net.id
+  -  cianjur.rajasa.net.id
   -  cibaliung.siber.net.id
   -  ciemas.rajasa.net.id
   -  cikupa.speedtest.telkom.net.id
@@ -455,6 +462,7 @@ domain_set:
   -  clk-srv04.convergeict.com
   -  cln-speedtest.globe.com.ph
   -  cln.speedtest.telmexchile.cl
+  -  cloud.mendozainternet.com.ar
   -  cltn-speedtest-02.brightspeed.com
   -  cmbrooklaspeed1.jioconnect.com
   -  cmi.speedtest.pavlovmedia.net
@@ -512,6 +520,7 @@ domain_set:
   -  culiacan.speedtest.totalplay.com.mx
   -  curarrehue.globalconnect.cl
   -  custom.tbcnet.net.tw
+  -  custom.tbcnet.net.tw.prod.hosts.ooklaserver.net
   -  cvt.speedtest.civitanet.com
   -  cvtspeedtest1.coosavalleytech.com
   -  cwf-speedtest-mw.clearwave.com
@@ -523,6 +532,7 @@ domain_set:
   -  d-pcommunications.com
   -  da-speed.kbro.com.tw
   -  dah.myspeed.net.sa
+  -  daha.radiuspk.online
   -  dal-speedtest.net.sangoma.net
   -  dal-speedtest.transtelco.net
   -  dal.speedtest.clouvider.net
@@ -612,6 +622,7 @@ domain_set:
   -  dns.yesindiacommunications.in
   -  dns1.skymaxtelecom.com.br
   -  dnsprive.moov-africa.cf
+  -  dnvrco-ookla1.vyvebroadband.net
   -  dnvrco-speedtest-ookla-01.st.charter.com
   -  dpac-la.guam.net
   -  dps.speedtest.jinom.net
@@ -622,6 +633,7 @@ domain_set:
   -  drs1.com.br
   -  drtvpdspeedtesta.voiped.eu
   -  drtvpdspeedtestb.voiped.com
+  -  drw.speedtest.gslnetworks.com
   -  drw1.speedtest.telstra.net
   -  dry.myspeed.net.sa
   -  ds19.vipconnect.mx
@@ -647,6 +659,7 @@ domain_set:
   -  efibra.ravisystems.com.br
   -  egz.egztelecom.com.br
   -  eitis.cloudns.nz
+  -  eka.soppeng.go.id
   -  elbasan.speedtest.one.al
   -  elbolson.ispgroup.com.ar
   -  eletrotel.brsserver.com.br
@@ -723,14 +736,17 @@ domain_set:
   -  fiberinovadoranet.inovadoranet.com.br
   -  fiberpaineirasnet.rbsti.com.br
   -  fibertest.bezeq.co.il
+  -  fibertest.soipl.co.in
   -  fibraturbo.brsserver.com.br
   -  fibretest.kcom.com
+  -  firatnet.link
   -  fitzgerald.speedtest.windstream.net
   -  fiz-speedtest01.brasiltecpar.com.br
   -  fl.speedtest.openinfra.com
   -  fla.brisanet.eu.org
   -  flagstaff.speedtest.bluespanwireless.com
   -  flash.gwk.net.id
+  -  flashnetcom.brsserver.com.br
   -  flga.speedtest.pavlovmedia.net
   -  flk.ookla.ms-nw.net
   -  flnet.topoficial.com.br
@@ -855,6 +871,7 @@ domain_set:
   -  hilla.cloudns.nz
   -  hinesville.speedtest.brightspeed.com
   -  hispeedtest.go.com.sa
+  -  hitechisp.net
   -  hitechisp.online
   -  hizinitestet.kktcell.com
   -  hiztesti.codit.com.tr
@@ -1003,8 +1020,10 @@ domain_set:
   -  isp.rayunetprovider.xyz
   -  isptools.saltonet.inf.br
   -  ispyovi.daycomve.com
+  -  ist-ookla.oculve.com
   -  it1.speedtest.aruba.it
   -  it3.speedtest.aruba.it
+  -  it4.speedtest.aruba.it
   -  itacare.conecttelecom.com.br
   -  itatest02.itacell.net.br
   -  itdspeed1.nd.gov
@@ -1017,11 +1036,13 @@ domain_set:
   -  izmit-speed.tbtnet.com.tr
   -  iztacalco.speedtest.totalplay.com.mx
   -  jaipur-sptest.ishancloud.com
+  -  jakarta.rajasa.net.id
   -  jakarta.siber.net.id
   -  jakarta.speed.co.id
   -  jakarta.speedtest.jwi.id
   -  jakarta2.speedtest.telkom.net.id
   -  jamestown.speedtest.windstream.net
+  -  jampangkulon.rajasa.net.id
   -  jamst.laxminetwork.com
   -  jayapura.speedtest.telkom.net.id
   -  jbl.myspeed.net.sa
@@ -1031,6 +1052,7 @@ domain_set:
   -  jed-speed.itc.net.sa
   -  jed-speedtest.saudi.net.sa
   -  jember.speedtest.telkom.net.id
+  -  jepara.ashnetwork.my.id
   -  jepara.avianaglobal.my.id
   -  jepara.lintasjepara.my.id
   -  jepara.netcoffee.my.id
@@ -1067,6 +1089,8 @@ domain_set:
   -  jouf.myspeed.net.sa
   -  jp-nperf.verizon.net
   -  jp-nperf.verizon.net.prod.hosts.ooklaserver.net
+  -  jp.speedtest.bug.pw
+  -  jp.speedtest.bug.pw.prod.hosts.ooklaserver.net
   -  jp.speedtest.railtel.in
   -  jrnet.tinfosolution.com.br
   -  jsnspt.jsonsnetworks.com
@@ -1253,6 +1277,7 @@ domain_set:
   -  lifespeedtest.life.net.br
   -  lifitelecom.brsserver.com.br
   -  lightspeed.rainierconnect.com
+  -  lightspeed.rainierconnect.com.prod.hosts.ooklaserver.net
   -  lil.cubic.ookla.bytel.fr
   -  lil2.speedtest.mire.sfr.net
   -  lille3.d2m.c2d.liveservices.fr
@@ -1473,6 +1498,8 @@ domain_set:
   -  mi-speedtest.optimaitalia.com
   -  mi.speedtest.warian.net
   -  mia-eqx1-ookla-1.99.network
+  -  mia-speedtest.northstate.net
+  -  mia.speedtest.gslnetworks.com
   -  miami-speedtest.reliablesite.net
   -  miami.fl.speedtest.frontier.com
   -  miami.getstreamhosting.com
@@ -1480,6 +1507,7 @@ domain_set:
   -  miaspeedtest.blackburn-pr.com
   -  mib-rst-sp1.mibroadband.com
   -  micron.brsserver.com.br
+  -  mil.speedtest.gslnetworks.com
   -  milnhi-speedtest-ookla-01.st.charter.com
   -  min-r450-speedtest.metrocomm.com
   -  min2.smart.com.ph
@@ -1544,6 +1572,7 @@ domain_set:
   -  montreal.speedtest.telus.com
   -  montreal2.speedtest.telus.com
   -  montsouris3.d2m.c2d.liveservices.fr
+  -  moodle.equinoxius.net
   -  moovspeedtest.moov-africa.ci
   -  morbi.laxminetwork.com
   -  morelia.speedtest.totalplay.com.mx
@@ -1558,6 +1587,7 @@ domain_set:
   -  mrutooklaspeed1.jioconnect.com
   -  msarat.site
   -  msibitnap.apfutura.net
+  -  mslkwa-ookla1.vyvebroadband.net
   -  mspeedtest.linkceara.com.br
   -  mspeedtest.skynet.in.net
   -  msr.myspeed.net.sa
@@ -1582,6 +1612,7 @@ domain_set:
   -  mumspeedtest.uvfiber.com
   -  mundodigitalchile.com
   -  mux.uahsoft.com
+  -  muxspeedtest.prime.net.pk
   -  my-speed.info
   -  my.albarq.ly
   -  mynext.mynextbroadband.in
@@ -1698,6 +1729,7 @@ domain_set:
   -  npnst.npisp.pk
   -  npnst2.npisp.pk
   -  ns.speedtest.clicknetiternet.com.br
+  -  ns1.anlnetwork.in
   -  ns1.fab5network.com
   -  ns1.gramnet.com.br
   -  ns1.grupojcc.com.br
@@ -1707,6 +1739,7 @@ domain_set:
   -  ns1.wignet.com.br
   -  ns10.fab5network.com
   -  ns2.fab5network.com
+  -  ns2.migonet.com.br
   -  ns2.peer.net.in
   -  ns2.redevidatel.com.br
   -  ns3.connect3.net.bd
@@ -1777,6 +1810,7 @@ domain_set:
   -  ook511.prtel.net
   -  ook702.prtel.net
   -  ookla-01.ind.fd-ix.com
+  -  ookla-1.aerioncloud.com
   -  ookla-1.edi.as58246.net
   -  ookla-2.aerioncloud.com
   -  ookla-3-1a.defastlink.net
@@ -1790,6 +1824,7 @@ domain_set:
   -  ookla-are01.movistar.pe
   -  ookla-atl.gigsouth.com
   -  ookla-aya01.movistar.pe
+  -  ookla-barcelona.aerioncloud.com
   -  ookla-bgo.net.avur.no
   -  ookla-bgr.sandya.net
   -  ookla-blz.inq.mw
@@ -1803,6 +1838,8 @@ domain_set:
   -  ookla-cus01.movistar.pe
   -  ookla-dfw.gigsouth.com
   -  ookla-dps.blip.co.id
+  -  ookla-estepona.aerioncloud.com
+  -  ookla-falkenstein.aerioncloud.com
   -  ookla-germany01.tropicalgames.net
   -  ookla-in.mercuryfiber.com
   -  ookla-in.salt.ch
@@ -1855,9 +1892,11 @@ domain_set:
   -  ookla-speedtest.starverse.network
   -  ookla-speedtest.starverse.network.prod.hosts.ooklaserver.net
   -  ookla-speedtest.tkrz.de
+  -  ookla-stealthbroadband-norfolk-10g.stealthbroadband.com
   -  ookla-sub.barokah.net.id
   -  ookla-test.netexpressrd.com.br
   -  ookla-tga.kinect.co.nz
+  -  ookla-toronto.aerioncloud.com
   -  ookla-tru2.movistar.pe
   -  ookla-was2.movistar.pe
   -  ookla.1.me
@@ -1874,7 +1913,9 @@ domain_set:
   -  ookla.africell.ao
   -  ookla.agilinformatica.com
   -  ookla.agnetbandalarga.com.br
+  -  ookla.aipinternetspeedtest.com.br
   -  ookla.airbridgebroadband.com
+  -  ookla.akton.hr
   -  ookla.aljeel.ly
   -  ookla.alsavanetwork.com
   -  ookla.alyrica.net
@@ -1942,6 +1983,7 @@ domain_set:
   -  ookla.dgtelecomdns.com.br
   -  ookla.digicontrol.com.br
   -  ookla.dmlink.com.br
+  -  ookla.dns-net.de
   -  ookla.dt8.as6453.net
   -  ookla.dus-02.testpub.telefonica.de
   -  ookla.eclipset.net.br
@@ -2009,11 +2051,13 @@ domain_set:
   -  ookla.hslink.com.br
   -  ookla.huythedev.com
   -  ookla.ibanet-telecom.com.br
+  -  ookla.ibiunet.com.br
   -  ookla.iclixhosting.co.za
   -  ookla.idc3d.mitrainet.co.id
   -  ookla.idc3d.proxinet.co.id
   -  ookla.ideanet.net.id
   -  ookla.idnet.id
+  -  ookla.idnet.net
   -  ookla.ignite.gsc.dbbs.ph
   -  ookla.infolinkbroadband.com
   -  ookla.infor.net.br
@@ -2040,6 +2084,7 @@ domain_set:
   -  ookla.jspnet.inf.br
   -  ookla.kayroslink.com.br
   -  ookla.kernwifi.com.au
+  -  ookla.kgwifi.com
   -  ookla.kk.as6453.net
   -  ookla.koba.pl
   -  ookla.kues-data.de
@@ -2072,6 +2117,7 @@ domain_set:
   -  ookla.martekcomm.com
   -  ookla.maxcloud.id
   -  ookla.mbspeed.net
+  -  ookla.mbspeed.net.prod.hosts.ooklaserver.net
   -  ookla.mci-1.serverforge.org
   -  ookla.mdl.net.id
   -  ookla.me1.neptune.net.au
@@ -2117,6 +2163,7 @@ domain_set:
   -  ookla.netweblink.com.br
   -  ookla.neuviz.net.id
   -  ookla.newnetprovedor.net.br
+  -  ookla.newwavenet.net.br
   -  ookla.nova.net.br
   -  ookla.novanetudi.com.br
   -  ookla.novasatwifi.com.br
@@ -2136,6 +2183,7 @@ domain_set:
   -  ookla.pas.net.id
   -  ookla.pass.net.id
   -  ookla.paulonet.srv.br
+  -  ookla.pawfoliobreeder.com
   -  ookla.pclink.net.br
   -  ookla.pcserviceplus.net.ve
   -  ookla.permata.net.id
@@ -2301,6 +2349,7 @@ domain_set:
   -  ookla2.homeip.net
   -  ookla2.infra.uvtnet.cz
   -  ookla2.mbspeed.net
+  -  ookla2.mbspeed.net.prod.hosts.ooklaserver.net
   -  ookla2.mlconnect.com
   -  ookla2.ooredoo.com.kw
   -  ookla2.vmax.net.br
@@ -2349,7 +2398,9 @@ domain_set:
   -  ooklaserver.citylink.pl
   -  ooklaserver.cloud.tri.tv.br
   -  ooklaserver.cotecal.com.ar
+  -  ooklaserver.dentanet.id
   -  ooklaserver.fdwy.nobullnetworks.net
+  -  ooklaserver.fdwy.nobullnetworks.net.prod.hosts.ooklaserver.net
   -  ooklaserver.g3link.psi.br
   -  ooklaserver.gecom.sk
   -  ooklaserver.hna.net.id
@@ -2366,6 +2417,7 @@ domain_set:
   -  ooklaserver.venonconnect.net.br
   -  ooklaserver01.nipbr.com.br
   -  ooklaserver1-del1.skymaxbroadband.com
+  -  ooklaserverngk.trimitra.net.id
   -  ooklaservernoc.calfibra.com.ar
   -  ooklaspeed.reajnet.com.br
   -  ooklaspeed.satcomm.pk
@@ -2394,6 +2446,7 @@ domain_set:
   -  ooklatestnoida.live.vodafone.in
   -  ooklatins.redeconexaonet.com
   -  ooklatpt.pcserviceplus.net.ve
+  -  ooklatubod.caltechcomputer.com
   -  ooklavhsa.homedns.org
   -  ooklavte.laotel.com
   -  ooklay2.skynet360.com
@@ -2422,6 +2475,7 @@ domain_set:
   -  ospeed1.cruzio.com.prod.hosts.ooklaserver.net
   -  osr-srv-spdprd-001.verointernet.com.br
   -  ost02.whidbey.net
+  -  ost02.whidbey.net.prod.hosts.ooklaserver.net
   -  ost1.epic.net.cy
   -  ost2.epic.net.cy
   -  ost3.epic.net.cy
@@ -2433,6 +2487,7 @@ domain_set:
   -  ox-speedtest.oxentenet.com
   -  oxfrma-speedtest-ookla-01.st.charter.com
   -  oxygn.zapto.org
+  -  ozi.mdnet.co.id
   -  pacespeedtest.pace-tel.com
   -  pachuca.speedtest.totalplay.com.mx
   -  padang.speedtest.telkom.net.id
@@ -2444,6 +2499,7 @@ domain_set:
   -  pandeglang.siber.net.id
   -  pangkalanbun.trisuladata.net.id
   -  par.host.speedtest.net
+  -  par.speedtest.gslnetworks.com
   -  par1speedtest01.skylogic.com
   -  partner.superfast.net.pk
   -  pasuruan.speedtest.telkom.net.id
@@ -2600,6 +2656,7 @@ domain_set:
   -  ranchi-speedtest.ishancloud.com
   -  randomlake-speedtest1.as36001.net
   -  rangkas.siber.net.id
+  -  rangkasbitung.rajasa.net.id
   -  rapidex.brsserver.com.br
   -  rapido.izhnt.ru
   -  raslavice.mcom.sk
@@ -2660,6 +2717,7 @@ domain_set:
   -  rsp1.jbnettelecom.com.br
   -  rtlo-ookla-speed-eza.redtelo.net
   -  rtlo-ookla-speed-int.redtelo.net
+  -  rwpspeedtest.ptcl.net
   -  rychlost.poda.cz
   -  ryd.myspeed.net.sa
   -  rygsp1.myaisfibre.com
@@ -2674,6 +2732,7 @@ domain_set:
   -  sa-prka-st1.speedtest.aarnet.net.au
   -  sa.speedtest.exetel.com.au
   -  sa.speedtest.leaptel.com.au
+  -  sagaranten.rajasa.net.id
   -  sahuarita.speedtest.bluespan.com
   -  sai.isp.krutarth.network
   -  saint-paul2.speedtest.centurylink.net
@@ -2689,6 +2748,7 @@ domain_set:
   -  samsun.hizinitestet.com
   -  sane-jaen.sharknet.ph
   -  sanfrancisco.getstreamhosting.com
+  -  sanjoseiturbide.openti.mx
   -  sanjuandelrio.speedtest.totalplay.com.mx
   -  sanluispotosi.speedtest.totalplay.com.mx
   -  sanmigueldeallende.speedtest.totalplay.com.mx
@@ -2728,14 +2788,19 @@ domain_set:
   -  se-speedtest.1cent.host
   -  se.altushost.com
   -  sea-speedtest.net.sangoma.net
+  -  sea-speedtest.net.sangoma.net.prod.hosts.ooklaserver.net
   -  sea.speedtest.gslnetworks.com
+  -  sea.speedtest.gslnetworks.com.prod.hosts.ooklaserver.net
   -  sea.st.spacecore.pro
+  -  sea.st.spacecore.pro.prod.hosts.ooklaserver.net
   -  seattle.speedtest.centurylink.net
   -  seawa00-speedtest.etstelco.com
+  -  seawa00-speedtest.etstelco.com.prod.hosts.ooklaserver.net
   -  sec.speedtest.railtel.in
   -  secaucus.nj.speedtest.frontier.com
   -  secretspeedsterserver2364.cpe.nj.crnrstn.comcast.net
   -  seednet-tc1.seed.net.tw
+  -  seednet-tc1.seed.net.tw.prod.hosts.ooklaserver.net
   -  seednet-ty1.seed.net.tw
   -  seednet-ty1.seed.net.tw.prod.hosts.ooklaserver.net
   -  sem-st-01.kcell.kz
@@ -2759,6 +2824,7 @@ domain_set:
   -  server.gkgnetwork.com.br
   -  server.joantv.net
   -  server.neticabo.com.br
+  -  server.nns.co.id
   -  server.servicomjc.com.co
   -  server.teraisp.net
   -  server.tvzona.net
@@ -2823,6 +2889,9 @@ domain_set:
   -  shm-st-01.kcell.kz
   -  shm-st10g.2day.kz
   -  shreveport.speedtest.brightspeed.com
+  -  sht-ookla01.celcomdigi.com
+  -  sht-ookla02.celcomdigi.com
+  -  sht-ookla03.celcomdigi.com
   -  shtookla02.maxis.com.my
   -  shushufindispeed.biossistemas.ec
   -  shymkent-01.speedtest.telco.ftel.kz
@@ -2881,6 +2950,7 @@ domain_set:
   -  smfsa0001speedtestserver01.wiline.com
   -  smg.dcity.id
   -  smiguel.speedtest.nos-acores.pt
+  -  smknpakisaji.sch.id
   -  smp-st.astel.kz
   -  smrc-speedtest-02.brightspeed.com
   -  smtest.supermedia.pl
@@ -3215,6 +3285,7 @@ domain_set:
   -  sp1.ovio.am
   -  sp1.paideguanetwork.com.br
   -  sp1.paiminternet.com.br
+  -  sp1.panaromabroadband.in
   -  sp1.patagoniaip.cl
   -  sp1.pegonet.sk
   -  sp1.pinecomm.net
@@ -3240,6 +3311,7 @@ domain_set:
   -  sp1.rbt.psi.br
   -  sp1.rdfnet.com.br
   -  sp1.realtel.in
+  -  sp1.redebestnettelecom.com.br
   -  sp1.redecom.net.br
   -  sp1.redenettelecom-ce.com.br
   -  sp1.redeviaconnect.net.br
@@ -3274,6 +3346,7 @@ domain_set:
   -  sp1.sulconnect.com.br
   -  sp1.superlinkprovedor.com.br
   -  sp1.supernetes.net.br
+  -  sp1.supnet.com.br
   -  sp1.suprifibra.com.br
   -  sp1.suprinet.net.br
   -  sp1.swissnetwork.ch
@@ -3374,6 +3447,7 @@ domain_set:
   -  sp2.semfronteiras.net.br
   -  sp2.sitsa.com.ar
   -  sp2.snu.in
+  -  sp2.souconectanet.com.br
   -  sp2.telered.es
   -  sp2.telgo.com.br
   -  sp2.unpl.co.in
@@ -3456,6 +3530,7 @@ domain_set:
   -  spd.alyfibra.com.br
   -  spd.amigosfibra.com.br
   -  spd.cianetwork.com.br
+  -  spd.clicknetconnect.com.br
   -  spd.clite.com.br
   -  spd.cndd.net
   -  spd.dimension5.co.za
@@ -3478,6 +3553,7 @@ domain_set:
   -  spd.rnetfibra.com.br
   -  spd.salesnettelecom.com.br
   -  spd.sitetelecom.net.br
+  -  spd.speedytelecom.com.br
   -  spd.spiretel.in
   -  spd.teonet.com.br
   -  spd.tmkultra.com.br
@@ -3555,6 +3631,7 @@ domain_set:
   -  spd79.claro.com.br
   -  spd80.claro.com.br
   -  spd82.claro.com.br
+  -  spdblt.nalendra.net.id
   -  spdf.fastpath.gr
   -  spdha.getlinks.net.pk
   -  spdookla.facilnet.net.br
@@ -3563,6 +3640,7 @@ domain_set:
   -  spdookla.tnetprovedor.com.br
   -  spdookla10g.noanet.net
   -  spdookla10g0201.noanet.net
+  -  spdookla10g0201.noanet.net.prod.hosts.ooklaserver.net
   -  spdpnb.grupoabenet.com.br
   -  spdt.digitalfibraotica.com.br
   -  spdt.encnusantara.net
@@ -3651,6 +3729,7 @@ domain_set:
   -  speed-jab-01.ioh.co.id
   -  speed-jesenice.jmnet.cz
   -  speed-jkt.claranet.id
+  -  speed-jkt.simtek.co.id
   -  speed-jxn1.cspirefiber.com
   -  speed-jzn.ired.net.br
   -  speed-kaunas.telia.lt
@@ -3752,6 +3831,7 @@ domain_set:
   -  speed.as151799.net.au
   -  speed.asadigitalinternet.com.br
   -  speed.atpfibra.com.br
+  -  speed.azulinternet.ar
   -  speed.banyuwangikab.go.id
   -  speed.bctelecom.com.br
   -  speed.beachnet.com.br
@@ -3859,6 +3939,7 @@ domain_set:
   -  speed.duoslinks.com.pk
   -  speed.dwnet.com.br
   -  speed.e-netkomp.pl
+  -  speed.econett.com.br
   -  speed.edgeconnect.co.za
   -  speed.ednet-telecom.com.br
   -  speed.edstelecom.com.br
@@ -3872,6 +3953,7 @@ domain_set:
   -  speed.empetel.com.br
   -  speed.emtechnet.com.br
   -  speed.epenthink.co.id
+  -  speed.eralpresit.com
   -  speed.esdasilvaredemeganet.com.br
   -  speed.especialnet.com.br
   -  speed.evernet.net.co
@@ -3945,6 +4027,7 @@ domain_set:
   -  speed.hysing.is
   -  speed.iacuonline.com.br
   -  speed.ibh.net
+  -  speed.idealnet.app.br
   -  speed.ideanet.net.id
   -  speed.ifxnw.com.ve
   -  speed.ih-net.al
@@ -4018,6 +4101,7 @@ domain_set:
   -  speed.lordnet.net
   -  speed.lrminternet.com.br
   -  speed.luxfibra.net.br
+  -  speed.lyallpurtelecom.com.pk
   -  speed.mainonecable.com
   -  speed.majumapan.info
   -  speed.malang.net.in
@@ -4249,12 +4333,14 @@ domain_set:
   -  speed.tibo.al
   -  speed.time.com.my
   -  speed.tmknet.com.br
+  -  speed.tnahosting.net
   -  speed.topnetjaguar.com.br
   -  speed.topoficial.com.br
   -  speed.toronto.telmax.ca
   -  speed.totalrv.com.br
   -  speed.tritan-bb.net
   -  speed.tropicalnetfsa.com.br
+  -  speed.ttsn.net.pk
   -  speed.tudoall.com.br
   -  speed.turbonetce.com.br
   -  speed.turbonetprovider.com.br
@@ -4444,6 +4530,7 @@ domain_set:
   -  speed2.systemtelecomunicacoes.com.br
   -  speed2.teraisp.com
   -  speed2.transoceanet.com
+  -  speed2.ultranetdvn.com.br
   -  speed2.velloznet.com.br
   -  speed2.wibo.mx
   -  speed2.wifinetsystem.com.ar
@@ -4501,6 +4588,7 @@ domain_set:
   -  speedcn.viatectelecom.com.br
   -  speedcori.teleimpiantisrl.net
   -  speedcorrente.suprinettelecom.com.br
+  -  speedcristal.cristalinternet.com.br
   -  speedcruz.turbosp.com.br
   -  speeddelhi.zeonet.co.in
   -  speeddigitalnet.inetcon.com.br
@@ -4583,7 +4671,9 @@ domain_set:
   -  speedmirante.pontalnet.com.br
   -  speedmjk.homeplay.web.id
   -  speedmn.gatewayfiber.net
+  -  speedmogi.rainternet.com.br
   -  speedmtp.quattrocom.mx
+  -  speedmum.n-tel.in
   -  speedmurcia.fibranet.tv
   -  speedmvn.mvntele.com
   -  speedn.acessosimples.net.br
@@ -4674,6 +4764,7 @@ domain_set:
   -  speedsse.conectainter.net.br
   -  speedssn.sembrani.my.id
   -  speedstz.turbosp.com.br
+  -  speedt-mi.lakenetworks.it
   -  speedt-mi.skycdn.it
   -  speedt-rm.skycdn.it
   -  speedt.agilitycrv.com.br
@@ -4756,6 +4847,7 @@ domain_set:
   -  speedtest-ath.inalan.gr
   -  speedtest-atl.conexonconnect.com
   -  speedtest-atl.melbicom.net
+  -  speedtest-atlanta.ripplefiber.com
   -  speedtest-auckland.spark.co.nz
   -  speedtest-aus.chainlinkhosting.com
   -  speedtest-avei.vodafone.pt
@@ -4913,6 +5005,7 @@ domain_set:
   -  speedtest-dc1.sulnet.net.br
   -  speedtest-dcy.ideatek.com
   -  speedtest-de.sonnleitner-it.de
+  -  speedtest-delhi.xtremefiber.in
   -  speedtest-delicias.nidix.mx
   -  speedtest-demak.demak.online
   -  speedtest-demak.menaracloud.com
@@ -4923,6 +5016,7 @@ domain_set:
   -  speedtest-dfw.dish-wireless.com
   -  speedtest-dh.subisu.net.np
   -  speedtest-dhk.carnival.com.bd
+  -  speedtest-din.rapidnet.co.in
   -  speedtest-dnvr.mynextlight.net
   -  speedtest-dpr.advaix.com
   -  speedtest-dpr.domonet.ua
@@ -4933,6 +5027,7 @@ domain_set:
   -  speedtest-eastburwood.optusnet.com.au
   -  speedtest-eastern.tm.com.my
   -  speedtest-ebw.telta.de
+  -  speedtest-edinburgh.vodafone.co.uk
   -  speedtest-eldorado.azza.net.br
   -  speedtest-elp100g.transtelco.net
   -  speedtest-embu-das-artes.azza.net.br
@@ -5101,6 +5196,7 @@ domain_set:
   -  speedtest-kkn1.ais-idc.net
   -  speedtest-kl.netgroup.ua
   -  speedtest-klg.tm.com.my
+  -  speedtest-kol.rapidnet.co.in
   -  speedtest-kol.speednetkolkata.com
   -  speedtest-kr.the.hosting
   -  speedtest-kr.the.hosting.prod.hosts.ooklaserver.net
@@ -5207,6 +5303,7 @@ domain_set:
   -  speedtest-melbourne.optusnet.com.au
   -  speedtest-mer100g.transtelco.net
   -  speedtest-mercurio.visionsatelital.com.co
+  -  speedtest-meulaboh.telnet.net.id
   -  speedtest-mhn01.gtpl.net
   -  speedtest-mi.enegan.it
   -  speedtest-mi1.cloudfire.it
@@ -5251,6 +5348,7 @@ domain_set:
   -  speedtest-mty100g.transtelco.net
   -  speedtest-muc.ffmuc.net
   -  speedtest-mum.froze.in
+  -  speedtest-mumbai.scify.co.in
   -  speedtest-mur.avanzafibra.net
   -  speedtest-mur.cableworld.es
   -  speedtest-mv-1.zoominternet.net
@@ -5280,6 +5378,7 @@ domain_set:
   -  speedtest-nix-2.redi.es
   -  speedtest-njf.asiacell.com
   -  speedtest-nl.bellaliant.net
+  -  speedtest-nl.cloudlease.co.il
   -  speedtest-nl.eastlink.ca
   -  speedtest-nl.hyperfilter.com
   -  speedtest-nl.the.hosting
@@ -5388,6 +5487,7 @@ domain_set:
   -  speedtest-ptn01.gtpl.net
   -  speedtest-ptn1.3bb.co.th
   -  speedtest-ptor.waveip.org
+  -  speedtest-ptor.waveip.org.prod.hosts.ooklaserver.net
   -  speedtest-pty1.ais-idc.net
   -  speedtest-puerto-cabello.fibextelecom.net
   -  speedtest-pup.coelhotecnologia.com.br
@@ -5417,6 +5517,7 @@ domain_set:
   -  speedtest-ro.the.hosting
   -  speedtest-rochester.greenlightnetworks.com
   -  speedtest-rockingham.optusnet.com.au
+  -  speedtest-rod-10g.emtelnet.com
   -  speedtest-roma.proxad.it
   -  speedtest-ronca.wifiweb.it
   -  speedtest-rp.verte.cloud
@@ -5458,6 +5559,7 @@ domain_set:
   -  speedtest-sdm.bbg.psi.br
   -  speedtest-sdt.cosys.cc
   -  speedtest-seattle.ripplefiber.com
+  -  speedtest-seattle.ripplefiber.com.prod.hosts.ooklaserver.net
   -  speedtest-sere.grupogtd.com
   -  speedtest-serve.servimast.com
   -  speedtest-server-02.dakotacentral.com
@@ -5537,6 +5639,7 @@ domain_set:
   -  speedtest-syr.northland.net
   -  speedtest-tabuk.sa.zain.com
   -  speedtest-tac1.gigabitnow.com
+  -  speedtest-tac1.gigabitnow.com.prod.hosts.ooklaserver.net
   -  speedtest-tampere.lounea.fi
   -  speedtest-tb.yettel.hu
   -  speedtest-tbg.aneka.net.id
@@ -5571,6 +5674,7 @@ domain_set:
   -  speedtest-tsm.gms.net.id
   -  speedtest-tsr.keralavisionisp.com
   -  speedtest-tts.lmpl.net
+  -  speedtest-tuban.lhost.net.id
   -  speedtest-tus-az.ngxnetworks.net
   -  speedtest-tvm.keralavisionisp.com
   -  speedtest-ubn1.3bb.co.th
@@ -5608,6 +5712,7 @@ domain_set:
   -  speedtest-wa-dbn.as20011.net
   -  speedtest-wa-jhb.as20011.net
   -  speedtest-wa.waveip.org
+  -  speedtest-wa.waveip.org.prod.hosts.ooklaserver.net
   -  speedtest-waw.retn.net
   -  speedtest-wbrn.waveip.org
   -  speedtest-wc.surf4life.co.za
@@ -5652,6 +5757,7 @@ domain_set:
   -  speedtest.3.dk
   -  speedtest.365services.in
   -  speedtest.37sur.com
+  -  speedtest.3angel.net
   -  speedtest.3ax.com.br
   -  speedtest.3dnet.net.br
   -  speedtest.3dtelecom.com.br
@@ -5689,6 +5795,7 @@ domain_set:
   -  speedtest.aaac.pk
   -  speedtest.aabroadband.in
   -  speedtest.abdo77.com
+  -  speedtest.abibd.com
   -  speedtest.abifiber.id
   -  speedtest.abinet.id
   -  speedtest.abisson-net.com.br
@@ -5834,6 +5941,7 @@ domain_set:
   -  speedtest.akbarprimamedia.id
   -  speedtest.akdnet.net
   -  speedtest.akicelsatinter.com.br
+  -  speedtest.aknet.net.br
   -  speedtest.akomp.pl
   -  speedtest.aktau.telecom.kz
   -  speedtest.aktobe.telecom.kz
@@ -5932,9 +6040,11 @@ domain_set:
   -  speedtest.ams0.nl.as61049.net
   -  speedtest.ams1.hivelocity.net
   -  speedtest.amscloud.co.id
+  -  speedtest.amsterdam.valtrix.org
   -  speedtest.amteck.net.br
   -  speedtest.anand.charotarbroadband.in
   -  speedtest.anc.inter.com.ve
+  -  speedtest.andalanmediaraya.net
   -  speedtest.andels.net
   -  speedtest.andinared.com
   -  speedtest.andinatel.pe
@@ -5946,6 +6056,7 @@ domain_set:
   -  speedtest.anschlusswerk.net
   -  speedtest.ansluten.net
   -  speedtest.ansolution.id
+  -  speedtest.anten.net.id
   -  speedtest.antennaworld.hu
   -  speedtest.antik.sk
   -  speedtest.antisatelecom.es
@@ -5991,6 +6102,7 @@ domain_set:
   -  speedtest.arkadata.co.id
   -  speedtest.arktel.in
   -  speedtest.arlab.com.ar
+  -  speedtest.arlequim.com
   -  speedtest.armix.am
   -  speedtest.arnetelecom.com.br
   -  speedtest.arrownet.com.np
@@ -6003,6 +6115,7 @@ domain_set:
   -  speedtest.artelco.net
   -  speedtest.artelecom.com.br
   -  speedtest.artennet.com.br
+  -  speedtest.arthaloka-teknologi.co.id
   -  speedtest.artkom.az
   -  speedtest.artmotion.net
   -  speedtest.artnet.pl
@@ -6080,6 +6193,7 @@ domain_set:
   -  speedtest.axclusive.com.sg
   -  speedtest.axclusive.com.sg.prod.hosts.ooklaserver.net
   -  speedtest.axigent.net
+  -  speedtest.axindo.net.id
   -  speedtest.axsbolivia.com
   -  speedtest.axtelnetworks.mx
   -  speedtest.ayd-info.com
@@ -6148,6 +6262,7 @@ domain_set:
   -  speedtest.bcn.byfi.tech
   -  speedtest.bcn.indaleccius.com
   -  speedtest.bcn.netcloudify.net
+  -  speedtest.bcndigitaltv.com
   -  speedtest.bcnetpi.net.br
   -  speedtest.bdconnectctg.net
   -  speedtest.bdcwireless.co.za
@@ -6168,6 +6283,7 @@ domain_set:
   -  speedtest.bellacom.com.pk
   -  speedtest.bellaliant.net
   -  speedtest.bellevueia.gov
+  -  speedtest.belltele.in
   -  speedtest.belmontcountygig.com
   -  speedtest.belpak.brest.by
   -  speedtest.bemol.com.br
@@ -6245,6 +6361,7 @@ domain_set:
   -  speedtest.bluenapamericas.com
   -  speedtest.bluevalley.net
   -  speedtest.bluewave.bm
+  -  speedtest.blufibre.ca
   -  speedtest.bluperu.pe
   -  speedtest.blz.com.br
   -  speedtest.bmflex.net.br
@@ -6294,6 +6411,7 @@ domain_set:
   -  speedtest.brawnettelecom.com.br
   -  speedtest.brconnect.net.br
   -  speedtest.breedband.nl
+  -  speedtest.brenoconnectpe.com.br
   -  speedtest.bri01.launtel.net.au
   -  speedtest.bridgenet.com.br
   -  speedtest.brightstarnetwork.net.bd
@@ -6337,6 +6455,7 @@ domain_set:
   -  speedtest.buriti.net.br
   -  speedtest.businesszoneltd.com
   -  speedtest.butanonet.com.br
+  -  speedtest.buzzardhub.xyz
   -  speedtest.buzzbroadband.com
   -  speedtest.bvconline.com.ar
   -  speedtest.bwc.im
@@ -6371,6 +6490,7 @@ domain_set:
   -  speedtest.cablenethn.com
   -  speedtest.cableredperu.com
   -  speedtest.cablesatelite.com
+  -  speedtest.cablesistemas.pe
   -  speedtest.cableunion.pe
   -  speedtest.cablevision.at
   -  speedtest.cablevisionjarabacoa.com
@@ -6417,6 +6537,7 @@ domain_set:
   -  speedtest.cariranet.com.br
   -  speedtest.carnet.hr
   -  speedtest.carolinaconnect.com
+  -  speedtest.carrinter.net
   -  speedtest.cas.net.br
   -  speedtest.cascadecomm.com
   -  speedtest.casscomm.com
@@ -6435,6 +6556,7 @@ domain_set:
   -  speedtest.cbr.net.id
   -  speedtest.cbxfibra.com.br
   -  speedtest.cc.kg
+  -  speedtest.cccnet.in
   -  speedtest.cceca.net
   -  speedtest.ccs.inter.com.ve
   -  speedtest.cct-llc.net
@@ -6521,17 +6643,20 @@ domain_set:
   -  speedtest.cimanuk.co.id
   -  speedtest.cindy.web.id
   -  speedtest.cinenetprovedor.com.br
+  -  speedtest.cinez4.com.br
   -  speedtest.ciplbihar.com
   -  speedtest.cirbn.net
   -  speedtest.circlebwirelessllc.com
   -  speedtest.circlefiber.com
   -  speedtest.cirebon.telkomsel.com
   -  speedtest.cit.net.br
+  -  speedtest.citconecta.net
   -  speedtest.citelia.es
   -  speedtest.citicableworld.com
   -  speedtest.citizens.coop
   -  speedtest.citnet.psi.br
   -  speedtest.cits.net.pk
+  -  speedtest.city-dotnet.com
   -  speedtest.citycom-austria.com
   -  speedtest.cityhost.se
   -  speedtest.citylinkservices.co.in
@@ -6597,6 +6722,7 @@ domain_set:
   -  speedtest.cmsinter.net
   -  speedtest.cnc.rimtel.net.ec
   -  speedtest.cncbd.info
+  -  speedtest.cncbroadband.in
   -  speedtest.cnet.net.br
   -  speedtest.cnetoficial.com.br
   -  speedtest.cnetonline.net
@@ -6616,6 +6742,7 @@ domain_set:
   -  speedtest.codekece.com
   -  speedtest.codestudio.cloud
   -  speedtest.cogeco.ca
+  -  speedtest.cogentbroadband.net
   -  speedtest.cohabnetwork.com.br
   -  speedtest.col.inter.com.ve
   -  speedtest.col.megared.net.mx
@@ -6755,6 +6882,7 @@ domain_set:
   -  speedtest.coopesantos.com
   -  speedtest.cooptel.ca
   -  speedtest.coopvgg.com.ar
+  -  speedtest.copatel.com.br
   -  speedtest.copelnet.com.ar
   -  speedtest.copesnet.com.ar
   -  speedtest.coralcablevision.com
@@ -6853,6 +6981,7 @@ domain_set:
   -  speedtest.dalink.com.br
   -  speedtest.danar.net.pl
   -  speedtest.danatelfiber.com
+  -  speedtest.danisnet.md
   -  speedtest.darksystems.hu
   -  speedtest.darnet.eu
   -  speedtest.dascacable.com
@@ -6972,6 +7101,7 @@ domain_set:
   -  speedtest.digitaltelecom.srv.br
   -  speedtest.digitalvga.com.br
   -  speedtest.digitalwave.net.br
+  -  speedtest.digitaramedan.com
   -  speedtest.digitelss.com
   -  speedtest.dilife.net.br
   -  speedtest.diminternet.lviv.ua
@@ -7009,6 +7139,7 @@ domain_set:
   -  speedtest.dnsgiga.com.br
   -  speedtest.dnsgroup.id
   -  speedtest.dnvrco26.metronetinc.com
+  -  speedtest.doblernet.com.br
   -  speedtest.dod.hawaii.gov
   -  speedtest.dolnet.pl
   -  speedtest.dolomitinet.it
@@ -7018,6 +7149,7 @@ domain_set:
   -  speedtest.domonet.me
   -  speedtest.dongfong.com.tw
   -  speedtest.dongfong.com.tw.prod.hosts.ooklaserver.net
+  -  speedtest.doornet.mx
   -  speedtest.dotnet.id
   -  speedtest.dotsisnetwork.com
   -  speedtest.downloadnet.com.br
@@ -7045,6 +7177,7 @@ domain_set:
   -  speedtest.dukekunshan.edu.cn
   -  speedtest.dukunwifi.net
   -  speedtest.duobroadband.com
+  -  speedtest.duocast.net
   -  speedtest.duotel.com.br
   -  speedtest.durgawifi.in
   -  speedtest.dus.plusnet.de
@@ -7125,8 +7258,10 @@ domain_set:
   -  speedtest.elxireit.in
   -  speedtest.emenet.mx
   -  speedtest.emexinternet.com.br
+  -  speedtest.emlima.net
   -  speedtest.empireaccess.com
   -  speedtest.empiretech.com.kh
+  -  speedtest.empresascablevision.com
   -  speedtest.encotelecom.com
   -  speedtest.energotel.sk
   -  speedtest.enettelecom.net.br
@@ -7326,6 +7461,7 @@ domain_set:
   -  speedtest.fiberway.com.ar
   -  speedtest.fiberwi.com.br
   -  speedtest.fiberworld.net.np
+  -  speedtest.fiberx.al
   -  speedtest.fiberx.co.in
   -  speedtest.fiberx.com.mx
   -  speedtest.fiberztelecom.com
@@ -7391,6 +7527,7 @@ domain_set:
   -  speedtest.fiznet.id
   -  speedtest.fjtelecom.srv.br
   -  speedtest.fl1.li
+  -  speedtest.flamehost.com.br
   -  speedtest.flash.net.id
   -  speedtest.flash.srv.br
   -  speedtest.flashband-internet.com
@@ -7428,6 +7565,7 @@ domain_set:
   -  speedtest.flynet.net.br
   -  speedtest.flynetospl.com
   -  speedtest.flynetwifi.com
+  -  speedtest.fm
   -  speedtest.fmnetworks.net
   -  speedtest.fnet.am
   -  speedtest.fnet.com.bd
@@ -7438,6 +7576,7 @@ domain_set:
   -  speedtest.fnxtelecom.net.br
   -  speedtest.fob.ng
   -  speedtest.foboss.net
+  -  speedtest.focusonlinectg.com
   -  speedtest.fonexiabroadband.com
   -  speedtest.fonira.at
   -  speedtest.forcebb.net
@@ -7465,6 +7604,7 @@ domain_set:
   -  speedtest.francanetisp.com.br
   -  speedtest.frankfurt-am-main.valtrix.org
   -  speedtest.franklinepb.net
+  -  speedtest.frantic.link
   -  speedtest.free.sn
   -  speedtest.freecomsrl.com
   -  speedtest.freedomfiber.com
@@ -7606,9 +7746,11 @@ domain_set:
   -  speedtest.gln.jkt.gayatri.net.id
   -  speedtest.glo1.gloworld.com
   -  speedtest.global-layer.com
+  -  speedtest.globalcableca.net
   -  speedtest.globalcomtecnologia.com
   -  speedtest.globalconnect.cl
   -  speedtest.globalfiber.com.co
+  -  speedtest.globalfiberbrasil.com.br
   -  speedtest.globalinfotelecom.net.br
   -  speedtest.globalkoneksi.co.id
   -  speedtest.globalnet.id
@@ -7759,6 +7901,7 @@ domain_set:
   -  speedtest.guadalajara.bestel.com.mx
   -  speedtest.guallinet.ec
   -  speedtest.guam.net
+  -  speedtest.guaptelnet.com.br
   -  speedtest.guareze.com.br
   -  speedtest.gubug.satulimanet.id
   -  speedtest.guj.vodafoneidea.com
@@ -7788,6 +7931,7 @@ domain_set:
   -  speedtest.hata.net.ua
   -  speedtest.hawaiidt.com
   -  speedtest.hay.net
+  -  speedtest.hazalhost.com
   -  speedtest.hbci.com
   -  speedtest.hckrncaa.metronetinc.com
   -  speedtest.hctc.net
@@ -7907,6 +8051,7 @@ domain_set:
   -  speedtest.i9telecomms.com.br
   -  speedtest.iacunet.com.br
   -  speedtest.iad01.wdc.pilotfiber.com
+  -  speedtest.iba.ng.canalbox.net
   -  speedtest.ibertic.es
   -  speedtest.ibltelecom.com.br
   -  speedtest.ibred.es
@@ -7918,6 +8063,7 @@ domain_set:
   -  speedtest.icn.am
   -  speedtest.icn.com.bd
   -  speedtest.icolite.com
+  -  speedtest.iconfiber.co.ke
   -  speedtest.iconnectsfs.com.br
   -  speedtest.icostelecom.com.br
   -  speedtest.icta.az
@@ -7987,6 +8133,7 @@ domain_set:
   -  speedtest.indosatooredoo.com
   -  speedtest.indynet.net.ec
   -  speedtest.ines.ro
+  -  speedtest.inet-cyt.com
   -  speedtest.inet-work.co
   -  speedtest.inet.com.ve
   -  speedtest.inetfiber.net
@@ -8012,6 +8159,7 @@ domain_set:
   -  speedtest.info-bras.net.br
   -  speedtest.info-net.org.pl
   -  speedtest.infobarranet.com.br
+  -  speedtest.infobd24.com
   -  speedtest.infobyte.net.ua
   -  speedtest.infocom.zp.ua
   -  speedtest.infocomltd.net
@@ -8129,6 +8277,7 @@ domain_set:
   -  speedtest.internetoreo.co.id
   -  speedtest.internetpontocom.com.br
   -  speedtest.internetport.se
+  -  speedtest.internetsierraschicas.com.ar
   -  speedtest.internetsuarez.com.ar
   -  speedtest.internetsubway.com
   -  speedtest.internettelecom.com.br
@@ -8140,6 +8289,7 @@ domain_set:
   -  speedtest.internetytvhd.com
   -  speedtest.internex.com.pe
   -  speedtest.internitrotelecom.com.br
+  -  speedtest.interone.com.br
   -  speedtest.interplus.com.br
   -  speedtest.interplus.com.pl
   -  speedtest.interplus.online
@@ -8158,6 +8308,7 @@ domain_set:
   -  speedtest.interwifi.pl
   -  speedtest.intidataguna.id
   -  speedtest.intlink.com.br
+  -  speedtest.intouchsystems.co.uk
   -  speedtest.inttelgo.com
   -  speedtest.intv.com.co
   -  speedtest.inuvtelecom.com.br
@@ -8208,6 +8359,7 @@ domain_set:
   -  speedtest.isanett.net
   -  speedtest.isknet.id
   -  speedtest.islingtoncollege.edu.np
+  -  speedtest.ismayadjati.id
   -  speedtest.isoceltelecom.com
   -  speedtest.isp-intercol.com
   -  speedtest.isp.net
@@ -8221,6 +8373,7 @@ domain_set:
   -  speedtest.istv.uz
   -  speedtest.isuper.com.br
   -  speedtest.it.umich.edu
+  -  speedtest.itandtel.at
   -  speedtest.itatec.com.py
   -  speedtest.itatelecom.com.br
   -  speedtest.itatiaianet.com
@@ -8259,6 +8412,8 @@ domain_set:
   -  speedtest.iztelecom.com
   -  speedtest.jaaftecnologia.com.br
   -  speedtest.jackrabbitwireless.com
+  -  speedtest.jactos.net.br
+  -  speedtest.jaenuri.gayatri.net.id
   -  speedtest.jagoandata.com
   -  speedtest.jairolnetworks.com
   -  speedtest.jaironet.com.br
@@ -8440,6 +8595,7 @@ domain_set:
   -  speedtest.komitex.net
   -  speedtest.komogoto.com
   -  speedtest.konectamais.com.br
+  -  speedtest.konectatelecom.com.br
   -  speedtest.konnekteam.kz
   -  speedtest.konnet.com.br
   -  speedtest.konverto.eu
@@ -8518,6 +8674,7 @@ domain_set:
   -  speedtest.lax.gigenet.com
   -  speedtest.lax.hivelocity.net
   -  speedtest.lax1.nitelusa.net
+  -  speedtest.lax2.sonic.net
   -  speedtest.laxminetwork.com
   -  speedtest.layanenet.com.br
   -  speedtest.layanetwork.in
@@ -8537,6 +8694,7 @@ domain_set:
   -  speedtest.leadnet.com.br
   -  speedtest.lealnet.com.br
   -  speedtest.leaonet.com.br
+  -  speedtest.leapdigitals.com
   -  speedtest.lecc.co.ls
   -  speedtest.ledinfortelecom.com.br
   -  speedtest.leer.jonasdevries.de
@@ -8595,6 +8753,7 @@ domain_set:
   -  speedtest.linenet.com.br
   -  speedtest.linfortel.com.br
   -  speedtest.link.bm
+  -  speedtest.link4.com.br
   -  speedtest.linkamos.com.br
   -  speedtest.linkear.com.ar
   -  speedtest.linkexplorer.com.br
@@ -8610,6 +8769,7 @@ domain_set:
   -  speedtest.linknetpsi.com.br
   -  speedtest.linknetsb.com.br
   -  speedtest.linknetsolucoes.com.br
+  -  speedtest.linknetspeedtest.net.br
   -  speedtest.linkonetecnologia.com.br
   -  speedtest.linkselect.com.br
   -  speedtest.linkspeed.com.br
@@ -8628,6 +8788,7 @@ domain_set:
   -  speedtest.lintasmediasolusindo.com
   -  speedtest.lintasnet.id
   -  speedtest.linustep.eu
+  -  speedtest.liquidtelecom.co.bw
   -  speedtest.liquidtelecom.co.ke
   -  speedtest.liquidtelecom.co.ug
   -  speedtest.lirecom.com.do
@@ -8660,6 +8821,7 @@ domain_set:
   -  speedtest.localtelecom.com.br
   -  speedtest.lodrich.de
   -  speedtest.logon.com.pk
+  -  speedtest.logonbroadband.in
   -  speedtest.logotelecom.net.br
   -  speedtest.lombard.sk
   -  speedtest.lon1.edgoo.net
@@ -8689,6 +8851,7 @@ domain_set:
   -  speedtest.lucfibra.com.br
   -  speedtest.lucknet.net.br
   -  speedtest.lukestar.in
+  -  speedtest.lukman.pl
   -  speedtest.lumianetwork.it
   -  speedtest.luminatebroadband.com
   -  speedtest.luminet.cr
@@ -8887,6 +9050,7 @@ domain_set:
   -  speedtest.metrocom.cr
   -  speedtest.metrofibre.co.za
   -  speedtest.metronet.az
+  -  speedtest.metronet.ge
   -  speedtest.metropolisrp.de
   -  speedtest.metrouniv.ac.id
   -  speedtest.mevatel.cl
@@ -8895,6 +9059,7 @@ domain_set:
   -  speedtest.mexicarrier.mx
   -  speedtest.mexline.com
   -  speedtest.meyertelecom.com.br
+  -  speedtest.mflex.com.br
   -  speedtest.mgconecta.com.br
   -  speedtest.mgm1.jmfnetworks.net
   -  speedtest.mgnetmaceio.com.br
@@ -9020,9 +9185,11 @@ domain_set:
   -  speedtest.mrmfibra.com.br
   -  speedtest.mrnet.com.br
   -  speedtest.mrnet.hdcogroup.do
+  -  speedtest.mrnetfibra.com.br
   -  speedtest.mrtc.com
   -  speedtest.ms.sim.digital
   -  speedtest.ms.urip.id
+  -  speedtest.msbdcloud.com
   -  speedtest.msfiber.net
   -  speedtest.msmprovider.com.br
   -  speedtest.msnet.com.ve
@@ -9047,10 +9214,12 @@ domain_set:
   -  speedtest.mtl.cooptel.ca
   -  speedtest.mtl.telkel.ca
   -  speedtest.mtmbali.com
+  -  speedtest.mtn.net.sy
   -  speedtest.mtn.zm
   -  speedtest.mtnbusiness.ci
   -  speedtest.mtncongo.net
   -  speedtest.mtnet.hr
+  -  speedtest.mtnetworks.com.mx
   -  speedtest.mtnetworks.mn
   -  speedtest.mtnmax.net
   -  speedtest.mtnpcl.com
@@ -9068,6 +9237,7 @@ domain_set:
   -  speedtest.multilinkfibra.com.br
   -  speedtest.multimediatransdata.co.id
   -  speedtest.multinet.net.pl
+  -  speedtest.multisystemtelecom.net.br
   -  speedtest.multivelox.com.br
   -  speedtest.multnetfibra.com.br
   -  speedtest.multpontostelecom.com.br
@@ -9112,6 +9282,7 @@ domain_set:
   -  speedtest.myrnet.id
   -  speedtest.mysmbs.com
   -  speedtest.mytvalb.com
+  -  speedtest.mywnz.com
   -  speedtest.mzllo.megared.net.mx
   -  speedtest.mzlnet.com.br
   -  speedtest.mzt.megared.net.mx
@@ -9170,6 +9341,7 @@ domain_set:
   -  speedtest.nemturbofibra.com.br
   -  speedtest.nencycable.com
   -  speedtest.neofiber.it
+  -  speedtest.neofibra.net.br
   -  speedtest.neolinepb.com.br
   -  speedtest.neologonline.in
   -  speedtest.neomedia.it
@@ -9181,13 +9353,16 @@ domain_set:
   -  speedtest.nesparc.com
   -  speedtest.nessus.at
   -  speedtest.net-rosas.com.br
+  -  speedtest.net-sar.com
   -  speedtest.net.kirz.com
   -  speedtest.net.nhm.it
   -  speedtest.net.preanet-telecom.com.br
   -  speedtest.net.usf.edu
   -  speedtest.net.vutbr.cz
+  -  speedtest.net10ma.com.br
   -  speedtest.net11.com.br
   -  speedtest.net253.net
+  -  speedtest.net253.net.prod.hosts.ooklaserver.net
   -  speedtest.net360.cloud
   -  speedtest.net360.net.lb
   -  speedtest.net42.in
@@ -9274,6 +9449,7 @@ domain_set:
   -  speedtest.netplay.net.br
   -  speedtest.netplaza.fi
   -  speedtest.netplus.ba
+  -  speedtest.netplus.co.in
   -  speedtest.netplusinternet.com.br
   -  speedtest.netpoint.az
   -  speedtest.netpointspeed.com.br
@@ -9393,6 +9569,7 @@ domain_set:
   -  speedtest.nmt.celerium.net.br
   -  speedtest.nmu.edu
   -  speedtest.nobreaknetbandalarga.com.br
+  -  speedtest.nobrefibra.feira.br
   -  speedtest.noc.pe
   -  speedtest.nocglobal.net.br
   -  speedtest.nocisp.online
@@ -9448,6 +9625,7 @@ domain_set:
   -  speedtest.noxnetprovedor.com.br
   -  speedtest.nrbn.ca
   -  speedtest.nrflvaaa.metronetinc.com
+  -  speedtest.nrtj.rimtel.net.ec
   -  speedtest.ns.ondo.mn
   -  speedtest.nsg.itnettelecom.com.br
   -  speedtest.nsys.cz
@@ -9469,6 +9647,7 @@ domain_set:
   -  speedtest.nusaaksesmedia.co.id
   -  speedtest.nusadata.co.id
   -  speedtest.nusadata.co.id.prod.hosts.ooklaserver.net
+  -  speedtest.nusantara.net.id
   -  speedtest.nutt.co.id
   -  speedtest.nvnetwork.com.br
   -  speedtest.nvtel.com.br
@@ -9489,6 +9668,7 @@ domain_set:
   -  speedtest.octaplus.uk
   -  speedtest.octelinfonet.com
   -  speedtest.octopismart.co.za
+  -  speedtest.odyssey.uk
   -  speedtest.oecfiber.com
   -  speedtest.ofi.id
   -  speedtest.oficialnet.net.br
@@ -9616,6 +9796,7 @@ domain_set:
   -  speedtest.padang.telkomsel.com
   -  speedtest.padmaonlinebd.com
   -  speedtest.padmeshdigital.in
+  -  speedtest.padumcomputers.in
   -  speedtest.paglo.net.id
   -  speedtest.pakonek.com
   -  speedtest.palapa.net.id
@@ -9624,6 +9805,7 @@ domain_set:
   -  speedtest.palembang2.telkomsel.com
   -  speedtest.palmerone.com
   -  speedtest.panaybroadband.com.ph
+  -  speedtest.panhanetwork.net
   -  speedtest.panmtech.com
   -  speedtest.pannet.com.br
   -  speedtest.panservice.it
@@ -9677,6 +9859,7 @@ domain_set:
   -  speedtest.pernambucotel.com.br
   -  speedtest.persiancabletv.com
   -  speedtest.pesenergize.com
+  -  speedtest.petabyteindo.net
   -  speedtest.petitjeanfiber.com
   -  speedtest.petrarcasolucoes.com.br
   -  speedtest.petroinform.net
@@ -9704,6 +9887,7 @@ domain_set:
   -  speedtest.pindoramaonline.com.br
   -  speedtest.pineland.net
   -  speedtest.pinerichland.org
+  -  speedtest.ping.com.bd
   -  speedtest.pingless.com
   -  speedtest.pinguimtelecom.net.br
   -  speedtest.pioneer.co.in
@@ -9728,6 +9912,7 @@ domain_set:
   -  speedtest.planextelecom.com.br
   -  speedtest.planicienet.com.br
   -  speedtest.planters.net
+  -  speedtest.plasmanodes.com
   -  speedtest.plastcom.pl
   -  speedtest.playcomla.com.ar
   -  speedtest.playnettecnologia.com.br
@@ -9811,6 +9996,7 @@ domain_set:
   -  speedtest.presnet.sk
   -  speedtest.previder.net
   -  speedtest.prg.fdcservers.net
+  -  speedtest.primasaranabersama.com
   -  speedtest.primeispnet.com
   -  speedtest.primmusfibra.com.br
   -  speedtest.primonet.com.ua
@@ -9893,6 +10079,7 @@ domain_set:
   -  speedtest.qld.edgeix.net.au
   -  speedtest.qnecta.cat
   -  speedtest.qnetfacil.com.br
+  -  speedtest.qonekt.cw
   -  speedtest.qro.megared.net.mx
   -  speedtest.qsghosting.com
   -  speedtest.qsria.megared.net.mx
@@ -9929,6 +10116,7 @@ domain_set:
   -  speedtest.rapeedo.com.br
   -  speedtest.rapidexnet.com.br
   -  speedtest.rapidwifi.in
+  -  speedtest.rapnettelecom.net.br
   -  speedtest.rasmilink.co.ke
   -  speedtest.rateone.net
   -  speedtest.rathnaaspectra.com
@@ -9954,6 +10142,7 @@ domain_set:
   -  speedtest.reconet.co.id
   -  speedtest.redbirdcommunications.ca
   -  speedtest.redcentro.org
+  -  speedtest.redcom.ec
   -  speedtest.redeatel.com.br
   -  speedtest.redebrasil.net.br
   -  speedtest.redebrasiltelecom.com.br
@@ -10009,6 +10198,7 @@ domain_set:
   -  speedtest.rgnettelecom.com.br
   -  speedtest.rgol.com.br
   -  speedtest.rgprovider.com.br
+  -  speedtest.ridaonline.com
   -  speedtest.rikt.ru
   -  speedtest.rimatel.mr
   -  speedtest.ring.net.id
@@ -10054,6 +10244,7 @@ domain_set:
   -  speedtest.royalinternet.net
   -  speedtest.rpnspl.com
   -  speedtest.rptelecom.com.br
+  -  speedtest.rpworld.co.in
   -  speedtest.rrinternettelecom.com.br
   -  speedtest.rrnetmari.com.br
   -  speedtest.rsbsonline.in
@@ -10090,6 +10281,7 @@ domain_set:
   -  speedtest.safitelchad.com
   -  speedtest.saforwifi.es
   -  speedtest.saga.net.br
+  -  speedtest.sahinotomotiv.com
   -  speedtest.saidnettelecom.com.br
   -  speedtest.saileelas.in
   -  speedtest.sal.megared.net.mx
@@ -10127,6 +10319,7 @@ domain_set:
   -  speedtest.satpol.pl
   -  speedtest.satria.net.id
   -  speedtest.satsol.net
+  -  speedtest.sattelecom.net.br
   -  speedtest.sattelital.com.pe
   -  speedtest.sattlink.net
   -  speedtest.saudi.net.sa
@@ -10160,11 +10353,13 @@ domain_set:
   -  speedtest.sdt.goa2.airnetnetworks.com
   -  speedtest.sdvcomm.in
   -  speedtest.sea.accretive-networks.net
+  -  speedtest.sea.accretive-networks.net.prod.hosts.ooklaserver.net
   -  speedtest.seafiber.com.br
   -  speedtest.seaside.ns.ca
   -  speedtest.sebratel.net.br
   -  speedtest.sectornet.com.ar
   -  speedtest.securenetfiber.com
+  -  speedtest.segva.charotarbroadband.in
   -  speedtest.seitelbrs.com.br
   -  speedtest.sejaleven.com
   -  speedtest.sejalike.com.br
@@ -10195,6 +10390,7 @@ domain_set:
   -  speedtest.serviciosintercable.pe
   -  speedtest.servicteksas.com
   -  speedtest.servinetcomunicaciones-sas.com
+  -  speedtest.servinetwork.com.pe
   -  speedtest.servired.co
   -  speedtest.servitelecomsrl.com
   -  speedtest.servitelsoluciones.com
@@ -10216,6 +10412,7 @@ domain_set:
   -  speedtest.sgmnet.id
   -  speedtest.sgspl.tech
   -  speedtest.sgvtelecom.com.br
+  -  speedtest.shahramteleco.pk
   -  speedtest.shakh.tv
   -  speedtest.sharenetwork.io
   -  speedtest.shastacoe.net
@@ -10225,6 +10422,7 @@ domain_set:
   -  speedtest.sherwoodbroadband.com
   -  speedtest.shimkent.telecom.kz
   -  speedtest.shineplusnetworks.in
+  -  speedtest.shintabuana.co.id
   -  speedtest.shinternet.ch
   -  speedtest.shofa.net.id
   -  speedtest.shombra.com.br
@@ -10320,11 +10518,13 @@ domain_set:
   -  speedtest.skyinf.net
   -  speedtest.skylife.ec
   -  speedtest.skyline.kh.ua
+  -  speedtest.skylineiq.com
   -  speedtest.skylineworld.net
   -  speedtest.skylink-data-center.nl
   -  speedtest.skylinknetworks.co.ke
   -  speedtest.skynet-ks.com
   -  speedtest.skynet.am
+  -  speedtest.skynet.net.in
   -  speedtest.skynet.net.pl
   -  speedtest.skynetpe.com.br
   -  speedtest.skyplay.app
@@ -10447,6 +10647,7 @@ domain_set:
   -  speedtest.spectrabd.net
   -  speedtest.spectram.in
   -  speedtest.spectratelecomunicaciones.co
+  -  speedtest.spectrum-ghana.com
   -  speedtest.spectrumfiberblaze.com
   -  speedtest.spectrumnet.com.br
   -  speedtest.spectrumvoip.com
@@ -10464,6 +10665,7 @@ domain_set:
   -  speedtest.speednetpa.net.br
   -  speedtest.speednetpacaja.com.br
   -  speedtest.speednetwork.mx
+  -  speedtest.speedostar.com
   -  speedtest.speedostar.in
   -  speedtest.speedplus.in
   -  speedtest.speedtelecom.net.br
@@ -10575,12 +10777,14 @@ domain_set:
   -  speedtest.supercel.net.br
   -  speedtest.supercellnetwork.com
   -  speedtest.supercorridor.co.id
+  -  speedtest.superfibratelecom.com.br
   -  speedtest.superip.net.br
   -  speedtest.superlink.co.id
   -  speedtest.superlinkes.com.br
   -  speedtest.superlinktelecom.com.br
   -  speedtest.superlite.co.ke
   -  speedtest.supernet24.pl
+  -  speedtest.supernetbhutan.com
   -  speedtest.supernetelecom.com.br
   -  speedtest.supernetnettelecom.app.br
   -  speedtest.supernetwork.net.br
@@ -10676,6 +10880,7 @@ domain_set:
   -  speedtest.tcomp.net.br
   -  speedtest.tconect.net.br
   -  speedtest.tctelco.net
+  -  speedtest.tctv.ph
   -  speedtest.tctwest.net
   -  speedtest.tdanet.com.br
   -  speedtest.tdtdigital.mx
@@ -10732,6 +10937,7 @@ domain_set:
   -  speedtest.telecablesanchez.com
   -  speedtest.telecaravaca.com
   -  speedtest.telecasa.net
+  -  speedtest.telecel.com.gh
   -  speedtest.teleceliberia.com
   -  speedtest.telecom.com.fj
   -  speedtest.telecom.mu
@@ -10757,6 +10963,7 @@ domain_set:
   -  speedtest.telemach.ba
   -  speedtest.telemach.hr
   -  speedtest.telemach.net
+  -  speedtest.telemajo.com
   -  speedtest.telemas.com.sv
   -  speedtest.telematica.at
   -  speedtest.telemaxx.net
@@ -10818,6 +11025,7 @@ domain_set:
   -  speedtest.tetanet.cz
   -  speedtest.tevisat.net
   -  speedtest.texus.cl
+  -  speedtest.tezcom.net.pk
   -  speedtest.tfl.com.fj
   -  speedtest.tgb-host.com
   -  speedtest.tgr.inter.com.ve
@@ -10923,6 +11131,7 @@ domain_set:
   -  speedtest.trbandalarga.com.br
   -  speedtest.trcnet.fi
   -  speedtest.treelink.in
+  -  speedtest.treenet.com.co
   -  speedtest.trepicnetworks.com
   -  speedtest.trevointernet.com.br
   -  speedtest.tri-cogo.com
@@ -10948,10 +11157,12 @@ domain_set:
   -  speedtest.truthwifi.com
   -  speedtest.truvista.net
   -  speedtest.trymnetprovedor.com.br
+  -  speedtest.tscl.al.ogital.ai
   -  speedtest.tsnetwork.net.bd
   -  speedtest.tsnetworkpr.com
   -  speedtest.ttcl.co.tz
   -  speedtest.ttinet.com.br
+  -  speedtest.ttk-temirtau.kz
   -  speedtest.ttk-yakutsk.ru
   -  speedtest.ttnetwork.net
   -  speedtest.tty.fiberbro.com
@@ -10983,6 +11194,7 @@ domain_set:
   -  speedtest.tuwifi.cl
   -  speedtest.tvcableve.com
   -  speedtest.tvcabo.mz
+  -  speedtest.tvcolombiadigital.com
   -  speedtest.tvdatos.net
   -  speedtest.tvfinternet.com.br
   -  speedtest.tvifiber.com
@@ -11025,6 +11237,7 @@ domain_set:
   -  speedtest.ugm.ac.id
   -  speedtest.uia.net
   -  speedtest.uii.net.id
+  -  speedtest.uio2.rimtel.net.ec
   -  speedtest.uline.com.ua
   -  speedtest.ultel.net
   -  speedtest.ultlink.com.br
@@ -11061,6 +11274,7 @@ domain_set:
   -  speedtest.unicable.gt
   -  speedtest.unicasmart.it
   -  speedtest.unicatel.com.ec
+  -  speedtest.unicommultisystem.net
   -  speedtest.unidata.it
   -  speedtest.unifone.net.nz
   -  speedtest.unifyinternet.com.br
@@ -11124,6 +11338,7 @@ domain_set:
   -  speedtest.us-sc.kamatera.com
   -  speedtest.us-sc.kamatera.com.prod.hosts.ooklaserver.net
   -  speedtest.us-se.kamatera.com
+  -  speedtest.us-se.kamatera.com.prod.hosts.ooklaserver.net
   -  speedtest.us-tx.kamatera.com
   -  speedtest.us.mirhosting.net
   -  speedtest.us.novoserve.com
@@ -11179,6 +11394,7 @@ domain_set:
   -  speedtest.veepnet.com.br
   -  speedtest.vegasnet.net.br
   -  speedtest.velcom.it
+  -  speedtest.velfibra.net.br
   -  speedtest.velloxnetwork.com.br
   -  speedtest.velnet.net.br
   -  speedtest.velocetelecom.com.br
@@ -11245,6 +11461,7 @@ domain_set:
   -  speedtest.virtualconnect.net.br
   -  speedtest.virtualnetmg.com.br
   -  speedtest.virusnet.am
+  -  speedtest.viruzs.co.id
   -  speedtest.viser.com
   -  speedtest.visio.red
   -  speedtest.visionbroadband.in
@@ -11281,6 +11498,7 @@ domain_set:
   -  speedtest.vnet.com.br
   -  speedtest.vnet.com.ve
   -  speedtest.vnetservices.in
+  -  speedtest.vnso.vn
   -  speedtest.vnt.net.id
   -  speedtest.vntinternet.com.br
   -  speedtest.vobiss.net
@@ -11289,9 +11507,11 @@ domain_set:
   -  speedtest.vodafone.com.ki
   -  speedtest.vodafone.com.tr
   -  speedtest.vodafone.com.vu
+  -  speedtest.vodafone.com.ws
   -  speedtest.vodafone.it
   -  speedtest.voee.provsolutions.com.br
   -  speedtest.voetelecom.net.br
+  -  speedtest.voetelecomunicacoes.com.br
   -  speedtest.voip-unlimited.net
   -  speedtest.voipnettelecom.com.br
   -  speedtest.volia.com
@@ -11315,6 +11535,7 @@ domain_set:
   -  speedtest.vpscity.co.nz
   -  speedtest.vpsfree.es
   -  speedtest.vpsttt.com
+  -  speedtest.vrindatechnology.in
   -  speedtest.vselink.com
   -  speedtest.vsh.indent.io
   -  speedtest.vsm.sh
@@ -11322,7 +11543,9 @@ domain_set:
   -  speedtest.vstnetfiber.net.br
   -  speedtest.vt.mycci.net
   -  speedtest.vtable.org
+  -  speedtest.vtnet.id
   -  speedtest.vuela.bo
+  -  speedtest.vulcanarequipa.com
   -  speedtest.vvispl.in
   -  speedtest.vybetelecom.in
   -  speedtest.vyme.fr
@@ -11393,6 +11616,7 @@ domain_set:
   -  speedtest.westnet.com.ar
   -  speedtest.westpa.net
   -  speedtest.wfibra.com.br
+  -  speedtest.wfnet.com.br
   -  speedtest.wfredes.com.br
   -  speedtest.white.com.do
   -  speedtest.whizdigital.id
@@ -11415,6 +11639,7 @@ domain_set:
   -  speedtest.wifimaxcolombia.com.co
   -  speedtest.wifimaxnetwork.com
   -  speedtest.wifinavas.es
+  -  speedtest.wifiplusperu.top
   -  speedtest.wifiprado.com.ve
   -  speedtest.wifipros.co
   -  speedtest.wifisolution.com.ve
@@ -11530,6 +11755,7 @@ domain_set:
   -  speedtest.xtreamfiberhome.net.pk
   -  speedtest.xtreme.net.nz
   -  speedtest.xtreme.net.pk
+  -  speedtest.xtremefiber.in
   -  speedtest.xtremeinternet.com.br
   -  speedtest.xturbo.com.br
   -  speedtest.xturbo.net.br
@@ -11606,6 +11832,7 @@ domain_set:
   -  speedtest.zivlinaa.metronetinc.com
   -  speedtest.zl.osso.network
   -  speedtest.zmm.if.ua
+  -  speedtest.znetworks-negros.net
   -  speedtest.zochnet.com
   -  speedtest.zoenet.net.br
   -  speedtest.zon.ao
@@ -11664,6 +11891,7 @@ domain_set:
   -  speedtest01.goodu.cabonnet.com.br
   -  speedtest01.gosemofiber.com
   -  speedtest01.gplustelecom.com.br
+  -  speedtest01.hariharan.ind.in
   -  speedtest01.imon.net
   -  speedtest01.ing.net.br
   -  speedtest01.interfaciltelecom.net.br
@@ -11737,6 +11965,7 @@ domain_set:
   -  speedtest018.telecomitalia.it
   -  speedtest019.telecomitalia.it
   -  speedtest01sp.netwarebrasil.com.br
+  -  speedtest02.acessoonlineltda.com.br
   -  speedtest02.asinetwork.hn
   -  speedtest02.azercell.com
   -  speedtest02.bigventuresmedia.com
@@ -11805,6 +12034,7 @@ domain_set:
   -  speedtest09.garuda.net.id
   -  speedtest09.suddenlink.net
   -  speedtest1-bothwaxb.as20055.net
+  -  speedtest1-bothwaxb.as20055.net.prod.hosts.ooklaserver.net
   -  speedtest1-cdo.dctechmicro.com
   -  speedtest1-cgk3.linkbit.net.id
   -  speedtest1-chc.vygr.net
@@ -11817,6 +12047,7 @@ domain_set:
   -  speedtest1-mod.vygr.net
   -  speedtest1-ookla.iskon.hr
   -  speedtest1-sttlwawb.as20055.net
+  -  speedtest1-sttlwawb.as20055.net.prod.hosts.ooklaserver.net
   -  speedtest1-xdc.vygr.net
   -  speedtest1.20i.com
   -  speedtest1.acentek.net
@@ -11870,6 +12101,7 @@ domain_set:
   -  speedtest1.cybernetrs.com.br
   -  speedtest1.cyxym.net
   -  speedtest1.d-com.pl
+  -  speedtest1.dacor.de
   -  speedtest1.danaweb.com
   -  speedtest1.dctechmicro.com
   -  speedtest1.dctv.com.ph
@@ -11989,6 +12221,7 @@ domain_set:
   -  speedtest1.netlifespeedtest.ec
   -  speedtest1.netmitt.com.br
   -  speedtest1.netparque.net.br
+  -  speedtest1.netx.org.pl
   -  speedtest1.nexlinx.net.pk
   -  speedtest1.nextfiber.rs
   -  speedtest1.nextpertise.nl
@@ -12010,6 +12243,7 @@ domain_set:
   -  speedtest1.paragould.net
   -  speedtest1.partner.co.il
   -  speedtest1.peakair.in
+  -  speedtest1.pepeunet.com.br
   -  speedtest1.personal.com.py
   -  speedtest1.pithonduras.hn
   -  speedtest1.plateautel.net
@@ -12204,6 +12438,8 @@ domain_set:
   -  speedtest1unn.brunet.bn
   -  speedtest1zug.firestorm.ch
   -  speedtest2-csbyorxx.as20055.net
+  -  speedtest2-evrtwaxa.as20055.net
+  -  speedtest2-evrtwaxa.as20055.net.prod.hosts.ooklaserver.net
   -  speedtest2-tor.teksavvy.com
   -  speedtest2.a1.mk
   -  speedtest2.abcrede.com.br
@@ -12376,6 +12612,7 @@ domain_set:
   -  speedtest2.netciti.co.id
   -  speedtest2.netmigtelecom.com.br
   -  speedtest2.netwaytelecom.com.br
+  -  speedtest2.nfcservice.net
   -  speedtest2.ng.airtel.com
   -  speedtest2.nicnet.com.br
   -  speedtest2.nstplnet.com
@@ -12472,6 +12709,7 @@ domain_set:
   -  speedtest2.uztelecom.uz
   -  speedtest2.valleyfiber.ca
   -  speedtest2.valoonet.fi
+  -  speedtest2.viasky.com.br
   -  speedtest2.viaturbo.net.br
   -  speedtest2.vip.mk
   -  speedtest2.vivatecnologia.com.br
@@ -12579,6 +12817,7 @@ domain_set:
   -  speedtest3.level3carrier.com
   -  speedtest3.liderinternet.com.br
   -  speedtest3.lintas.net.id
+  -  speedtest3.lintasjaya.co.id
   -  speedtest3.liveapp.co.nz
   -  speedtest3.loanetwork.pe
   -  speedtest3.lytefiber.com
@@ -12777,6 +13016,7 @@ domain_set:
   -  speedtest65.amx.com.pe
   -  speedtest66.amx.com.pe
   -  speedtest7.altel.kz
+  -  speedtest7.alternativaip.net.br
   -  speedtest7.azeronline.com
   -  speedtest7.aztelekom.az
   -  speedtest7.gpm.co.id
@@ -12898,6 +13138,7 @@ domain_set:
   -  speedtestbti.angelbroadband.com
   -  speedtestbtm.sdi.net.id
   -  speedtestbts1.sweet.tv
+  -  speedtestbuc.tvcolombiadigital.com
   -  speedtestbucuresti.vodafone.ro
   -  speedtestbud1.sweet.tv
   -  speedtestbue.cabase.org.ar
@@ -12968,6 +13209,7 @@ domain_set:
   -  speedtestdps.mtmbali.com
   -  speedtestdps2.gmedia.net.id
   -  speedtestduluth.arkdnacloud.com
+  -  speedteste.3mnetturbo.com.br
   -  speedteste.awonline.net.br
   -  speedteste.gnetinfo.com.br
   -  speedteste.granadanet.com.br
@@ -13019,6 +13261,7 @@ domain_set:
   -  speedtestfl.telecom.mu
   -  speedtestflo.virtex.com.br
   -  speedtestfloriano.megalinkpiaui.com.br
+  -  speedtestfredonia.racosmostelecomunicaciones.com
   -  speedtestfsd.nayatel.com
   -  speedtestfsd.nextelbroadband.com.pk
   -  speedtestfsd.npcn.net.pk
@@ -13066,6 +13309,7 @@ domain_set:
   -  speedtesthtd.ntc.net.np
   -  speedtesthyd.airtelbroadband.in
   -  speedtestibx.itafiber.com.br
+  -  speedtestica.gpon.pe
   -  speedtestico.infortec.net.br
   -  speedtestid.perwiramedia.co.id
   -  speedtestiky.mtn.ng
@@ -13094,6 +13338,7 @@ domain_set:
   -  speedtestjdh1.airtel.in
   -  speedtestjem.ipn.net.id
   -  speedtestjhb.cellc.co.za
+  -  speedtestjhlm.tes.com.pk
   -  speedtestjhr.u.net.my
   -  speedtestjhr.u.net.my.prod.hosts.ooklaserver.net
   -  speedtestjijoca.cyberinfo.net.br
@@ -13101,6 +13346,7 @@ domain_set:
   -  speedtestjkt.lintasnetwork.net
   -  speedtestjkt.masterstar.id
   -  speedtestjkt.sdi.net.id
+  -  speedtestjld.netplus.co.in
   -  speedtestjmg.myriseid.com
   -  speedtestjmstelecom.com.br
   -  speedtestjmu.airtel.in
@@ -13183,6 +13429,7 @@ domain_set:
   -  speedtestmcal.vexusfiber.com
   -  speedtestmdc.deltapa.com.br
   -  speedtestmdl.mtmbali.com
+  -  speedtestmdn.myriseid.com
   -  speedtestmed01.claro.net.co
   -  speedtestmed1.tigo.com.co
   -  speedtestmegaip.megaipconnect.com.br
@@ -13360,6 +13607,7 @@ domain_set:
   -  speedtestsan.brphonia.com.br
   -  speedtestsanbernardo.tlink.cl
   -  speedtestsaoborja.fronteirainternet.com.br
+  -  speedtestsas.infoservic.com.br
   -  speedtestsbp.st1internet.com.br
   -  speedtestsby.ldm.net.id
   -  speedtestsby.myriseid.com
@@ -13413,6 +13661,7 @@ domain_set:
   -  speedtestsu.virtex.com.br
   -  speedtestsur2.airtel.in
   -  speedtestsvr.rapidfibra.com.br
+  -  speedtestsvr01.aksesdigital.net.id
   -  speedtestt.telcomaster.com
   -  speedtesttala.tlink.cl
   -  speedtesttar1.airtel.in
@@ -13450,6 +13699,7 @@ domain_set:
   -  speedtestvcc.amacom.com.ar
   -  speedtestve1.telecomitalia.it
   -  speedtestvegafibra.com
+  -  speedtestvenecia.racosmostelecomunicaciones.com
   -  speedtestversatile.meghbelabroadband.in
   -  speedtestvge.st1internet.com.br
   -  speedtestvibe.ajustconsulting.com.br
@@ -13490,6 +13740,7 @@ domain_set:
   -  speedtupa.migonet.com.br
   -  speeduio.ultralink.ec
   -  speedujn.skynetmp.com
+  -  speedulianopolis.xn--netcloudsolues-rjb8t.com.br
   -  speedultra.itacell.net.br
   -  speedultra.realnetmg.com.br
   -  speedultranet.tripleplay.network
@@ -13558,6 +13809,7 @@ domain_set:
   -  sprout-speedtest.cullmanec.com
   -  spryk.getlinks.net.pk
   -  sps.kisnet.id
+  -  sps1.yesnet.mx
   -  spshj.getlinks.net.pk
   -  spsugd.tojiktelecom.tj
   -  spt-bog1.edgeuno.com
@@ -13634,11 +13886,14 @@ domain_set:
   -  sptanquenovo.novolink.net.br
   -  sptblgr.roarnet.in
   -  sptch2.taiwanmobile.com
+  -  sptch2.taiwanmobile.com.prod.hosts.ooklaserver.net
   -  sptcon.roarnet.in
   -  sptcy2.taiwanmobile.com
+  -  sptcy2.taiwanmobile.com.prod.hosts.ooklaserver.net
   -  sptdad.taiwanmobile.com
   -  sptdad.taiwanmobile.com.prod.hosts.ooklaserver.net
   -  sptdl2.taiwanmobile.com
+  -  sptdl2.taiwanmobile.com.prod.hosts.ooklaserver.net
   -  sptest-cub1.intervel.com.br
   -  sptest.duoslinks.com.pk
   -  sptest.grandtel.com.pk
@@ -13665,6 +13920,7 @@ domain_set:
   -  spts1.idinternet.com.br
   -  sptst.cloudtelecom.net.br
   -  spttc2.taiwanmobile.com
+  -  spttc2.taiwanmobile.com.prod.hosts.ooklaserver.net
   -  spttn2.taiwanmobile.com
   -  spttp1.taiwanmobile.com
   -  spttp1.taiwanmobile.com.prod.hosts.ooklaserver.net
@@ -13736,6 +13992,7 @@ domain_set:
   -  srv3.profi-net.sk
   -  srvnstst.portaltimbiras.net.br
   -  srvr-speed-24.solarus.net
+  -  srvspeed.conectaprovedor.com.br
   -  srvspeed.zupnetelecom.com.br
   -  srvtest.netbom.com.br
   -  srvtest.webfibraprovedor.com.br
@@ -13944,6 +14201,7 @@ domain_set:
   -  st2.vtx1.net
   -  st2.wificanarias.com
   -  st2a.les.net
+  -  st3.admmax.com
   -  st3.fastnetwork.com.pk
   -  st3.hbsnetwork.net
   -  st3.paulbunyan.net
@@ -14057,6 +14315,7 @@ domain_set:
   -  stl.cninternet.com.br
   -  stl.speedtest.contabo.net
   -  stladhuka.clicknconnect.co.in
+  -  stladhuka.cncbroadband.in
   -  stleamingtonwireless.rogers.com
   -  stlembong.afna.link
   -  stlethbridgewireless.rogers.com
@@ -14119,6 +14378,7 @@ domain_set:
   -  stmos.colombiamas.net
   -  stmos.wikinetworks.com.co
   -  stmsn.abv.co
+  -  stmum.estointernet.in
   -  stmum.tatatelebusiness.com
   -  stnanaimowireless.rogers.com
   -  stnet1.balticum.lt
@@ -14150,6 +14410,7 @@ domain_set:
   -  stosat-dvre-01.sys.comcast.net
   -  stosat-hstn-01.sys.comcast.net
   -  stosat-indp-01.sys.comcast.net
+  -  stosat-jkvl-01.sys.comcast.net
   -  stosat-lrck-01.sys.comcast.net
   -  stosat-malt-01.sys.comcast.net
   -  stosat-nash-01.sys.comcast.net
@@ -14157,6 +14418,7 @@ domain_set:
   -  stosat-pima-01.sys.comcast.net
   -  stosat-plfi-08p.sys.comcast.net
   -  stosat-rvlt-01.sys.comcast.net
+  -  stosat-rvlt-01.sys.comcast.net.prod.hosts.ooklaserver.net
   -  stosat-scla-01.sys.comcast.net
   -  stosat-scrm-01.sys.comcast.net
   -  stosat-smil-01.sys.comcast.net
@@ -14237,7 +14499,9 @@ domain_set:
   -  stwoodstockwireless.rogers.com
   -  stx-fre-speedtest.vipowernet.net
   -  suanetprovedorltda.com.br
+  -  subdominio.enlaceolt.com
   -  sugarland.speedtest.windstream.net
+  -  sukaraja.rajasa.net.id
   -  sukoharjo-ookla.gmdp.net.id
   -  sul-r450-speedtest.metrocomm.com
   -  sulfur.burlingtontelecom.net
@@ -14305,7 +14569,9 @@ domain_set:
   -  tamanche.quattrocom.mx
   -  tamanjaya.rajasa.net.id
   -  tampfl-speedtest-ookla-01.st.charter.com
+  -  tangerang.jinus.net.id
   -  tangerang.siber.net.id
+  -  tangsel.palapamedia.id
   -  tanjungkarang.speedtest.telkom.net.id
   -  tapachula.speedtest.totalplay.com.mx
   -  tar-st-01.kcell.kz
@@ -14317,6 +14583,7 @@ domain_set:
   -  tc-speed.kbro.com.tw
   -  tc1.chtm.hinet.net
   -  tcg.speedtest.pni.tw
+  -  tcg.speedtest.pni.tw.prod.hosts.ooklaserver.net
   -  tcmaisfibraspeed.ajustconsulting.com.br
   -  tcrst.gsisp.in
   -  tcv3-1.speedtest.idv.tw
@@ -14370,6 +14637,7 @@ domain_set:
   -  test.easyconnect.com.br
   -  test.eolo.it
   -  test.espanet.co.ao
+  -  test.ezzynet.net
   -  test.fibercom.net.ar
   -  test.fiberway.pl
   -  test.fibra.scpl.coop
@@ -14550,6 +14818,7 @@ domain_set:
   -  teste.ahanet.com.br
   -  teste.ajaxtellecom.com.br
   -  teste.all.com.br
+  -  teste.almeidanet.tv.br
   -  teste.alsolution.net.br
   -  teste.altavistatelecom.com.br
   -  teste.altelecommcz.com.br
@@ -14608,6 +14877,7 @@ domain_set:
   -  teste.clickfibra.net
   -  teste.clicking.com.br
   -  teste.clicknetrs.com.br
+  -  teste.clicknetto.com.br
   -  teste.clikpower.com.br
   -  teste.clonix.com.br
   -  teste.cnanet.net.br
@@ -14725,6 +14995,7 @@ domain_set:
   -  teste.gauchaonline.com.br
   -  teste.genesisfibra.com.br
   -  teste.ghosttelecom.com.br
+  -  teste.giganet-ce.com.br
   -  teste.giganetbahia.com.br
   -  teste.giganetparaisopolis.com.br
   -  teste.giganetperdizes.com.br
@@ -14761,6 +15032,7 @@ domain_set:
   -  teste.imagemnettelecom.com.br
   -  teste.impactonetwork.com.br
   -  teste.implantartelecom.com.br
+  -  teste.infinity-ro.com.br
   -  teste.infinitynet.net.br
   -  teste.infonetdns.com.br
   -  teste.infonetsolucoes.com
@@ -14775,6 +15047,7 @@ domain_set:
   -  teste.internetcordoba.com.ar
   -  teste.internetflex.com
   -  teste.ispglobaltelecom.com.br
+  -  teste.isprwnet.net.br
   -  teste.istelecom.net
   -  teste.istinformatica.com.br
   -  teste.it3telecom.com.br
@@ -14811,6 +15084,7 @@ domain_set:
   -  teste.likerfibra.com.br
   -  teste.liknet.com.br
   -  teste.link-net.online
+  -  teste.link3telecom.com.br
   -  teste.linkmnet.com.br
   -  teste.linkneti.com.br
   -  teste.linknetporto.com.br
@@ -14895,12 +15169,14 @@ domain_set:
   -  teste.nossanet.net
   -  teste.novabandalarga.com.br
   -  teste.novalink.com.br
+  -  teste.novanetfibraoptica.com.br
   -  teste.novanetinternet.com.br
   -  teste.novotelecom.com.br
   -  teste.novvainternet.com.br
   -  teste.nrconexoes.com.br
   -  teste.ntcnetwork.com.br
   -  teste.oai.com.br
+  -  teste.octorlink.com.br
   -  teste.oestenet.com.br
   -  teste.olahconnect.com.br
   -  teste.oliveiratellecom.com.br
@@ -15013,6 +15289,7 @@ domain_set:
   -  teste.stargateway.com.br
   -  teste.starman.net.br
   -  teste.starnetsaj.com.br
+  -  teste.starttecnologia.site
   -  teste.startultra.com.br
   -  teste.stlk.com.br
   -  teste.streamnet.net.br
@@ -15064,6 +15341,7 @@ domain_set:
   -  teste.upprovedor.com.br
   -  teste.uslink.com.br
   -  teste.ussenettelecom.com.br
+  -  teste.v8net.net.br
   -  teste.vargastelecom.com.br
   -  teste.vavatec.com.br
   -  teste.vbnetpb.com.br
@@ -15082,6 +15360,7 @@ domain_set:
   -  teste.vipfibratelecom.net.br
   -  teste.vipnetararuna.com
   -  teste.vipnett.net.br
+  -  teste.virtualnetminas.com.br
   -  teste.visionet.inf.br
   -  teste.visualnetfibra.com.br
   -  teste.vitwork.net.br
@@ -15092,6 +15371,8 @@ domain_set:
   -  teste.volplink.com.br
   -  teste.voluy.com.br
   -  teste.voyinternet.com
+  -  teste.vpfibra.com.br.vpfibra.net.br
+  -  teste.vpfibra.net.br
   -  teste.vunnfibra.com.br
   -  teste.wawfibra.com.br
   -  teste.wbtelecom.net.br
@@ -15135,6 +15416,7 @@ domain_set:
   -  teste1.itabtelecom.com.br
   -  teste1.jnetfibratelecom.com.br
   -  teste1.kikonecttelecom.net.br
+  -  teste1.kukanet.com.br
   -  teste1.ligwarnet.com.br
   -  teste1.maisinternetprovedor.com.br
   -  teste1.suafibra.com
@@ -15179,6 +15461,7 @@ domain_set:
   -  testedevelocidade.taquaranet.com.br
   -  testedevelocidadeookla.mastelecom.com.br
   -  testedevelocidadeookla.wittelecom.com.br
+  -  testef.skynet-internet.net
   -  testefibra.brnetprovedor.com.br
   -  testeg7.dmzsolucoes.com.br
   -  testegiga.ajnettelecom.com.br
@@ -15462,6 +15745,7 @@ domain_set:
   -  velocidade-mal.goxinternet.com.br
   -  velocidade-nbd.wavemax.com.br
   -  velocidade-nmv.wavemax.com.br
+  -  velocidade-nortetel-mcl.siega.net
   -  velocidade-pirapora.vianorte.tv.br
   -  velocidade-prs.goxinternet.com.br
   -  velocidade-pta.wavemax.com.br
@@ -15644,6 +15928,7 @@ domain_set:
   -  velocidade.pointtelecom.com.br
   -  velocidade.portalnet.psi.br
   -  velocidade.portalnetgoias.com.br
+  -  velocidade.portaltelecom.net.br
   -  velocidade.powertecprovider.com.br
   -  velocidade.provedorglobonet.com.br
   -  velocidade.provedorsosredes.com.br
@@ -15677,6 +15962,7 @@ domain_set:
   -  velocidade.softelecom.com.br
   -  velocidade.softhousenet.com.br
   -  velocidade.soltelecomprovedor.com.br
+  -  velocidade.solucoesnet.com.br
   -  velocidade.somosfibra.com.br
   -  velocidade.soudotcom.com.br
   -  velocidade.sousatelecom.net
@@ -15749,6 +16035,7 @@ domain_set:
   -  velocidadesinop.accessinternet.net.br
   -  velocidadestm.amazonett.com.br
   -  velocidadetls.wlannetwork.com.br
+  -  velocimax.infranoc.com.br
   -  velocimentro.infotech.net.br
   -  velocimentros.navega.net.br
   -  velocimentros.unirtelecom.com.br
@@ -15829,6 +16116,7 @@ domain_set:
   -  velocimetro.cpn.lv.network
   -  velocimetro.cstelecomprovedor.com.br
   -  velocimetro.desktop.com.br
+  -  velocimetro.dfnetfibra.com.br
   -  velocimetro.dgtelecomunicacoes.com.br
   -  velocimetro.digitalsattelecom.com.br
   -  velocimetro.dmsfibra.com.br
@@ -15839,6 +16127,7 @@ domain_set:
   -  velocimetro.falconbandalarga.com.br
   -  velocimetro.fastnet-internet.com.br
   -  velocimetro.fernandonet.net.br
+  -  velocimetro.fibra.net.br
   -  velocimetro.gdnetfibra.com.br
   -  velocimetro.gnetworksfibra.com.br
   -  velocimetro.govistabr.com.br
@@ -15991,6 +16280,7 @@ domain_set:
   -  wd-speedtest.homeplus.net.tw
   -  web.speedtest.lu
   -  web2.rbonline.com.br
+  -  websfinityspeed.com
   -  webtelecompa.com
   -  wellington-speedtest.connectwithusa.com
   -  wellington.speedtest.one.nz
@@ -16001,6 +16291,7 @@ domain_set:
   -  wh-netspeed.nwtel.ca
   -  whvl-ga-st.highlinefast.com
   -  wifi-informatica.brsserver.com.br
+  -  wifimaxspeedtest.com
   -  wifinetscs.brsserver.com.br
   -  wimax.radiuspk.online
   -  win1.speedtest.telstra.net
@@ -16077,6 +16368,7 @@ domain_set:
   -  ynb.myspeed.net.sa
   -  yogyakarta.speedtest.telkom.net.id
   -  yourspeed.allwest.com
+  -  ysj-speedtest.xplore.ca
   -  yumbo.fibranetplus.com
   -  yyc-speedtest.xplore.ca
   -  yyz-speedtest.xplore.ca
