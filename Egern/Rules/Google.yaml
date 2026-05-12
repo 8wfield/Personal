@@ -1,5 +1,5 @@
 # 规则名称: Google
-# 规则统计: 705
+# 规则统计: 698
 
 no_resolve: true
 
@@ -204,7 +204,6 @@ domain_suffix_set:
   - doubleclick-cn.net
   - doubleclick.com
   - doubleclick.net
-  - download.qatp1.net
   - episodic.com
   - fastlane.ci
   - fastlane.tools
@@ -553,7 +552,6 @@ domain_suffix_set:
   - meet.new
   - mfg-inspector.com
   - mobileview.page
-  - monitoring.qpdp1.net
   - moodstocks.com
   - near.by
   - nest.com
@@ -597,12 +595,8 @@ domain_suffix_set:
   - projectara.com
   - projectbaseline.com
   - publishproxy.com
-  - qagpublic.qatp1.net
-  - qgadmin.qcpp1.net
   - qiao-cn.com
   - qpx.googleflights.net
-  - qualysapi.qatp1.net
-  - qualysguard.qpdp1.net
   - questvisual.com
   - quickoffice.com
   - quiksee.com
@@ -619,7 +613,6 @@ domain_suffix_set:
   - run.app
   - savethedate.foo
   - saynow.com
-  - scanservice1.qcpp1.net
   - schema.org
   - schemer.com
   - screenwisetrends.com
