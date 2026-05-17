@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26393
+# 规则统计: 26394
 
 domain_set:
   - 1password.drift.click
@@ -2929,6 +2929,7 @@ domain_suffix_set:
   - archivx.to
   - archlinux.de
   - archlinux.org
+  - archlinux.page
   - archlinuxarm.org
   - archlinuxcn.org
   - arcraiders.com
