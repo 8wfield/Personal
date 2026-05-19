@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26396
+# 规则统计: 26416
 
 domain_set:
   - 1password.drift.click
@@ -1105,6 +1105,7 @@ domain_suffix_set:
   - 55dndn.com
   - 567321.online
   - 568xe.com
+  - 573.jp
   - 58avgo.com
   - 592r.com
   - 59mvmv.com
@@ -14011,6 +14012,7 @@ domain_suffix_set:
   - keytransparency.foo
   - keytransparency.org
   - kfs.io
+  - kgisystems.com
   - kgslb.com
   - khanacademy.org
   - khatrimaza.org
@@ -14104,6 +14106,7 @@ domain_suffix_set:
   - kissjav.com
   - kissjav.li
   - kitakyushubank.co.jp
+  - kiwi.jp
   - kiwi.kz
   - kiwibrowser.com
   - kiyobank.co.jp
@@ -14141,6 +14144,20 @@ domain_suffix_set:
   - konachan.com
   - konachan.net
   - konachan.wjcodes.com
+  - konami
+  - konami-igaming.online
+  - konami.co.jp
+  - konami.com
+  - konami.net
+  - konami.org
+  - konamicrossmedia.com
+  - konamigaming.com
+  - konamigaming.net
+  - konamigaming.online
+  - konamionline.com
+  - konamiopen.jp
+  - konamisportsclub.jp
+  - konamistyle.jp
   - koolsolutions.com
   - koornk.com
   - kopfhorergunstigshop.com
@@ -19744,6 +19761,8 @@ domain_suffix_set:
   - researchkit.net
   - researchkit.org
   - researchkit.tv
+  - resella.jp
+  - resellablue.com
   - resilio.com
   - resistchina.org
   - resonabank.co.jp
@@ -26149,6 +26168,7 @@ domain_suffix_set:
   - yuanming.net
   - yuenuge113.xyz
   - yuenuge18.cc
+  - yugioh-card.com
   - yulghun.com
   - yuming.qxbbs.org
   - yunchao.net
