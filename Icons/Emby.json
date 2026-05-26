@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "472 图标",
+  "description": "473 图标",
   "icons": [
     {
       "name": "105°",
@@ -1317,6 +1317,10 @@
     {
       "name": "SDL_1",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/SDL1.PNG"
+    },
+    {
+      "name": "SDN",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/SDN.PNG"
     },
     {
       "name": "SDP",
