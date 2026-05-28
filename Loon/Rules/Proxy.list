@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6786
+# 规则统计: 6787
 
 DOMAIN,api.waqi.info
 DOMAIN,aqi.aqicn.org
@@ -3692,6 +3692,7 @@ DOMAIN-SUFFIX,mousebreaker.com
 DOMAIN-SUFFIX,movements.org
 DOMAIN-SUFFIX,moves-export.com
 DOMAIN-SUFFIX,moviefap.com
+DOMAIN-SUFFIX,mozilla.ai
 DOMAIN-SUFFIX,mozilla.org
 DOMAIN-SUFFIX,moztw.org
 DOMAIN-SUFFIX,mp3buscador.com
