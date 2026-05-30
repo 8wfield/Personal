@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26471
+# 规则统计: 26473
 
 domain_set:
   - 1password.drift.click
@@ -2982,6 +2982,7 @@ domain_suffix_set:
   - arxiv.org
   - arzon.jp
   - as-hp.ca
+  - as.mr
   - asacp.org
   - asagaku.com
   - asahi.com
@@ -10243,6 +10244,7 @@ domain_suffix_set:
   - gemfury.com
   - gemini.com
   - gen.lib.rus.ec
+  - gencraft.com
   - gendai.net
   - generated.photos
   - genetic-technologies.am
@@ -23514,6 +23516,7 @@ domain_suffix_set:
   - vdoav.com
   - vecchiescopate.casa
   - vector.im
+  - veed.io
   - veet.at
   - veet.be
   - veet.ca
@@ -25914,7 +25917,6 @@ domain_suffix_set:
   - yhy.cool
   - yibaochina.com
   - yibei.org
-  - yidio.com
   - yigeni.com
   - yimg.com
   - yimg.jp
