@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6788
+# 规则统计: 6794
 
 no_resolve: true
 
@@ -448,6 +448,7 @@ domain_suffix_set:
   - arunachalforests.gov.in
   - arvanstorage.ir
   - arweave.org
+  - as.mr
   - asacp.org
   - asdfg.jp
   - asg.to
@@ -547,6 +548,7 @@ domain_suffix_set:
   - bangdream.space
   - bangkokpost.com
   - bangumi.moe
+  - bangumi.tv
   - bangyoulater.com
   - bankmobilevibe.com
   - bannednews.org
@@ -632,6 +634,7 @@ domain_suffix_set:
   - beyondfirewall.com
   - bfnn.org
   - bfsh.hk
+  - bgm.tv
   - bgme.me
   - bgvpn.com
   - bianlei.com
@@ -1015,6 +1018,7 @@ domain_suffix_set:
   - cherrysave.com
   - chhongbi.org
   - chicagoncmtv.com
+  - chii.in
   - china-mmm.jp.net
   - china-mmm.net
   - china-mmm.sa.com
@@ -1184,7 +1188,6 @@ domain_suffix_set:
   - cn6.eu
   - cna.com.tw
   - cnabc.com
-  - cnbc.com
   - cnbeta.com.tw
   - cnd.org
   - cnet.com
@@ -2192,6 +2195,7 @@ domain_suffix_set:
   - geekheart.info
   - gekikame.com
   - gelbooru.com
+  - gencraft.com
   - generated.photos
   - geni.us
   - genius.com
@@ -2517,6 +2521,7 @@ domain_suffix_set:
   - hicairo.com
   - hiccears.com
   - hidden-advent.org
+  - hiddify.com
   - hide.me
   - hidecloud.com
   - hidein.net
@@ -5975,6 +5980,7 @@ domain_suffix_set:
   - vcf-online.org
   - vcfbuilder.org
   - vds.rightster.com
+  - veed.io
   - vegasred.com
   - velkaepocha.sk
   - venbbs.com
