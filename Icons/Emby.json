@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "477 图标",
+  "description": "478 图标",
   "icons": [
     {
       "name": "105°",
@@ -49,6 +49,10 @@
     {
       "name": "Alpha",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Alpha.PNG"
+    },
+    {
+      "name": "Alpha_Comic",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Alpha_Comic.PNG"
     },
     {
       "name": "Alpha_Kid",
