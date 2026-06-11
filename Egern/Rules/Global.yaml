@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26715
+# 规则统计: 26754
 
 domain_set:
   - 1password.drift.click
@@ -2110,6 +2110,7 @@ domain_suffix_set:
   - allizom.net
   - allizom.org
   - alljapanesepass.com
+  - allkeyshop.com
   - allmomsex.com
   - allmovie.com
   - allover30.com
@@ -3360,6 +3361,7 @@ domain_suffix_set:
   - avdwang.xyz
   - avelip.com
   - aventertainments.com
+  - avermedia.com
   - aversbank.ru
   - avfox.cc
   - avg.com
@@ -4166,6 +4168,7 @@ domain_suffix_set:
   - bextbuy.com
   - beyondcore.com
   - bfa.ru
+  - bfads.net
   - bffshd.com
   - bfnn.org
   - bfsh.hk
@@ -5389,6 +5392,7 @@ domain_suffix_set:
   - buypass.com
   - buypass.no
   - buypass.se
+  - buyservices.com
   - buyshoponly.com
   - buzzardflapper.com
   - buzzav.com
@@ -6400,6 +6404,7 @@ domain_suffix_set:
   - coinbene.com
   - coindesk.com
   - coinex.com
+  - coingate.com
   - coingecko.com
   - coingi.com
   - coinglass.com
@@ -7437,6 +7442,9 @@ domain_suffix_set:
   - discountbeatsstore.com
   - discountedporn.com
   - discountporn.club
+  - discourse-cdn.com
+  - discourse.group
+  - discourse.org
   - discovershiretoko.org
   - discoveryplus.com
   - discreet.com
@@ -8072,6 +8080,10 @@ domain_suffix_set:
   - eater.com
   - ebahy.com
   - ebalovo.com
+  - ebates.ca
+  - ebates.kr
+  - ebates.sg
+  - ebatescanada.com
   - ebay-authenticate.net
   - ebay-confirm.com
   - ebay-course.com
@@ -8254,6 +8266,7 @@ domain_suffix_set:
   - ebtcbank.com
   - ebuyer.com
   - ebuyheadphones.com
+  - ecbsn.com
   - ecchinohentai.ru
   - ecert.gov.hk
   - ecfa.org.tw
@@ -8337,6 +8350,7 @@ domain_suffix_set:
   - electronicarts.fr
   - electronicsignature.ru
   - electronjs.org
+  - elegantthemes.com
   - element.io
   - elementary.io
   - elephantlist.com
@@ -9215,6 +9229,7 @@ domain_suffix_set:
   - fasttrackreadysupport.com
   - fatbtc.com
   - fatstube.com
+  - fatwallet.com
   - favebook.com
   - favelaporno.com
   - favepornmovs.com
@@ -9353,6 +9368,7 @@ domain_suffix_set:
   - ficador.com
   - ficbook.net
   - ficeboock.com
+  - ficgs.com
   - ficmania.com
   - fictionmania.tv
   - fiddle.jshell.net
@@ -10036,6 +10052,7 @@ domain_suffix_set:
   - fullpornnetwork.com
   - fullservicegame.com
   - fullsexmovs.com
+  - fullstory.com
   - fulltaboo.tv
   - fullxxxmovies.net
   - fundaiphone5s.com
@@ -10152,7 +10169,9 @@ domain_suffix_set:
   - gamesfuckgirls.com
   - gamesofdesire.com
   - gamespark.jp
+  - gamesplanet.com
   - gamesstack.com
+  - gametap.com
   - gameuxmasterguide.com
   - gamez.com.tw
   - gaming-notebooks.com
@@ -10428,6 +10447,7 @@ domain_suffix_set:
   - gfx.ms
   - gfycat.com
   - gfysex.com
+  - gg.deals
   - ggdiao.com
   - ggjav.com
   - ggoogle.com
@@ -10440,6 +10460,7 @@ domain_suffix_set:
   - gh.io
   - ghbi.ir
   - ghcr.io
+  - ghe.com
   - ghettotube.com
   - ghidra-sre.org
   - ghostarchive.org
@@ -11034,6 +11055,7 @@ domain_suffix_set:
   - governmentengineer.com
   - govforce.com
   - gpb.ru
+  - gpstatic.com
   - gpstheseries.com
   - gputechconf.co.kr
   - gputechconf.com
@@ -12295,6 +12317,7 @@ domain_suffix_set:
   - hyper.is
   - hyperbeam.com
   - hyperdreams.com
+  - hyperliquid.xyz
   - hyperrate.com
   - hyperscan.io
   - hypnohub.net
@@ -14177,6 +14200,7 @@ domain_suffix_set:
   - kingofpics.com
   - kingstagram.com
   - kingstone.com.tw
+  - kinguin.net
   - kinguno.xyz
   - kink.com
   - kinkbook.com
@@ -14528,6 +14552,8 @@ domain_suffix_set:
   - lifewire.com
   - lightbridge.com
   - lighten.org.tw
+  - lighter.exchange
+  - lighter.xyz
   - lighti.me
   - lightnovel.cn
   - lightxxxtube.com
@@ -16980,7 +17006,9 @@ domain_suffix_set:
   - nexon.co.jp
   - nexon.com
   - nexon.io
+  - nexon.net
   - nexoncdn.co.kr
+  - nexongames.co.kr
   - nexpart.com
   - nexpart.tv
   - next.com
@@ -17047,6 +17075,10 @@ domain_suffix_set:
   - nhentaihaven.com
   - nhentaihaven.org
   - nheos.com
+  - nhk
+  - nhk.jp
+  - nhk.or.jp
+  - nhkworld.jp
   - nhncorp.jp
   - nic.cz.cc
   - nic.gov
@@ -19671,7 +19703,10 @@ domain_suffix_set:
   - rakuten.com
   - rakuten.com.tw
   - rakuten.ne.jp
+  - rakuten.tv
   - rakuten.tw
+  - rakutenadvertising.com
+  - rakutengiftcards.ca
   - rakuya.com.tw
   - ramcity.com.au
   - randyblue.com
@@ -20112,6 +20147,7 @@ domain_suffix_set:
   - rpmfusion.org
   - rprimelab.com
   - rqbank.ir
+  - rrcbsn.com
   - rrl28.buzz
   - rrs1.xyz
   - rrtis.com
@@ -23960,6 +23996,7 @@ domain_suffix_set:
   - viewpointsfromfacebook.com
   - vigorgame.com
   - viju.ru
+  - viki.com
   - vikiporn.com
   - vilanet.me
   - vilavpn.com
@@ -25130,6 +25167,7 @@ domain_suffix_set:
   - woolyss.com
   - woopie.jp
   - woopie.tv
+  - wordcamp.org
   - wordpress.com
   - wordpress.net
   - wordpress.org
@@ -26612,6 +26650,7 @@ domain_suffix_set:
   - zipcine.com
   - ziraatbank.ru
   - zishy.com
+  - zklighter.elliot.ai
   - zlib.life
   - zlibcdn.com
   - zlibcdn2.com
