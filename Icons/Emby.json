@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "483 图标",
+  "description": "486 图标",
   "icons": [
     {
       "name": "105°",
@@ -1276,19 +1276,27 @@
     },
     {
       "name": "QM_CCT",
-      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Chacanting.PNG"
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/QM_CCT.PNG"
+    },
+    {
+      "name": "QM_LXG",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/QM_LXG.PNG"
+    },
+    {
+      "name": "QM_QNYH",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/QM_QNYH.PNG"
     },
     {
       "name": "QM_QSYH",
-      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Qingshui.PNG"
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/QM_QSYH.PNG"
     },
     {
       "name": "QM_ZJYH",
-      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Zhujiu.PNG"
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/QM_ZJYH.PNG"
     },
     {
       "name": "QM_ZMYH",
-      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Zhuma.PNG"
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/QM_ZMYH.PNG"
     },
     {
       "name": "Qidianzhan",
@@ -1843,7 +1851,11 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Youno.PNG"
     },
     {
-      "name": "YounoPlus",
+      "name": "Youno_Air",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/YounoAir.PNG"
+    },
+    {
+      "name": "Youno_Plus",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/YounoPlus.PNG"
     },
     {
