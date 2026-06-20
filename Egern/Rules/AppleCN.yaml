@@ -1,5 +1,5 @@
 # 规则名称: AppleCN
-# 规则统计: 163
+# 规则统计: 164
 
 domain_suffix_set:
   - a1.mzstatic.com
@@ -107,6 +107,7 @@ domain_suffix_set:
   - itunes-apple.com.akadns.net
   - itunes.apple.com
   - itunesconnect.apple.com
+  - mensura.cdn-apple.com
   - mesu-cdn.apple.com.akadns.net
   - mesu-china.apple.com.akadns.net
   - mesu.apple.com

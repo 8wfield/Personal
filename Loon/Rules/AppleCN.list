@@ -1,5 +1,5 @@
 # 规则名称: AppleCN
-# 规则统计: 163
+# 规则统计: 164
 
 DOMAIN-SUFFIX,a1.mzstatic.com
 DOMAIN-SUFFIX,a2.mzstatic.com
@@ -106,6 +106,7 @@ DOMAIN-SUFFIX,is5.mzstatic.com
 DOMAIN-SUFFIX,itunes-apple.com.akadns.net
 DOMAIN-SUFFIX,itunes.apple.com
 DOMAIN-SUFFIX,itunesconnect.apple.com
+DOMAIN-SUFFIX,mensura.cdn-apple.com
 DOMAIN-SUFFIX,mesu-cdn.apple.com.akadns.net
 DOMAIN-SUFFIX,mesu-china.apple.com.akadns.net
 DOMAIN-SUFFIX,mesu.apple.com
