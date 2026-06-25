@@ -1,5 +1,5 @@
 # 规则名称: AI
-# 规则统计: 89
+# 规则统计: 90
 
 no_resolve: true
 
@@ -57,6 +57,7 @@ domain_set:
   -  webchannel-alkalimakersuite-pa.clients6.google.com
 
 domain_suffix_set:
+  -  agnes-ai.com
   -  anthropic.com
   -  antigravity-unleash.goog
   -  antigravity.google

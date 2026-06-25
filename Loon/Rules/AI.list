@@ -1,5 +1,5 @@
 # 规则名称: AI
-# 规则统计: 92
+# 规则统计: 93
 
 AND, ((DOMAIN-KEYWORD, antigravity-auto-updater-), (DOMAIN-SUFFIX, run.app))
 AND, ((DOMAIN-KEYWORD, chatgpt-async-webps-prod-), (DOMAIN-SUFFIX, webpubsub.azure.com))
@@ -55,6 +55,7 @@ DOMAIN, token-plan-sgp.xiaomimimo.com
 DOMAIN, trae-api-sg.mchost.guru
 DOMAIN, turn.livekit.cloud
 DOMAIN, webchannel-alkalimakersuite-pa.clients6.google.com
+DOMAIN-SUFFIX, agnes-ai.com
 DOMAIN-SUFFIX, anthropic.com
 DOMAIN-SUFFIX, antigravity-unleash.goog
 DOMAIN-SUFFIX, antigravity.google
