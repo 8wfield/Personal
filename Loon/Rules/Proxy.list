@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6870
+# 规则统计: 6871
 
 DOMAIN,api.waqi.info
 DOMAIN,aqi.aqicn.org
@@ -1295,6 +1295,7 @@ DOMAIN-SUFFIX,crazyshit.com
 DOMAIN-SUFFIX,crbug.com
 DOMAIN-SUFFIX,crchina.org
 DOMAIN-SUFFIX,crd-net.org
+DOMAIN-SUFFIX,creader.com
 DOMAIN-SUFFIX,creaders.net
 DOMAIN-SUFFIX,creadersnet.com
 DOMAIN-SUFFIX,creativelab5.com
