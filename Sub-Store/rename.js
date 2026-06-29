@@ -266,7 +266,7 @@ function jxh(e) {
       newName += item._baseName + numStr + item.blkeyStr;
 
       if (item.blSuper) {
-        newName += item.blSuper;
+        newName += " " + item.blSuper;
       }
 
       result.push({ ...item, name: newName });
