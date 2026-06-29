@@ -3,14 +3,13 @@
  * 用法：Sub-Store 脚本操作添加 rename.js
  * 
  * 主要参数：
- * name=机场名          → 显示为 ｢机场名｣
+ * name=机场名          → 显示为 name⋅
  * flag                 → 添加国旗
- * bl                   → 保留倍率（显示 X0.1、X2 等）
- * blkey=家宽+IPLC+GPT  → 保留关键词（+号分隔，显示在[]内）
+ * bl                   → 保留2x及以上倍率（上标形式，如 ²ˣ）
+ * blkey=家宽+IPLC      → 保留关键词（用-连接）
  * 
  * 最终格式示例：
- * 🇭🇰香港¹｢name｣[X0.1 家宽 IPLC]
- * （无 name 时不显示｢｣）
+ * 🇭🇰 name⋅香港 01-家宽 IPLC ²ˣ
  */
 
 const inArg = $arguments;
@@ -179,8 +178,10 @@ function operator(pro) {
     if (bl) {
       const match = e.name.match(/((倍率|X|x|×)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x|×)/);
       if (match) {
-        const rev = match[0].match(/(\d[\d.]*)/)[0];
-        if (rev !== "1") blRate = "X" + rev;
+        const rev = parseFloat(match[0].match(/(\d[\d.]*)/)[0]);
+        if (rev >= 2) {
+          blRate = rev.toString();
+        }
       }
     }
 
@@ -199,17 +200,22 @@ function operator(pro) {
         }
       }
 
+      let blSuper = "";
+      if (blRate) {
+        blSuper = toSuperscript(blRate) + "ˣ";
+      }
+
       let inside = [];
-      if (blRate) inside.push(blRate);
       if (bracketItems.length > 0) inside = inside.concat(bracketItems);
       if (retainKey.trim()) inside.push(retainKey.trim());
 
-      let bracketStr = inside.length > 0 ? `[${inside.join(" ")}]` : "";
+      let blkeyStr = inside.length > 0 ? "-" + inside.join(" ") : "";
 
       e.name = findKeyValue;
       e._baseName = findKeyValue;
       e._flag = flagStr;
-      e._bracket = bracketStr;
+      e._blkeyStr = blkeyStr;
+      e._blSuper = blSuper;
       e._hasName = !!FNAME;
     } else {
       if (nm) {
@@ -234,13 +240,14 @@ function operator(pro) {
 function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
     let baseName = proxy._baseName || proxy.name;
-    const bracketStr = proxy._bracket || "";
+    const blkeyStr = proxy._blkeyStr || "";
+    const blSuper = proxy._blSuper || "";
     const flagStr = proxy._flag || "";
     if (!acc[baseName]) {
       acc[baseName] = { count: 0, items: [] };
     }
     acc[baseName].count++;
-    acc[baseName].items.push({ ...proxy, bracketStr, flagStr });
+    acc[baseName].items.push({ ...proxy, blkeyStr, blSuper, flagStr });
     return acc;
   }, {});
 
@@ -248,20 +255,20 @@ function jxh(e) {
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
       const num = idx + 1;
-      let superscript = (group.items.length === 1 && numone) ? "" : toSuperscript(num);
+      let numStr = (group.items.length === 1 && numone) ? "" : " " + String(num).padStart(2, '0');
 
       let newName = "";
 
-      if (item._flag) newName += item._flag;
-
-      newName += item._baseName + superscript;
+      if (item._flag) newName += item._flag + " ";
 
       if (item._hasName && FNAME) {
-        newName += "｢" + FNAME + "｣";
+        newName += FNAME + "⋅";
       }
 
-      if (item.bracketStr) {
-        newName += item.bracketStr;
+      newName += item._baseName + numStr + item.blkeyStr;
+
+      if (item.blSuper) {
+        newName += " " + item.blSuper;
       }
 
       result.push({ ...item, name: newName });
