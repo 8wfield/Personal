@@ -5,7 +5,7 @@
  * 主要参数：
  * name=机场名          → 显示为 name⋅
  * flag                 → 添加国旗
- * bl                   → 保留2x及以上倍率（上标形式，如 ²ˣ）
+ * bl                   → 保留倍率（上标形式 ⁰·¹ˣ / ²ˣ）
  * blkey=家宽+IPLC      → 保留关键词（用-连接）
  * 
  * 最终格式示例：
@@ -178,10 +178,8 @@ function operator(pro) {
     if (bl) {
       const match = e.name.match(/((倍率|X|x|×)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x|×)/);
       if (match) {
-        const rev = parseFloat(match[0].match(/(\d[\d.]*)/)[0]);
-        if (rev >= 2) {
-          blRate = rev.toString();
-        }
+        const rev = match[0].match(/(\d[\d.]*)/)[0];
+        blRate = rev;
       }
     }
 
@@ -268,7 +266,7 @@ function jxh(e) {
       newName += item._baseName + numStr + item.blkeyStr;
 
       if (item.blSuper) {
-        newName += " " + item.blSuper;
+        newName += item.blSuper;
       }
 
       result.push({ ...item, name: newName });
@@ -280,7 +278,11 @@ function jxh(e) {
 }
 
 function toSuperscript(n) {
-  const map = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+  const map = {
+    '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
+    '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
+    '.': '·'
+  };
   return String(n).split('').map(c => map[c] || c).join('');
 }
 
