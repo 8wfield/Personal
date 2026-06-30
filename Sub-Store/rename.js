@@ -5,11 +5,12 @@
  * 主要参数：
  * name=机场名          → 显示为 name⋅
  * flag                 → 添加国旗
- * bl                   → 保留倍率（上标形式 ⁰·¹ˣ / ²ˣ）
- * blkey=家宽+IPLC      → 保留关键词（用-连接）
+ * bl                   → 保留倍率（显示为[0.1X]或[2X]）
+ * blkey=家宽+IPLC      → 保留关键词
  * 
  * 最终格式示例：
- * 🇭🇰 name⋅香港 01-家宽 IPLC ²ˣ
+ * 🇭🇰 name⋅香港 01-家宽[2X]
+ * 🇭🇰 name⋅香港 01 [0.1X]
  */
 
 const inArg = $arguments;
@@ -178,8 +179,11 @@ function operator(pro) {
     if (bl) {
       const match = e.name.match(/((倍率|X|x|×)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x|×)/);
       if (match) {
-        const rev = match[0].match(/(\d[\d.]*)/)[0];
-        blRate = rev;
+        const revStr = match[0].match(/(\d[\d.]*)/)[0];
+        const rev = parseFloat(revStr);
+        if (rev !== 1) {
+          blRate = revStr;
+        }
       }
     }
 
@@ -198,9 +202,9 @@ function operator(pro) {
         }
       }
 
-      let blSuper = "";
+      let blStr = "";
       if (blRate) {
-        blSuper = toSuperscript(blRate) + "ˣ";
+        blStr = "[" + blRate + "X]";
       }
 
       let inside = [];
@@ -213,7 +217,7 @@ function operator(pro) {
       e._baseName = findKeyValue;
       e._flag = flagStr;
       e._blkeyStr = blkeyStr;
-      e._blSuper = blSuper;
+      e._blStr = blStr;
       e._hasName = !!FNAME;
     } else {
       if (nm) {
@@ -239,13 +243,13 @@ function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
     let baseName = proxy._baseName || proxy.name;
     const blkeyStr = proxy._blkeyStr || "";
-    const blSuper = proxy._blSuper || "";
+    const blStr = proxy._blStr || "";
     const flagStr = proxy._flag || "";
     if (!acc[baseName]) {
       acc[baseName] = { count: 0, items: [] };
     }
     acc[baseName].count++;
-    acc[baseName].items.push({ ...proxy, blkeyStr, blSuper, flagStr });
+    acc[baseName].items.push({ ...proxy, blkeyStr, blStr, flagStr });
     return acc;
   }, {});
 
@@ -265,8 +269,12 @@ function jxh(e) {
 
       newName += item._baseName + numStr + item.blkeyStr;
 
-      if (item.blSuper) {
-        newName += " " + item.blSuper;
+      if (item.blStr) {
+        if (item.blkeyStr) {
+          newName += item.blStr;
+        } else {
+          newName += " " + item.blStr;
+        }
       }
 
       result.push({ ...item, name: newName });
@@ -275,15 +283,6 @@ function jxh(e) {
 
   e.splice(0, e.length, ...result);
   return e;
-}
-
-function toSuperscript(n) {
-  const map = {
-    '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
-    '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
-    '.': '·'
-  };
-  return String(n).split('').map(c => map[c] || c).join('');
 }
 
 function oneP(e) {
