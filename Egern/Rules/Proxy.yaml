@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6871
+# 规则统计: 6886
 
 no_resolve: true
 
@@ -244,6 +244,7 @@ domain_suffix_set:
   - aircrack-ng.org
   - airitilibrary.com
   - airtable.com
+  - airuniversity.af.edu
   - airvpn.org
   - aisex.com
   - ait.org.tw
@@ -2204,6 +2205,7 @@ domain_suffix_set:
   - gartlive.com
   - garudalinux.org
   - gate-project.com
+  - gate.com
   - gate.io
   - gatecoin.com
   - gather.com
@@ -2633,6 +2635,7 @@ domain_suffix_set:
   - hklft.com
   - hklts.org.hk
   - hkmap.live
+  - hkong.hk
   - hkopentv.com
   - hkpeanut.com
   - hkptu.org
@@ -3176,6 +3179,7 @@ domain_suffix_set:
   - kex.com
   - keycdn.com
   - keyhole.com
+  - kfor.com
   - khabdha.org
   - khatrimaza.org
   - khmusic.com.tw
@@ -3598,6 +3602,7 @@ domain_suffix_set:
   - mgoon.com
   - mgstage.com
   - mh4u.org
+  - mhwindow.org
   - michaelmarketl.com
   - microsoft-falcon.io
   - microsoft.com
@@ -4293,6 +4298,7 @@ domain_suffix_set:
   - pbxes.org
   - pcanywhere.net
   - pcdvd.com.tw
+  - pcgamesn.com
   - pcgamestorrents.com
   - pchome.com.tw
   - pcij.org
@@ -4329,6 +4335,7 @@ domain_suffix_set:
   - perfectgirls.net
   - perfectvpn.net
   - periscope.tv
+  - perma.cc
   - perplexity.ai
   - persecutionblog.com
   - persiankitty.com
@@ -4700,6 +4707,7 @@ domain_suffix_set:
   - renyurenquan.org
   - resilio.com
   - resistchina.org
+  - restofworld.org
   - retweeteffect.com
   - retweetist.com
   - retweetrank.com
@@ -5130,6 +5138,7 @@ domain_suffix_set:
   - sowers.org.hk
   - soylent.com
   - soylentnews.org
+  - spaceforce.mil
   - spacex.com
   - spankbang.com
   - spankingtube.com
@@ -5269,6 +5278,7 @@ domain_suffix_set:
   - supervpn.net
   - superzooi.com
   - suppig.net
+  - supremecourt.gov
   - suprememastertv.com
   - surfeasy.com
   - surfeasy.com.au
@@ -5462,6 +5472,7 @@ domain_suffix_set:
   - thehousenews.com
   - thehun.net
   - theinitium.com
+  - theintercept.com
   - themoviedb.org
   - thenewslens.com
   - thepiratebay.ee
@@ -5712,6 +5723,7 @@ domain_suffix_set:
   - trouw.nl
   - trt.net.tr
   - trtc.com.tw
+  - trtworld.com
   - truebuddha-md.org
   - truenas.com
   - truesocial.media
@@ -5876,6 +5888,7 @@ domain_suffix_set:
   - twnorth.org.tw
   - twreporter.org
   - twskype.com
+  - twstalker.com
   - twstar.net
   - twt.tl
   - twtkr.com
@@ -6226,6 +6239,7 @@ domain_suffix_set:
   - waselpro.com
   - washeng.net
   - washingtonpost.com
+  - washingtontimes.com
   - watch8x.com
   - watchinese.com
   - watchmygf.net
@@ -6529,6 +6543,7 @@ domain_suffix_set:
   - xt.pub
   - xteko.com
   - xtube.com
+  - xuan.com.my
   - xuchao.net
   - xuchao.org
   - xuehua.us
