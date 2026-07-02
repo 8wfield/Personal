@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 6886
+# 规则统计: 6887
 
 DOMAIN,api.waqi.info
 DOMAIN,aqi.aqicn.org
@@ -1808,6 +1808,7 @@ DOMAIN-SUFFIX,expekt.com
 DOMAIN-SUFFIX,experts-univers.com
 DOMAIN-SUFFIX,exploader.net
 DOMAIN-SUFFIX,expofutures.com
+DOMAIN-SUFFIX,expressnews.com
 DOMAIN-SUFFIX,expressvpn.com
 DOMAIN-SUFFIX,exrates.me
 DOMAIN-SUFFIX,extmatrix.com
