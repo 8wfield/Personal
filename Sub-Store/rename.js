@@ -227,12 +227,13 @@ function operator(pro) {
 
 function getSortKey(name) {
   if (!name) return null;
-  if (/香港|HK|Hong/.test(name)) return "香港";
-  if (/台湾|TW|Taiwan/.test(name)) return "台湾";
-  if (/日本|JP|Japan/.test(name)) return "日本";
-  if (/韩国|KR|Korea/.test(name)) return "韩国";
-  if (/新加坡|SG|Singapore/.test(name)) return "新加坡";
-  if (/美国|US|United States/.test(name)) return "美国";
+  const n = name.toUpperCase();
+  if (n.includes("香港") || n.includes("HK") || n.includes("HONG")) return "香港";
+  if (n.includes("台湾") || n.includes("TW") || n.includes("TAIWAN")) return "台湾";
+  if (n.includes("日本") || n.includes("JP") || n.includes("JAPAN")) return "日本";
+  if (n.includes("韩国") || n.includes("KR") || n.includes("KOREA")) return "韩国";
+  if (n.includes("新加坡") || n.includes("SG") || n.includes("SINGAPORE")) return "新加坡";
+  if (n.includes("美国") || n.includes("US") || n.includes("UNITED STATES")) return "美国";
   return null;
 }
 
