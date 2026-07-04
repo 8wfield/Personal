@@ -3,33 +3,29 @@
  * 用法：Sub-Store 脚本操作添加 rename.js
  * 
  * 主要参数：
- * name=机场名          → 显示为 name⋅
+ * name=机场名          → 显示为 ｢name｣
  * flag                 → 添加国旗
- * bl                   → 保留倍率（忽略1倍，显示为[0.1X]或[2X]）
+ * bl                   → 保留倍率（忽略1倍）
  * blkey=家宽+IPLC      → 保留关键词
  * 
  * 最终格式示例：
- * 🇭🇰 name⋅香港 01-家宽[2X]
+ * 🇭🇰 香港 1 ｢name｣ [2X 家宽 IPLC]
  */
 
 const inArg = $arguments;
 
 const nx = inArg.nx || false,
   bl = inArg.bl || false,
-  nf = inArg.nf || false,
   key = inArg.key || false,
   blgd = inArg.blgd || false,
   blpx = inArg.blpx || false,
   blnx = inArg.blnx || false,
   numone = inArg.one || false,
-  debug = inArg.debug || false,
   clear = inArg.clear || false,
   addflag = inArg.flag || false,
   nm = inArg.nm || false;
 
-const FGF = inArg.fgf == undefined ? " " : decodeURI(inArg.fgf),
-  XHFGF = inArg.sn == undefined ? " " : decodeURI(inArg.sn),
-  FNAME = inArg.name == undefined ? "" : decodeURI(inArg.name),
+const FNAME = inArg.name == undefined ? "" : decodeURI(inArg.name),
   BLKEY = inArg.blkey == undefined ? "" : decodeURI(inArg.blkey),
   blockquic = inArg.blockquic == undefined ? "" : decodeURI(inArg.blockquic),
   nameMap = {
@@ -54,12 +50,6 @@ const nameclear = /(套餐|到期|有效|剩余|版本|已用|过期|失联|测�
 const regexArray=[/ˣ²/, /ˣ³/, /ˣ⁴/, /ˣ⁵/, /ˣ⁶/, /ˣ⁷/, /ˣ⁸/, /ˣ⁹/, /ˣ¹⁰/, /ˣ²⁰/, /ˣ³⁰/, /ˣ⁴⁰/, /ˣ⁵⁰/, /IPLC/i, /IEPL/i, /核心/, /边缘/, /高级/, /标准/, /实验/, /商宽/, /家宽/, /游戏|game/i, /购物/, /专线/, /LB/, /cloudflare/i, /\budp\b/i, /\bgpt\b/i,/udpn\b/];
 const valueArray= [ "2X","3X","4X","5X","6X","7X","8X","9X","10X","20X","30X","40X","50X","IPLC","IEPL","Kern","Edge","Pro","Std","Exp","Biz","Fam","Game","Buy","Zx","LB","CF","UDP","GPT","UDPN"];
 
-const nameblnx = /(高倍|(?!1)2+(x|倍)|ˣ²|ˣ³|ˣ⁴|ˣ⁵|ˣ¹⁰)/i;
-const namenx = /(高倍|(?!1)(0\.|\d)+(x|倍)|ˣ²|ˣ³|ˣ⁴|ˣ⁵|ˣ¹⁰)/i;
-
-const keya = /港|Hong|HK|新加坡|SG|Singapore|日本|Japan|JP|美国|United States|US|韩|土耳其|TR|Turkey|Korea|KR|🇸🇬|🇭🇰|🇯🇵|🇺🇸|🇰🇷|🇹🇷/i;
-const keyb = /(((1|2|3|4)\d)|(香港|Hong|HK) 0[5-9]|((新加坡|SG|Singapore|日本|Japan|JP|美国|United States|US|韩|土耳其|TR|Turkey|Korea|KR) 0[3-9]))/i;
-
 const rurekey = {
   GB: /UK/g,
   "B-G-P": /BGP/g,
@@ -76,26 +66,7 @@ const rurekey = {
   日本: /(深|沪|呼|京|广|杭|中|辽)日(?!.*(I|线))|东京|大坂/g,
   新加坡: /狮城|(深|沪|呼|京|广|杭)新/g,
   美国: /(深|沪|呼|京|广|杭)美|波特兰|芝加哥|哥伦布|纽约|硅谷|俄勒冈|西雅图|芝加哥/g,
-  波斯尼亚和黑塞哥维那: /波黑共和国/g,
-  印尼: /印度尼西亚|雅加达/g,
-  印度: /孟买/g,
-  阿联酋: /迪拜|阿拉伯联合酋酋国/g,
-  孟加拉国: /孟加拉/g,
-  捷克: /捷克共和国/g,
-  台湾: /新台|新北|台(?!.*线)/g,
-  Taiwan: /Taipei/g,
-  韩国: /春川|韩|首尔/g,
-  Japan: /Tokyo|Osaka/g,
-  英国: /伦敦/g,
-  India: /Mumbai/g,
-  Germany: /Frankfurt/g,
-  Switzerland: /Zurich/g,
-  俄罗斯: /莫斯科/g,
-  土耳其: /伊斯坦布尔/g,
-  泰国: /泰國|曼谷/g,
-  法国: /巴黎/g,
   G: /\d\s?GB/gi,
-  Esnc: /esnc/gi,
 };
 
 let GetK = false, AMK = []
@@ -107,12 +78,7 @@ function ObjKA(i) {
 function operator(pro) {
   const Allmap = {};
   const outList = getList(outputName);
-  let inputList;
-  if (inname !== "") {
-    inputList = [getList(inname)];
-  } else {
-    inputList = [ZH, FG, QC, EN];
-  }
+  let inputList = [ZH, FG, QC, EN];
 
   inputList.forEach((arr) => {
     arr.forEach((value, valueIndex) => {
@@ -120,23 +86,15 @@ function operator(pro) {
     });
   });
 
-  if (clear || nx || blnx || key) {
-    pro = pro.filter((res) => {
-      const resname = res.name;
-      const shouldKeep =
-        !(clear && nameclear.test(resname)) &&
-        !(nx && namenx.test(resname)) &&
-        !(blnx && !nameblnx.test(resname)) &&
-        !(key && !(keya.test(resname) && /2|4|6|7/i.test(resname)));
-      return shouldKeep;
-    });
+  if (clear) {
+    pro = pro.filter((res) => !nameclear.test(res.name));
   }
 
   const BLKEYS = BLKEY ? BLKEY.split("+") : [];
 
   pro.forEach((e) => {
-    let ens = e.name;
     let retainKey = "";
+    let blRate = "";
 
     Object.keys(rurekey).forEach((ikey) => {
       if (rurekey[ikey].test(e.name)) {
@@ -144,45 +102,22 @@ function operator(pro) {
       }
     });
 
-    if (blockquic == "on") e["block-quic"] = "on";
-    else if (blockquic == "off") e["block-quic"] = "off";
-    else delete e["block-quic"];
-
     if (BLKEY) {
-      let re = false;
       BLKEYS.forEach((i) => {
         if (i.includes(">")) {
           const [from, to] = i.split(">");
-          if (ens.includes(from)) {
-            retainKey = to || from;
-            re = true;
-          }
-        } else if (ens.includes(i)) {
+          if (e.name.includes(from)) retainKey = to || from;
+        } else if (e.name.includes(i)) {
           retainKey = i;
-        }
-      });
-      if (!re) retainKey = BLKEYS.filter((item) => e.name.includes(item)).join(" ");
-    }
-
-    let bracketItems = [];
-    let blRate = "";
-
-    if (blgd) {
-      regexArray.forEach((regex, index) => {
-        if (regex.test(e.name) && valueArray[index] !== undefined) {
-          bracketItems.push(valueArray[index]);
         }
       });
     }
 
     if (bl) {
-      const match = e.name.match(/((倍率|X|x|×)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x|×)/);
+      const match = e.name.match(/(\d[\d.]*)[xX×倍]/);
       if (match) {
-        const revStr = match[0].match(/(\d[\d.]*)/)[0];
-        const rev = parseFloat(revStr);
-        if (rev !== 1) {
-          blRate = revStr;
-        }
+        const rev = parseFloat(match[1]);
+        if (rev !== 1) blRate = rev + "X";
       }
     }
 
@@ -195,80 +130,42 @@ function operator(pro) {
       let flagStr = "";
       if (addflag) {
         const index = outList.indexOf(findKeyValue);
-        if (index !== -1) {
-          flagStr = FG[index] || "";
-          if (flagStr === "🇹🇼") flagStr = "🇨🇳";
-        }
+        if (index !== -1) flagStr = FG[index] || "";
       }
 
-      let blStr = "";
-      if (blRate) {
-        blStr = "[" + blRate + "X]";
-      }
+      let extra = [];
+      if (blRate) extra.push(blRate);
+      if (retainKey) extra.push(retainKey);
 
-      let inside = [];
-      if (bracketItems.length > 0) inside = inside.concat(bracketItems);
-      if (retainKey.trim()) inside.push(retainKey.trim());
-
-      let blkeyStr = inside.length > 0 ? "-" + inside.join(" ") : "";
+      let bracketStr = extra.length > 0 ? " [" + extra.join(" ") + "]" : "";
 
       e.name = findKeyValue;
       e._baseName = findKeyValue;
       e._flag = flagStr;
-      e._blkeyStr = blkeyStr;
-      e._blStr = blStr;
+      e._bracket = bracketStr;
       e._hasName = !!FNAME;
-      e._sortKey = getSortKey(findKeyValue);   // 用于排序
     } else {
-      if (nm) {
-        e.name = (FNAME ? FNAME + "-" : "") + e.name;
-      } else {
-        e.name = null;
-      }
+      e.name = null;
     }
   });
 
-  pro = pro.filter((e) => e.name !== null && e._sortKey !== undefined);
+  pro = pro.filter((e) => e.name !== null);
 
   jxh(pro);
   if (numone) oneP(pro);
 
-  if (blpx) pro = fampx(pro);
-  if (key) pro = pro.filter((e) => !keyb.test(e.name));
-
-  const sortOrder = ["香港", "台湾", "日本", "韩国", "新加坡", "美国"];
-  pro.sort((a, b) => {
-    const idxA = sortOrder.indexOf(a._sortKey);
-    const idxB = sortOrder.indexOf(b._sortKey);
-    if (idxA === -1) return 1;
-    if (idxB === -1) return -1;
-    return idxA - idxB;
-  });
-
   return pro;
-}
-
-function getSortKey(name) {
-  if (/香港|HK|Hong/.test(name)) return "香港";
-  if (/台湾|TW|Taiwan/.test(name)) return "台湾";
-  if (/日本|JP|Japan/.test(name)) return "日本";
-  if (/韩国|KR|Korea/.test(name)) return "韩国";
-  if (/新加坡|SG|Singapore/.test(name)) return "新加坡";
-  if (/美国|US|United States/.test(name)) return "美国";
-  return null;
 }
 
 function jxh(e) {
   const groups = e.reduce((acc, proxy) => {
     let baseName = proxy._baseName || proxy.name;
-    const blkeyStr = proxy._blkeyStr || "";
-    const blStr = proxy._blStr || "";
+    const bracketStr = proxy._bracket || "";
     const flagStr = proxy._flag || "";
     if (!acc[baseName]) {
-      acc[baseName] = { count: 0, items: [] };
+      acc[baseName] = { items: [] };
     }
-    acc[baseName].count++;
-    acc[baseName].items.push({ ...proxy, blkeyStr, blStr, flagStr });
+    acc[baseName].items.push({ ...proxy, bracketStr, flagStr });
     return acc;
   }, {});
 
@@ -276,24 +173,20 @@ function jxh(e) {
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
       const num = idx + 1;
-      let numStr = (group.items.length === 1 && numone) ? "" : " " + String(num).padStart(2, '0');
+      let numStr = " " + num;
 
       let newName = "";
 
       if (item._flag) newName += item._flag + " ";
 
+      newName += item._baseName + numStr;
+
       if (item._hasName && FNAME) {
-        newName += FNAME + "⋅";
+        newName += " ｢" + FNAME + "｣";
       }
 
-      newName += item._baseName + numStr + item.blkeyStr;
-
-      if (item.blStr) {
-        if (item.blkeyStr) {
-          newName += item.blStr;
-        } else {
-          newName += " " + item.blStr;
-        }
+      if (item.bracketStr) {
+        newName += item.bracketStr;
       }
 
       result.push({ ...item, name: newName });
@@ -315,27 +208,4 @@ function getList(arg) {
     case 'quan': return QC;
     default: return ZH;
   }
-}
-
-function fampx(pro) {
-  const specialRegex = [
-    /(\d\.)?\d+X/,
-    /IPLC|IEPL|Kern|Edge|Pro|Std|Exp|Biz|Fam|Game|Buy|Zx|LB|Game/,
-  ];
-
-  const wis = pro.filter(proxy => specialRegex.some(regex => regex.test(proxy.name)));
-  const wnout = pro.filter(proxy => !specialRegex.some(regex => regex.test(proxy.name)));
-
-  const sps = wis.map(proxy =>
-    specialRegex.findIndex(regex => regex.test(proxy.name))
-  );
-
-  wis.sort((a, b) =>
-    sps[wis.indexOf(a)] - sps[wis.indexOf(b)] ||
-    a.name.localeCompare(b.name)
-  );
-
-  wnout.sort((a, b) => pro.indexOf(a) - pro.indexOf(b));
-
-  return wnout.concat(wis);
 }
