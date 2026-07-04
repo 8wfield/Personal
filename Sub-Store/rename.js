@@ -1,17 +1,37 @@
 /**
  * 更新日期：2025-06-19
  * 用法：Sub-Store 脚本操作添加 rename.js
+ * 以下是此脚本支持的参数，必须以 # 为开头多个参数使用"&"连接
  * 
- * 主要参数：
- * name=机场名          → 显示为 ｢name｣
- * flag                 → 添加国旗
- * bl                   → 保留倍率（忽略1倍）
- * blkey=家宽+IPLC      → 保留关键词
- * 
- * 最终格式示例：
- * 🇭🇰 香港 1 ｢name｣ [2X 家宽 IPLC]
- * 
- * 默认排序：香港 > 台湾 > 日本 > 韩国 > 新加坡 > 美国
+ * [in=] 自动判断机场节点名类型 优先级 zh(中文) -> flag(国旗) -> quan(英文全称) -> en(英文简写)
+ * 如果不准的情况, 可以加参数指定:
+ *
+ * [nm]    保留没有匹配到的节点
+ * [in=zh] 或in=cn识别中文
+ * [in=en] 或in=us 识别英文缩写
+ * [in=flag] 或in=gq 识别国旗 如果加参数 in=flag 则识别国旗 脚本操作前面不要添加国旗操作 否则移除国旗后面脚本识别不到
+ * [in=quan] 识别英文全称
+
+ *
+ * [out=]   输出节点名可选参数: (cn或zh ，us或en ，gq或flag ，quan) 对应：(中文，英文缩写 ，国旗 ，英文全称) 默认中文 例如 [out=en] 或 out=us 输出英文缩写
+ *** 分隔符参数
+ *
+ * [one]    清理只有一个节点的地区的01
+ * [flag]   给节点前面加国旗
+ *
+ *** 前缀参数
+ * [name=]  节点添加机场名称前缀；
+ *** 保留参数
+ * [blkey=iplc+gpt+NF+IPLC] 用+号添加多个关键词 保留节点名的自定义字段 需要区分大小写!
+ * 如果需要修改 保留的关键词 替换成别的 可以用 > 分割 例如 [#blkey=GPT>新名字+其他关键词] 这将把【GPT】替换成【新名字】
+ * 例如      https://raw.githubusercontent.com/Keywos/rule/main/rename.js#flag&blkey=GPT>新名字+NF
+ * [blgd]   保留: 家宽 IPLC ˣ² 等
+ * [bl]     正则匹配保留 [0.1x, x0.2, 6x ,3倍]等标识
+ * [nx]     保留1倍率与不显示倍率的
+ * [blnx]   只保留高倍率
+ * [clear]  清理乱名
+ * [blpx]   如果用了上面的bl参数,对保留标识后的名称分组排序,如果没用上面的bl参数单独使用blpx则不起任何作用
+ * 最终格式示例：🇭🇰 香港 1 ｢name｣ [2X 家宽 IPLC]
  */
 
 const inArg = $arguments;
@@ -23,11 +43,14 @@ const nx = inArg.nx || false,
   blpx = inArg.blpx || false,
   blnx = inArg.blnx || false,
   numone = inArg.one || false,
+  debug = inArg.debug || false,
   clear = inArg.clear || false,
   addflag = inArg.flag || false,
   nm = inArg.nm || false;
 
-const FNAME = inArg.name == undefined ? "" : decodeURI(inArg.name),
+const FGF = inArg.fgf == undefined ? " " : decodeURI(inArg.fgf),
+  XHFGF = inArg.sn == undefined ? " " : decodeURI(inArg.sn),
+  FNAME = inArg.name == undefined ? "" : decodeURI(inArg.name),
   BLKEY = inArg.blkey == undefined ? "" : decodeURI(inArg.blkey),
   blockquic = inArg.blockquic == undefined ? "" : decodeURI(inArg.blockquic),
   nameMap = {
@@ -48,6 +71,9 @@ const ZH = ['香港','澳门','台湾','日本','韩国','新加坡','美国','�
 const QC = ['Hong Kong','Macao','Taiwan','Japan','Korea','Singapore','United States','United Kingdom','France','Germany','Australia','Dubai','Afghanistan','Albania','Algeria','Angola','Argentina','Armenia','Austria','Azerbaijan','Bahrain','Bangladesh','Belarus','Belgium','Belize','Benin','Bhutan','Bolivia','Bosnia and Herzegovina','Botswana','Brazil','British Virgin Islands','Brunei','Bulgaria','Burkina-faso','Burundi','Cambodia','Cameroon','Canada','CapeVerde','CaymanIslands','Central African Republic','Chad','Chile','Colombia','Comoros','Congo-Brazzaville','Congo-Kinshasa','CostaRica','Croatia','Cyprus','Czech Republic','Denmark','Djibouti','Dominican Republic','Ecuador','Egypt','EISalvador','Equatorial Guinea','Eritrea','Estonia','Ethiopia','Fiji','Finland','Gabon','Gambia','Georgia','Ghana','Greece','Greenland','Guatemala','Guinea','Guyana','Haiti','Honduras','Hungary','Iceland','India','Indonesia','Iran','Iraq','Ireland','Isle of Man','Israel','Italy','Ivory Coast','Jamaica','Jordan','Kazakstan','Kenya','Kuwait','Kyrgyzstan','Laos','Latvia','Lebanon','Lesotho','Liberia','Libya','Lithuania','Luxembourg','Macedonia','Madagascar','Malawi','Malaysia','Maldives','Mali','Malta','Mauritania','Mauritius','Mexico','Moldova','Monaco','Mongolia','Montenegro','Morocco','Mozambique','Myanmar(Burma)','Namibia','Nepal','Netherlands','New Zealand','Nicaragua','Niger','Nigeria','NorthKorea','Norway','Oman','Pakistan','Panama','Paraguay','Peru','Philippines','Portugal','PuertoRico','Qatar','Romania','Russia','Rwanda','SanMarino','SaudiArabia','Senegal','Serbia','SierraLeone','Slovakia','Slovenia','Somalia','SouthAfrica','Spain','SriLanka','Sudan','Suriname','Swaziland','Sweden','Switzerland','Syria','Tajikstan','Tanzania','Thailand','Togo','Tonga','TrinidadandTobago','Tunisia','Turkey','Turkmenistan','U.S.Virgin Islands','Uganda','Ukraine','Uruguay','Uzbekistan','Venezuela','Vietnam','Yemen','Zambia','Zimbabwe','Andorra','Reunion','Poland','Guam','Vatican','Liechtensteins','Curacao','Seychelles','Antarctica','Gibraltar','Cuba','Faroe Islands','Ahvenanmaa','Bermuda','Timor-Leste'];
 
 const nameclear = /(套餐|到期|有效|剩余|版本|已用|过期|失联|测试|官方|网址|备用|群|TEST|客服|网站|获取|订阅|流量|机场|下次|官址|联系|邮箱|工单|学术|USE|USED|TOTAL|EXPIRE|EMAIL|GB)/i;
+
+const regexArray=[/ˣ²/, /ˣ³/, /ˣ⁴/, /ˣ⁵/, /ˣ⁶/, /ˣ⁷/, /ˣ⁸/, /ˣ⁹/, /ˣ¹⁰/, /ˣ²⁰/, /ˣ³⁰/, /ˣ⁴⁰/, /ˣ⁵⁰/, /IPLC/i, /IEPL/i, /核心/, /边缘/, /高级/, /标准/, /实验/, /商宽/, /家宽/, /游戏|game/i, /购物/, /专线/, /LB/, /cloudflare/i, /\budp\b/i, /\bgpt\b/i,/udpn\b/];
+const valueArray= [ "2X","3X","4X","5X","6X","7X","8X","9X","10X","20X","30X","40X","50X","IPLC","IEPL","Kern","Edge","Pro","Std","Exp","Biz","Fam","Game","Buy","Zx","LB","CF","UDP","GPT","UDPN"];
 
 const rurekey = {
   GB: /UK/g,
@@ -77,7 +103,12 @@ function ObjKA(i) {
 function operator(pro) {
   const Allmap = {};
   const outList = getList(outputName);
-  let inputList = [ZH, FG, QC, EN];
+  let inputList;
+  if (inname !== "") {
+    inputList = [getList(inname)];
+  } else {
+    inputList = [ZH, FG, QC, EN];
+  }
 
   inputList.forEach((arr) => {
     arr.forEach((value, valueIndex) => {
@@ -85,15 +116,23 @@ function operator(pro) {
     });
   });
 
-  if (clear) {
-    pro = pro.filter((res) => !nameclear.test(res.name));
+  if (clear || nx || blnx || key) {
+    pro = pro.filter((res) => {
+      const resname = res.name;
+      const shouldKeep =
+        !(clear && nameclear.test(resname)) &&
+        !(nx && namenx.test(resname)) &&
+        !(blnx && !nameblnx.test(resname)) &&
+        !(key && !(keya.test(resname) && /2|4|6|7/i.test(resname)));
+      return shouldKeep;
+    });
   }
 
   const BLKEYS = BLKEY ? BLKEY.split("+") : [];
 
   pro.forEach((e) => {
+    let ens = e.name;
     let retainKey = "";
-    let blRate = "";
 
     Object.keys(rurekey).forEach((ikey) => {
       if (rurekey[ikey].test(e.name)) {
@@ -101,13 +140,33 @@ function operator(pro) {
       }
     });
 
+    if (blockquic == "on") e["block-quic"] = "on";
+    else if (blockquic == "off") e["block-quic"] = "off";
+    else delete e["block-quic"];
+
     if (BLKEY) {
+      let re = false;
       BLKEYS.forEach((i) => {
         if (i.includes(">")) {
           const [from, to] = i.split(">");
-          if (e.name.includes(from)) retainKey = to || from;
-        } else if (e.name.includes(i)) {
+          if (ens.includes(from)) {
+            retainKey = to || from;
+            re = true;
+          }
+        } else if (ens.includes(i)) {
           retainKey = i;
+        }
+      });
+      if (!re) retainKey = BLKEYS.filter((item) => e.name.includes(item)).join(" ");
+    }
+
+    let bracketItems = [];
+    let blRate = "";
+
+    if (blgd) {
+      regexArray.forEach((regex, index) => {
+        if (regex.test(e.name) && valueArray[index] !== undefined) {
+          bracketItems.push(valueArray[index]);
         }
       });
     }
@@ -145,7 +204,11 @@ function operator(pro) {
       e._hasName = !!FNAME;
       e._sortKey = getSortKey(findKeyValue);
     } else {
-      e.name = null;
+      if (nm) {
+        e.name = (FNAME ? FNAME + "-" : "") + e.name;
+      } else {
+        e.name = null;
+      }
     }
   });
 
@@ -188,7 +251,7 @@ function jxh(e) {
   Object.values(groups).forEach(group => {
     group.items.forEach((item, idx) => {
       const num = idx + 1;
-      let numStr = " " + num;
+      let numStr = (group.items.length === 1 && numone) ? "" : " " + num;
 
       let newName = "";
 
