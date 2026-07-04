@@ -5,12 +5,11 @@
  * 主要参数：
  * name=机场名          → 显示为 name⋅
  * flag                 → 添加国旗
- * bl                   → 保留倍率（显示为[0.1X]或[2X]）
+ * bl                   → 保留倍率（忽略1倍，显示为[0.1X]或[2X]）
  * blkey=家宽+IPLC      → 保留关键词
  * 
  * 最终格式示例：
  * 🇭🇰 name⋅香港 01-家宽[2X]
- * 🇭🇰 name⋅香港 01 [0.1X]
  */
 
 const inArg = $arguments;
@@ -219,6 +218,7 @@ function operator(pro) {
       e._blkeyStr = blkeyStr;
       e._blStr = blStr;
       e._hasName = !!FNAME;
+      e._sortKey = getSortKey(findKeyValue);   // 用于排序
     } else {
       if (nm) {
         e.name = (FNAME ? FNAME + "-" : "") + e.name;
@@ -228,7 +228,7 @@ function operator(pro) {
     }
   });
 
-  pro = pro.filter((e) => e.name !== null);
+  pro = pro.filter((e) => e.name !== null && e._sortKey !== undefined);
 
   jxh(pro);
   if (numone) oneP(pro);
@@ -236,7 +236,26 @@ function operator(pro) {
   if (blpx) pro = fampx(pro);
   if (key) pro = pro.filter((e) => !keyb.test(e.name));
 
+  const sortOrder = ["香港", "台湾", "日本", "韩国", "新加坡", "美国"];
+  pro.sort((a, b) => {
+    const idxA = sortOrder.indexOf(a._sortKey);
+    const idxB = sortOrder.indexOf(b._sortKey);
+    if (idxA === -1) return 1;
+    if (idxB === -1) return -1;
+    return idxA - idxB;
+  });
+
   return pro;
+}
+
+function getSortKey(name) {
+  if (/香港|HK|Hong/.test(name)) return "香港";
+  if (/台湾|TW|Taiwan/.test(name)) return "台湾";
+  if (/日本|JP|Japan/.test(name)) return "日本";
+  if (/韩国|KR|Korea/.test(name)) return "韩国";
+  if (/新加坡|SG|Singapore/.test(name)) return "新加坡";
+  if (/美国|US|United States/.test(name)) return "美国";
+  return null;
 }
 
 function jxh(e) {
