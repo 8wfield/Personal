@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26965
+# 规则统计: 26968
 
 domain_set:
   - 1password.drift.click
@@ -243,7 +243,6 @@ domain_set:
   - img-s-msn-com.akamaized.net
   - impala-media-production.s3.amazonaws.com
   - imperial.insendi.com
-  - ingest.apple-studies.com
   - lastfm.freetls.fastly.net
   - lazer.ppy.sh
   - lgcscc-hamivideo2.cdn.hinet.net
@@ -2632,6 +2631,7 @@ domain_suffix_set:
   - apple-pay.wang
   - apple-store.net
   - apple-store.wang
+  - apple-studies.com
   - apple-usa.net
   - apple-watch.com.ru
   - apple.ae
@@ -3135,6 +3135,7 @@ domain_suffix_set:
   - atlassian-dev.net
   - atlassian.com
   - atlassian.net
+  - atmeta.com
   - atnext.com
   - atokara.jp
   - atom.io
@@ -3516,6 +3517,7 @@ domain_suffix_set:
   - azirevpn.com
   - aznude.com
   - azure
+  - azure-api.net
   - azure-devices-int.net
   - azure-devices.net
   - azure-dns.com
@@ -3553,6 +3555,7 @@ domain_suffix_set:
   - azureserviceprofiler.com
   - azuresmartspaces.net
   - azurestackvalidation.com
+  - azurestaticapps.net
   - azurewebsites.net
   - b-cdn.net
   - b-eroland.net
