@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 26970
+# 规则统计: 26976
 
 domain_set:
   - 1password.drift.click
@@ -9632,6 +9632,8 @@ domain_suffix_set:
   - flowgpt.com
   - flowhongkong.net
   - flowtype.org
+  - flowwow-images.com
+  - flowwow.com
   - fluffychat.im
   - fluidfxapp.com
   - fluidpreview.com
@@ -10136,6 +10138,8 @@ domain_suffix_set:
   - funkyimg.com
   - funnyfacebook.org
   - funnyordie.com
+  - funpay.com
+  - funpay.ru
   - funshemale.com
   - fuq.com
   - fuqqt.com
@@ -21039,6 +21043,7 @@ domain_suffix_set:
   - sforce.com
   - sfshibao.com
   - sftuk.org
+  - sfunpay.com
   - sfx.ms
   - sg120.me
   - sg1lib.org
@@ -22980,6 +22985,7 @@ domain_suffix_set:
   - tilda.ws
   - tildaapi.com
   - tildacdn.com
+  - tildacdn.net
   - tiltbrush.com
   - timdir.com
   - time-messenger.ru
