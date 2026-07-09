@@ -1,5 +1,5 @@
 # 规则名称: Meta
-# 规则统计: 586
+# 规则统计: 585
 
 no_resolve: true
 
@@ -557,7 +557,6 @@ domain_suffix_set:
 domain_keyword_set:
   - facebook
   - fbcdn
-  - instagram
   - whatsapp
 
 ip_cidr_set:

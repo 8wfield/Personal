@@ -1,10 +1,9 @@
 # 规则名称: Meta
-# 规则统计: 586
+# 规则统计: 585
 
 DOMAIN,graph.facebook.com
 DOMAIN-KEYWORD,facebook
 DOMAIN-KEYWORD,fbcdn
-DOMAIN-KEYWORD,instagram
 DOMAIN-KEYWORD,whatsapp
 DOMAIN-SUFFIX,aboutfacebook.com
 DOMAIN-SUFFIX,accessfacebookfromschool.com
