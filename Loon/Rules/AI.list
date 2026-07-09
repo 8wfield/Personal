@@ -1,11 +1,12 @@
 # 规则名称: AI
-# 规则统计: 93
+# 规则统计: 94
 
 AND, ((DOMAIN-KEYWORD, antigravity-auto-updater-), (DOMAIN-SUFFIX, run.app))
 AND, ((DOMAIN-KEYWORD, chatgpt-async-webps-prod-), (DOMAIN-SUFFIX, webpubsub.azure.com))
 AND, ((DOMAIN-KEYWORD, openaicom-api-), (DOMAIN-SUFFIX, azurefd.net))
 DOMAIN, ai-gateway.vercel.sh
 DOMAIN, ai.google.dev
+DOMAIN, aicode.googleapis.com
 DOMAIN, aida.googleapis.com
 DOMAIN, aiplatform.googleapis.com
 DOMAIN, aisandbox-pa.googleapis.com

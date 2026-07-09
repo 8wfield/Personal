@@ -1,11 +1,12 @@
 # 规则名称: AI
-# 规则统计: 90
+# 规则统计: 91
 
 no_resolve: true
 
 domain_set:
   -  ai-gateway.vercel.sh
   -  ai.google.dev
+  -  aicode.googleapis.com
   -  aida.googleapis.com
   -  aiplatform.googleapis.com
   -  aisandbox-pa.googleapis.com
