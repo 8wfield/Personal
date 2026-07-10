@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "488 图标",
+  "description": "492 图标",
   "icons": [
     {
       "name": "105°",
@@ -467,6 +467,14 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FW.PNG"
     },
     {
+      "name": "FY",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY.png"
+    },
+    {
+      "name": "FY_Air",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_Air.png"
+    },
+    {
       "name": "FY_CDN",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_CDN.PNG"
     },
@@ -476,7 +484,15 @@
     },
     {
       "name": "FY_CDN2",
-      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_CDN2.PNG"
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_CDN2.png"
+    },
+    {
+      "name": "FY_CDN3",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_CDN3.png"
+    },
+    {
+      "name": "FY_CDN4",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_CDN4.png"
     },
     {
       "name": "FY_Caihong",
@@ -491,20 +507,16 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_Caihong2.PNG"
     },
     {
-      "name": "FY_DPX",
-      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_DPX.PNG"
+      "name": "FY_Plus",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_Plus.png"
     },
     {
-      "name": "FY_DPX1",
-      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_DPX1.PNG"
+      "name": "FY_RainBow",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_RainBow.png"
     },
     {
-      "name": "FY_Pvt",
-      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_Pvt.PNG"
-    },
-    {
-      "name": "FY_Pvt1",
-      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_Pvt1.PNG"
+      "name": "FY_Ultra",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_Ultra.png"
     },
     {
       "name": "FY_Xingkong",
@@ -1829,6 +1841,10 @@
     {
       "name": "Xuanyi",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Xuanyi.PNG"
+    },
+    {
+      "name": "YCD",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/YCD.png"
     },
     {
       "name": "Yezi",
