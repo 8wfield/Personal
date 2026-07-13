@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "492 图标",
+  "description": "495 图标",
   "icons": [
     {
       "name": "105°",
@@ -505,6 +505,14 @@
     {
       "name": "FY_Caihong2",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_Caihong2.PNG"
+    },
+    {
+      "name": "FY_Music",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_Music.png"
+    },
+    {
+      "name": "FY_NSFW",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/FY_NSFW.png"
     },
     {
       "name": "FY_Plus",
@@ -1821,6 +1829,10 @@
     {
       "name": "XiaoDou_1",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/XiaoDou1.PNG"
+    },
+    {
+      "name": "XiaoHongShu",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/XiaoHongShu.png"
     },
     {
       "name": "Xiaoxiami",
