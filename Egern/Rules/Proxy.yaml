@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 29680
+# 规则统计: 29674
 
 no_resolve: true
 
@@ -342,11 +342,7 @@ domain_set:
   - poshtestgallery.cloudapp.net
   - ppl-ai-file-upload.s3.amazonaws.com
   - pplx-res.cloudinary.com
-  - practivate.adobe
   - practivate.adobe.com
-  - practivate.adobe.ipp
-  - practivate.adobe.newoa
-  - practivate.adobe.ntp
   - prd-priconne-redive.akamaized.net
   - preprod-publicca.googleapis.com
   - prodforza.blob.core.windows.net
@@ -2138,7 +2134,6 @@ domain_suffix_set:
   - alexanderstreet.com
   - alexlur.org
   - alfa.me
-  - alfabank.oavdo.amc
   - alfabank.ru
   - alfabank.st
   - alfadirect.ru
@@ -6304,6 +6299,7 @@ domain_suffix_set:
   - chatango.com
   - chatgpt.com
   - chatgpt.livekit.cloud
+  - chatgpt.site
   - chatgptvideo.xyz
   - chatgptvideob.buzz
   - chatnook.com
@@ -11713,7 +11709,6 @@ domain_suffix_set:
   - gonike.com
   - gonzo-movies.com
   - gonzo.com
-  - goo
   - goo.gl
   - goo.gle
   - goo.ne.jp
@@ -14183,7 +14178,6 @@ domain_suffix_set:
   - intagrm.com
   - intc.com
   - integral7.com
-  - intel
   - intel-research.net
   - intel-university-collaboration.net
   - intel.ac
@@ -15485,6 +15479,7 @@ domain_suffix_set:
   - khotruyentranhx.com
   - kichiku-doujinko.com
   - kichikuou.com
+  - kick.com
   - kickporn.com
   - kickshatchannel.com
   - kicksnike1.com
@@ -15617,7 +15612,6 @@ domain_suffix_set:
   - konachan.com
   - konachan.net
   - konachan.wjcodes.com
-  - konami
   - konami-igaming.online
   - konami.co.jp
   - konami.com
