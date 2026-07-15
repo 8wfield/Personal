@@ -1,5 +1,5 @@
 # 规则名称: AI
-# 规则统计: 91
+# 规则统计: 92
 
 no_resolve: true
 
@@ -65,6 +65,7 @@ domain_suffix_set:
   -  cerebras.ai
   -  chat.com
   -  chatgpt.com
+  -  chatgpt.site
   -  claude.ai
   -  claudeusercontent.com
   -  crixet.com
