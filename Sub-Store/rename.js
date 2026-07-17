@@ -50,9 +50,7 @@ const nx = inArg.nx || false,
   addflag = inArg.flag || false,
   nm = inArg.nm || false;
 
-const FGF = inArg.fgf == undefined ? " " : decodeURI(inArg.fgf),
-  XHFGF = inArg.sn == undefined ? " " : decodeURI(inArg.sn),
-  FNAME = inArg.name == undefined ? "" : decodeURI(inArg.name),
+const FNAME = inArg.name == undefined ? "" : decodeURI(inArg.name),
   BLKEY = inArg.blkey == undefined ? "" : decodeURI(inArg.blkey),
   blockquic = inArg.blockquic == undefined ? "" : decodeURI(inArg.blockquic),
   nameMap = {
@@ -214,6 +212,7 @@ function operator(pro) {
       e._flag = usflag;
       e._bracket = bracketStr;
       e._hasName = !!FNAME;
+      e._sortKey = getSortKey(findKeyValue);
     } else {
       if (nm) {
         e.name = (FNAME ? FNAME + "-" : "") + e.name;
@@ -223,12 +222,26 @@ function operator(pro) {
     }
   });
 
-  pro = pro.filter((e) => e.name !== null);
+  pro = pro.filter((e) => e.name !== null && e._sortKey);
+
+  const sortOrder = ["香港", "台湾", "日本", "韩国", "新加坡", "美国"];
+  pro.sort((a, b) => sortOrder.indexOf(a._sortKey) - sortOrder.indexOf(b._sortKey));
 
   jxh(pro);
   if (numone) oneP(pro);
 
   return pro;
+}
+
+function getSortKey(name) {
+  if (!name) return null;
+  if (/香港|HK|Hong/.test(name)) return "香港";
+  if (/台湾|TW|Taiwan/.test(name)) return "台湾";
+  if (/日本|JP|Japan/.test(name)) return "日本";
+  if (/韩国|KR|Korea/.test(name)) return "韩国";
+  if (/新加坡|SG|Singapore/.test(name)) return "新加坡";
+  if (/美国|US|United States/.test(name)) return "美国";
+  return null;
 }
 
 function jxh(e) {
