@@ -222,10 +222,17 @@ function operator(pro) {
     }
   });
 
-  pro = pro.filter((e) => e.name !== null && e._sortKey);
+  pro = pro.filter((e) => e.name !== null);
 
   const sortOrder = ["香港", "台湾", "日本", "韩国", "新加坡", "美国"];
-  pro.sort((a, b) => sortOrder.indexOf(a._sortKey) - sortOrder.indexOf(b._sortKey));
+  pro.sort((a, b) => {
+    const idxA = sortOrder.indexOf(a._sortKey || "");
+    const idxB = sortOrder.indexOf(b._sortKey || "");
+    if (idxA === -1 && idxB === -1) return 0;
+    if (idxA === -1) return 1;
+    if (idxB === -1) return -1;
+    return idxA - idxB;
+  });
 
   jxh(pro);
   if (numone) oneP(pro);
