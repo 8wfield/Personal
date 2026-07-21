@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 29714
+# 规则统计: 29725
 
 DOMAIN,1password.drift.click
 DOMAIN,3dns-1.adobe.com
@@ -576,6 +576,7 @@ DOMAIN,time5.facebook.com
 DOMAIN,tlmr-hamivideo2.cdn.hinet.net
 DOMAIN,tmdb-image-prod.b-cdn.net
 DOMAIN,tmdb-web-image-prod.b-cdn.net
+DOMAIN,trojan-gfw.github.io
 DOMAIN,tv.applemusic.com
 DOMAIN,tvcastlive-hamivideo.cdn.hinet.net
 DOMAIN,ubisoft-orbit-savegames.s3.amazonaws.com
@@ -746,6 +747,7 @@ DOMAIN,wwis-dubc1-vip99.adobe.com
 DOMAIN,www-cdn.icloud.com.akadns.net
 DOMAIN,www.microsoft.com
 DOMAIN,www.quora.com.cdn.cloudflare.net
+DOMAIN,xtls.github.io
 DOMAIN,yangzhi.app
 DOMAIN,yt3.googleusercontent.com
 DOMAIN,zeenews-fonts.s3.amazonaws.com
@@ -4359,6 +4361,7 @@ DOMAIN-SUFFIX,berlinerbericht.de
 DOMAIN-SUFFIX,berlintwitterwall.com
 DOMAIN-SUFFIX,berm.co.nz
 DOMAIN-SUFFIX,best-sex-games.com
+DOMAIN-SUFFIX,best2pay.net
 DOMAIN-SUFFIX,best4bim.com
 DOMAIN-SUFFIX,bestbeats4u.com
 DOMAIN-SUFFIX,bestbhy.com
@@ -6702,6 +6705,7 @@ DOMAIN-SUFFIX,clashmini.com
 DOMAIN-SUFFIX,clashofclans.com
 DOMAIN-SUFFIX,clashroyale.com
 DOMAIN-SUFFIX,clashroyaleapp.com
+DOMAIN-SUFFIX,clashyun.com
 DOMAIN-SUFFIX,clasporno.org
 DOMAIN-SUFFIX,classicalguitarblog.net
 DOMAIN-SUFFIX,classicnike.com
@@ -9560,6 +9564,8 @@ DOMAIN-SUFFIX,f-dro1d.org
 DOMAIN-SUFFIX,f-droid.com
 DOMAIN-SUFFIX,f-droid.org
 DOMAIN-SUFFIX,f-secure.com
+DOMAIN-SUFFIX,f1.com
+DOMAIN-SUFFIX,f1tv.com
 DOMAIN-SUFFIX,f2pool.com
 DOMAIN-SUFFIX,f5pf.com
 DOMAIN-SUFFIX,f6.dev
@@ -10468,6 +10474,7 @@ DOMAIN-SUFFIX,form.new
 DOMAIN-SUFFIX,formit360.com
 DOMAIN-SUFFIX,formitfactory.com
 DOMAIN-SUFFIX,forms.new
+DOMAIN-SUFFIX,formula1.com
 DOMAIN-SUFFIX,forpojie.pics
 DOMAIN-SUFFIX,forshtadt.ru
 DOMAIN-SUFFIX,fortawesome.com
@@ -13508,6 +13515,7 @@ DOMAIN-SUFFIX,hutianyi.net
 DOMAIN-SUFFIX,hutong9.net
 DOMAIN-SUFFIX,hutpromos.com
 DOMAIN-SUFFIX,huyandex.com
+DOMAIN-SUFFIX,hva.im
 DOMAIN-SUFFIX,hwadzan.tw
 DOMAIN-SUFFIX,hwayue.org.tw
 DOMAIN-SUFFIX,hwgo.com
@@ -21769,8 +21777,10 @@ DOMAIN-SUFFIX,rbmavericks.com
 DOMAIN-SUFFIX,rbnainternational.com
 DOMAIN-SUFFIX,rbplc.com
 DOMAIN-SUFFIX,rbrandlibrary.com
+DOMAIN-SUFFIX,rbsgate.com
 DOMAIN-SUFFIX,rbsgr.com
 DOMAIN-SUFFIX,rbspeakup.com
+DOMAIN-SUFFIX,rbsuat.com
 DOMAIN-SUFFIX,rbth.com
 DOMAIN-SUFFIX,rbx.com
 DOMAIN-SUFFIX,rbxcdn.com
@@ -24423,6 +24433,7 @@ DOMAIN-SUFFIX,syosetu.com
 DOMAIN-SUFFIX,sysinternals.com
 DOMAIN-SUFFIX,sysresccd.org
 DOMAIN-SUFFIX,system76.com
+DOMAIN-SUFFIX,sysub.com
 DOMAIN-SUFFIX,sytes.net
 DOMAIN-SUFFIX,syx86.com
 DOMAIN-SUFFIX,syzbj36.xyz

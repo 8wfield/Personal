@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 29714
+# 规则统计: 29725
 
 no_resolve: true
 
@@ -579,6 +579,7 @@ domain_set:
   - tlmr-hamivideo2.cdn.hinet.net
   - tmdb-image-prod.b-cdn.net
   - tmdb-web-image-prod.b-cdn.net
+  - trojan-gfw.github.io
   - tv.applemusic.com
   - tvcastlive-hamivideo.cdn.hinet.net
   - ubisoft-orbit-savegames.s3.amazonaws.com
@@ -749,6 +750,7 @@ domain_set:
   - www-cdn.icloud.com.akadns.net
   - www.microsoft.com
   - www.quora.com.cdn.cloudflare.net
+  - xtls.github.io
   - yangzhi.app
   - yt3.googleusercontent.com
   - zeenews-fonts.s3.amazonaws.com
@@ -4338,6 +4340,7 @@ domain_suffix_set:
   - berlintwitterwall.com
   - berm.co.nz
   - best-sex-games.com
+  - best2pay.net
   - best4bim.com
   - bestbeats4u.com
   - bestbhy.com
@@ -6681,6 +6684,7 @@ domain_suffix_set:
   - clashofclans.com
   - clashroyale.com
   - clashroyaleapp.com
+  - clashyun.com
   - clasporno.org
   - classicalguitarblog.net
   - classicnike.com
@@ -9539,6 +9543,8 @@ domain_suffix_set:
   - f-droid.com
   - f-droid.org
   - f-secure.com
+  - f1.com
+  - f1tv.com
   - f2pool.com
   - f5pf.com
   - f6.dev
@@ -10447,6 +10453,7 @@ domain_suffix_set:
   - formit360.com
   - formitfactory.com
   - forms.new
+  - formula1.com
   - forpojie.pics
   - forshtadt.ru
   - fortawesome.com
@@ -13487,6 +13494,7 @@ domain_suffix_set:
   - hutong9.net
   - hutpromos.com
   - huyandex.com
+  - hva.im
   - hwadzan.tw
   - hwayue.org.tw
   - hwgo.com
@@ -21748,8 +21756,10 @@ domain_suffix_set:
   - rbnainternational.com
   - rbplc.com
   - rbrandlibrary.com
+  - rbsgate.com
   - rbsgr.com
   - rbspeakup.com
+  - rbsuat.com
   - rbth.com
   - rbx.com
   - rbxcdn.com
@@ -24402,6 +24412,7 @@ domain_suffix_set:
   - sysinternals.com
   - sysresccd.org
   - system76.com
+  - sysub.com
   - sytes.net
   - syx86.com
   - syzbj36.xyz
