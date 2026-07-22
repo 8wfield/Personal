@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 29725
+# 规则统计: 29726
 
 no_resolve: true
 
@@ -29418,6 +29418,7 @@ domain_suffix_set:
   - zenlesszonezero.com
   - zenmate.com
   - zenmate.com.ru
+  - zenmux.ai
   - zenodo.org
   - zeplin.dev
   - zeplin.io

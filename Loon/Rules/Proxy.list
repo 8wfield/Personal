@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 29725
+# 规则统计: 29726
 
 DOMAIN,1password.drift.click
 DOMAIN,3dns-1.adobe.com
@@ -29439,6 +29439,7 @@ DOMAIN-SUFFIX,zenit.ru
 DOMAIN-SUFFIX,zenlesszonezero.com
 DOMAIN-SUFFIX,zenmate.com
 DOMAIN-SUFFIX,zenmate.com.ru
+DOMAIN-SUFFIX,zenmux.ai
 DOMAIN-SUFFIX,zenodo.org
 DOMAIN-SUFFIX,zeplin.dev
 DOMAIN-SUFFIX,zeplin.io
