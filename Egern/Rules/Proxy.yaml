@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 29726
+# 规则统计: 29727
 
 no_resolve: true
 
@@ -25293,6 +25293,7 @@ domain_suffix_set:
   - tok.media
   - token.im
   - tokenlon.im
+  - tokenplus.app
   - tokyo-247.com
   - tokyo-hot.com
   - tokyo-porn-tube.com

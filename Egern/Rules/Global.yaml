@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 27039
+# 规则统计: 27040
 
 domain_set:
   - 1password.drift.click
@@ -23132,6 +23132,7 @@ domain_suffix_set:
   - tok.media
   - token.im
   - tokenlon.im
+  - tokenplus.app
   - tokyo-hot.com
   - tokyo-porn-tube.com
   - tokyo-sports.co.jp
