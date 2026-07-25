@@ -1,5 +1,5 @@
 # 规则名称: Proxy
-# 规则统计: 29727
+# 规则统计: 29732
 
 no_resolve: true
 
@@ -6594,6 +6594,7 @@ domain_suffix_set:
   - cinny.in
   - cios.org
   - cipfg.org
+  - circle19.org
   - circlethebayfortibet.org
   - cirosantilli.com
   - cisco
@@ -8252,6 +8253,7 @@ domain_suffix_set:
   - docs.com
   - docs.new
   - docs.rs
+  - docs.rw
   - doctor-videos.com
   - doctorvoice.org
   - documentforce.com
@@ -15400,6 +15402,7 @@ domain_suffix_set:
   - karabako-gmo.com
   - karafarinbank.ir
   - karayou.com
+  - kards.com
   - karechat.ai
   - karger.com
   - karinahart.com
@@ -16168,6 +16171,7 @@ domain_suffix_set:
   - localpresshk.com
   - localxlist.org
   - lockestek.com
+  - log.rw
   - logbot.net
   - logi.com
   - logicool.co.jp
@@ -25555,6 +25559,7 @@ domain_suffix_set:
   - truyenkk1.com
   - truyentranh86.com
   - truyenwk.com
+  - try.rw
   - tryalias.com
   - tryboobs.com
   - trycloudflare.com
