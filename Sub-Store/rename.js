@@ -35,7 +35,7 @@
  * [blpx]   分组排序（需配合 [bl] 使用）
  * 
  * 最终输出示例：
- * 🇭🇰  [机场名] 香港-01｜2X家宽 IPLC
+ * 🇭🇰 [机场名] 香港-01·2X 家宽 IPLC
  */
 
 const inArg = $arguments;
@@ -274,7 +274,7 @@ function jxh(e) {
 
       let newName = "";
 
-      if (item._flag) newName += item._flag + "  ";
+      if (item._flag) newName += item._flag + " ";
 
       if (item._hasName && FNAME) {
         newName += "[" + FNAME + "] ";
@@ -291,7 +291,7 @@ function jxh(e) {
         if (content.startsWith("[") && content.endsWith("]")) {
           content = content.slice(1, -1);
         }
-        newName += "｜" + content;
+        newName += "·" + content;
       }
 
       result.push({ ...item, name: newName });
