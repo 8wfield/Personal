@@ -172,10 +172,10 @@ function operator(pro) {
     }
 
     if (bl) {
-      const match = e.name.match(/(\d[\d.]*)[xX×倍]/);
+      const match = e.name.match(/(\d[\d.]*)\s*[xX×倍]|[xX×倍]\s*(\d[\d.]*)/);
       if (match) {
-        const rev = parseFloat(match[1]);
-        if (rev !== 1) blRate = rev + "X";
+        const rev = parseFloat(match[1] || match[2]);
+        if (rev !== 1) blRate = "X" + rev;
       }
     }
 
