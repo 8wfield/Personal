@@ -4,38 +4,47 @@
  * 参数格式：以 # 开头，多个参数用 & 连接
  * 
  * ========== 输入识别 ==========
- * [in=zh]  识别中文节点名（默认）
- * [in=en]  识别英文缩写（如 US、JP、HK）
- * [in=flag] 识别国旗
- * [in=quan] 识别英文全称
- * [nm]     保留未匹配到的节点（不删除）
+ * [in=zh]    识别中文节点名（默认）
+ * [in=en]    识别英文缩写（如 US、JP、HK）
+ * [in=flag]  识别国旗
+ * [in=quan]  识别英文全称
+ * [nm]       保留未匹配到的节点（不删除）
  * 
  * ========== 输出格式 ==========
- * [out=zh] 输出中文（默认）
- * [out=en] 输出英文缩写
+ * [out=zh]   输出中文（默认）
+ * [out=en]   输出英文缩写
  * [out=flag] 输出国旗
  * [out=quan] 输出英文全称
  * 
  * ========== 显示控制 ==========
- * [flag]   给节点前面加国旗
- * [one]    如果某地区只有一个节点，去掉序号
+ * [flag]     给节点前面加国旗
+ * [one]      如果某地区只有一个节点，去掉序号
  * 
  * ========== 前缀设置 ==========
  * [name=机场名称]  节点添加机场名称前缀
- * [nf]     把前缀放在最前面
+ * [nf]       把前缀放在最前面
  * 
  * ========== 保留规则 ==========
  * [blkey=关键词1+关键词2]  保留节点名中的关键词，用 + 连接多个
  *                         支持替换：关键词1>新名字
- * [blgd]   保留：家宽、IPLC、ˣ² 等标签
- * [bl]     保留倍率标识（如 2X、6x、3倍）
- * [nx]     保留 1 倍率与无倍率节点
- * [blnx]   只保留高倍率节点
- * [clear]  清理乱名（套餐、到期、客服等）
- * [blpx]   分组排序（需配合 [bl] 使用）
+ * [blgd]     保留：家宽、IPLC、ˣ² 等标签
+ * [bl]       保留倍率标识（如 2X、6x、3倍）
+ * [nx]       保留 1 倍率与无倍率节点
+ * [blnx]     只保留高倍率节点
+ * [clear]    清理乱名（套餐、到期、客服等）
+ * [blpx]     分组排序（需配合 [bl] 使用）
  * 
- * 最终输出示例：
- * 🇭🇰 [机场名] 香港-01·2X 家宽 IPLC
+ * ========== 输出格式说明 ==========
+ * 最终输出示例（参数：flag & name=机场名 & bl & blgd）：
+ * 🇭🇰 ｢机场名｣ 香港01 [2X 家宽 IPLC]
+ * 
+ * 格式拆解：国旗 + 机场名(｢｣) + 地区名 + 序号(无分隔符) + [倍率 标签]
+ * - 前缀使用日式括弧 ｢｣，视觉上更醒目整洁
+ * - 地区与序号之间无连字符，紧凑自然
+ * - 倍率和标签统一用 [ ] 包裹，与主名称清晰区分
+ * 
+ * @author Minis (modified from 8wfield/Personal)
+ * @date   2026-07-31
  */
 
 const inArg = $arguments;
@@ -277,11 +286,11 @@ function jxh(e) {
       if (item._flag) newName += item._flag + " ";
 
       if (item._hasName && FNAME) {
-        newName += "[" + FNAME + "] ";
+        newName += "｢" + FNAME + "｣ ";
       }
 
       if (numStr) {
-        newName += item._baseName + "-" + numStr;
+        newName += item._baseName + numStr;
       } else {
         newName += item._baseName;
       }
@@ -291,7 +300,7 @@ function jxh(e) {
         if (content.startsWith("[") && content.endsWith("]")) {
           content = content.slice(1, -1);
         }
-        newName += "·" + content;
+        newName += " [" + content + "]";
       }
 
       result.push({ ...item, name: newName });
