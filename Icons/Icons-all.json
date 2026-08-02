@@ -1,10 +1,14 @@
 {
   "name": "Icons-all",
-  "description": "1233 图标",
+  "description": "1243 图标",
   "icons": [
     {
       "name": "115",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/115.png"
+    },
+    {
+      "name": "115(1)",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/115(1).png"
     },
     {
       "name": "12123",
@@ -1295,6 +1299,10 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/Loop.png"
     },
     {
+      "name": "LotusCloud",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/LotusCloud.png"
+    },
+    {
       "name": "Lray",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/Lray.png"
     },
@@ -2243,6 +2251,14 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/Twitter.png"
     },
     {
+      "name": "UC",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/UC.png"
+    },
+    {
+      "name": "UC(1)",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/UC(1).png"
+    },
+    {
       "name": "UHD",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/UHD.png"
     },
@@ -2751,8 +2767,24 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/chinamobilemcloud.png"
     },
     {
+      "name": "chinamobilemcloud(1)",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/chinamobilemcloud(1).png"
+    },
+    {
       "name": "chinaunicomcloud",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/chinaunicomcloud.png"
+    },
+    {
+      "name": "chinaunicomcloud(1)",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/chinaunicomcloud(1).png"
+    },
+    {
+      "name": "chinaunicomcloud(2)",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/chinaunicomcloud(2).png"
+    },
+    {
+      "name": "chinaunicomcloud(3)",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/chinaunicomcloud(3).png"
     },
     {
       "name": "chinese",
@@ -4039,6 +4071,10 @@
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/quark.png"
     },
     {
+      "name": "quark(1)",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/quark(1).png"
+    },
+    {
       "name": "qunhuiguanjia",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/qunhuiguanjia.png"
     },
@@ -4733,6 +4769,10 @@
     {
       "name": "xuexitong",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/xuexitong.png"
+    },
+    {
+      "name": "xunlei",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Icons-all/xunlei.png"
     },
     {
       "name": "yawang",
