@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 30005
+# 规则统计: 30008
 
 no_resolve: true
 
@@ -22386,6 +22386,7 @@ domain_suffix_set:
   - rsdlmonitor.com
   - rsf-chinese.org
   - rsf.org
+  - rsg.ms
   - rsg.sc
   - rsgamen.org
   - rshb.ru
@@ -22742,6 +22743,8 @@ domain_suffix_set:
   - sbux.com.my
   - sbuxcard.com
   - sc-cdn.net
+  - sc-gw.com
+  - sc-static.net
   - sc.com
   - sca-tolo.info
   - scala-lang.org
