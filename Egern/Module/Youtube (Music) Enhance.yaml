@@ -3,38 +3,38 @@ description: 适用于 Youtube & Youtube Music
 author: Maasea
 homepage: https://github.com/Maasea/sgmodule
 compat_arguments:
-  屏蔽上传按钮: 'true'
-  屏蔽选段按钮: 'true'
-  屏蔽Shorts按钮: 'false'
-  字幕翻译语言: 'off'
-  启用调试模式: 'false'
+  captionLang: 'off'
+  blockUpload: 'true'
+  blockImmersive: 'true'
+  blockShorts: 'false'
+  debug: 'false'
 compat_arguments_schema:
-  屏蔽上传按钮:
+  captionLang:
+    name: 字幕翻译语言
+    description: 字幕翻译语言代码，off 表示关闭翻译
+    default_value: 'off'
+  blockUpload:
     name: 屏蔽上传按钮
     description: 是否屏蔽视频上传按钮
     default_value: 'true'
     options:
     - 'true'
     - 'false'
-  屏蔽选段按钮:
+  blockImmersive:
     name: 屏蔽选段按钮
     description: 是否屏蔽全屏选段按钮
     default_value: 'true'
     options:
     - 'true'
     - 'false'
-  屏蔽Shorts按钮:
+  blockShorts:
     name: 屏蔽Shorts按钮
     description: 是否屏蔽 Shorts 按钮
     default_value: 'false'
     options:
     - 'true'
     - 'false'
-  字幕翻译语言:
-    name: 字幕翻译语言
-    description: 字幕翻译语言代码，off 表示关闭翻译
-    default_value: 'off'
-  启用调试模式:
+  debug:
     name: 启用调试模式
     description: 开启后输出更多调试日志
     default_value: 'false'
@@ -47,7 +47,7 @@ scriptings:
     match: ^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config))(\?(.*))?$
     script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js
     env:
-      _compat.$argument: '{"屏蔽上传按钮":"true","屏蔽选段按钮":"true","屏蔽Shorts按钮":"false","字幕翻译语言":"off","启用调试模式":"false"}'
+      _compat.$argument: '{"captionLang":"{{{captionLang}}}","blockUpload":{{{blockUpload}}},"blockImmersive":{{{blockImmersive}}},"blockShorts":{{{blockShorts}}},"debug":{{{debug}}}}'
     body_required: true
     binary_body: true
     max_size: -1
@@ -56,7 +56,7 @@ scriptings:
     match: ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*
     script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js
     env:
-      _compat.$argument: '{"屏蔽上传按钮":"true","屏蔽选段按钮":"true","屏蔽Shorts按钮":"false","字幕翻译语言":"off","启用调试模式":"false"}'
+      _compat.$argument: '{"captionLang":"{{{captionLang}}}"}'
     body_required: true
     binary_body: true
     max_size: -1
@@ -64,8 +64,6 @@ scriptings:
     name: youtube.request.log_event
     match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event
     script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js
-    env:
-      _compat.$argument: '{"屏蔽上传按钮":"true","屏蔽选段按钮":"true","屏蔽Shorts按钮":"false","字幕翻译语言":"off","启用调试模式":"false"}'
     body_required: true
     binary_body: true
     max_size: -1
