@@ -1,0 +1,61 @@
+name: Youtube (Music) Enhance
+description: 适用于 Youtube & Youtube Music
+compat_arguments_desc: "- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n\n1. 语言代码遵循 Google\
+  \ Translate Languages Codes, 当填入 off 时关闭翻译\n2. 开启调试模式用于输出更多日志"
+env_schema:
+  blockUpload:
+    name: 屏蔽上传按钮
+    description: 屏蔽参数：[true, false]
+    options:
+    - 'true'
+    - 'false'
+  blockImmersive:
+    name: 屏蔽选段按钮
+    description: 屏蔽参数：[true, false]
+    options:
+    - 'true'
+    - 'false'
+  blockShorts:
+    name: 屏蔽Shorts按钮
+    description: 屏蔽参数：[true, false]
+    options:
+    - 'true'
+    - 'false'
+  captionLang:
+    name: 字幕翻译语言
+    description: |-
+      翻译参数：[语言代码, off]
+      语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译
+    default_value: 'off'
+  debugMode:
+    name: 启用调试模式
+    description: 开启调试模式用于输出更多日志
+    options:
+    - 'true'
+    - 'false'
+scriptings:
+- http_response:
+    name: youtube.response
+    match: ^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config))(\?(.*))?$
+    script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js
+    body_required: true
+    binary_body: true
+    max_size: -1
+- http_request:
+    name: youtube.request.init
+    match: ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*
+    script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js
+    body_required: true
+    binary_body: true
+    max_size: -1
+- http_request:
+    name: youtube.request.log_event
+    match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event
+    script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js
+    body_required: true
+    binary_body: true
+    max_size: -1
+mitm:
+  hostnames:
+  - '*.googlevideo.com'
+  - youtubei.googleapis.com
