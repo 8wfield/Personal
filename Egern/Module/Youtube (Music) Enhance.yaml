@@ -1,67 +1,80 @@
-
 name: Youtube (Music) Enhance
 description: 适用于 Youtube & Youtube Music
-author: Maasea
-homepage: https://github.com/Maasea/sgmodule
+author: Maasea[https://github.com/Maasea], ZenmoFeiShi[https://github.com/ZenmoFeiShi/Qx]
 compat_arguments:
   blockUpload: 'true'
   blockImmersive: 'true'
   blockShorts: 'false'
   captionLang: 'off'
-  debug: 'false'
-compat_arguments_desc: '- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 开启调试模式用于输出更多日志'
+  debugMode: 'false'
+compat_arguments_desc: "- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n\n1. 语言代码遵循 Google\
+  \ Translate Languages Codes, 当填入 off 时关闭翻译\n2. 开启调试模式用于输出更多日志"
 compat_arguments_schema:
   blockUpload:
     name: 屏蔽上传按钮
-    description: 是否屏蔽视频上传按钮。可选值：[true, false]
+    description: 屏蔽参数：[true, false]
     default_value: 'true'
     options:
     - 'true'
     - 'false'
   blockImmersive:
     name: 屏蔽选段按钮
-    description: 是否屏蔽全屏选段按钮。可选值：[true, false]
+    description: 屏蔽参数：[true, false]
     default_value: 'true'
     options:
     - 'true'
     - 'false'
   blockShorts:
     name: 屏蔽Shorts按钮
-    description: 是否屏蔽Shorts按钮。可选值：[true, false]
+    description: 屏蔽参数：[true, false]
     default_value: 'false'
     options:
     - 'true'
     - 'false'
   captionLang:
     name: 字幕翻译语言
-    description: 字幕翻译语言代码，off 表示关闭翻译。遵循 Google Translate Languages Codes
+    description: '翻译参数：[语言代码, off]
+
+      语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译'
     default_value: 'off'
-  debug:
+  debugMode:
     name: 启用调试模式
-    description: 开启后输出更多调试日志。可选值：[true, false]
+    description: 开启调试模式用于输出更多日志
     default_value: 'false'
     options:
     - 'true'
     - 'false'
+url_rewrites:
+- match: ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?&ctier=L(&.+?),ctier,(.+)
+  location: https://$1$2$3
+  status_code: 302
+- match: ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad
+  location: reject-200
+- match: ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads
+  location: reject-200
+- match: ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking)
+  location: reject-200
+- match: ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext
+  location: reject-200
 scriptings:
 - http_response:
     name: youtube.response
     match: ^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config))(\?(.*))?$
     script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js
-    env:
-      _compat.$argument: '{"captionLang":"{{{captionLang}}}","blockUpload":{{{blockUpload}}},"blockImmersive":{{{blockImmersive}}}","blockShorts":{{{blockShorts}}}","debug":{{{debug}}}}'
     body_required: true
     binary_body: true
     max_size: -1
+    env:
+      _compat.$argument: '{"captionLang":"{{{captionLang}}}","blockUpload":{{{blockUpload}}},"blockImmersive":{{{blockImmersive}}},"blockShorts":{{{blockShorts}}},"debug":{{{debugMode}}}}'
 - http_request:
     name: youtube.request.init
     match: ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*
     script_url: https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js
-    env:
-      _compat.$argument: '{"captionLang":"{{{captionLang}}}"}'
     body_required: true
     binary_body: true
     max_size: -1
+    env:
+      _compat.$argument: '{"captionLang":"{{{captionLang}}}"}'
 - http_request:
     name: youtube.request.log_event
     match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event
@@ -73,4 +86,7 @@ mitm:
   hostnames:
     includes:
     - '*.googlevideo.com'
+    - redirector*.googlevideo.com
+    - www.youtube.com
+    - s.youtube.com
     - youtubei.googleapis.com
