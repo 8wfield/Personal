@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "506 图标",
+  "description": "512 图标",
   "icons": [
     {
       "name": "105°",
@@ -289,6 +289,18 @@
     {
       "name": "DC",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/DC.PNG"
+    },
+    {
+      "name": "DC Studios",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/DC Studios.png"
+    },
+    {
+      "name": "DC Studios_1",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/DC Studios1.png"
+    },
+    {
+      "name": "DC Studios_2",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/DC Studios2.png"
     },
     {
       "name": "DC_1",
@@ -633,6 +645,10 @@
     {
       "name": "GingaRessha",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/GingaRessha.PNG"
+    },
+    {
+      "name": "Goose",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Goose.png"
     },
     {
       "name": "Gousen",
@@ -1301,6 +1317,14 @@
     {
       "name": "Pixar_1",
       "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Pixar1.PNG"
+    },
+    {
+      "name": "Pixar_2",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Pixar2.png"
+    },
+    {
+      "name": "Pixar_3",
+      "url": "https://raw.githubusercontent.com/8wfield/Personal/main/Icons/Emby/Pixar3.png"
     },
     {
       "name": "PlayZ",
