@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 30029
+# 规则统计: 30032
 
 DOMAIN,1password.drift.click
 DOMAIN,3dns-1.adobe.com
@@ -1647,6 +1647,7 @@ DOMAIN-SUFFIX,adguard.info
 DOMAIN-SUFFIX,adguard.io
 DOMAIN-SUFFIX,adguard.org
 DOMAIN-SUFFIX,adguardaccount.com
+DOMAIN-SUFFIX,adguardaccount.net
 DOMAIN-SUFFIX,adguardcdn.com
 DOMAIN-SUFFIX,adguardvpn.com
 DOMAIN-SUFFIX,adhelpnews.com
@@ -20077,6 +20078,7 @@ DOMAIN-SUFFIX,oursogo.com
 DOMAIN-SUFFIX,oursteps.com.au
 DOMAIN-SUFFIX,oursweb.net
 DOMAIN-SUFFIX,ourtv.hk
+DOMAIN-SUFFIX,ouryahoo.com
 DOMAIN-SUFFIX,out-app-purchase.com
 DOMAIN-SUFFIX,outbound.io
 DOMAIN-SUFFIX,outdoorpublicsex.com
@@ -29171,6 +29173,7 @@ DOMAIN-SUFFIX,yahooapis.com
 DOMAIN-SUFFIX,yahoodns.net
 DOMAIN-SUFFIX,yahoofinance.com
 DOMAIN-SUFFIX,yahoohealth.com
+DOMAIN-SUFFIX,yahooinc.com
 DOMAIN-SUFFIX,yahoomusic.com
 DOMAIN-SUFFIX,yahoosandbox.com
 DOMAIN-SUFFIX,yahoosportsbook.com
