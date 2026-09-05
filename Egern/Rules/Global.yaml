@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 30044
+# 规则统计: 30045
 
 no_resolve: true
 
@@ -16218,6 +16218,7 @@ domain_suffix_set:
   - linux.do
   - linux.org
   - linux.org.hk
+  - linux.sb
   - linuxfoundation.org
   - linuxfromscratch.org
   - linuxmint.com
