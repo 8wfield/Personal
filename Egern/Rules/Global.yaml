@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 30051
+# 规则统计: 30052
 
 no_resolve: true
 
@@ -273,6 +273,7 @@ domain_set:
   - img-s-msn-com.akamaized.net
   - impala-media-production.s3.amazonaws.com
   - imperial.insendi.com
+  - lastfm-img.freetls.fastly.net
   - lastfm.freetls.fastly.net
   - lazer.ppy.sh
   - lgcscc-hamivideo2.cdn.hinet.net
