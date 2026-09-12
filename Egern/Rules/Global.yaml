@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 30053
+# 规则统计: 30037
 
 no_resolve: true
 
@@ -2744,13 +2744,10 @@ domain_suffix_set:
   - apexlegends.com
   - apexprint.com.hk
   - api-extractor.com
-  - api-gl.lbkrs.com
   - api-secure.recaptcha.net
   - api-verify.recaptcha.net
   - api.ai
   - api.amplitude.com
-  - api.futunn.com
-  - api.lbkrs.com
   - api.mixpanel.com
   - api.moomoobull.com
   - api.news
@@ -2761,7 +2758,6 @@ domain_suffix_set:
   - api.shuaiapi.com
   - api.steampowered.com
   - api.termius.com
-  - api5.futunn.com
   - apiary.io
   - apiauto.ru
   - apibay.org
@@ -6254,7 +6250,6 @@ domain_suffix_set:
   - cdn-vk.ru
   - cdn.angruo.com
   - cdn.arstechnica.net
-  - cdn.futustatic.com
   - cdn.jwplayer.com
   - cdn.printfriendly.com
   - cdn.seatguru.com
@@ -6917,7 +6912,6 @@ domain_suffix_set:
   - cn.sandscotaicentral.com
   - cn.shafaqna.com
   - cn.theaustralian.com.au
-  - cn.uptodown.com
   - cn6.eu
   - cna.com.tw
   - cnabc.com
@@ -8468,7 +8462,6 @@ domain_suffix_set:
   - dowjoneson.com
   - download.com
   - download.dappcdn.com
-  - download.futunn.com
   - downloadpass.com
   - downloadsforipod.com
   - dphk.org
@@ -16529,7 +16522,6 @@ domain_suffix_set:
   - lzmtnews.org
   - m-power.com
   - m-sport.co.uk
-  - m.hkgalden.com
   - m.me
   - m.moegirl.org
   - m.plixi.com
@@ -19913,12 +19905,8 @@ domain_suffix_set:
   - openallweb.com
   - openamt.com
   - openapi-quote.longbridge.cn
-  - openapi-quote.longbridge.com
   - openapi-trade.longbridge.cn
-  - openapi-trade.longbridge.com
-  - openapi.futunn.com
   - openapi.longbridge.cn
-  - openapi.longbridge.com
   - openapiplatform.com
   - openapiservice.com
   - openart.ai
@@ -21751,10 +21739,9 @@ domain_suffix_set:
   - qstatus.com
   - qt-project.org
   - qt.io
-  - qtcard.futunn.com
-  - qtcardfthk.futufin.com
   - qtrac.eu
   - qtweeter.com
+  - quakemachinex.com
   - qualcomm-email.com
   - qualcomm-inc.com
   - qualcomm.co.id
@@ -24554,7 +24541,6 @@ domain_suffix_set:
   - suppig.net
   - supplybestjerseys.com
   - support-uber.com
-  - support.futunn.com
   - supportfacebook.com
   - supr.cl
   - supremacy.com
@@ -25721,8 +25707,6 @@ domain_suffix_set:
   - tracker.gg
   - tracker.network
   - tracking-location.com
-  - trade.futunn.com
-  - trade.longportapp.com
   - tradeup.com
   - tradevip1.com
   - tradingview.com
