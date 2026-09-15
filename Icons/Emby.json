@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "Emby 521 图标",
+  "description": "Emby 522 图标",
   "icons": [
     {
       "name": "105°",
@@ -229,6 +229,10 @@
     {
       "name": "CC_1",
       "url": "https://emby-icon.vercel.app/icons/CC1.PNG"
+    },
+    {
+      "name": "ChaPanda",
+      "url": "https://emby-icon.vercel.app/icons/ChaPanda.png"
     },
     {
       "name": "ChilledMelon",

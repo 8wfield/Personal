@@ -1,6 +1,6 @@
 {
   "name": "Icons-all",
-  "description": "全部 1759 图标",
+  "description": "全部 1760 图标",
   "icons": [
     {
       "name": "105°",
@@ -669,6 +669,10 @@
     {
       "name": "Cellular.png",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cellular.png"
+    },
+    {
+      "name": "ChaPanda",
+      "url": "https://emby-icon.vercel.app/icons/ChaPanda.png"
     },
     {
       "name": "CherryLink",
