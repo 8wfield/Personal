@@ -1,6 +1,6 @@
 # 规则名称: Global
-# 规则统计: 30037
-# 更新时间: 2026-09-14 20:02:29
+# 规则统计: 30041
+# 更新时间: 2026-09-17 03:12:38
 
 DOMAIN,1password.drift.click
 DOMAIN,3dns-1.adobe.com
@@ -357,6 +357,7 @@ DOMAIN,opgg-static.akamaized.net
 DOMAIN,origin-a.akamaihd.net
 DOMAIN,osu.ppy.sh
 DOMAIN,p-events-delivery.akamaized.net
+DOMAIN,p16-tiktok-dm-sticker-sign-sg.ibyteimg.com
 DOMAIN,p16-tiktokcdn-com.akamaized.net
 DOMAIN,packages.microsoft.com
 DOMAIN,paper-attachments.s3.amazonaws.com
@@ -24455,6 +24456,9 @@ DOMAIN-SUFFIX,stripcamfun.com
 DOMAIN-SUFFIX,stripchat.com
 DOMAIN-SUFFIX,stripe-terminal-local-reader.net
 DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,stripe.dev
+DOMAIN-SUFFIX,stripe.events
+DOMAIN-SUFFIX,stripe.global
 DOMAIN-SUFFIX,stripe.network
 DOMAIN-SUFFIX,stripecdn.com
 DOMAIN-SUFFIX,stripparadise.com
