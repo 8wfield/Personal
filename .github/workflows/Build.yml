@@ -758,15 +758,6 @@ jobs:
 
           ICON_SIZE = 28
 
-          SECTIONS = [
-              ("常用服务", ["AI", "Apple", "AppleCN", "Github", "Google", "Meta", "Telegram", "Twitter", "Talkatone"]),
-              ("流媒体", ["Netflix", "PikPak", "Spotify", "YouTube"]),
-              ("国内应用", ["Alibaba", "ByteDance", "China", "ChinaIPs", "DouYin", "GeoipCN", "Tencent", "TikTok"]),
-              ("网络工具", ["Global", "HttpDns", "Lan", "SpeedtestChina", "SpeedtestInternational"]),
-              ("广告拦截", ["BanAD"]),
-          ]
-          OTHER_TITLE = "其他"
-
           def local_icon(app_name):
               target = app_name.strip().lower()
               if not ICON_DIR.is_dir():
@@ -862,15 +853,8 @@ jobs:
 
           total_rules = sum(item["count"] for item in groups)
 
-          buckets = []
-          for title, names in SECTIONS:
-              items = [g for g in groups if g["name"] in names]
-              if items:
-                  buckets.append((title, items))
-          rest = [g for g in groups if not any(g["name"] in names for _, names in SECTIONS)]
-          if rest:
-              buckets.append((OTHER_TITLE, rest))
-          print("共 " + str(len(groups)) + " 组 / " + f"{total_rules:,}" + " 条，分 " + str(len(buckets)) + " 个板块")
+          groups.sort(key=lambda entry: entry["name"].lower())
+          print("共 " + str(len(groups)) + " 组 / " + f"{total_rules:,}" + " 条")
 
           def icon_md(app, url, size):
               if not app["icon"]:
@@ -909,15 +893,12 @@ jobs:
           md.append('<p align="center"><sub>共 ' + str(len(groups)) + " 组规则，" + f"{total_rules:,}" + " 条</sub></p>")
           md.append("")
 
-          for title, items in buckets:
-              md.append("---")
-              md.append("")
-              md.append("### " + title + " <sub>" + str(len(items)) + " 组</sub>")
-              md.append("")
-              for item in items:
-                  md.append("<p><strong>" + item["name"] + "</strong> <sub>" + f"{item['count']:,}"
-                            + "</sub>" + buttons_md(item) + "</p>")
-              md.append("")
+          md.append("---")
+          md.append("")
+          for item in groups:
+              md.append("<p><strong>" + item["name"] + "</strong> <sub>" + f"{item['count']:,}"
+                        + "</sub>" + buttons_md(item) + "</p>")
+          md.append("")
 
           md.append("---")
           md.append("")
@@ -955,21 +936,15 @@ jobs:
               print("已跳过 index.html（未开启）")
               raise SystemExit(0)
 
-          sections_html = []
-          for title, items in buckets:
-              rows = []
-              for item in items:
-                  rows.append(
-                      "<tr><td class=\"rule\"><span class=\"nm\">" + html.escape(item["name"])
-                      + "</span><span class=\"ct\">" + f"{item['count']:,}" + "</span></td>"
-                      + "<td class=\"go\">" + buttons_html(item) + "</td></tr>"
-                  )
-              sections_html.append(
-                  "    <section>\n"
-                  + "      <h2>" + html.escape(title) + " <span class=\"n\">" + str(len(items)) + " 组</span></h2>\n"
-                  + "      <table><tbody>\n" + "\n".join(rows) + "\n      </tbody></table>\n"
-                  + "    </section>"
+          rows = []
+          for item in groups:
+              rows.append(
+                  "<tr><td class=\"rule\"><span class=\"nm\">" + html.escape(item["name"])
+                  + "</span><span class=\"ct\">" + f"{item['count']:,}" + "</span></td>"
+                  + "<td class=\"go\">" + buttons_html(item) + "</td></tr>"
               )
+          sections_html = ["    <section>\n      <table><tbody>\n" + "\n".join(rows)
+                           + "\n      </tbody></table>\n    </section>"]
 
           template = """<!DOCTYPE html>
           <html lang="zh-CN">
