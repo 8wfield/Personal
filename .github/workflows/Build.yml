@@ -875,16 +875,16 @@ jobs:
           def icon_md(app, url, size):
               if not app["icon"]:
                   return "[" + app["name"] + "](" + url + ")"
-              return ('[<img src="' + app["icon"] + '" width="' + str(size) + '" height="' + str(size)
-                      + '" alt="导入 ' + app["name"] + '">](' + url + ")")
+              return ('<a href="' + url + '"><img src="' + app["icon"] + '" width="' + str(size)
+                      + '" height="' + str(size) + '" align="right" alt="导入 ' + app["name"] + '"></a>')
 
           def buttons_md(item, size=ICON_SIZE):
               out = []
-              if item["loon_url"]:
-                  out.append(icon_md(APPS[0], loon_link(item["loon_url"]), size))
               if item["egern_url"]:
                   out.append(icon_md(APPS[1], egern_link(item["egern_url"]), size))
-              return "&nbsp;&nbsp;".join(out) if out else "—"
+              if item["loon_url"]:
+                  out.append(icon_md(APPS[0], loon_link(item["loon_url"]), size))
+              return "".join(out)
 
           def icon_html(app, url, size):
               image = ('<img src="' + html.escape(app["icon"]) + '" width="' + str(size)
@@ -914,11 +914,9 @@ jobs:
               md.append("")
               md.append("### " + title + " <sub>" + str(len(items)) + " 组</sub>")
               md.append("")
-              md.append("| 规则 |")
-              md.append("|:---|")
               for item in items:
-                  md.append("| **" + item["name"] + "**&nbsp;&nbsp;<sub>" + f"{item['count']:,}"
-                            + "</sub>&nbsp;&nbsp;&nbsp;" + buttons_md(item) + " |")
+                  md.append("<p><strong>" + item["name"] + "</strong> <sub>" + f"{item['count']:,}"
+                            + "</sub>" + buttons_md(item) + "</p>")
               md.append("")
 
           md.append("---")
