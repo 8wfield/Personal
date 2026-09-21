@@ -1,0 +1,1156 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      mirror_icons:
+        description: "把图标镜像到本仓库（默认关闭，开启后明显变慢且体积增大）"
+        required: false
+        default: false
+        type: boolean
+      allow_empty:
+        description: "生成内容没有变化时也创建提交"
+        required: false
+        default: false
+        type: boolean
+      generate_html:
+        description: "额外生成响应式 index.html（可选）"
+        required: false
+        default: false
+        type: boolean
+      clear_history:
+        description: "压缩 Git 历史并清理运行记录（危险，会重写历史）"
+        required: false
+        default: false
+        type: boolean
+  push:
+    paths:
+      - ".github/workflows/clear-main.yml"
+  schedule:
+    - cron: "0 */8 * * *"
+    - cron: "30 23 * * 0"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: personal-generated-files
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TZ: Asia/Shanghai
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get date
+        id: date
+        run: echo "date=$(date +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache rule sources
+        uses: actions/cache@v4
+        with:
+          path: .cache/sources
+          key: personal-rules-${{ runner.os }}-${{ steps.date.outputs.date }}
+
+      - name: Download rule sources
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -Eeuo pipefail
+          python3 <<'PY'
+          import hashlib
+          import os
+          import time
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+
+          GROUPS = [
+              ("Telegram", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list"]),
+              ("Alibaba", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Alibaba/Alibaba_All_No_Resolve.list"]),
+              ("ByteDance", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ByteDance/ByteDance.list"]),
+              ("Tencent", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Tencent/Tencent_All_No_Resolve.list"]),
+              ("YouTube", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list"]),
+              ("Twitter", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list"]),
+              ("DouYin", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DouYin/DouYin.list"]),
+              ("TikTok", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list"]),
+              ("Github", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list"]),
+              ("Google", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list"]),
+              ("Spotify", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list"]),
+              ("Netflix", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list"]),
+              ("ChinaIPs", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaIPs/ChinaIPs.list"]),
+              ("BanAD", [
+                  "https://anti-ad.net/surge.txt",
+                  "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+                  "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockloon.list",
+              ]),
+              ("China", [
+                  "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMax/ChinaMax_All_No_Resolve.list",
+                  "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All_No_Resolve.list",
+              ]),
+              ("Apple", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All_No_Resolve.list"]),
+              ("AppleCN", [
+                  "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/apple.txt",
+                  "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/icloud.txt",
+              ]),
+              ("Meta", [
+                  "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list",
+                  "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list",
+                  "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Threads/Threads.list",
+                  "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Whatsapp/Whatsapp.list",
+              ]),
+              ("HttpDns", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BlockHttpDNS/BlockHttpDNS.list"]),
+              ("AI", ["https://git.repcz.link/kelee.one/Tool/Loon/Lsr/AI.lsr"]),
+              ("Talkatone", ["https://raw.githubusercontent.com/Repcz/Tool/X/Surge/Rules/Talkatone.list"]),
+              ("Global", [
+                  "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/proxy.txt",
+                  "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/gfw.txt",
+                  "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list",
+              ]),
+              ("Lan", ["https://raw.githubusercontent.com/Repcz/Tool/X/Surge/Custom/Lan.list"]),
+              ("GeoipCN", ["https://raw.githubusercontent.com/Repcz/Tool/X/Surge/Custom/FILTER_REGION.list"]),
+              ("SpeedtestChina", ["https://git.repcz.link/kelee.one/Tool/Loon/Lsr/SpeedtestChina.lsr"]),
+              ("SpeedtestInternational", ["https://git.repcz.link/kelee.one/Tool/Loon/Lsr/SpeedtestInternational.lsr"]),
+              ("PikPak", ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PikPak/PikPak.list"]),
+          ]
+
+          CACHE = Path(".cache/sources")
+          USE_CACHE = os.environ.get("EVENT_NAME") != "workflow_dispatch"
+
+          def fetch(url):
+              cached = CACHE / (hashlib.sha256(url.encode()).hexdigest() + ".txt")
+              if USE_CACHE and cached.is_file() and cached.stat().st_size:
+                  print(f"cache hit: {url}")
+                  return cached.read_text(encoding="utf-8", errors="replace")
+              last_error = None
+              for attempt in range(1, 5):
+                  try:
+                      request = Request(url, headers={
+                          "User-Agent": "Personal-Rule-Builder/3.0",
+                          "Accept-Encoding": "identity",
+                      })
+                      with urlopen(request, timeout=45) as response:
+                          body = response.read().decode("utf-8-sig", errors="replace")
+                      if not body.strip():
+                          raise RuntimeError("empty response")
+                      probe = body.lstrip()[:400].lower()
+                      if probe.startswith("<html") or probe.startswith("<!doctype"):
+                          raise RuntimeError("unexpected HTML response")
+                      CACHE.mkdir(parents=True, exist_ok=True)
+                      cached.write_text(body, encoding="utf-8")
+                      return body
+                  except Exception as exc:
+                      last_error = exc
+                      if attempt < 4:
+                          time.sleep(attempt * 2)
+              raise RuntimeError(f"download failed: {url}: {last_error}")
+
+          urls = list(dict.fromkeys(url for _, group_urls in GROUPS for url in group_urls))
+          bodies = {}
+          with ThreadPoolExecutor(max_workers=16) as pool:
+              futures = {pool.submit(fetch, url): url for url in urls}
+              for future in as_completed(futures):
+                  url = futures[future]
+                  bodies[url] = future.result()
+                  print(f"downloaded: {url}")
+
+          Path("raw").mkdir(exist_ok=True)
+          for name, group_urls in GROUPS:
+              parts = [bodies[url] for url in group_urls]
+              Path("raw", f"{name}.source").write_text("\n".join(parts) + "\n", encoding="utf-8")
+              total = sum(part.count("\n") for part in parts)
+              print(f"{name}: {total:,} source lines")
+          PY
+
+      - name: Build Loon and Egern rules
+        run: |
+          set -Eeuo pipefail
+          python3 <<'PY'
+          import re
+          from datetime import datetime, timedelta, timezone
+          from pathlib import Path
+
+          GROUP_OF = {
+              "DOMAIN": "domain_set",
+              "DOMAIN-SUFFIX": "domain_suffix_set",
+              "DOMAIN-KEYWORD": "domain_keyword_set",
+              "DOMAIN-REGEX": "domain_regex_set",
+              "DOMAIN-WILDCARD": "domain_wildcard_set",
+              "GEOIP": "geoip_set",
+              "IP-CIDR": "ip_cidr_set",
+              "IP-CIDR6": "ip_cidr6_set",
+              "URL-REGEX": "url_regex_set",
+              "IP-ASN": "asn_set",
+              "USER-AGENT": "user_agent_set",
+              "SSID": "ssid_set",
+              "BSSID": "bssid_set",
+              "CELLULAR": "cellular_set",
+              "DEST-PORT": "dest_port_set",
+              "PROTOCOL": "protocol_set",
+          }
+          GROUP_ORDER = list(GROUP_OF.values())
+          ALIASES = {"DST-PORT": "DEST-PORT", "IP6-CIDR": "IP-CIDR6"}
+          LOGICAL = {"AND", "OR", "NOT"}
+          MULTI_VALUE = {"DEST-PORT", "DOMAIN-REGEX", "URL-REGEX", "USER-AGENT", "DOMAIN-WILDCARD"}
+          ALWAYS_QUOTE = {"DOMAIN-REGEX", "DOMAIN-WILDCARD", "IP-CIDR6", "IP-ASN", "URL-REGEX", "USER-AGENT"}
+          NO_RESOLVE_TYPES = {"IP-CIDR", "IP-CIDR6", "IP-ASN", "GEOIP"}
+          NO_RESOLVE_EXEMPT = {"GeoipCN", "Lan"}
+          KNOWN_TYPES = set(GROUP_OF) | set(LOGICAL) | set(ALIASES)
+          INNER_RULE = re.compile(r"\(([A-Za-z][A-Za-z0-9-]*)\s*,\s*([^()]*)\)")
+
+          def clean(line):
+              text = line.strip().strip("\ufeff")
+              if not text:
+                  return None
+              head = text[0]
+              if head in "#/;!":
+                  return None
+              if head == "-":
+                  if not text.startswith("- "):
+                      return None
+                  text = text[2:].strip()
+              kind, separator, rest = text.partition(",")
+              if not separator:
+                  return None
+              kind = kind.strip().upper()
+              if kind not in KNOWN_TYPES:
+                  return None
+              return kind, rest.strip()
+
+          def normalize(kind, raw_value):
+              value = raw_value.strip()
+              if not value:
+                  return None
+              no_resolve = False
+              if "," in value:
+                  parts = [part.strip() for part in value.split(",")]
+                  if parts and parts[-1].lower() == "no-resolve":
+                      no_resolve = True
+                      parts = parts[:-1]
+                  if kind not in MULTI_VALUE:
+                      parts = parts[:1]
+                  value = ",".join(parts).strip()
+              if len(value) >= 2 and value[0] == value[-1] and value[0] in "'\"":
+                  value = value[1:-1].strip()
+              kind = ALIASES.get(kind, kind)
+              if not value or kind in LOGICAL:
+                  return None
+              return kind, value, no_resolve
+
+          def parse(content):
+              rules = {}          # (kind, 归一化键) -> (kind, value, no_resolve)
+              logical_lines = []
+              skipped = 0
+              for raw in content.splitlines():
+                  cleaned = clean(raw)
+                  if cleaned is None:
+                      if raw.strip():
+                          skipped += 1
+                      continue
+                  kind, rest = cleaned
+                  if kind in LOGICAL:
+                      logical_lines.append(f"{kind}, {rest}")
+                      for inner_kind, inner_value in INNER_RULE.findall(rest):
+                          item = normalize(inner_kind.upper(), inner_value)
+                          if item:
+                              rules.setdefault((item[0], item[1].lower()), item)
+                          else:
+                              skipped += 1
+                      continue
+                  item = normalize(kind, rest)
+                  if item is None:
+                      skipped += 1
+                      continue
+                  key = (item[0], item[1].lower() if item[0] in {"DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD"} else item[1])
+                  previous = rules.get(key)
+                  if previous is None:
+                      rules[key] = item
+                  elif item[2] and not previous[2]:
+                      rules[key] = (previous[0], previous[1], True)
+              return rules, logical_lines, skipped
+
+          TIME_PATTERNS = (
+              (re.compile(r"#\s*UPDATED:\s*(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})", re.I), "%Y-%m-%d %H:%M:%S"),
+              (re.compile(r"#!date=(\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2})", re.I), "%Y/%m/%d %H:%M:%S"),
+              (re.compile(r"#\s*Update time:\s*(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})", re.I), "%Y-%m-%d %H:%M:%S"),
+              (re.compile(r"#\s*(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})", re.I), "%Y-%m-%d %H:%M:%S"),
+              (re.compile(r"#VER=(\d{14})", re.I), "%Y%m%d%H%M%S"),
+          )
+          BEIJING = timezone(timedelta(hours=8))
+
+          def source_time(path):
+              try:
+                  head = path.read_text(encoding="utf-8", errors="replace")[:8192]
+              except OSError:
+                  head = ""
+              best = None
+              for pattern, fmt in TIME_PATTERNS:
+                  for found in pattern.findall(head):
+                      try:
+                          moment = datetime.strptime(found, fmt).replace(tzinfo=BEIJING)
+                      except ValueError:
+                          continue
+                      if best is None or moment > best:
+                          best = moment
+              return (best or datetime.now(BEIJING)).astimezone(BEIJING).strftime("%Y-%m-%d %H:%M:%S")
+
+          PLAIN_FORBIDDEN = set(":[]{}\",#&*!|>%@`\n\t'\\")
+          PLAIN_KEYWORDS = {"true", "false", "yes", "no", "on", "off", "null", "~"}
+          NUMBERISH = re.compile(r"[-+]?[0-9]+(?:\.[0-9]+)?")
+
+          def scalar(kind, value):
+              quote = kind in ALWAYS_QUOTE
+              if not quote:
+                  if value != value.strip() or not value:
+                      quote = True
+                  elif value[0] in "-?:,[]{}#&*!|>'\"%@`":
+                      quote = True
+                  elif any(char in PLAIN_FORBIDDEN for char in value):
+                      quote = True
+                  elif " #" in value:
+                      quote = True
+                  elif value.lower() in PLAIN_KEYWORDS:
+                      quote = True
+                  elif NUMBERISH.fullmatch(value):
+                      quote = True
+              if not quote:
+                  return value
+              return "'" + value.replace("'", "''") + "'"
+
+          def header(name, count, timestamp):
+              return f"# 规则名称: {name}\n# 规则统计: {count}\n# 更新时间: {timestamp}\n\n"
+
+          def write_stable(path, body, name, count, timestamp):
+              previous = path.read_text(encoding="utf-8", errors="replace") if path.exists() else ""
+              old_body = previous.split("\n\n", 1)[1].strip() if "\n\n" in previous else ""
+              old_time = None
+              for line in previous.splitlines()[:4]:
+                  if line.startswith("# 更新时间:"):
+                      old_time = line.split(":", 1)[1].strip()
+              if old_time and old_body == body.strip():
+                  timestamp = old_time
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_text(header(name, count, timestamp) + body.strip() + "\n", encoding="utf-8", newline="\n")
+
+          loon_dir = Path("Loon/Rules")
+          egern_dir = Path("Egern/Rules")
+          loon_dir.mkdir(parents=True, exist_ok=True)
+          egern_dir.mkdir(parents=True, exist_ok=True)
+
+          sources = sorted(Path("raw").glob("*.source"))
+          if not sources:
+              raise SystemExit("no raw/*.source generated")
+
+          generated = set()
+          for source in sources:
+              name = source.stem
+              rules, logical_lines, skipped = parse(source.read_text(encoding="utf-8", errors="replace"))
+              if not rules:
+                  raise SystemExit(f"{name}: no usable rules (skipped {skipped})")
+              timestamp = source_time(source)
+              use_no_resolve = name not in NO_RESOLVE_EXEMPT
+
+              loon_rules = []
+              for kind, value, no_resolve in rules.values():
+                  suffix = ",no-resolve" if kind in NO_RESOLVE_TYPES and (no_resolve or use_no_resolve) else ""
+                  loon_rules.append((kind, f"{kind},{value}{suffix}"))
+              loon_rules.sort(key=lambda item: (item[0], item[1].lower()))
+              loon_lines = [line for _, line in loon_rules] + sorted(logical_lines)
+              write_stable(loon_dir / f"{name}.list", "\n".join(loon_lines), name, len(loon_lines), timestamp)
+
+              groups = {key: [] for key in GROUP_ORDER}
+              needs_no_resolve = False
+              for kind, value, no_resolve in rules.values():
+                  group = GROUP_OF[kind]
+                  groups[group].append((kind, value))
+                  if kind in NO_RESOLVE_TYPES and (no_resolve or use_no_resolve):
+                      needs_no_resolve = True
+              body = []
+              if needs_no_resolve:
+                  body.append("no_resolve: true")
+              total = 0
+              for group in GROUP_ORDER:
+                  items = groups[group]
+                  if not items:
+                      continue
+                  body.append(f"{group}:")
+                  for kind, value in sorted(set(items), key=lambda item: item[1].lower()):
+                      body.append(f"- {scalar(kind, value)}")
+                      total += 1
+              write_stable(egern_dir / f"{name}.yaml", "\n".join(body), name, total, timestamp)
+              generated.add(name)
+              print(f"{name}: {len(loon_lines):,} Loon / {total:,} Egern / skipped {skipped:,}")
+
+          for directory, suffix in ((loon_dir, ".list"), (egern_dir, ".yaml")):
+              for path in directory.glob(f"*{suffix}"):
+                  if path.stem not in generated:
+                      path.unlink()
+                      print(f"removed stale: {path}")
+
+          print("rule files built")
+          PY
+
+      - name: Icons
+        env:
+          MIRROR_ICONS: ${{ inputs.mirror_icons || 'false' }}
+        run: |
+          set -Eeuo pipefail
+          mkdir -p Icons raw/icon-work
+          WORK="raw/icon-work"
+
+          sources=(
+            "Flags|direct|https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Area.json"
+            "Media|direct|https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Media.json"
+            "Apps|direct|https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-AppGame.json"
+            "Services|direct|https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Service.json"
+            "Server|direct|https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Server.json"
+            "Common|direct|https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Common.json"
+            "Inhibition|direct|https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Inhibition.json"
+            "Other|direct|https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Other.json"
+            "Other|path|https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon.json"
+            "Emby|direct|https://emby-icon.vercel.app/TFEL-Emby.json"
+          )
+
+          repo="${{ github.repository }}"
+          branch="${{ github.ref_name }}"
+          mirror="${MIRROR_ICONS:-false}"
+          mirror_json=$([ "$mirror" = "true" ] && echo true || echo false)
+
+          cat > "$WORK/extract.jq" <<'JQ'
+          def enc_url:
+            explode | map([.] | implode)
+            | map(if test("^[A-Za-z0-9._~:/?#@!$&'()*+,;=%-]$") then . else @uri end)
+            | join("");
+          def icons:
+            if type == "object" and has("icons") then .icons
+            elif type == "array" then .
+            else error("unsupported icon source") end;
+          def classify($u):
+            if   ($u | test("icon/01Country/"))       then "Flags"
+            elif ($u | test("icon/02ProxySoftLogo/")) then "ProxyTools"
+            elif ($u | test("icon/03CNSoft/"))        then "CNApps"
+            elif ($u | test("icon/04ProxySoft/"))     then "Apps"
+            elif ($u | test("icon/05icon/"))          then "Functional"
+            elif ($u | test("icon/06jichang/"))       then "Airport"
+            else "Other" end;
+          icons
+          | .[]
+          | select(.url? and (.url | type == "string"))
+          | select(.url | test("\\.(png|jpe?g|gif|svg|webp)(\\?.*)?$"; "i"))
+          | {
+              category: (if $mode == "path" then classify(.url) else $category end),
+              name: ((.name // "") | tostring),
+              url: .url,
+              encoded: (.url | enc_url)
+            }
+          JQ
+
+          download_icon() {
+            local encoded="$1" target="$2" temp="$3"
+            mkdir -p "${target%/*}"
+            if curl --fail --silent --show-error --location --retry 3 --retry-all-errors \
+              --connect-timeout 8 --max-time 60 "$encoded" -o "$temp" && [ -s "$temp" ]; then
+              if [ -s "$target" ] && cmp -s "$temp" "$target"; then
+                rm -f "$temp"
+                return 0
+              fi
+              mv -f "$temp" "$target"
+              return 0
+            fi
+            rm -f "$temp"
+            [ -s "$target" ]
+          }
+          export -f download_icon
+
+          : > "$WORK/all.jsonl"
+          index=0
+          ok_sources=0
+          for entry in "${sources[@]}"; do
+            IFS='|' read -r category mode url <<< "$entry"
+            index=$((index + 1))
+            src="$WORK/source-$index.json"
+            if ! curl --fail --silent --show-error --location --retry 3 --retry-all-errors \
+              --connect-timeout 15 --max-time 90 "$url" -o "$src"; then
+              echo "::warning::icon source unavailable: $url"
+              continue
+            fi
+            if ! jq -c -e -f "$WORK/extract.jq" --arg category "$category" --arg mode "$mode" "$src" > "$WORK/part-$index.jsonl" 2>/dev/null; then
+              echo "::warning::icon source skipped: $url"
+              continue
+            fi
+            ok_sources=$((ok_sources + 1))
+            echo "[$category/$mode] $(wc -l < "$WORK/part-$index.jsonl") icons <- $url"
+            cat "$WORK/part-$index.jsonl" >> "$WORK/all.jsonl"
+          done
+          if [ "$ok_sources" -eq 0 ] || [ ! -s "$WORK/all.jsonl" ]; then
+            echo "::error::no icon source could be parsed"
+            exit 1
+          fi
+
+          jq -s 'group_by(.category) | map({category: .[0].category, icons: (group_by(.name) | map(.[0]))})' \
+            "$WORK/all.jsonl" > "$WORK/groups.json"
+
+          if [ "$mirror" = "true" ]; then
+            declare -A USED=()
+            : > "$WORK/mirror-list.tsv"
+            : > "$WORK/jobs.tsv"
+            jq -r '.[] | .category as $c | .icons[] | [$c, .encoded, .url] | @tsv' "$WORK/groups.json" > "$WORK/mirror-list.tsv"
+            while IFS=$'\t' read -r category encoded url; do
+              base="${url%%\?*}"
+              base="${base##*/}"
+              base="${base// /%20}"
+              [ -n "$base" ] || base="icon.png"
+              key="$category/$base"
+              if [ -n "${USED[$key]:-}" ]; then
+                if [[ "$base" == *.* ]]; then
+                  base="${base%.*}-$(printf '%s' "$url" | sha256sum | cut -c1-10).${base##*.}"
+                else
+                  base="$(printf '%s' "$url" | sha256sum | cut -c1-10).png"
+                fi
+                key="$category/$base"
+              fi
+              USED[$key]=1
+              printf '%s\t%s\t%s\t%s\t%s\n' "$encoded" "Icons/$category/$base" "$WORK/.tmp-$category-$base" "$url" "$category" >> "$WORK/jobs.tsv"
+            done < "$WORK/mirror-list.tsv"
+
+            if [ -s "$WORK/jobs.tsv" ]; then
+              cut -f1-3 "$WORK/jobs.tsv" | xargs -P 16 -n 3 bash -c 'download_icon "$1" "$2" "$3"' _ || true
+            fi
+
+            : > "$WORK/success.tsv"
+            while IFS=$'\t' read -r encoded target temp url category; do
+              if [ -s "$target" ]; then
+                printf '%s\t%s\t%s\n' "$url" "$category" "${target##*/}" >> "$WORK/success.tsv"
+              fi
+            done < "$WORK/jobs.tsv"
+            total=$(wc -l < "$WORK/jobs.tsv")
+            done_count=$(wc -l < "$WORK/success.tsv")
+            echo "mirrored $done_count/$total icons"
+            if [ "$done_count" -lt "$total" ]; then
+              echo "::warning::$((total - done_count)) icons kept on upstream URLs"
+            fi
+            jq -Rn '[inputs | split("\t") | {url: .[0], category: .[1], filename: .[2]}]' \
+              < "$WORK/success.tsv" > "$WORK/success.json"
+          else
+            printf '[]\n' > "$WORK/success.json"
+          fi
+
+          jq --arg repo "$repo" --arg branch "$branch" --argjson mode "$mirror_json" \
+            --slurpfile success "$WORK/success.json" '
+            def zh($c): ({Flags:"国旗",Media:"媒体",Apps:"应用",CNApps:"国内应用",Airport:"机场",ProxyTools:"代理工具",Functional:"功能",Services:"服务",Server:"服务器",Common:"公共",Inhibition:"拦截",Other:"其他",Emby:"Emby"}[$c] // $c);
+            .[]
+            | .category as $category
+            | (.icons | map(
+                .url as $u
+                | (first($success[0][] | select(.url == $u)) // null) as $m
+                | if $mode and $m then
+                    {name: .name, url: ("https://raw.githubusercontent.com/" + $repo + "/" + $branch + "/Icons/" + $m.category + "/" + $m.filename)}
+                  else {name: .name, url: .url} end
+              )) as $icons
+            | {
+                name: $category,
+                description: (zh($category) + " " + (($icons | length) | tostring) + " 图标"),
+                icons: $icons
+              }
+          ' "$WORK/groups.json" > "$WORK/output.jsonl"
+
+          jq -c '.' "$WORK/output.jsonl" | while IFS= read -r obj; do
+            category=$(jq -r '.name' <<< "$obj")
+            jq '.' <<< "$obj" > "Icons/$category.json"
+          done
+
+          jq -s '
+            (map(.icons) | add | group_by(.name) | map(.[0])) as $all
+            | {
+                name: "Icons-all",
+                description: ("全部 " + (($all | length) | tostring) + " 图标"),
+                icons: $all
+              }
+          ' "$WORK/output.jsonl" > "Icons/Icons-all.json"
+
+          if [ "$mirror" = "true" ]; then
+            for f in Icons/*.json; do
+              name="${f##*/}"
+              name="${name%.json}"
+              [ "$name" = "Icons-all" ] && continue
+              mkdir -p "Icons/$name"
+              touch "Icons/$name/updated.flag"
+            done
+          fi
+
+          for f in Icons/*.json; do
+            printf '%-20s %s\n' "${f##*/}" "$(jq -r '(.icons|length|tostring) + " 图标"' "$f")"
+          done
+
+          rm -rf "$WORK"
+
+      - name: Validate
+        run: |
+          set -Eeuo pipefail
+          python3 <<'PY'
+          import json
+          import shutil
+          import subprocess
+          from pathlib import Path
+
+          EGERN_KEYS = {
+              "no_resolve", "domain_set", "domain_suffix_set", "domain_keyword_set",
+              "domain_regex_set", "domain_wildcard_set", "geoip_set", "ip_cidr_set",
+              "ip_cidr6_set", "url_regex_set", "asn_set", "user_agent_set",
+              "ssid_set", "bssid_set", "cellular_set", "dest_port_set", "protocol_set",
+          }
+          problems = []
+
+          def report(path, message):
+              problems.append(f"{path}: {message}")
+
+          def read_lines(path):
+              return path.read_text(encoding="utf-8").splitlines()
+
+          def check_header(path, lines):
+              if len(lines) < 4:
+                  report(path, "file is too short")
+                  return False
+              if lines[0] != f"# 规则名称: {path.stem}":
+                  report(path, f"unexpected name header: {lines[0]!r}")
+              if not lines[1].startswith("# 规则统计: "):
+                  report(path, "missing count header")
+              if not lines[2].startswith("# 更新时间: "):
+                  report(path, "missing update-time header")
+              if lines[3].strip():
+                  report(path, "header must be followed by a blank line")
+              return True
+
+          egern_files = sorted(Path("Egern/Rules").glob("*.yaml"))
+          loon_files = sorted(Path("Loon/Rules").glob("*.list"))
+          if not egern_files:
+              problems.append("Egern/Rules: no output")
+          if not loon_files:
+              problems.append("Loon/Rules: no output")
+
+          for path in egern_files:
+              lines = read_lines(path)
+              if not check_header(path, lines):
+                  continue
+              declared = int(lines[1].split(":", 1)[1].strip())
+              counted = 0
+              current = None
+              for line in lines[4:]:
+                  if not line.strip():
+                      continue
+                  if line.lstrip().startswith("#"):
+                      report(path, f"unexpected comment: {line[:40]!r}")
+                      continue
+                  if line.startswith("- "):
+                      if current is None:
+                          report(path, f"list item before any key: {line[:40]!r}")
+                      counted += 1
+                      continue
+                  if line.startswith("  - ") or line.startswith("\t"):
+                      report(path, f"unexpected indentation: {line[:40]!r}")
+                      continue
+                  if line.endswith(":"):
+                      current = line[:-1]
+                      if current not in EGERN_KEYS:
+                          report(path, f"unsupported key: {current!r}")
+                      continue
+                  if line in ("no_resolve: true", "no_resolve: false"):
+                      continue
+                  report(path, f"unexpected line: {line[:60]!r}")
+              if counted != declared:
+                  report(path, f"declared {declared} rules but found {counted}")
+
+          for path in loon_files:
+              lines = read_lines(path)
+              if not check_header(path, lines):
+                  continue
+              declared = int(lines[1].split(":", 1)[1].strip())
+              counted = 0
+              for line in lines[4:]:
+                  if not line.strip():
+                      continue
+                  if line.lstrip().startswith("#"):
+                      report(path, f"unexpected comment: {line[:40]!r}")
+                      continue
+                  if "," not in line:
+                      report(path, f"not a Loon rule: {line[:60]!r}")
+                      continue
+                  counted += 1
+              if counted != declared:
+                  report(path, f"declared {declared} rules but found {counted}")
+
+          icon_files = sorted(Path("Icons").glob("*.json"))
+          if not icon_files:
+              problems.append("Icons: no output")
+          for path in icon_files:
+              try:
+                  data = json.loads(path.read_text(encoding="utf-8"))
+              except json.JSONDecodeError as exc:
+                  report(path, f"invalid JSON: {exc}")
+                  continue
+              icons = data.get("icons")
+              if not isinstance(icons, list) or not icons:
+                  report(path, "empty icon list")
+                  continue
+              names = [item.get("name") for item in icons]
+              if len(names) != len(set(names)):
+                  report(path, "duplicate icon names")
+              if any(not isinstance(item.get("url"), str) or not item["url"].startswith("http") for item in icons):
+                  report(path, "icon without valid url")
+
+          if problems:
+              print("\n".join(problems))
+              raise SystemExit(f"validation failed with {len(problems)} problem(s)")
+          print(f"structural check passed: {len(egern_files)} Egern, {len(loon_files)} Loon, {len(icon_files)} icon files")
+          PY
+          if command -v ruby >/dev/null 2>&1; then
+            ruby -ryaml -e '
+              Dir["Egern/Rules/*.yaml"].each do |path|
+                begin
+                  data = YAML.load_file(path)
+                rescue => e
+                  abort "#{path}: invalid YAML: #{e.message}"
+                end
+                abort "#{path}: root is not a mapping" unless data.is_a?(Hash)
+                total = data.reject { |k, _| k == "no_resolve" }.values.sum { |v| v.is_a?(Array) ? v.length : 0 }
+                abort "#{path}: no rules" if total.zero?
+              end
+              puts "YAML parse check passed (#{Dir["Egern/Rules/*.yaml"].length} files)"
+            '
+          else
+            echo "ruby not available, skipped full YAML parse"
+          fi
+
+      - name: Generate README
+        env:
+          GENERATE_HTML: ${{ inputs.generate_html || 'false' }}
+        run: |
+          set -Eeuo pipefail
+          python3 <<'PY'
+          import html
+          import json
+          import os
+          import re
+          import urllib.parse
+          import urllib.request
+          from pathlib import Path
+
+          REPO = os.environ.get("GITHUB_REPOSITORY", "fieldw18/test")
+          BRANCH = os.environ.get("GITHUB_REF_NAME", "main")
+          RAW = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH
+          WITH_HTML = os.environ.get("GENERATE_HTML", "false").lower() == "true"
+
+          LOON_DIR = Path("Loon/Rules")
+          EGERN_DIR = Path("Egern/Rules")
+          ICON_DIR = Path("Icons")
+
+          TITLE = "规则中心"
+          TAGLINE = "选择规则组，点击图标即可导入对应 App"
+
+          ICON_SIZE = 28
+
+          def local_icon(app_name):
+              target = app_name.strip().lower()
+              if not ICON_DIR.is_dir():
+                  return ""
+              for path in sorted(ICON_DIR.glob("*.json")):
+                  try:
+                      data = json.loads(path.read_text(encoding="utf-8"))
+                  except (OSError, json.JSONDecodeError):
+                      continue
+                  for item in data.get("icons", []):
+                      url = item.get("url")
+                      if not isinstance(url, str) or not url:
+                          continue
+                      if str(item.get("name") or "").strip().lower() != target:
+                          continue
+                      if url.lower().endswith(".png") or url.lower().endswith(".svg"):
+                          return url
+              return ""
+
+          def store_icon(app_id):
+              try:
+                  request = urllib.request.Request(
+                      "https://itunes.apple.com/lookup?id=" + app_id + "&country=us",
+                      headers={"User-Agent": "readme-generator/5.0"},
+                  )
+                  with urllib.request.urlopen(request, timeout=20) as response:
+                      payload = json.loads(response.read().decode("utf-8", errors="replace"))
+                  for result in payload.get("results") or []:
+                      icon = result.get("artworkUrl100") or result.get("artworkUrl512")
+                      if icon:
+                          return icon
+              except Exception as exc:
+                  print("App Store 图标获取失败 " + app_id + "：" + str(exc))
+              return ""
+
+          APPS = [
+              {"name": "Loon", "id": "1373567447"},
+              {"name": "Egern", "id": "1616105820"},
+          ]
+          for app in APPS:
+              app["icon"] = local_icon(app["name"])
+              app["source"] = "图标库" if app["icon"] else ""
+              if not app["icon"]:
+                  app["icon"] = store_icon(app["id"])
+                  app["source"] = "App Store" if app["icon"] else "缺失"
+              print("App " + app["name"] + " 图标来源：" + app["source"])
+
+          def parse_count(path):
+              try:
+                  with path.open(encoding="utf-8", errors="replace") as handle:
+                      for _ in range(6):
+                          line = next(handle, "")
+                          if not line:
+                              break
+                          found = re.match(r"#\s*规则统计:\s*(\d+)", line)
+                          if found:
+                              return int(found.group(1))
+              except OSError:
+                  pass
+              return 0
+
+          def loon_link(url):
+              return "https://www.nsloon.com/openloon/import?rules=" + urllib.parse.quote(url, safe="")
+
+          def egern_link(url):
+              return ("https://egernapp.com/rules/new?type=rule_set&match="
+                      + urllib.parse.quote(url, safe="") + "&policy=DIRECT")
+
+          groups = []
+          seen = set()
+          for path in sorted(LOON_DIR.glob("*.list")):
+              egern_path = EGERN_DIR / (path.stem + ".yaml")
+              groups.append({
+                  "name": path.stem,
+                  "count": parse_count(path),
+                  "loon_url": RAW + "/Loon/Rules/" + path.name,
+                  "egern_url": (RAW + "/Egern/Rules/" + egern_path.name) if egern_path.exists() else "",
+              })
+              seen.add(path.stem)
+
+          for path in sorted(EGERN_DIR.glob("*.yaml")):
+              if path.stem in seen:
+                  continue
+              groups.append({
+                  "name": path.stem,
+                  "count": parse_count(path),
+                  "loon_url": "",
+                  "egern_url": RAW + "/Egern/Rules/" + path.name,
+              })
+
+          if not groups:
+              raise SystemExit("未找到规则文件，请先运行 Build workflow")
+
+          total_rules = sum(item["count"] for item in groups)
+
+          groups.sort(key=lambda entry: entry["name"].lower())
+          print("共 " + str(len(groups)) + " 组 / " + f"{total_rules:,}" + " 条")
+
+          def icon_md(app, url, size):
+              if not app["icon"]:
+                  return "[" + app["name"] + "](" + url + ")"
+              return ('<a href="' + url + '"><img src="' + app["icon"] + '" width="' + str(size)
+                      + '" height="' + str(size) + '" align="right" alt="导入 ' + app["name"] + '"></a>')
+
+          def buttons_md(item, size=ICON_SIZE):
+              out = []
+              if item["egern_url"]:
+                  out.append(icon_md(APPS[1], egern_link(item["egern_url"]), size))
+              if item["loon_url"]:
+                  out.append(icon_md(APPS[0], loon_link(item["loon_url"]), size))
+              return "".join(out)
+
+          def icon_html(app, url, size):
+              image = ('<img src="' + html.escape(app["icon"]) + '" width="' + str(size)
+                       + '" height="' + str(size) + '" alt="导入 ' + app["name"] + '">') if app["icon"] else app["name"]
+              return '<a class="act" href="' + html.escape(url) + '">' + image + "</a>"
+
+          def buttons_html(item, size=22):
+              out = []
+              if item["loon_url"]:
+                  out.append(icon_html(APPS[0], loon_link(item["loon_url"]), size))
+              if item["egern_url"]:
+                  out.append(icon_html(APPS[1], egern_link(item["egern_url"]), size))
+              return "".join(out)
+
+          md = []
+          md.append("<!-- 由 GitHub Actions 自动生成，请勿手动编辑 -->")
+          md.append("")
+          md.append('<h1 align="center">' + TITLE + "</h1>")
+          md.append("")
+          md.append('<p align="center"><sub>' + TAGLINE + "</sub></p>")
+          md.append("")
+          md.append('<p align="center"><sub>共 ' + str(len(groups)) + " 组规则，" + f"{total_rules:,}" + " 条</sub></p>")
+          md.append("")
+
+          md.append("---")
+          md.append("")
+          for item in groups:
+              md.append("<p><strong>" + item["name"] + "</strong> <sub>" + f"{item['count']:,}"
+                        + "</sub>" + buttons_md(item) + "</p>")
+          md.append("")
+
+          md.append("---")
+          md.append("")
+          md.append("### 声明")
+          md.append("")
+          md.append("> 本仓库仅对公开规则做整理与分类，不生产、不修改规则内容。<br>")
+          md.append("> 规则均来自互联网公开项目，版权归原作者所有。<br>")
+          md.append("> 仅供个人学习与技术交流，请勿用于商业用途。<br>")
+          md.append("> 使用本规则可能影响网络访问，请自行评估风险并承担相应后果。<br>")
+          md.append("> 如有侵权，请联系删除。")
+          md.append("")
+          md.append("---")
+          md.append("")
+          md.append("### 感谢")
+          md.append("")
+          md.append("| 项目 | 说明 |")
+          md.append("|:---|:---|")
+          md.append("| [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) | 主力规则来源 |")
+          md.append("| [Loyalsoldier/surge-rules](https://github.com/Loyalsoldier/surge-rules) | 国内外分流规则 |")
+          md.append("| [Repcz/Tool](https://github.com/Repcz/Tool) | 补充与自定义规则 |")
+          md.append("| [lige47/QuanX-icon-rule](https://github.com/lige47/QuanX-icon-rule) | 图标库 |")
+          md.append("| [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule) | 去广告规则 |")
+          md.append("| [217heidai/adblockfilters](https://github.com/217heidai/adblockfilters) | 去广告规则 |")
+          md.append("| [anti-AD](https://anti-ad.net/) | 去广告规则 |")
+          md.append("")
+          md.append("---")
+          md.append("")
+          md.append('<sub>由 GitHub Actions 自动生成</sub>')
+          md.append("")
+
+          Path("README.md").write_text("\n".join(md), encoding="utf-8", newline="\n")
+          print("README.md 已生成（不产生其他文件）")
+
+          if not WITH_HTML:
+              print("已跳过 index.html（未开启）")
+              raise SystemExit(0)
+
+          rows = []
+          for item in groups:
+              rows.append(
+                  "<tr><td class=\"rule\"><span class=\"nm\">" + html.escape(item["name"])
+                  + "</span><span class=\"ct\">" + f"{item['count']:,}" + "</span></td>"
+                  + "<td class=\"go\">" + buttons_html(item) + "</td></tr>"
+              )
+          sections_html = ["    <section>\n      <table><tbody>\n" + "\n".join(rows)
+                           + "\n      </tbody></table>\n    </section>"]
+
+          template = """<!DOCTYPE html>
+          <html lang="zh-CN">
+          <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="color-scheme" content="light dark">
+          <title>__TITLE__</title>
+          <style>
+            :root {
+              color-scheme: light dark;
+              --bg:#ffffff; --fg:#111418; --muted:#6b7280;
+              --line:#eceef1; --line-strong:#dfe3e9;
+              --soft:#f7f8fa; --soft-hover:#eef0f3; --accent:#0a84ff;
+            }
+            @media (prefers-color-scheme: dark) {
+              :root {
+                --bg:#0b0d10; --fg:#eef1f5; --muted:#8b939f;
+                --line:#1d2127; --line-strong:#2a2f37;
+                --soft:#14171b; --soft-hover:#1c2026; --accent:#4da3ff;
+              }
+            }
+            * { box-sizing:border-box; }
+            html { -webkit-text-size-adjust:100%; }
+            body {
+              margin:0; background:var(--bg); color:var(--fg);
+              font-family:-apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+                          "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+              font-size:15px; line-height:1.65; -webkit-font-smoothing:antialiased;
+            }
+            .wrap { max-width:680px; margin:0 auto; padding:64px 24px 80px; }
+            header { text-align:center; }
+            h1 { margin:0 0 10px; font-size:27px; font-weight:600; letter-spacing:-.015em; }
+            .tagline { margin:0; color:var(--muted); font-size:14px; }
+            .stats { margin:6px 0 0; color:var(--muted); font-size:13px; }
+
+            section { margin-top:46px; }
+            h2 {
+              display:flex; align-items:baseline; gap:9px;
+              margin:0 0 4px; padding-bottom:12px; border-bottom:1px solid var(--line-strong);
+              font-size:15px; font-weight:600;
+            }
+            h2 .n { font-size:12.5px; font-weight:400; color:var(--muted); }
+            table { width:100%; border-collapse:collapse; }
+            td { padding:12px 0; border-bottom:1px solid var(--line); vertical-align:middle; }
+            tr:last-child td { border-bottom:none; }
+            td.rule .nm { font-size:15px; font-weight:500; }
+            td.rule .ct {
+              margin-left:10px; font-size:12.5px; color:var(--muted);
+              font-variant-numeric:tabular-nums;
+            }
+            td.go { text-align:right; white-space:nowrap; width:1%; }
+
+            .act {
+              display:inline-flex; align-items:center; justify-content:center;
+              width:42px; height:42px; margin-left:6px; border-radius:11px;
+              border:1px solid transparent; background:transparent;
+              text-decoration:none; transition:background .15s ease, border-color .15s ease;
+            }
+            .act:hover { background:var(--soft-hover); border-color:var(--line-strong); }
+            .act img { width:28px; height:28px; display:block; }
+
+            h3 {
+              margin:54px 0 14px; padding-top:26px; border-top:1px solid var(--line);
+              font-size:15px; font-weight:600;
+            }
+            p { margin:0 0 12px; }
+            .notice {
+              border-left:3px solid var(--line-strong); padding:2px 0 2px 16px;
+              color:var(--muted); font-size:14px;
+            }
+            .notice p { margin:5px 0; }
+            table.plain td:first-child { width:46%; }
+            a { color:var(--accent); text-decoration:none; }
+            a:hover { text-decoration:underline; }
+            footer { margin-top:56px; padding-top:22px; border-top:1px solid var(--line);
+                     color:var(--muted); font-size:12px; text-align:center; }
+
+            @media (max-width:640px) {
+              .wrap { padding:36px 18px 56px; }
+              h1 { font-size:22px; }
+              table, tbody, tr, td { display:block; width:100%; }
+              tr { padding:14px 0; border-bottom:1px solid var(--line); }
+              tr:last-child { border-bottom:none; }
+              td { border:none; padding:0; }
+              td.rule { display:flex; align-items:baseline; gap:9px; margin-bottom:11px; }
+              td.rule .nm { font-size:16px; }
+              td.go { text-align:left; width:auto; }
+              .act { margin:0 10px 0 0; width:46px; height:46px; }
+              .act img { width:30px; height:30px; }
+              section { margin-top:34px; }
+            }
+          </style>
+          </head>
+          <body>
+          <div class="wrap">
+            <header>
+              <h1>__TITLE__</h1>
+              <p class="tagline">__TAGLINE__</p>
+              <p class="stats">共 __GROUP_COUNT__ 组规则，__TOTAL__ 条</p>
+            </header>
+
+          __SECTIONS__
+
+            <h3>声明</h3>
+            <div class="notice">
+              <p>本仓库仅对公开规则做整理与分类，不生产、不修改规则内容。</p>
+              <p>规则均来自互联网公开项目，版权归原作者所有。</p>
+              <p>仅供个人学习与技术交流，请勿用于商业用途。</p>
+              <p>使用本规则可能影响网络访问，请自行评估风险并承担相应后果。</p>
+              <p>如有侵权，请联系删除。</p>
+            </div>
+
+            <h3>感谢</h3>
+            <table class="plain"><tbody>
+              <tr><td><a href="https://github.com/blackmatrix7/ios_rule_script">blackmatrix7/ios_rule_script</a></td><td>主力规则来源</td></tr>
+              <tr><td><a href="https://github.com/Loyalsoldier/surge-rules">Loyalsoldier/surge-rules</a></td><td>国内外分流规则</td></tr>
+              <tr><td><a href="https://github.com/Repcz/Tool">Repcz/Tool</a></td><td>补充与自定义规则</td></tr>
+              <tr><td><a href="https://github.com/lige47/QuanX-icon-rule">lige47/QuanX-icon-rule</a></td><td>图标库</td></tr>
+              <tr><td><a href="https://github.com/TG-Twilight/AWAvenue-Ads-Rule">TG-Twilight/AWAvenue-Ads-Rule</a></td><td>去广告规则</td></tr>
+              <tr><td><a href="https://github.com/217heidai/adblockfilters">217heidai/adblockfilters</a></td><td>去广告规则</td></tr>
+              <tr><td><a href="https://anti-ad.net/">anti-AD</a></td><td>去广告规则</td></tr>
+            </tbody></table>
+
+            <footer>由 GitHub Actions 自动生成</footer>
+          </div>
+          </body>
+          </html>
+          """
+
+          Path("index.html").write_text(
+              template.replace("__SECTIONS__", "\n".join(sections_html))
+              .replace("__TITLE__", TITLE)
+              .replace("__TAGLINE__", TAGLINE)
+              .replace("__GROUP_COUNT__", str(len(groups)))
+              .replace("__TOTAL__", f"{total_rules:,}"),
+              encoding="utf-8", newline="\n",
+          )
+          print("index.html 已生成")
+          PY
+
+      - name: Commit and push
+        env:
+          ALLOW_EMPTY: ${{ inputs.allow_empty || 'false' }}
+        run: |
+          set -Eeuo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Loon Egern Icons README.md
+          if [ -f index.html ]; then git add index.html; fi
+          if git diff --cached --quiet; then
+            [[ "${ALLOW_EMPTY:-false}" == "true" ]] || { echo "no generated changes"; exit 0; }
+            git commit --allow-empty -m "chore: refresh generated rules and icons"
+          else
+            git commit -m "chore: update generated rules and icons"
+          fi
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH"; then
+              echo "pushed"
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 2))
+          done
+          echo "push failed after 5 attempts" >&2
+          exit 1
+
+      - name: Clear history
+        if: github.event.schedule == '30 23 * * 0' || inputs.clear_history
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -Eeuo pipefail
+          REPO="${GITHUB_REPOSITORY}"
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          KEEP=3
+
+          ids=$(curl -sS -H "Authorization: Bearer ${GH_TOKEN}" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${REPO}/actions/runs?per_page=100" \
+            | jq -r ".workflow_runs | sort_by(.created_at) | reverse | .[${KEEP}:] | .[].id" || true)
+
+          removed=0
+          for id in $ids; do
+            if curl -sS -o /dev/null -X DELETE -H "Authorization: Bearer ${GH_TOKEN}" \
+              "https://api.github.com/repos/${REPO}/actions/runs/${id}"; then
+              removed=$((removed + 1))
+            fi
+          done
+          echo "已删除 ${removed} 条历史运行记录，保留最近 ${KEEP} 次"
+
+          rm -rf raw .cache
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git branch -D fresh 2>/dev/null || true
+          git checkout --orphan fresh
+          git add -A
+          git commit -m "chore: 压缩历史 $(date -u '+%Y-%m-%d')"
+          git branch -M fresh "${BRANCH}"
+
+          for attempt in 1 2 3; do
+            if git push -f origin "${BRANCH}"; then
+              echo "历史已压缩为单次提交"
+              exit 0
+            fi
+            sleep $((attempt * 3))
+          done
+          echo "force push failed" >&2
+          exit 1

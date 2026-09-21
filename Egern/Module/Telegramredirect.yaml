@@ -1,0 +1,23 @@
+name: Telegram跳转
+description: Telegram重定向到你选择的客户端
+compat_arguments_desc: 跳转Telegram/Swiftgram/Turrit/iMe/Nicegram/Lingogram
+author: Baby[https://github.com/Yu9191]
+env_schema:
+  Client:
+    name: 客户端
+    description: Telegram/Swiftgram/Turrit/iMe/Nicegram/Lingogram [Nagram请选择Telegram]
+    options:
+    - Telegram
+    - Swiftgram
+    - Turrit
+    - iMe
+    - Nicegram
+    - Lingogram
+scriptings:
+- http_request:
+    name: tme_redirect
+    match: ^https?:\/\/t\.me\/.+
+    script_url: https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/TgRedirect.js
+mitm:
+  hostnames:
+  - t.me
