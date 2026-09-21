@@ -1,6 +1,6 @@
 # 规则名称: AI
-# 规则统计: 101
-# 更新时间: 2026-07-15 13:18:31
+# 规则统计: 112
+# 更新时间: 2026-09-21 23:15:09
 
 DOMAIN,ai-gateway.vercel.sh
 DOMAIN,ai.google.dev
@@ -14,9 +14,12 @@ DOMAIN,alkalimakersuite-pa.clients6.google.com
 DOMAIN,api.githubcopilot.com
 DOMAIN,api.hyperbolic.xyz
 DOMAIN,api.x.ai
+DOMAIN,api.zed.dev
 DOMAIN,bard.google.com
+DOMAIN,cdn.delta.dev
 DOMAIN,chat.mistral.ai
 DOMAIN,chatgpt.livekit.cloud
+DOMAIN,cloud.zed.dev
 DOMAIN,console.mistral.ai
 DOMAIN,copilot-proxy.githubusercontent.com
 DOMAIN,copilot.microsoft.com
@@ -24,6 +27,7 @@ DOMAIN,daily-cloudcode-pa.googleapis.com
 DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com
 DOMAIN,deepmind.com
 DOMAIN,deepmind.google
+DOMAIN,delta.zed.dev
 DOMAIN,geller-pa.googleapis.com
 DOMAIN,gemini.google
 DOMAIN,gemini.google.com
@@ -54,6 +58,7 @@ DOMAIN,token-plan-sgp.xiaomimimo.com
 DOMAIN,trae-api-sg.mchost.guru
 DOMAIN,turn.livekit.cloud
 DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
+DOMAIN,zed-us-east-1-zed-production.c15t.dev
 DOMAIN-KEYWORD,antigravity-auto-updater-
 DOMAIN-KEYWORD,chatgpt-async-webps-prod-
 DOMAIN-KEYWORD,openaicom-api-
@@ -68,7 +73,10 @@ DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.site
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,cline.bot
+DOMAIN-SUFFIX,commandcode.ai
 DOMAIN-SUFFIX,crixet.com
+DOMAIN-SUFFIX,devin.ai
 DOMAIN-SUFFIX,fireworks.ai
 DOMAIN-SUFFIX,grazie.ai
 DOMAIN-SUFFIX,grazie.aws.intellij.net
@@ -83,7 +91,9 @@ DOMAIN-SUFFIX,minimax.io
 DOMAIN-SUFFIX,mistral.ai
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,ollama.com
 DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,opencode.ai
 DOMAIN-SUFFIX,openrouter.ai
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,perplexity.com
@@ -94,6 +104,7 @@ DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,together.ai
 DOMAIN-SUFFIX,tokenflux.ai
 DOMAIN-SUFFIX,trae.ai
+DOMAIN-SUFFIX,typesafe.ai
 DOMAIN-SUFFIX,voyageai.com
 DOMAIN-SUFFIX,webpubsub.azure.com
 DOMAIN-SUFFIX,x.ai

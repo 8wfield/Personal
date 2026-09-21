@@ -1,6 +1,6 @@
 # 规则名称: AI
-# 规则统计: 98
-# 更新时间: 2026-07-15 13:18:31
+# 规则统计: 109
+# 更新时间: 2026-09-21 23:15:09
 
 no_resolve: true
 domain_set:
@@ -16,9 +16,12 @@ domain_set:
 - api.githubcopilot.com
 - api.hyperbolic.xyz
 - api.x.ai
+- api.zed.dev
 - bard.google.com
+- cdn.delta.dev
 - chat.mistral.ai
 - chatgpt.livekit.cloud
+- cloud.zed.dev
 - console.mistral.ai
 - copilot-proxy.githubusercontent.com
 - copilot.microsoft.com
@@ -26,6 +29,7 @@ domain_set:
 - daily-cloudcode-pa.sandbox.googleapis.com
 - deepmind.com
 - deepmind.google
+- delta.zed.dev
 - geller-pa.googleapis.com
 - gemini.google
 - gemini.google.com
@@ -56,6 +60,7 @@ domain_set:
 - trae-api-sg.mchost.guru
 - turn.livekit.cloud
 - webchannel-alkalimakersuite-pa.clients6.google.com
+- zed-us-east-1-zed-production.c15t.dev
 domain_suffix_set:
 - agnes-ai.com
 - anthropic.com
@@ -68,7 +73,10 @@ domain_suffix_set:
 - chatgpt.site
 - claude.ai
 - claudeusercontent.com
+- cline.bot
+- commandcode.ai
 - crixet.com
+- devin.ai
 - fireworks.ai
 - grazie.ai
 - grazie.aws.intellij.net
@@ -83,7 +91,9 @@ domain_suffix_set:
 - mistral.ai
 - oaistatic.com
 - oaiusercontent.com
+- ollama.com
 - openai.com
+- opencode.ai
 - openrouter.ai
 - perplexity.ai
 - perplexity.com
@@ -94,6 +104,7 @@ domain_suffix_set:
 - together.ai
 - tokenflux.ai
 - trae.ai
+- typesafe.ai
 - voyageai.com
 - webpubsub.azure.com
 - x.ai

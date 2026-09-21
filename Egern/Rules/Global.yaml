@@ -1,6 +1,6 @@
 # 规则名称: Global
-# 规则统计: 30041
-# 更新时间: 2026-09-17 03:12:38
+# 规则统计: 30047
+# 更新时间: 2026-09-22 04:11:45
 
 no_resolve: true
 domain_set:
@@ -216,9 +216,10 @@ domain_set:
 - faronics.kayako.com
 - favoritescc-hamivideo2.cdn.hinet.net
 - fbcdn-a.akamaihd.net
-- firebase.google.com
 - firebase.googleapis.com
 - firebaseappcheck.googleapis.com
+- firebaseappdistribution.googleapis.com
+- firebaseapptesters.googleapis.com
 - firebasedynamiclinks-ipv4.googleapis.com
 - firebasedynamiclinks-ipv6.googleapis.com
 - firebasedynamiclinks.googleapis.com
@@ -6967,6 +6968,7 @@ domain_suffix_set:
 - code1984.com
 - codeberg.org
 - codeberg.page
+- codebuff.com
 - codecademy.com
 - codeforaliving.io
 - codeforces.com
@@ -10384,10 +10386,12 @@ domain_suffix_set:
 - fire-emblem-heroes.com
 - firearmsworld.net
 - firebase.com
+- firebase.dev
 - firebase.io
 - firebaseapp.com
 - firebaseio.com
 - fireemblemawakening.com
+- firefox-portal-detection.com
 - firefox.com
 - firefox.hu
 - firefoxtweetmachine.com
@@ -10839,6 +10843,7 @@ domain_suffix_set:
 - freebrowser.org
 - freebs.com
 - freebsd.org
+- freebuff.com
 - freecamsfan.com
 - freecartoons.biz
 - freechal.com
@@ -25050,6 +25055,7 @@ domain_suffix_set:
 - textnow.me
 - texttobuy.org
 - texture.com
+- tfbnw.net
 - tfc-taiwan.org.tw
 - tferwq.com
 - tfhub.dev
