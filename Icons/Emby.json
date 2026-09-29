@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "Emby 522 图标",
+  "description": "Emby 528 图标",
   "icons": [
     {
       "name": "105°",
@@ -205,6 +205,14 @@
     {
       "name": "Beebi",
       "url": "https://emby-icon.vercel.app/icons/Beebi.PNG"
+    },
+    {
+      "name": "BiliBili",
+      "url": "https://emby-icon.vercel.app/icons/BiliBili.png"
+    },
+    {
+      "name": "BiliBili_1",
+      "url": "https://emby-icon.vercel.app/icons/BiliBili_1.png"
     },
     {
       "name": "Blossoms",
@@ -1007,6 +1015,10 @@
       "url": "https://emby-icon.vercel.app/icons/ME4.PNG"
     },
     {
+      "name": "MGTV",
+      "url": "https://emby-icon.vercel.app/icons/MGTV.png"
+    },
+    {
       "name": "MICU",
       "url": "https://emby-icon.vercel.app/icons/MICU.PNG"
     },
@@ -1687,6 +1699,10 @@
       "url": "https://emby-icon.vercel.app/icons/Temby.PNG"
     },
     {
+      "name": "Tencent",
+      "url": "https://emby-icon.vercel.app/icons/Tencent.png"
+    },
+    {
       "name": "Terminus",
       "url": "https://emby-icon.vercel.app/icons/Terminus.PNG"
     },
@@ -1963,6 +1979,10 @@
       "url": "https://emby-icon.vercel.app/icons/YCD.png"
     },
     {
+      "name": "YOUKU",
+      "url": "https://emby-icon.vercel.app/icons/YOUKU.png"
+    },
+    {
       "name": "Yezi",
       "url": "https://emby-icon.vercel.app/icons/Yezi.PNG"
     },
@@ -2089,6 +2109,10 @@
     {
       "name": "Zoxfree",
       "url": "https://emby-icon.vercel.app/icons/Zoxfree.PNG"
+    },
+    {
+      "name": "iQIYI",
+      "url": "https://emby-icon.vercel.app/icons/iQIYI.png"
     }
   ]
 }
