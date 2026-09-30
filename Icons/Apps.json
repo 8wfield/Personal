@@ -1,6 +1,6 @@
 {
   "name": "Apps",
-  "description": "应用 282 图标",
+  "description": "应用 283 图标",
   "icons": [
     {
       "name": "1password",
@@ -649,6 +649,10 @@
     {
       "name": "cursor",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/cursor.png"
+    },
+    {
+      "name": "deepl",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/deepl.png"
     },
     {
       "name": "discord",
