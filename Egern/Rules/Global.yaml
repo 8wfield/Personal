@@ -1,6 +1,6 @@
 # 规则名称: Global
-# 规则统计: 30054
-# 更新时间: 2026-09-29 00:15:31
+# 规则统计: 30060
+# 更新时间: 2026-10-01 04:24:10
 
 no_resolve: true
 domain_set:
@@ -236,6 +236,8 @@ domain_set:
 - gamedownloads-rockstargames-com.akamaized.net
 - gamer-cds.cdn.hinet.net
 - gamer2-cds.cdn.hinet.net
+- geminiweb-pa.clients.google.com
+- geminiweb-pa.clients6.google.com
 - gigabyte2.azureedge.net
 - github-api.arkoselabs.com
 - github-cloud.s3.amazonaws.com
@@ -13524,6 +13526,7 @@ domain_suffix_set:
 - huaren4us.com
 - huarenav.com
 - huarenporn.com
+- huarun.win
 - huashangnews.com
 - huashundg.com
 - huasing.org
@@ -17189,6 +17192,7 @@ domain_suffix_set:
 - met-nude.com
 - meta.ai
 - meta.com
+- metaaivm.com
 - metabora.io
 - metabrainz.org
 - metacafe.com
@@ -18265,6 +18269,7 @@ domain_suffix_set:
 - muscache.com
 - muscdn.com
 - musclegirlflix.com
+- muse.ai
 - mushroomtrack.com
 - mushymush.tv
 - music.amazon.com
@@ -19922,6 +19927,7 @@ domain_suffix_set:
 - openbook.org.tw
 - opencas.io
 - openclaw.ai
+- opencode.ai
 - opencollective.com
 - opencreate.org
 - opencritic.com

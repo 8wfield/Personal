@@ -1,6 +1,6 @@
 # 规则名称: AI
-# 规则统计: 244
-# 更新时间: 2026-09-22 17:43:59
+# 规则统计: 245
+# 更新时间: 2026-09-30 15:40:36
 
 no_resolve: true
 domain_set:
@@ -185,6 +185,7 @@ domain_set:
 - router.requesty.ai
 - sydney.bing.com
 - tinker.thinkingmachines.dev
+- titles.prod.mos.microsoft.com
 - token-plan-ams.xiaomimimo.com
 - token-plan-sgp.xiaomimimo.com
 - token-plan.ap-southeast-1.maas.aliyuncs.com
