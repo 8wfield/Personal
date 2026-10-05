@@ -1,6 +1,6 @@
 # 规则名称: Global
-# 规则统计: 30065
-# 更新时间: 2026-10-05 02:53:31
+# 规则统计: 30066
+# 更新时间: 2026-10-06 00:36:39
 
 no_resolve: true
 domain_set:
@@ -12155,6 +12155,7 @@ domain_suffix_set:
 - googlepagecreator.com
 - googlephotos.com
 - googleplay.com
+- googleplaycensorship.com
 - googleplus.com
 - googlescholar.com
 - googlesource.com
