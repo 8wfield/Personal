@@ -1,6 +1,6 @@
 # 规则名称: China
 # 规则统计: 124318
-# 更新时间: 2026-10-04 04:30:45
+# 更新时间: 2026-10-06 07:38:17
 
 no_resolve: true
 domain_set:
@@ -124283,8 +124283,8 @@ user_agent_set:
 - 'Best%20Trace*'
 - 'bili*'
 - 'bili-inter*'
-- 'Bilibili*'
 - 'bilibili*'
+- 'Bilibili*'
 - 'cmb*'
 - 'cmblife*'
 - 'DomesticMedia*'
@@ -124292,9 +124292,9 @@ user_agent_set:
 - 'hearthstone*'
 - 'hide*'
 - 'Himalaya*'
+- 'iQiyi*'
 - 'iQIYI*'
 - 'iQiYi*'
-- 'iQiyi*'
 - 'live4iphone*'
 - 'MegaWerewolf*'
 - 'MGTV*'
@@ -124325,6 +124325,6 @@ user_agent_set:
 - 'WebTorrent*'
 - 'WeChat*'
 - 'xiami*'
-- 'Youku*'
 - 'youku*'
+- 'Youku*'
 - 'YYeTs*'
