@@ -1,6 +1,6 @@
 # 规则名称: AI
-# 规则统计: 248
-# 更新时间: 2026-09-30 15:40:36
+# 规则统计: 249
+# 更新时间: 2026-10-07 22:40:50
 
 DOMAIN,agentrouter.org
 DOMAIN,ai-gateway.helicone.ai
@@ -207,6 +207,7 @@ DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.site
 DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,cline.bot
 DOMAIN-SUFFIX,commandcode.ai

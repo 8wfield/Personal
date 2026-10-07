@@ -1,6 +1,6 @@
 # 规则名称: AI
-# 规则统计: 245
-# 更新时间: 2026-09-30 15:40:36
+# 规则统计: 246
+# 更新时间: 2026-10-07 22:40:50
 
 no_resolve: true
 domain_set:
@@ -207,6 +207,7 @@ domain_suffix_set:
 - chatgpt.com
 - chatgpt.site
 - claude.ai
+- claude.com
 - claudeusercontent.com
 - cline.bot
 - commandcode.ai
