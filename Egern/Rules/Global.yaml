@@ -1,6 +1,6 @@
 # 规则名称: Global
-# 规则统计: 30097
-# 更新时间: 2026-10-09 04:55:09
+# 规则统计: 30101
+# 更新时间: 2026-10-10 04:24:08
 
 no_resolve: true
 domain_set:
@@ -106,6 +106,8 @@ domain_set:
 - cloudsync-prod.s3.amazonaws.com
 - configuration-lb.ls-apple.com.akadns.net
 - copilot-proxy.githubusercontent.com
+- copilot-telemetry-service.githubusercontent.com
+- copilot-telemetry.githubusercontent.com
 - copilot-workspace.githubnext.com
 - copilotprodattachments.blob.core.windows.net
 - crl.microsoft.com
@@ -276,6 +278,8 @@ domain_set:
 - img-s-msn-com.akamaized.net
 - impala-media-production.s3.amazonaws.com
 - imperial.insendi.com
+- incoming-telemetry.thunderbird.net
+- incoming.telemetry.mozilla.org
 - lastfm-img.freetls.fastly.net
 - lastfm.freetls.fastly.net
 - lazer.ppy.sh
