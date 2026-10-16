@@ -1,6 +1,6 @@
 # 规则名称: TikTok
-# 规则统计: 32
-# 更新时间: 2025-08-10 02:08:00
+# 规则统计: 35
+# 更新时间: 2026-10-16 04:51:01
 
 domain_set:
 - lf16-effectcdn.byteeffecttos-g.com
@@ -13,6 +13,9 @@ domain_suffix_set:
 - byteintlapi.com
 - byteoversea.com
 - capcut.com
+- capcutapi.com
+- capcutapi.us
+- capcutstatic.com
 - ibytedtos.com
 - ibyteimg.com
 - ipstatp.com
