@@ -1,6 +1,6 @@
 # 规则名称: China
 # 规则统计: 123584
-# 更新时间: 2026-10-18 04:00:43
+# 更新时间: 2026-10-20 06:00:43
 
 no_resolve: true
 domain_set:
@@ -123591,6 +123591,6 @@ user_agent_set:
 - 'WebTorrent*'
 - 'WeChat*'
 - 'xiami*'
-- 'Youku*'
 - 'youku*'
+- 'Youku*'
 - 'YYeTs*'

@@ -1,6 +1,6 @@
 # 规则名称: Global
-# 规则统计: 30209
-# 更新时间: 2026-10-20 04:47:36
+# 规则统计: 30214
+# 更新时间: 2026-10-21 03:44:44
 
 no_resolve: true
 domain_set:
@@ -282,6 +282,8 @@ domain_set:
 - imperial.insendi.com
 - incoming-telemetry.thunderbird.net
 - incoming.telemetry.mozilla.org
+- kp-config-smart-tv.akamaized.net
+- kp-configs-smart-tv.s3.eu-central-1.amazonaws.com
 - lastfm-img.freetls.fastly.net
 - lastfm.freetls.fastly.net
 - lazer.ppy.sh
@@ -16708,6 +16710,7 @@ domain_suffix_set:
 - magic-net.info
 - magicalmirai.com
 - magicmovies.com
+- magnific.com
 - mahabodhi.org
 - mahajantech.com
 - mahjongsoul.com
@@ -18298,6 +18301,7 @@ domain_suffix_set:
 - mt0011.site
 - mtao.fun
 - mthruf.com
+- mts-link.ru
 - mts-ws.net
 - mts.ru
 - mtsbank.ru
@@ -21448,6 +21452,7 @@ domain_suffix_set:
 - postimg.cc
 - postimg.org
 - postini.com
+- postman.com
 - posts.careerengine.us
 - posty.kr
 - postyourgirls.ws

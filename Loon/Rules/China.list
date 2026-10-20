@@ -1,6 +1,6 @@
 # 规则名称: China
 # 规则统计: 123584
-# 更新时间: 2026-10-18 04:00:43
+# 更新时间: 2026-10-20 06:00:43
 
 DOMAIN,1-fss24-s0.streamhoster.com
 DOMAIN,14033.live.streamtheworld.com
@@ -123583,6 +123583,6 @@ USER-AGENT,walkman*
 USER-AGENT,WebTorrent*
 USER-AGENT,WeChat*
 USER-AGENT,xiami*
-USER-AGENT,youku*
 USER-AGENT,Youku*
+USER-AGENT,youku*
 USER-AGENT,YYeTs*
