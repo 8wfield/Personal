@@ -1,6 +1,6 @@
 # 规则名称: Global
-# 规则统计: 30214
-# 更新时间: 2026-10-21 03:44:44
+# 规则统计: 30216
+# 更新时间: 2026-10-22 03:46:39
 
 no_resolve: true
 domain_set:
@@ -3663,8 +3663,10 @@ domain_suffix_set:
 - avinin.com
 - avira.com
 - avistaz.to
+- avito.com
 - avito.ru
 - avito.st
+- avito.tech
 - avizoon.site
 - avizoone.com
 - avjb.com
