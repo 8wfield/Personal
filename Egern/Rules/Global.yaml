@@ -1,6 +1,6 @@
 # 规则名称: Global
-# 规则统计: 30216
-# 更新时间: 2026-10-22 03:46:39
+# 规则统计: 30238
+# 更新时间: 2026-10-23 03:37:53
 
 no_resolve: true
 domain_set:
@@ -157,6 +157,7 @@ domain_set:
 - d3lh5kkip965lj.cloudfront.net
 - d3nwj80emtnjeo.cloudfront.net
 - d3r7nsslvs6aaf.cloudfront.net
+- d3stzm2eumvgb4.cloudfront.net
 - d3ucl0eqgl80l5.cloudfront.net
 - d3vd9lfkzbru3h.cloudfront.net
 - d6d4ismr40iw.cloudfront.net
@@ -2698,6 +2699,7 @@ domain_suffix_set:
 - ansarbank.com
 - ansin.erodayo.com
 - answering-islam.org
+- ant.dev
 - antarvasnaclips.com
 - antarvasnax.com
 - antd.org
@@ -2706,12 +2708,14 @@ domain_suffix_set:
 - anthemthegame.com
 - anthonycalzadilla.com
 - anthropic.com
+- anthropic.team
 - anti1984.com
 - antichristendom.com
 - antiphishing.nl
 - antiphishing.ru
 - antiwave.net
 - antpool.com
+- antspace.dev
 - anudetube.com
 - anuneko.com
 - anxiangxing.com
@@ -6427,6 +6431,7 @@ domain_suffix_set:
 - chat.lmsys.org
 - chat.openai.com
 - chatango.com
+- chatbotclaude.com
 - chatgpt.com
 - chatgpt.livekit.cloud
 - chatgpt.site
@@ -6809,10 +6814,16 @@ domain_suffix_set:
 - classymomsex.com
 - clau.de
 - claude.ai
+- claude.app
 - claude.com
 - claude.dev
+- claude.new
+- claude.site
+- claudeacademy.com
 - claudemcpclient.com
 - claudemcpcontent.com
+- claudepages.dev
+- claudestudio.com
 - claudeusercontent.com
 - clawhub.ai
 - clb.org.hk
@@ -10571,6 +10582,17 @@ domain_suffix_set:
 - fluidpreview.com
 - flutter.dev
 - flutterapp.com
+- fluxer.app
+- fluxer.com
+- fluxer.dev
+- fluxer.gg
+- fluxer.gift
+- fluxer.media
+- fluxer.tools
+- fluxerapp.com
+- fluxerstatic.com
+- fluxerstatus.com
+- fluxerusercontent.com
 - fly.dev
 - fly.io
 - flyflv.com
