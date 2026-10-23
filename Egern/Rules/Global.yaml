@@ -1,6 +1,6 @@
 # 规则名称: Global
-# 规则统计: 30238
-# 更新时间: 2026-10-23 03:37:53
+# 规则统计: 30264
+# 更新时间: 2026-10-24 03:38:19
 
 no_resolve: true
 domain_set:
@@ -238,6 +238,7 @@ domain_set:
 - firstsearch.oclc.org
 - fontshop-prod-responsive-images.s3.amazonaws.com
 - foxnewsplayer-a.akamaihd.net
+- funko.my.site.com
 - gamedownloads-rockstargames-com.akamaized.net
 - gamer-cds.cdn.hinet.net
 - gamer2-cds.cdn.hinet.net
@@ -1030,6 +1031,7 @@ domain_suffix_set:
 - 233abc.com
 - 233v2.com
 - 2371tom.com
+- 24.place
 - 24h.tv
 - 24hbook.com
 - 24hjav.com
@@ -4810,6 +4812,8 @@ domain_suffix_set:
 - blobstore.apple.com
 - blockcast.it
 - blockchain.com
+- blockchair.com
+- blockchair.net
 - blockcn.com
 - blockedbyhk.com
 - blockfrost.io
@@ -7272,6 +7276,7 @@ domain_suffix_set:
 - cqcorea.com
 - crabporn.com
 - crackle.com
+- craftifyx.com
 - craigslist.org
 - crankplayer.com
 - crashbandicoot.com
@@ -7352,6 +7357,7 @@ domain_suffix_set:
 - crypto.com
 - cryptocompare.com
 - cryptographyengineering.com
+- cryptoid.info
 - cryptomus.com
 - crypton.co.jp
 - crysis.jp
@@ -7754,6 +7760,7 @@ domain_suffix_set:
 - delcamtv.com
 - delcamuniversity.com
 - delcamusa.com
+- delets.cash
 - delets.online
 - delicious.com
 - delicious.com.au
@@ -10078,6 +10085,7 @@ domain_suffix_set:
 - fanbox.cc
 - fandango.com
 - fandom.com
+- fanfiction.net
 - fanfictionero.com
 - fanfox.net
 - fangbinxing.com
@@ -11170,6 +11178,7 @@ domain_suffix_set:
 - fundsupermart.com
 - funf.tw
 - funimation.com
+- funko.com
 - funkyimg.com
 - funnyfacebook.org
 - funnyordie.com
@@ -11304,6 +11313,7 @@ domain_suffix_set:
 - game-repack.site
 - game735.com
 - gameapps.hk
+- gamebanana.com
 - gamebase.com.tw
 - gamebeforethegame.com
 - gamebiz.jp
@@ -11584,6 +11594,7 @@ domain_suffix_set:
 - getporn.tv
 - getpricetag.com
 - getprintersupports.com
+- getsafety.com
 - getscorecash.com
 - getsentry.com
 - getsession.org
@@ -11767,6 +11778,8 @@ domain_suffix_set:
 - glass8.eu
 - gle
 - gleline.com
+- glitchprod.com
+- glitchproductions.store
 - glitchwave.com
 - global-sci.org
 - global.bing.com
@@ -15983,6 +15996,7 @@ domain_suffix_set:
 - kun66.xyz
 - kundun1069.com
 - kurashsultan.com
+- kurs.expert
 - kurtmunger.com
 - kusocity.com
 - kusugurizanmai.com
@@ -16774,6 +16788,7 @@ domain_suffix_set:
 - makemymood.com
 - makerepeater.jp
 - makesenseofdata.com
+- makeship.com
 - makeshop.jp
 - makingstartshere.com
 - makkahnewspaper.com
@@ -20217,6 +20232,7 @@ domain_suffix_set:
 - owind.com
 - owl.li
 - owltail.com
+- ownaj.com
 - owxd.xyz
 - oxfordaasc.com
 - oxfordartonline.com
@@ -21815,6 +21831,7 @@ domain_suffix_set:
 - pythonhosted.org
 - pythonic.life
 - pytorch.org
+- pyup.io
 - pzforever.skin
 - pzforever01.homes
 - pzhanfor.today
@@ -21980,6 +21997,7 @@ domain_suffix_set:
 - r18lu-avi.shop
 - r18lu.com
 - r2.dev
+- r2modman.com
 - r34porn.net
 - ra.gg
 - rabbitcounter.com
@@ -22747,6 +22765,7 @@ domain_suffix_set:
 - safeliner.tech
 - safepal.com
 - safervpn.com
+- safetycli.com
 - saffrontech.com
 - sagabank.co.jp
 - sage-observability.tech
@@ -24472,6 +24491,7 @@ domain_suffix_set:
 - steaminventoryhelper.com
 - steamladder.com
 - steamofporn.com
+- steamos.cloud
 - steampowered.com
 - steamserver.net
 - steamstatic.com
@@ -25214,6 +25234,7 @@ domain_suffix_set:
 - tgirlpostop.com
 - tgp6.com
 - tgstat.com
+- tgtime.store
 - tgtube.com
 - tgutube.com
 - thai-xxx.com
@@ -25473,6 +25494,8 @@ domain_suffix_set:
 - thunderbird.net
 - thunderbolttechnology.net
 - thundermail.com
+- thunderstore.io
+- thunderstore.org
 - thywords.com
 - thywords.com.tw
 - thz7.net
@@ -25693,6 +25716,7 @@ domain_suffix_set:
 - tmei-taoyuan.com
 - tmi.me
 - tmiaf.ru
+- tmimgcdn.com
 - tmpp.org
 - tmsnrt.rs
 - tn1.shemalez.com
@@ -28378,6 +28402,7 @@ domain_suffix_set:
 - worldoftanks.eu
 - worldofwarcraft.com
 - worldofwarplanes.com
+- worldofwarships.asia
 - worldofwarships.com
 - worldpopulationreview.com
 - worldpornvideos.com
@@ -29627,6 +29652,7 @@ domain_suffix_set:
 - youskbe.com
 - youthnetradio.org
 - youthwant.com.tw
+- youtooz.com
 - youtrack.cloud
 - youtrannytube.com
 - youtu.be
