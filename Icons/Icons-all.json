@@ -1,6 +1,6 @@
 {
   "name": "Icons-all",
-  "description": "全部 1829 图标",
+  "description": "全部 1830 图标",
   "icons": [
     {
       "name": "105°",
@@ -3581,6 +3581,10 @@
     {
       "name": "Sun.",
       "url": "https://emby-icon.vercel.app/icons/Sun.PNG"
+    },
+    {
+      "name": "Surfboard",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Surfboard.png"
     },
     {
       "name": "Surge(1)",
