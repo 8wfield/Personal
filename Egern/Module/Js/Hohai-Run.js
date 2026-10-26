@@ -1,7 +1,6 @@
 // HOHAI 每日签到 + 抽奖 · Egern 定时脚本
 // 账号密码来自模块参数，本文件不含任何凭据
 const ORIGIN = 'https://api.hohai.eu.org';
-const SEEN = 'hohai.seen';
 
 function pick(env, names, dft) {
   const norm = (s) => String(s).toLowerCase().replace(/[_\-\s]/g, '');
@@ -23,10 +22,6 @@ function amt(v) {
   const n = num(v, 0);
   const s = n.toFixed(2);
   return n !== 0 && s === '0.00' ? n.toFixed(3) : s;
-}
-
-function today() {
-  return new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
 }
 
 async function api(ctx, method, path, token, payload) {
@@ -70,13 +65,17 @@ export default async function (ctx) {
   try {
     const login = await api(ctx, 'POST', '/api/user/login', null, { username: user, password: pass });
     const token = dat(login).access_token;
-    if (!token) return say('⚠️ HOHAI 登录失败', why(login, '账号或密码不对'));
+    if (!token) {
+      return say('⚠️ HOHAI 登录失败', why(login, '账号或密码不对'));
+    }
 
     let signed = !!((dat(await api(ctx, 'GET', '/api/user/checkin', token)).stats || {}).checked_in_today);
     if (!signed) {
       const ci = await api(ctx, 'POST', '/api/user/checkin', token);
       signed = !!ci.body.success || /already/i.test(why(ci, ''));
-      if (!signed) return say('⚠️ HOHAI 签到失败', why(ci));
+      if (!signed) {
+        return say('⚠️ HOHAI 签到失败', why(ci));
+      }
     }
 
     const lt = dat(await api(ctx, 'GET', '/api/user/lottery', token));
@@ -103,10 +102,8 @@ export default async function (ctx) {
     lines.push('💰 余额 ' + m(bal));
     const title = draws > 0 ? '🎉 HOHAI 签到抽奖' : '🔔 HOHAI 已签到';
 
-    if (ctx.storage.get(SEEN) !== today() || draws > 0) {
-      ctx.storage.set(SEEN, today());
-      say(title, lines.join('\n'));
-    }
+    say(title, lines.join('\n'));
+    await api(ctx, 'POST', '/api/user/logout', token).catch(() => {});
   } catch (e) {
     say('⚠️ HOHAI 出错', String((e && e.message) || e));
   }
