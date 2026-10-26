@@ -1,6 +1,6 @@
 # 规则名称: Apple
-# 规则统计: 1603
-# 更新时间: 2026-09-14 04:06:56
+# 规则统计: 1602
+# 更新时间: 2026-10-26 04:15:00
 
 no_resolve: true
 domain_set:
@@ -1016,7 +1016,6 @@ domain_suffix_set:
 - icloud-isupport.com
 - icloud-sandbox.com
 - icloud.ch
-- icloud.cn
 - icloud.com
 - icloud.com.cn
 - icloud.de
