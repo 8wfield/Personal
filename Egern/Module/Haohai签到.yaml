@@ -1,0 +1,29 @@
+name: HOHAI 每日签到抽奖
+description: 每天定时签到并抽奖，通知只报抽到多少和余额
+author: Minis
+homepage: https://api.hohai.eu.org
+
+compat_arguments:
+  USERNAME: ''
+  PASSWORD: ''
+  CRON: '30 0 * * *'
+
+compat_arguments_schema:
+  USERNAME:
+    name: 账号
+    description: 站点用户名或邮箱
+  PASSWORD:
+    name: 密码
+    description: 只保存在本机
+  CRON:
+    name: 定时
+    description: cron 表达式，5 段「分 时 日 月 周」。默认 30 0 * * * = 每天 00:30
+
+scriptings:
+  - schedule:
+      name: HOHAI 每日签到抽奖
+      cron: "{{{CRON}}}"
+      script_url: https://raw.githubusercontent.com/8wfield/Personal/refs/heads/main/Egern/Module/Js/Hohai-Run.js
+      env:
+        USERNAME: '{{{USERNAME}}}'
+        PASSWORD: '{{{PASSWORD}}}'
