@@ -1,6 +1,6 @@
 # 规则名称: Global
-# 规则统计: 30276
-# 更新时间: 2026-10-27 04:48:12
+# 规则统计: 30267
+# 更新时间: 2026-10-28 04:18:20
 
 no_resolve: true
 domain_set:
@@ -57,6 +57,9 @@ domain_set:
 - apple.com.akadns.net
 - appleworldwidedeveloper.hb-api.omtrdc.net
 - appleworldwidedeveloper.sc.omtrdc.net
+- appsgenaiserver-pa.clients.google.com
+- appsgenaiserver-pa.clients6.google.com
+- appsgenaiserver-pa.googleapis.com
 - aqi.aqicn.org
 - as-dash-uk-live.akamaized.net
 - as-hls-uk-live.akamaized.net
@@ -167,6 +170,8 @@ domain_set:
 - databank.worldbank.org
 - database.asahi.com
 - datarouter.apps.netherrealm.com
+- dc.applicationinsights.azure.com
+- dc.services.visualstudio.com
 - dcb0z5ovq92mz.cloudfront.net
 - ddacn6pr5v0tl.cloudfront.net
 - ddpjwstwtpszg.cloudfront.net
@@ -191,6 +196,7 @@ domain_set:
 - doy2mn9upadnk.cloudfront.net
 - dqd0jw5gvbchn.cloudfront.net
 - dqrpb9wgowsf5.cloudfront.net
+- dropbox.zendesk.com
 - ds-linear-abematv.akamaized.net
 - ds-vod-abematv.akamaized.net
 - ds0h3roq6wcgc.cloudfront.net
@@ -296,6 +302,7 @@ domain_set:
 - link.theplatform.com
 - linkedin.sc.omtrdc.net
 - live-patreon-marketing.pantheonsite.io
+- live.applicationinsights.azure.com
 - lm.licenses.adobe.com
 - lmlicenses.wip4.adobe.com
 - location.microsoft.com
@@ -321,7 +328,6 @@ domain_set:
 - mwf-service.akamaized.net
 - na1r.services.adobe.com
 - nbbb1bb7.pmhcjk.com
-- netflix.com.edgesuite.net
 - nix-community.github.io
 - notary-submissions-prod.s3-accelerate.amazonaws.com
 - notary-submissions-prod.s3.us-west-2.amazonaws.com
@@ -441,6 +447,7 @@ domain_set:
 - rsshub.umzzz.com
 - rsshub.woodland.cafe
 - rsshub2.asailor.org
+- rt.services.visualstudio.com
 - rtm.tnt-ea.com
 - sa78gs.wpc.edgecastcdn.net
 - scc-hamivideo.cdn.hinet.net
@@ -525,7 +532,6 @@ domain_set:
 - servd-anthropic-website.b-cdn.net
 - sni1dcb6gl.wpc.edgecastcdn.net
 - spectator.ppy.sh
-- spotify.com.edgesuite.net
 - spotify.map.fastly.net
 - spotify.map.fastlylb.net
 - ssl-lvlt.cdn.ea.com
@@ -1628,6 +1634,7 @@ domain_suffix_set:
 - addthiscdn.com
 - addthisedge.com
 - addtoany.com
+- addtodropbox.com
 - addyoutube.com
 - adelaidebbs.com
 - adelaidenow.com.au
@@ -7633,6 +7640,7 @@ domain_suffix_set:
 - darwinsource.org
 - darwinsourcecode.com
 - dasaob.online
+- dash.ai
 - dashlane.com
 - dashly.app
 - dashly.help
@@ -8438,6 +8446,7 @@ domain_suffix_set:
 - docs.new
 - docs.rs
 - docs.rw
+- docsend.com
 - doctor-videos.com
 - doctorvoice.org
 - documentforce.com
@@ -8648,12 +8657,15 @@ domain_suffix_set:
 - dropboxapi.com
 - dropboxbusiness.com
 - dropboxcaptcha.com
+- dropboxexperiment.com
 - dropboxforum.com
 - dropboxforums.com
 - dropboxinsiders.com
+- dropboxlegal.com
 - dropboxmail.com
 - dropboxpartners.com
 - dropboxstatic.com
+- dropboxteam.com
 - dropboxusercontent.com
 - droplr.com
 - drpc.org
@@ -12797,9 +12809,11 @@ domain_suffix_set:
 - helixstudios.net
 - helloandroid.com
 - helloavgirls.com
+- hellofax.com
 - hellokittybeats.com
 - hellomoto.com
 - helloqueer.com
+- hellosign.com
 - hellosmartbook.com
 - helloss.pw
 - hellotxt.com
@@ -16249,6 +16263,7 @@ domain_suffix_set:
 - librarylovefest.com
 - libraryofthumbs.com
 - libredd.it
+- librewolf.dev
 - librewolf.net
 - libsolutions.app
 - libsolutions.domains
@@ -23731,7 +23746,6 @@ domain_suffix_set:
 - situero.com
 - six-degrees.io
 - six9dy.pw
-- sixte.st
 - sixth.biz
 - sjcollect.com
 - sjhsp1.buzz
@@ -25206,29 +25220,6 @@ domain_suffix_set:
 - teslaenergy.services
 - teslamotors.com
 - teslazta.net
-- test-ipv6.alpinedc.ch
-- test-ipv6.arauc.br
-- test-ipv6.belwue.net
-- test-ipv6.carnet.hr
-- test-ipv6.cl
-- test-ipv6.com
-- test-ipv6.cs.umd.edu
-- test-ipv6.csclub.uwaterloo.ca
-- test-ipv6.cz
-- test-ipv6.epic.network
-- test-ipv6.fratec.net
-- test-ipv6.freerangecloud.com
-- test-ipv6.go6.si
-- test-ipv6.hu
-- test-ipv6.is
-- test-ipv6.iu13.net
-- test-ipv6.ke.liquidtelecom.net
-- test-ipv6.noroutetohost.net
-- test-ipv6.roedu.net
-- test-ipv6.se
-- test-ipv6.sin.vr.org
-- test-ipv6.ttk.ru
-- testipv6.de
 - testonfox.com
 - tetrika-school.ru
 - tettediferro.it
