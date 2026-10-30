@@ -1,26 +1,28 @@
 /**
  * Sub-Store 节点重命名
- * 用法：在 Sub-Store 脚本操作中添加此脚本
- * 参数格式：以 # 开头，多个参数用 & 连接
  *
  * @author Minis
- * @date   2026-09-25
+ * @date   2026-10-30
  *
  * 输出格式
  *
- *   🇭🇰 机场名 香港¹ [家宽 IPLC 0.1X]
- *    │   │      │   └─ 标签 + 倍率，全部关闭时不出现括号
- *    │   │      └────── 地区名 + 上标序号（写法由 out 决定）
- *    │   └────────────── 机场名（name）
- *    └────────────────── 国旗（flag）
+ *   🇨🇳 机场名 [香港01 0.1X 家宽 IPLC]
+ *    │   │       └────────────────────── 方括号内全部内容，默认空格分隔
+ *    │   │                                ├─ 地区名 + 两位补零序号
+ *    │   │                                ├─ 倍率（1X 忽略；未开 bl 不显示）
+ *    │   │                                └─ 其余标签，未启用则整段省略
+ *    │   └────────────────────────────── 机场名（name）
+ *    └────────────────────────────────── 国旗（flag）
  *
- *   各段用单个空格连接，未开启的段整段省略（不留空位）。
+ *   方括号内默认用单个空格分隔，可用 sep=· 或 sep=| 换成其他符号。
+ *   未开启的段整段省略（不留空位）。地区默认输出中文；out=quan 可改为英文全称。
  *
  * 参数（$arguments，全部可选）
  *
  *   in        输入地区名写法：quan 全称 / en|us 缩写 / cn|zh 中文 / gq|flag 国旗
  *   out       输出地区名写法，取值同 in，默认 cn；台湾一律显示为 🇨🇳
  *   name      机场名，默认接在国旗后面
+ *   sep       方括号内分隔符，默认空格；可填 · | 等
  *   nf        name 提到国旗前面
  *   flag      加国旗前缀；out=gq 时地区本身就是国旗，不再重复添加
  *   one       该地区只有 1 个节点时省略序号
@@ -61,6 +63,7 @@ const $a = $arguments,
   },
   FNAME = $a.name == undefined ? "" : dec($a.name),
   BLKEY = $a.blkey == undefined ? "" : dec($a.blkey),
+  SEP = $a.sep == undefined ? " " : dec($a.sep),
   blockquic = $a.blockquic == undefined ? "" : dec($a.blockquic),
   INMAP = {
     cn: "cn",
@@ -222,12 +225,15 @@ function operator(pro) {
       });
     }
 
-    const extra = tags.slice();
+    const extra = [];
     if (bl) {
       const r = getr(n);
       if (r !== null && r !== 1) extra.push(r + "X");
     }
-    const bracket = extra.length ? "[" + extra.join(" ") + "]" : "",
+    tags.forEach(tag => {
+      if (!extra.includes(tag)) extra.push(tag);
+    });
+    const bracket = extra.length ? "[" + extra.join(SEP) + "]" : "",
       mm = PAT.exec(n);
 
     if (mm) {
@@ -275,7 +281,13 @@ function operator(pro) {
     g.forEach((p, i) => {
       const q = Object.assign({}, p);
       ["_base", "_head", "_bracket", "_sort"].forEach(f => delete q[f]);
-      q.name = [p._head, k + (p._base && !(g.length === 1 && numone) ? sup(i + 1) : ""), p._bracket].filter(Boolean).join(" ");
+      if (p._base) {
+        const index = !(g.length === 1 && numone) ? String(i + 1).padStart(2, "0") : "",
+          content = [k + index, p._bracket.slice(1, -1)].filter(Boolean).join(SEP);
+        q.name = [p._head, "[" + content + "]"].filter(Boolean).join(" ");
+      } else {
+        q.name = p.name;
+      }
       out.push(q);
     });
   });
