@@ -1,6 +1,6 @@
 {
   "name": "Icons-all",
-  "description": "全部 1834 图标",
+  "description": "全部 1866 图标",
   "icons": [
     {
       "name": "105°",
@@ -117,6 +117,18 @@
     {
       "name": "AU.png",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AU.png"
+    },
+    {
+      "name": "AVDB",
+      "url": "https://emby-icon.vercel.app/icons/AVDB.png"
+    },
+    {
+      "name": "AVDB_1",
+      "url": "https://emby-icon.vercel.app/icons/AVDB1.png"
+    },
+    {
+      "name": "AVDB_2",
+      "url": "https://emby-icon.vercel.app/icons/AVDB2.png"
     },
     {
       "name": "AbemaTV",
@@ -1791,6 +1803,22 @@
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"
     },
     {
+      "name": "Hongguo",
+      "url": "https://emby-icon.vercel.app/icons/Hongguo.png"
+    },
+    {
+      "name": "Hongguo_1",
+      "url": "https://emby-icon.vercel.app/icons/Hongguo1.png"
+    },
+    {
+      "name": "Hongguo_2",
+      "url": "https://emby-icon.vercel.app/icons/Hongguo2.png"
+    },
+    {
+      "name": "Hongguo_Man",
+      "url": "https://emby-icon.vercel.app/icons/Hongguo_Man.png"
+    },
+    {
       "name": "Hongkong",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Hongkong.png"
     },
@@ -1821,6 +1849,18 @@
     {
       "name": "Hulu_1.png",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hulu_1.png"
+    },
+    {
+      "name": "Huya",
+      "url": "https://emby-icon.vercel.app/icons/Huya.png"
+    },
+    {
+      "name": "Huya_1",
+      "url": "https://emby-icon.vercel.app/icons/Huya1.png"
+    },
+    {
+      "name": "Huya_2",
+      "url": "https://emby-icon.vercel.app/icons/Huya2.png"
     },
     {
       "name": "IEPL.png",
@@ -2000,7 +2040,7 @@
     },
     {
       "name": "Juhaokan_1",
-      "url": "https://emby-icon.vercel.app/icons/Juhaokan_1.PNG"
+      "url": "https://emby-icon.vercel.app/icons/Juhaokan_1.png"
     },
     {
       "name": "Juqing",
@@ -2277,6 +2317,18 @@
     {
       "name": "Lray",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/06jichang/Lray.png"
+    },
+    {
+      "name": "Lumen",
+      "url": "https://emby-icon.vercel.app/icons/Lumen.png"
+    },
+    {
+      "name": "Lumen_1",
+      "url": "https://emby-icon.vercel.app/icons/Lumen1.png"
+    },
+    {
+      "name": "Lumen_2",
+      "url": "https://emby-icon.vercel.app/icons/Lumen2.png"
     },
     {
       "name": "Lumina",
@@ -2653,6 +2705,18 @@
     {
       "name": "Nerwo",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/06jichang/Nerwo.png"
+    },
+    {
+      "name": "NetEase",
+      "url": "https://emby-icon.vercel.app/icons/NetEase.png"
+    },
+    {
+      "name": "NetEase_1",
+      "url": "https://emby-icon.vercel.app/icons/NetEase1.png"
+    },
+    {
+      "name": "NetEase_2",
+      "url": "https://emby-icon.vercel.app/icons/NetEase2.png"
     },
     {
       "name": "NetLove",
@@ -3139,6 +3203,18 @@
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/QQ.png"
     },
     {
+      "name": "QQmusic",
+      "url": "https://emby-icon.vercel.app/icons/QQmusic.png"
+    },
+    {
+      "name": "QQmusic_1",
+      "url": "https://emby-icon.vercel.app/icons/QQmusic1.png"
+    },
+    {
+      "name": "QQmusic_2",
+      "url": "https://emby-icon.vercel.app/icons/QQmusic2.png"
+    },
+    {
       "name": "Qidianzhan",
       "url": "https://emby-icon.vercel.app/icons/Qidianzhan.PNG"
     },
@@ -3161,22 +3237,6 @@
     {
       "name": "REX(1)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/REX(1).png"
-    },
-    {
-      "name": "REX_1",
-      "url": "https://emby-icon.vercel.app/icons/REX1.png"
-    },
-    {
-      "name": "REX_2",
-      "url": "https://emby-icon.vercel.app/icons/REX2.png"
-    },
-    {
-      "name": "REX_3",
-      "url": "https://emby-icon.vercel.app/icons/REX3.png"
-    },
-    {
-      "name": "REX_4",
-      "url": "https://emby-icon.vercel.app/icons/REX4.png"
     },
     {
       "name": "ROC",
@@ -3217,6 +3277,34 @@
     {
       "name": "RepublicofthePhilippines(2)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/RepublicofthePhilippines(2).png"
+    },
+    {
+      "name": "Rex",
+      "url": "https://emby-icon.vercel.app/icons/Rex.png"
+    },
+    {
+      "name": "Rex_1",
+      "url": "https://emby-icon.vercel.app/icons/Rex1.png"
+    },
+    {
+      "name": "Rex_2",
+      "url": "https://emby-icon.vercel.app/icons/Rex2.png"
+    },
+    {
+      "name": "Rex_3",
+      "url": "https://emby-icon.vercel.app/icons/Rex3.png"
+    },
+    {
+      "name": "Rex_4",
+      "url": "https://emby-icon.vercel.app/icons/Rex4.png"
+    },
+    {
+      "name": "Rex_5",
+      "url": "https://emby-icon.vercel.app/icons/Rex5.png"
+    },
+    {
+      "name": "Rex_6",
+      "url": "https://emby-icon.vercel.app/icons/Rex6.png"
     },
     {
       "name": "Robo",
@@ -3823,6 +3911,18 @@
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TW.png"
     },
     {
+      "name": "Tangxin",
+      "url": "https://emby-icon.vercel.app/icons/Tangxin.png"
+    },
+    {
+      "name": "Tangxin_1",
+      "url": "https://emby-icon.vercel.app/icons/Tangxin1.png"
+    },
+    {
+      "name": "Tangxin_2",
+      "url": "https://emby-icon.vercel.app/icons/Tangxin2.png"
+    },
+    {
       "name": "Tanhua",
       "url": "https://emby-icon.vercel.app/icons/Tanhua.PNG"
     },
@@ -3903,12 +4003,24 @@
       "url": "https://emby-icon.vercel.app/icons/Thu.PNG"
     },
     {
+      "name": "TikTok",
+      "url": "https://emby-icon.vercel.app/icons/TikTok.png"
+    },
+    {
       "name": "TikTok.png",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png"
     },
     {
+      "name": "TikTok_1",
+      "url": "https://emby-icon.vercel.app/icons/TikTok1.png"
+    },
+    {
       "name": "TikTok_1.png",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png"
+    },
+    {
+      "name": "TikTok_2",
+      "url": "https://emby-icon.vercel.app/icons/TikTok2.png"
     },
     {
       "name": "TikTok_2.png",
@@ -4427,8 +4539,20 @@
       "url": "https://emby-icon.vercel.app/icons/Yinyue.PNG"
     },
     {
+      "name": "YouTube",
+      "url": "https://emby-icon.vercel.app/icons/YouTube.png"
+    },
+    {
       "name": "YouTube.png",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"
+    },
+    {
+      "name": "YouTube_1",
+      "url": "https://emby-icon.vercel.app/icons/YouTube1.png"
+    },
+    {
+      "name": "YouTube_2",
+      "url": "https://emby-icon.vercel.app/icons/YouTube2.png"
     },
     {
       "name": "YouTube_Letter.png",
@@ -5673,6 +5797,10 @@
     {
       "name": "kendeji(1)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/06jichang/kendeji(1).png"
+    },
+    {
+      "name": "kendeji(2)",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/06jichang/kendeji(2).png"
     },
     {
       "name": "kittynetwork",

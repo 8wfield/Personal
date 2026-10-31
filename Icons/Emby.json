@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "Emby 542 图标",
+  "description": "Emby 572 图标",
   "icons": [
     {
       "name": "105°",
@@ -41,6 +41,18 @@
     {
       "name": "A24_1",
       "url": "https://emby-icon.vercel.app/icons/A241.PNG"
+    },
+    {
+      "name": "AVDB",
+      "url": "https://emby-icon.vercel.app/icons/AVDB.png"
+    },
+    {
+      "name": "AVDB_1",
+      "url": "https://emby-icon.vercel.app/icons/AVDB1.png"
+    },
+    {
+      "name": "AVDB_2",
+      "url": "https://emby-icon.vercel.app/icons/AVDB2.png"
     },
     {
       "name": "Aiqing",
@@ -775,12 +787,40 @@
       "url": "https://emby-icon.vercel.app/icons/Holivator.PNG"
     },
     {
+      "name": "Hongguo",
+      "url": "https://emby-icon.vercel.app/icons/Hongguo.png"
+    },
+    {
+      "name": "Hongguo_1",
+      "url": "https://emby-icon.vercel.app/icons/Hongguo1.png"
+    },
+    {
+      "name": "Hongguo_2",
+      "url": "https://emby-icon.vercel.app/icons/Hongguo2.png"
+    },
+    {
+      "name": "Hongguo_Man",
+      "url": "https://emby-icon.vercel.app/icons/Hongguo_Man.png"
+    },
+    {
       "name": "HuLu",
       "url": "https://emby-icon.vercel.app/icons/HuLu.PNG"
     },
     {
       "name": "Huachu",
       "url": "https://emby-icon.vercel.app/icons/Huachu.png"
+    },
+    {
+      "name": "Huya",
+      "url": "https://emby-icon.vercel.app/icons/Huya.png"
+    },
+    {
+      "name": "Huya_1",
+      "url": "https://emby-icon.vercel.app/icons/Huya1.png"
+    },
+    {
+      "name": "Huya_2",
+      "url": "https://emby-icon.vercel.app/icons/Huya2.png"
     },
     {
       "name": "Ichinose",
@@ -868,7 +908,7 @@
     },
     {
       "name": "Juhaokan_1",
-      "url": "https://emby-icon.vercel.app/icons/Juhaokan_1.PNG"
+      "url": "https://emby-icon.vercel.app/icons/Juhaokan_1.png"
     },
     {
       "name": "Juqing",
@@ -1001,6 +1041,18 @@
     {
       "name": "Long",
       "url": "https://emby-icon.vercel.app/icons/Long.PNG"
+    },
+    {
+      "name": "Lumen",
+      "url": "https://emby-icon.vercel.app/icons/Lumen.png"
+    },
+    {
+      "name": "Lumen_1",
+      "url": "https://emby-icon.vercel.app/icons/Lumen1.png"
+    },
+    {
+      "name": "Lumen_2",
+      "url": "https://emby-icon.vercel.app/icons/Lumen2.png"
     },
     {
       "name": "Lunaris",
@@ -1227,6 +1279,18 @@
       "url": "https://emby-icon.vercel.app/icons/Nebula_Starsho.PNG"
     },
     {
+      "name": "NetEase",
+      "url": "https://emby-icon.vercel.app/icons/NetEase.png"
+    },
+    {
+      "name": "NetEase_1",
+      "url": "https://emby-icon.vercel.app/icons/NetEase1.png"
+    },
+    {
+      "name": "NetEase_2",
+      "url": "https://emby-icon.vercel.app/icons/NetEase2.png"
+    },
+    {
       "name": "Nice",
       "url": "https://emby-icon.vercel.app/icons/Nice.PNG"
     },
@@ -1451,6 +1515,18 @@
       "url": "https://emby-icon.vercel.app/icons/QM_ZMYH.PNG"
     },
     {
+      "name": "QQmusic",
+      "url": "https://emby-icon.vercel.app/icons/QQmusic.png"
+    },
+    {
+      "name": "QQmusic_1",
+      "url": "https://emby-icon.vercel.app/icons/QQmusic1.png"
+    },
+    {
+      "name": "QQmusic_2",
+      "url": "https://emby-icon.vercel.app/icons/QQmusic2.png"
+    },
+    {
       "name": "Qidianzhan",
       "url": "https://emby-icon.vercel.app/icons/Qidianzhan.PNG"
     },
@@ -1467,26 +1543,6 @@
       "url": "https://emby-icon.vercel.app/icons/Qiyuan.PNG"
     },
     {
-      "name": "REX",
-      "url": "https://emby-icon.vercel.app/icons/REX.png"
-    },
-    {
-      "name": "REX_1",
-      "url": "https://emby-icon.vercel.app/icons/REX1.png"
-    },
-    {
-      "name": "REX_2",
-      "url": "https://emby-icon.vercel.app/icons/REX2.png"
-    },
-    {
-      "name": "REX_3",
-      "url": "https://emby-icon.vercel.app/icons/REX3.png"
-    },
-    {
-      "name": "REX_4",
-      "url": "https://emby-icon.vercel.app/icons/REX4.png"
-    },
-    {
       "name": "ROC",
       "url": "https://emby-icon.vercel.app/icons/ROC.PNG"
     },
@@ -1497,6 +1553,34 @@
     {
       "name": "Raise_1",
       "url": "https://emby-icon.vercel.app/icons/Raise1.PNG"
+    },
+    {
+      "name": "Rex",
+      "url": "https://emby-icon.vercel.app/icons/Rex.png"
+    },
+    {
+      "name": "Rex_1",
+      "url": "https://emby-icon.vercel.app/icons/Rex1.png"
+    },
+    {
+      "name": "Rex_2",
+      "url": "https://emby-icon.vercel.app/icons/Rex2.png"
+    },
+    {
+      "name": "Rex_3",
+      "url": "https://emby-icon.vercel.app/icons/Rex3.png"
+    },
+    {
+      "name": "Rex_4",
+      "url": "https://emby-icon.vercel.app/icons/Rex4.png"
+    },
+    {
+      "name": "Rex_5",
+      "url": "https://emby-icon.vercel.app/icons/Rex5.png"
+    },
+    {
+      "name": "Rex_6",
+      "url": "https://emby-icon.vercel.app/icons/Rex6.png"
     },
     {
       "name": "Robo",
@@ -1735,6 +1819,18 @@
       "url": "https://emby-icon.vercel.app/icons/TVB2.PNG"
     },
     {
+      "name": "Tangxin",
+      "url": "https://emby-icon.vercel.app/icons/Tangxin.png"
+    },
+    {
+      "name": "Tangxin_1",
+      "url": "https://emby-icon.vercel.app/icons/Tangxin1.png"
+    },
+    {
+      "name": "Tangxin_2",
+      "url": "https://emby-icon.vercel.app/icons/Tangxin2.png"
+    },
+    {
       "name": "Tanhua",
       "url": "https://emby-icon.vercel.app/icons/Tanhua.PNG"
     },
@@ -1757,6 +1853,18 @@
     {
       "name": "Thu.",
       "url": "https://emby-icon.vercel.app/icons/Thu.PNG"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://emby-icon.vercel.app/icons/TikTok.png"
+    },
+    {
+      "name": "TikTok_1",
+      "url": "https://emby-icon.vercel.app/icons/TikTok1.png"
+    },
+    {
+      "name": "TikTok_2",
+      "url": "https://emby-icon.vercel.app/icons/TikTok2.png"
     },
     {
       "name": "Tmdb",
@@ -2053,6 +2161,18 @@
     {
       "name": "Yinyue",
       "url": "https://emby-icon.vercel.app/icons/Yinyue.PNG"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://emby-icon.vercel.app/icons/YouTube.png"
+    },
+    {
+      "name": "YouTube_1",
+      "url": "https://emby-icon.vercel.app/icons/YouTube1.png"
+    },
+    {
+      "name": "YouTube_2",
+      "url": "https://emby-icon.vercel.app/icons/YouTube2.png"
     },
     {
       "name": "Youno",
