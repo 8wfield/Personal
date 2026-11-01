@@ -23,6 +23,7 @@ env:
   ICON_WORKERS: '16'
   ICON_BRANCH: main
   MIRROR_ICONS: ${{ inputs.mirror_icons && '1' || '0' }}
+  README_BRANCH: main
 
 jobs:
   build:
@@ -37,15 +38,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Cache mirrored icons
-        if: env.MIRROR_ICONS == '1'
-        uses: actions/cache@v4
-        with:
-          path: Icons
-          key: icons-cache-v5-${{ github.run_id }}
-          restore-keys: |
-            icons-cache-v5-
 
       - name: Build rules
         shell: bash
@@ -731,6 +723,250 @@ jobs:
           print("\n".join(lines))
           PYEOF
 
+      - name: Generate README
+        shell: bash
+        run: |
+          python3 - <<'PYEOF'
+          """生成 README.md：自适应手机 / PC，浅色主题。"""
+
+          import json
+          import os
+          import pathlib
+          import re
+          import subprocess
+          import urllib.parse
+
+          REPO = os.environ.get("GITHUB_REPOSITORY", "8wfield/Personal")
+          BRANCH = os.environ.get("README_BRANCH", "main")
+          BASE = f"https://raw.githubusercontent.com/{REPO}/{BRANCH}"
+
+          ICON_FALLBACK = {
+              "Egern": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Egern.png",
+              "Loon": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Loon.png",
+          }
+
+          def client_icon(app):
+              local = pathlib.Path(f"Icons/ProxyTools/{app}.png")
+              if local.exists():
+                  return f"{BASE}/Icons/ProxyTools/{app}.png"
+              manifest = pathlib.Path("Icons/ProxyTools.json")
+              if manifest.exists():
+                  try:
+                      data = json.loads(manifest.read_text(encoding="utf-8"))
+                      for entry in data.get("icons", []):
+                          if entry.get("name", "").strip().lower() == app.lower():
+                              return entry["url"]
+                  except (OSError, json.JSONDecodeError, KeyError):
+                      pass
+              return ICON_FALLBACK[app]
+
+          ICON_EGERN = client_icon("Egern")
+          ICON_LOON = client_icon("Loon")
+
+          CN = {
+              "Flags": "国旗地区",
+              "Media": "流媒体",
+              "Apps": "海外应用",
+              "CNApps": "国内应用",
+              "Services": "厂商服务",
+              "Server": "服务器线路",
+              "Common": "常用策略",
+              "Inhibition": "广告拦截",
+              "Functional": "功能图标",
+              "ProxyTools": "代理客户端",
+              "Airport": "机场",
+              "Emby": "Emby",
+              "Other": "其它",
+          }
+          ICON_ORDER = list(CN.keys())
+          SKIP_MANIFEST = {"Icons-all", "index"}
+
+          def repo_time():
+              """仓库最后一次提交时间，作为规则缺失更新时间时的兜底。"""
+              try:
+                  out = subprocess.run(
+                      ["git", "log", "-1", "--format=%cd", "--date=format-local:%Y-%m-%d %H:%M:%S"],
+                      capture_output=True, text=True, timeout=20, check=False,
+                      env={**os.environ, "TZ": "Asia/Shanghai"},
+                  )
+                  stamp = out.stdout.strip()
+                  if stamp:
+                      return stamp
+              except Exception:
+                  pass
+              import datetime as dt
+              tz = dt.timezone(dt.timedelta(hours=8))
+              return dt.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+
+          REPO_TIME = repo_time()
+
+          def read_header(path):
+              try:
+                  head = "\n".join(path.read_text(encoding="utf-8", errors="replace").split("\n")[:4])
+              except OSError:
+                  return None, None
+              count = re.search(r"规则统计: (\d+)", head)
+              stamp = re.search(r"更新时间：(.+)", head)
+              return (count.group(1) if count else None,
+                      stamp.group(1).strip() if stamp else None)
+
+          def egern_link(name):
+              return (f"https://egernapp.com/rules/new?type=rule_set"
+                      f"&match={BASE}/Egern/Rules/{name}.yaml&policy=DIRECT")
+
+          def loon_rule_link(name):
+              url = urllib.parse.quote(f"{BASE}/Loon/Rules/{name}.list", safe="")
+              return f"https://www.nsloon.com/openloon/import?rules={url}"
+
+          def loon_icon_link(cat):
+              url = urllib.parse.quote(f"{BASE}/Icons/{cat}.json", safe="")
+              return f"https://www.nsloon.com/openloon/import?iconset={url}"
+
+          def btn(icon, url, label):
+              return f'<a href="{url}"><img src="{icon}" width="20" alt="{label}"></a>'
+
+          def collect_rules():
+              egern_dir = pathlib.Path("Egern/Rules")
+              loon_dir = pathlib.Path("Loon/Rules")
+              egern = {p.stem for p in egern_dir.glob("*.yaml")} if egern_dir.is_dir() else set()
+              loon = {p.stem for p in loon_dir.glob("*.list")} if loon_dir.is_dir() else set()
+              rows = []
+              for name in sorted(egern | loon, key=str.lower):
+                  count, stamp = read_header(loon_dir / f"{name}.list")
+                  if count is None:
+                      count, stamp = read_header(egern_dir / f"{name}.yaml")
+                  rows.append((name, count or "-", stamp or REPO_TIME,
+                               name in egern, name in loon))
+              return rows, len(egern | loon)
+
+          def collect_icons():
+              root = pathlib.Path("Icons")
+              if not root.is_dir():
+                  return [], 0, 0
+              found = {}
+              for path in root.glob("*.json"):
+                  if path.stem in SKIP_MANIFEST:
+                      continue
+                  try:
+                      data = json.loads(path.read_text(encoding="utf-8"))
+                      found[path.stem] = len(data.get("icons", []))
+                  except (OSError, json.JSONDecodeError):
+                      continue
+              total = 0
+              merged = root / "Icons-all.json"
+              if merged.exists():
+                  try:
+                      total = len(json.loads(merged.read_text(encoding="utf-8")).get("icons", []))
+                  except (OSError, json.JSONDecodeError):
+                      total = 0
+              if not total:
+                  total = sum(found.values())
+              ordered = [c for c in ICON_ORDER if c in found]
+              ordered += sorted(c for c in found if c not in ICON_ORDER)
+              rows = [(CN.get(c, c), c, found[c]) for c in ordered]
+              return rows, len(ordered), total
+
+          def main():
+              rule_rows, rule_count = collect_rules()
+              icon_rows, icon_cats, icon_total = collect_icons()
+
+              rule_lines = [
+                  "| 规则组 | 条数 | 更新时间 | Egern | Loon |",
+                  "|:---|---:|:---|:---:|:---:|",
+              ]
+              for name, count, stamp, has_egern, has_loon in rule_rows:
+                  cell_e = btn(ICON_EGERN, egern_link(name), "Egern") if has_egern else "–"
+                  cell_l = btn(ICON_LOON, loon_rule_link(name), "Loon") if has_loon else "–"
+                  rule_lines.append(f"| **{name}** | {count} | {stamp} | {cell_e} | {cell_l} |")
+              rule_table = "\n".join(rule_lines)
+
+              icon_lines = [
+                  "| 分类 | 标识 | 数量 | Loon |",
+                  "|:---|:---|---:|:---:|",
+                  f"| **全量图标** | `Icons-all` | {icon_total} | {btn(ICON_LOON, loon_icon_link('Icons-all'), 'Loon')} |",
+              ]
+              for cn, en, count in icon_rows:
+                  icon_lines.append(f"| {cn} | `{en}` | {count} | {btn(ICON_LOON, loon_icon_link(en), 'Loon')} |")
+              icon_table = "\n".join(icon_lines)
+
+              md = f"""<div align="center">
+
+          # 🛰️ Personal Rules
+
+          **Loon · Egern 规则与图标集**
+
+          ![rules](https://img.shields.io/badge/规则-{rule_count}%20组-0969da?style=flat-square)
+          ![icons](https://img.shields.io/badge/图标-{icon_total}%20枚-8250df?style=flat-square)
+          ![cats](https://img.shields.io/badge/分类-{icon_cats}%20类-1a7f37?style=flat-square)
+          ![update](https://img.shields.io/badge/更新-每%208%20小时-bf8700?style=flat-square)
+
+          网络搜集整理，仅供个人学习交流
+
+          </div>
+
+          ## 📜 规则
+
+          点击 <img src="{ICON_EGERN}" width="16"> / <img src="{ICON_LOON}" width="16"> 一键导入对应客户端。
+          Egern 导入后可自行调整策略（默认 `DIRECT`）。
+
+          {rule_table}
+
+          ## 🎨 图标集
+
+          仅 Loon 支持图标集导入；清单指向上游 CDN，不占用仓库体积。
+
+          {icon_table}
+
+          ## 🙏 上游致谢
+
+          本仓库仅做聚合与格式转换，规则与图标均来自以下项目：
+
+          <div align="center">
+
+          <a href="https://magicrule.pages.dev"><img src="https://magicrule.pages.dev/favicon.svg" width="52" alt="MagicRule"></a>
+          <a href="https://github.com/v2fly/domain-list-community"><img src="https://github.com/v2fly.png" width="52" alt="v2fly"></a>
+          <a href="https://github.com/LM-Firefly/Rules"><img src="https://github.com/LM-Firefly.png" width="52" alt="LM-Firefly"></a>
+          <a href="https://ruleset.skk.moe"><img src="https://github.com/SukkaW.png" width="52" alt="Sukka"></a>
+          <a href="https://github.com/sve1r/Rules-For-Quantumult-X"><img src="https://github.com/sve1r.png" width="52" alt="sve1r"></a>
+          <a href="https://github.com/ACL4SSR/ACL4SSR"><img src="https://github.com/ACL4SSR.png" width="52" alt="ACL4SSR"></a>
+          <a href="https://github.com/Repcz/Tool"><img src="https://github.com/Repcz.png" width="52" alt="Repcz"></a>
+          <a href="https://github.com/Koolson/Qure"><img src="https://github.com/Koolson.png" width="52" alt="Koolson"></a>
+
+          </div>
+
+          | 项目 | 用途 |
+          |:---|:---|
+          | [MagicRule](https://magicrule.pages.dev) | 规则聚合源（48 组分流规则） |
+          | [v2fly/domain-list-community](https://github.com/v2fly/domain-list-community) | 域名 / ASN 基础库 |
+          | [LM-Firefly/Rules](https://github.com/LM-Firefly/Rules) | 国内 / 全球服务规则 |
+          | [ruleset.skk.moe](https://ruleset.skk.moe) | 分流 / 拦截规则（Sukka） |
+          | [sve1r/Rules-For-Quantumult-X](https://github.com/sve1r/Rules-For-Quantumult-X) | 拦截 / 分流规则 |
+          | [ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR) | 应用规则 |
+          | [Repcz/Tool](https://github.com/Repcz/Tool) | GeoipCN 原上游 |
+          | [Koolson/Qure](https://github.com/Koolson/Qure) | Qure 彩色图标集 |
+          | [lige47/QuanX-icon-rule](https://github.com/lige47/QuanX-icon-rule) | 应用 / 机场图标集 |
+          | [TFEL-Emby](https://emby-icon.vercel.app/) | Emby 图标集 |
+
+          ## ⚠️ 声明
+
+          规则与图标 **均搜集整理自互联网开源项目**，仅供个人学习与技术交流，请勿用于商业或非法用途。
+          不对准确性与时效性作任何保证；版权归各原作者所有，如有侵权请提 Issue 联系删除。
+
+          <div align="center">
+          <sub>GitHub Actions 自动构建 · 上游无更新时不产生提交</sub>
+          </div>
+          """
+
+              path = pathlib.Path("README.md")
+              if path.exists() and path.read_text(encoding="utf-8") == md:
+                  print("README.md 无变化")
+                  return
+              path.write_text(md, encoding="utf-8")
+              print(f"README.md 已更新：{rule_count} 组规则 / {icon_total} 枚图标 / {icon_cats} 类")
+
+          if __name__ == "__main__":
+              main()
+          PYEOF
       - name: Commit changes
         shell: bash
         run: |
@@ -741,14 +977,35 @@ jobs:
 
           BRANCH="${GITHUB_REF_NAME:-main}"
           STAMP="$(date '+%Y-%m-%d %H:%M')"
+          COUNT_FILE=".github/.commit_count"
+          FULL_EVERY="${FULL_COMMIT_EVERY:-5}"
+          DOW="$(date '+%u')"
 
-          if [ -z "$(git status --porcelain)" ]; then
+          if [ -z "$(git status --porcelain | grep -v "${COUNT_FILE}")" ]; then
             echo '上游无更新，工作区干净，跳过提交'
             exit 0
           fi
 
+          COUNT=0
+          [ -f "$COUNT_FILE" ] && COUNT="$(cat "$COUNT_FILE" 2>/dev/null || echo 0)"
+          COUNT=$((COUNT + 1))
+
+          DO_FULL=0
+          [ "$DOW" = "1" ] && DO_FULL=1
+          [ "$COUNT" -ge "$FULL_EVERY" ] && DO_FULL=1
+
+          if [ "$DO_FULL" = "1" ]; then
+            echo "全仓库同步触发（计数 ${COUNT}，周一=${DOW}）"
+            COUNT=0
+          fi
+
+          mkdir -p "$(dirname "$COUNT_FILE")"
+          echo "$COUNT" > "$COUNT_FILE"
           git add -A
           git commit -q -m "chore: 更新规则与图标 · ${STAMP}"
+          if [ "$DO_FULL" = "1" ]; then
+            git commit --allow-empty -q -m "chore: 全仓库同步 · ${STAMP}"
+          fi
 
           for _ in 1 2 3 4 5; do
             git push -q origin "HEAD:${BRANCH}" && exit 0
