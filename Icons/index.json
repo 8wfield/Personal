@@ -1,0 +1,71 @@
+{
+  "total": 1896,
+  "mirrored": false,
+  "categories": [
+    {
+      "category": "Flags",
+      "count": 131,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Flags.json"
+    },
+    {
+      "category": "Media",
+      "count": 99,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Media.json"
+    },
+    {
+      "category": "Apps",
+      "count": 291,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Apps.json"
+    },
+    {
+      "category": "CNApps",
+      "count": 243,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/CNApps.json"
+    },
+    {
+      "category": "Services",
+      "count": 16,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Services.json"
+    },
+    {
+      "category": "Server",
+      "count": 9,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Server.json"
+    },
+    {
+      "category": "Common",
+      "count": 12,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Common.json"
+    },
+    {
+      "category": "Inhibition",
+      "count": 4,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Inhibition.json"
+    },
+    {
+      "category": "Functional",
+      "count": 81,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Functional.json"
+    },
+    {
+      "category": "ProxyTools",
+      "count": 35,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/ProxyTools.json"
+    },
+    {
+      "category": "Airport",
+      "count": 329,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Airport.json"
+    },
+    {
+      "category": "Emby",
+      "count": 572,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Emby.json"
+    },
+    {
+      "category": "Other",
+      "count": 74,
+      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Other.json"
+    }
+  ]
+}

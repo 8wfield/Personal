@@ -1,22 +1,18 @@
 {
   "name": "Flags",
-  "description": "国旗 131 图标",
+  "description": "国旗 / 地区 / 地图 · 131 枚",
   "icons": [
     {
-      "name": "AU.png",
+      "name": "AU",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AU.png"
     },
     {
-      "name": "Africa_Map.png",
+      "name": "Africa_Map",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Africa_Map.png"
     },
     {
-      "name": "America_Map.png",
+      "name": "America_Map",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/America_Map.png"
-    },
-    {
-      "name": "Argentina",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Argentina.png"
     },
     {
       "name": "Argentina(1)",
@@ -27,12 +23,12 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Argentina(2).png"
     },
     {
-      "name": "Asia_Map.png",
-      "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Asia_Map.png"
+      "name": "Argentina",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Argentina.png"
     },
     {
-      "name": "Australia",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Australia.png"
+      "name": "Asia_Map",
+      "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Asia_Map.png"
     },
     {
       "name": "Australia(1)",
@@ -43,16 +39,16 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Australia(2).png"
     },
     {
-      "name": "Australia.png",
+      "name": "Australia",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Australia.png"
     },
     {
-      "name": "BR.png",
-      "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/BR.png"
+      "name": "Australia",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Australia.png"
     },
     {
-      "name": "Brasil",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Brasil.png"
+      "name": "BR",
+      "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/BR.png"
     },
     {
       "name": "Brasil(1)",
@@ -63,52 +59,52 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Brasil(2).png"
     },
     {
-      "name": "Brazil.png",
+      "name": "Brasil",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Brasil.png"
+    },
+    {
+      "name": "Brazil",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Brazil.png"
     },
     {
-      "name": "CA.png",
+      "name": "CA",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/CA.png"
     },
     {
-      "name": "CN.png",
+      "name": "CN",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/CN.png"
     },
     {
-      "name": "Canada.png",
+      "name": "Canada",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Canada.png"
     },
     {
-      "name": "China.png",
+      "name": "China",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
     },
     {
-      "name": "China_Map.png",
+      "name": "China_Map",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png"
     },
     {
-      "name": "DE.png",
+      "name": "DE",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/DE.png"
     },
     {
-      "name": "EG.png",
+      "name": "EG",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/EG.png"
     },
     {
-      "name": "EU.png",
+      "name": "EU",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/EU.png"
     },
     {
-      "name": "Egypt.png",
+      "name": "Egypt",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Egypt.png"
     },
     {
-      "name": "Europe_Map.png",
+      "name": "Europe_Map",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Europe_Map.png"
-    },
-    {
-      "name": "EuropeanUnion",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/EuropeanUnion.png"
     },
     {
       "name": "EuropeanUnion(1)",
@@ -119,20 +115,20 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/EuropeanUnion(2).png"
     },
     {
-      "name": "European_Union.png",
+      "name": "EuropeanUnion",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/EuropeanUnion.png"
+    },
+    {
+      "name": "European_Union",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png"
     },
     {
-      "name": "FI.png",
+      "name": "FI",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/FI.png"
     },
     {
-      "name": "FR.png",
+      "name": "FR",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/FR.png"
-    },
-    {
-      "name": "FederalRepublicofNigeria",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/FederalRepublicofNigeria.png"
     },
     {
       "name": "FederalRepublicofNigeria(1)",
@@ -143,16 +139,16 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/FederalRepublicofNigeria(2).png"
     },
     {
-      "name": "Finland.png",
+      "name": "FederalRepublicofNigeria",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/FederalRepublicofNigeria.png"
+    },
+    {
+      "name": "Finland",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Finland.png"
     },
     {
-      "name": "France.png",
+      "name": "France",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/France.png"
-    },
-    {
-      "name": "Germany",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Germany.png"
     },
     {
       "name": "Germany(1)",
@@ -163,20 +159,20 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Germany(2).png"
     },
     {
-      "name": "Germany.png",
+      "name": "Germany",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Germany.png"
     },
     {
-      "name": "HK.png",
+      "name": "Germany",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Germany.png"
+    },
+    {
+      "name": "HK",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/HK.png"
     },
     {
-      "name": "Hong_Kong.png",
+      "name": "Hong_Kong",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"
-    },
-    {
-      "name": "Hongkong",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Hongkong.png"
     },
     {
       "name": "Hongkong(1)",
@@ -191,12 +187,12 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Hongkong(3).png"
     },
     {
-      "name": "IN.png",
-      "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/IN.png"
+      "name": "Hongkong",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Hongkong.png"
     },
     {
-      "name": "India",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/India.png"
+      "name": "IN",
+      "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/IN.png"
     },
     {
       "name": "India(1)",
@@ -207,11 +203,15 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/India(2).png"
     },
     {
-      "name": "India.png",
+      "name": "India",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/India.png"
     },
     {
-      "name": "JP.png",
+      "name": "India",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/India.png"
+    },
+    {
+      "name": "JP",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/JP.png"
     },
     {
@@ -227,16 +227,12 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Japan(3).png"
     },
     {
-      "name": "Japan.png",
+      "name": "Japan",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"
     },
     {
-      "name": "KR.png",
+      "name": "KR",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/KR.png"
-    },
-    {
-      "name": "Korea",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Korea.png"
     },
     {
       "name": "Korea(1)",
@@ -247,20 +243,20 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Korea(2).png"
     },
     {
-      "name": "Korea.png",
+      "name": "Korea",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png"
     },
     {
-      "name": "MO.png",
+      "name": "Korea",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Korea.png"
+    },
+    {
+      "name": "MO",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/MO.png"
     },
     {
-      "name": "MY.png",
+      "name": "MY",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/MY.png"
-    },
-    {
-      "name": "Macao",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Macao.png"
     },
     {
       "name": "Macao(1)",
@@ -271,12 +267,12 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Macao(2).png"
     },
     {
-      "name": "Macao.png",
+      "name": "Macao",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Macao.png"
     },
     {
-      "name": "Malaysia",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Malaysia.png"
+      "name": "Macao",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Macao.png"
     },
     {
       "name": "Malaysia(1)",
@@ -287,12 +283,12 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Malaysia(2).png"
     },
     {
-      "name": "Malaysia.png",
+      "name": "Malaysia",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Malaysia.png"
     },
     {
-      "name": "Netherlands",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Netherlands.png"
+      "name": "Malaysia",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Malaysia.png"
     },
     {
       "name": "Netherlands(1)",
@@ -303,8 +299,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Netherlands(2).png"
     },
     {
-      "name": "NorthKorea",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/NorthKorea.png"
+      "name": "Netherlands",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Netherlands.png"
     },
     {
       "name": "NorthKorea(1)",
@@ -315,24 +311,24 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/NorthKorea(2).png"
     },
     {
-      "name": "Null_Nation.png",
+      "name": "NorthKorea",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/NorthKorea.png"
+    },
+    {
+      "name": "Null_Nation",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Null_Nation.png"
     },
     {
-      "name": "Oceania_Map.png",
+      "name": "Oceania_Map",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Oceania_Map.png"
     },
     {
-      "name": "PH.png",
+      "name": "PH",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/PH.png"
     },
     {
-      "name": "Philippines.png",
+      "name": "Philippines",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Philippines.png"
-    },
-    {
-      "name": "Poland",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Poland.png"
     },
     {
       "name": "Poland(2)",
@@ -343,12 +339,12 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Poland(3).png"
     },
     {
-      "name": "RU.png",
-      "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/RU.png"
+      "name": "Poland",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Poland.png"
     },
     {
-      "name": "RepublicofthePhilippines",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/RepublicofthePhilippines.png"
+      "name": "RU",
+      "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/RU.png"
     },
     {
       "name": "RepublicofthePhilippines(1)",
@@ -359,8 +355,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/RepublicofthePhilippines(2).png"
     },
     {
-      "name": "Russia",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Russia.png"
+      "name": "RepublicofthePhilippines",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/RepublicofthePhilippines.png"
     },
     {
       "name": "Russia(1)",
@@ -371,40 +367,40 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Russia(2).png"
     },
     {
-      "name": "Russia.png",
+      "name": "Russia",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Russia.png"
     },
     {
-      "name": "SG.png",
+      "name": "Russia",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Russia.png"
+    },
+    {
+      "name": "SG",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/SG.png"
     },
     {
-      "name": "Singapore.png",
+      "name": "Singapore",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"
-    },
-    {
-      "name": "Spain",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Spain.png"
     },
     {
       "name": "Spain(2)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Spain(2).png"
     },
     {
-      "name": "TH.png",
+      "name": "Spain",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Spain.png"
+    },
+    {
+      "name": "TH",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TH.png"
     },
     {
-      "name": "TR.png",
+      "name": "TR",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TR.png"
     },
     {
-      "name": "TW.png",
+      "name": "TW",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TW.png"
-    },
-    {
-      "name": "Thailand",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Thailand.png"
     },
     {
       "name": "Thailand(1)",
@@ -415,12 +411,12 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Thailand(2).png"
     },
     {
-      "name": "Thailand.png",
+      "name": "Thailand",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Thailand.png"
     },
     {
-      "name": "Turkey",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Turkey.png"
+      "name": "Thailand",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Thailand.png"
     },
     {
       "name": "Turkey(1)",
@@ -431,20 +427,20 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Turkey(2).png"
     },
     {
-      "name": "Turkey.png",
+      "name": "Turkey",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Turkey.png"
     },
     {
-      "name": "UK.png",
+      "name": "Turkey",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/Turkey.png"
+    },
+    {
+      "name": "UK",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/UK.png"
     },
     {
-      "name": "UN.png",
+      "name": "UN",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/UN.png"
-    },
-    {
-      "name": "US",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/US.png"
     },
     {
       "name": "US(1)",
@@ -455,12 +451,12 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/US(2).png"
     },
     {
-      "name": "US.png",
+      "name": "US",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/US.png"
     },
     {
-      "name": "UnitedKingdom",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/UnitedKingdom.png"
+      "name": "US",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/US.png"
     },
     {
       "name": "UnitedKingdom(1)",
@@ -471,32 +467,32 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/UnitedKingdom(2).png"
     },
     {
-      "name": "United_Kingdom.png",
+      "name": "UnitedKingdom",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/UnitedKingdom.png"
+    },
+    {
+      "name": "United_Kingdom",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_Kingdom.png"
     },
     {
-      "name": "United_Nations.png",
+      "name": "United_Nations",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_Nations.png"
     },
     {
-      "name": "United_States.png",
+      "name": "United_States",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"
     },
     {
-      "name": "United_States_Map.png",
+      "name": "United_States_Map",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States_Map.png"
     },
     {
-      "name": "World_Map.png",
+      "name": "World_Map",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/World_Map.png"
     },
     {
       "name": "chinese",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/chinese.png"
-    },
-    {
-      "name": "singapore",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/singapore.png"
     },
     {
       "name": "singapore(1)",
@@ -507,8 +503,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/singapore(2).png"
     },
     {
-      "name": "taiwan",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/taiwan.png"
+      "name": "singapore",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/singapore.png"
     },
     {
       "name": "taiwan(1)",
@@ -525,6 +521,10 @@
     {
       "name": "taiwan(4)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/taiwan(4).png"
+    },
+    {
+      "name": "taiwan",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/01Country/taiwan.png"
     }
   ]
 }

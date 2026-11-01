@@ -1,14 +1,10 @@
 {
   "name": "ProxyTools",
-  "description": "代理工具 35 图标",
+  "description": "代理客户端 Logo（Surge / Loon / QuanX / Egern ...） · 35 枚",
   "icons": [
     {
       "name": "Egern",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Egern.png"
-    },
-    {
-      "name": "Loon",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Loon.png"
     },
     {
       "name": "Loon(1)",
@@ -41,6 +37,10 @@
     {
       "name": "Loon(8)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Loon(8).png"
+    },
+    {
+      "name": "Loon",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Loon.png"
     },
     {
       "name": "Stash",
@@ -127,16 +127,16 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/mihomo.png"
     },
     {
-      "name": "quanx",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/quanx.png"
-    },
-    {
       "name": "quanx(1)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/quanx(1).png"
     },
     {
       "name": "quanx(2)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/quanx(2).png"
+    },
+    {
+      "name": "quanx",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/quanx.png"
     },
     {
       "name": "singbox",

@@ -1,19 +1,98 @@
 # 规则名称: DouYin
-# 规则统计: 13
-# 更新时间: 2025-06-06 09:18:50
+# 上游: https://magicrule.pages.dev/data/_shared/artifacts/DouYin_rules_b3dc4221b07a0f28.list
+# 规则统计: 90
+# 更新时间：2026-10-16 23:35:20
 
 domain_set:
-- lf3-static.bytednsdoc.com
-- v5-dy-o-abtest.zjcdn.com
+  - p-aweme-im-img-sign.bytedance.net
+  - v5-dy-o-abtest.zjcdn.com
+
 domain_suffix_set:
-- amemv.com
-- douyincdn.com
-- douyinpic.com
-- douyinstatic.com
-- douyinvod.com
-- idouyinvod.com
-- ixigua.com
-- ixiguavideo.com
-- pstatp.com
-- snssdk.com
-- toutiao.com
+  - activity-wbsj.com
+  - aihst8.com
+  - amemv.cn
+  - amemv.com
+  - amemv.net
+  - awemeughun.com
+  - awemeuglang.com
+  - awemeugsoul.com
+  - awemeugwave.com
+  - betastar.cn
+  - boxdouyin.com
+  - byted-static.com
+  - bytednsdoc.com
+  - bytegecko.com
+  - bytegoofy.com
+  - bytehwm.com
+  - byteimg.com
+  - bytescm.com
+  - bytetcc.com
+  - bytetos.com
+  - cookicut.com
+  - douyin.com
+  - douyinact.com
+  - douyinact.net
+  - douyincdn.com
+  - douyinec.com
+  - douyinfe.com
+  - douyinliving.com
+  - douyinmusicpromotion.com
+  - douyinpay.com
+  - douyinpic.com
+  - douyinstatic.com
+  - douyinvod.com
+  - duoshan.com
+  - huoshan.com
+  - huoshancdn.com
+  - huoshangroup.com
+  - huoshanimg.com
+  - huoshanlive.com
+  - huoshanparty.com
+  - huoshanstatic.com
+  - huoshante8.com
+  - huoshanvideo.cn
+  - huoshanvideo.net
+  - huoshanvod.com
+  - huoshanxiaoshipin.cn
+  - huoshanxiaoshipin.net
+  - huoshanzhibo.cn
+  - huoshanzhibo.com
+  - huoshanzhibo.net
+  - hypercachenode.com
+  - ibytedapm.com
+  - idouyinliving.com
+  - idouyinpic.com
+  - idouyinstatic.com
+  - idouyinvod.com
+  - iesdouyin.com
+  - iesdouyin.net
+  - ieshuodong.cn
+  - ieshuodong.net
+  - ihst8.com
+  - ihuoshanimg.com
+  - ihuoshanlive.com
+  - ihuoshanstatic.com
+  - ihuoshanvod.com
+  - ixigua.com
+  - ixiguavideo.com
+  - kolbuyer.cn
+  - lifexue.com
+  - nextvid.net
+  - open-douyin.com
+  - ppkankan01.com
+  - pstatp.com
+  - qishui.cn
+  - qishui.com
+  - qishui.com.cn
+  - qishuimusic.cn
+  - qishuimusic.com.cn
+  - snssdk.com
+  - supercachenet.com
+  - supercachenode.com
+  - toutiao.com
+  - ulpay.com
+  - ultracachenode.com
+  - woaihuoshan.com
+  - wohst8.com
+  - yhgfb-cn-static.com
+  - zijieapi.com

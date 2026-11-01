@@ -1,21 +1,21 @@
 {
   "name": "Inhibition",
-  "description": "拦截 4 图标",
+  "description": "拦截类（广告 / 劫持） · 4 枚",
   "icons": [
     {
-      "name": "AdBlack.png",
+      "name": "AdBlack",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AdBlack.png"
     },
     {
-      "name": "AdWhite.png",
+      "name": "AdWhite",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AdWhite.png"
     },
     {
-      "name": "Advertising.png",
+      "name": "Advertising",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
     },
     {
-      "name": "Hijacking.png",
+      "name": "Hijacking",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hijacking.png"
     }
   ]

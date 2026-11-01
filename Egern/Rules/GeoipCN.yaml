@@ -1,6 +1,7 @@
 # 规则名称: GeoipCN
+# 上游: https://raw.githubusercontent.com/Repcz/Tool/X/Surge/Custom/FILTER_REGION.list
 # 规则统计: 1
-# 更新时间: 2026-09-14 20:02:29
+# 更新时间：2026-10-31 18:43:19
 
 geoip_set:
-- CN
+  - CN

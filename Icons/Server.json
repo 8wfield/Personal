@@ -1,41 +1,41 @@
 {
   "name": "Server",
-  "description": "服务器 9 图标",
+  "description": "服务器与线路（BGP / GIA / IEPL / IPLC ...） · 9 枚",
   "icons": [
     {
-      "name": "AGA.png",
+      "name": "AGA",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AGA.png"
     },
     {
-      "name": "AIA.png",
+      "name": "AIA",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AIA.png"
     },
     {
-      "name": "Azure.png",
+      "name": "Azure",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Azure.png"
     },
     {
-      "name": "BGP.png",
+      "name": "BGP",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/BGP.png"
     },
     {
-      "name": "CC.png",
+      "name": "CC",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/CC.png"
     },
     {
-      "name": "GIA.png",
+      "name": "GIA",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GIA.png"
     },
     {
-      "name": "HC.png",
+      "name": "HC",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/HC.png"
     },
     {
-      "name": "IEPL.png",
+      "name": "IEPL",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/IEPL.png"
     },
     {
-      "name": "IPLC.png",
+      "name": "IPLC",
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/IPLC.png"
     }
   ]

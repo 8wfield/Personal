@@ -1,6 +1,6 @@
 {
   "name": "Emby",
-  "description": "Emby 572 图标",
+  "description": "Emby 服务器图标 · 572 枚",
   "icons": [
     {
       "name": "105°",
@@ -41,6 +41,22 @@
     {
       "name": "A24_1",
       "url": "https://emby-icon.vercel.app/icons/A241.PNG"
+    },
+    {
+      "name": "Ask_1",
+      "url": "https://emby-icon.vercel.app/icons/ASK1.PNG"
+    },
+    {
+      "name": "Ask_Premium1",
+      "url": "https://emby-icon.vercel.app/icons/ASK_Premium1.PNG"
+    },
+    {
+      "name": "Ask_Premium2",
+      "url": "https://emby-icon.vercel.app/icons/ASK_Premium2.PNG"
+    },
+    {
+      "name": "Ask_Ultra1",
+      "url": "https://emby-icon.vercel.app/icons/ASK_Ultra1.PNG"
     },
     {
       "name": "AVDB",
@@ -143,10 +159,6 @@
       "url": "https://emby-icon.vercel.app/icons/Ask.PNG"
     },
     {
-      "name": "Ask_1",
-      "url": "https://emby-icon.vercel.app/icons/ASK1.PNG"
-    },
-    {
       "name": "Ask_Lite",
       "url": "https://emby-icon.vercel.app/icons/Ask_Lite.PNG"
     },
@@ -155,20 +167,8 @@
       "url": "https://emby-icon.vercel.app/icons/Ask_Premium.PNG"
     },
     {
-      "name": "Ask_Premium1",
-      "url": "https://emby-icon.vercel.app/icons/ASK_Premium1.PNG"
-    },
-    {
-      "name": "Ask_Premium2",
-      "url": "https://emby-icon.vercel.app/icons/ASK_Premium2.PNG"
-    },
-    {
       "name": "Ask_Ultra",
       "url": "https://emby-icon.vercel.app/icons/Ask_ultra.PNG"
-    },
-    {
-      "name": "Ask_Ultra1",
-      "url": "https://emby-icon.vercel.app/icons/ASK_Ultra1.PNG"
     },
     {
       "name": "BCXC",
@@ -327,6 +327,14 @@
       "url": "https://emby-icon.vercel.app/icons/DC.PNG"
     },
     {
+      "name": "DC_1",
+      "url": "https://emby-icon.vercel.app/icons/DC1.PNG"
+    },
+    {
+      "name": "DC_2",
+      "url": "https://emby-icon.vercel.app/icons/DC2.PNG"
+    },
+    {
       "name": "DC Studios",
       "url": "https://emby-icon.vercel.app/icons/DC Studios.png"
     },
@@ -337,14 +345,6 @@
     {
       "name": "DC Studios_2",
       "url": "https://emby-icon.vercel.app/icons/DC Studios2.png"
-    },
-    {
-      "name": "DC_1",
-      "url": "https://emby-icon.vercel.app/icons/DC1.PNG"
-    },
-    {
-      "name": "DC_2",
-      "url": "https://emby-icon.vercel.app/icons/DC2.PNG"
     },
     {
       "name": "DaJia",
@@ -371,16 +371,16 @@
       "url": "https://emby-icon.vercel.app/icons/Daobi.PNG"
     },
     {
-      "name": "Disney",
-      "url": "https://emby-icon.vercel.app/icons/Disney.PNG"
-    },
-    {
       "name": "Disney+",
       "url": "https://emby-icon.vercel.app/icons/Disney+.PNG"
     },
     {
       "name": "Disney+_1",
       "url": "https://emby-icon.vercel.app/icons/Disney+1.PNG"
+    },
+    {
+      "name": "Disney",
+      "url": "https://emby-icon.vercel.app/icons/Disney.PNG"
     },
     {
       "name": "Donghua",
@@ -659,7 +659,7 @@
       "url": "https://emby-icon.vercel.app/icons/Fox1.PNG"
     },
     {
-      "name": "Fri.",
+      "name": "Fri",
       "url": "https://emby-icon.vercel.app/icons/Fri.PNG"
     },
     {
@@ -1203,7 +1203,7 @@
       "url": "https://emby-icon.vercel.app/icons/Mogu_Ultra.PNG"
     },
     {
-      "name": "Mon.",
+      "name": "Mon",
       "url": "https://emby-icon.vercel.app/icons/Mon.PNG"
     },
     {
@@ -1387,16 +1387,16 @@
       "url": "https://emby-icon.vercel.app/icons/PaoLu1.PNG"
     },
     {
-      "name": "Paramount",
-      "url": "https://emby-icon.vercel.app/icons/Paramount.PNG"
-    },
-    {
       "name": "Paramount+",
       "url": "https://emby-icon.vercel.app/icons/Paramount+.PNG"
     },
     {
       "name": "Paramount+_1",
       "url": "https://emby-icon.vercel.app/icons/Paramount+1.PNG"
+    },
+    {
+      "name": "Paramount",
+      "url": "https://emby-icon.vercel.app/icons/Paramount.PNG"
     },
     {
       "name": "Paul",
@@ -1607,12 +1607,12 @@
       "url": "https://emby-icon.vercel.app/icons/Ryan.PNG"
     },
     {
-      "name": "SDL",
-      "url": "https://emby-icon.vercel.app/icons/SDL.PNG"
-    },
-    {
       "name": "SDL+",
       "url": "https://emby-icon.vercel.app/icons/SDL+.PNG"
+    },
+    {
+      "name": "SDL",
+      "url": "https://emby-icon.vercel.app/icons/SDL.PNG"
     },
     {
       "name": "SDL_1",
@@ -1711,7 +1711,7 @@
       "url": "https://emby-icon.vercel.app/icons/Saodu3.PNG"
     },
     {
-      "name": "Sat.",
+      "name": "Sat",
       "url": "https://emby-icon.vercel.app/icons/Sat.PNG"
     },
     {
@@ -1795,7 +1795,7 @@
       "url": "https://emby-icon.vercel.app/icons/Summer.PNG"
     },
     {
-      "name": "Sun.",
+      "name": "Sun",
       "url": "https://emby-icon.vercel.app/icons/Sun.PNG"
     },
     {
@@ -1851,7 +1851,7 @@
       "url": "https://emby-icon.vercel.app/icons/Terminus.PNG"
     },
     {
-      "name": "Thu.",
+      "name": "Thu",
       "url": "https://emby-icon.vercel.app/icons/Thu.PNG"
     },
     {
@@ -1899,7 +1899,7 @@
       "url": "https://emby-icon.vercel.app/icons/Trakt2.PNG"
     },
     {
-      "name": "Tue.",
+      "name": "Tue",
       "url": "https://emby-icon.vercel.app/icons/Tue.PNG"
     },
     {
@@ -1933,10 +1933,6 @@
     {
       "name": "VVPro",
       "url": "https://emby-icon.vercel.app/icons/VVPro.PNG"
-    },
-    {
-      "name": "VWeTV_2",
-      "url": "https://emby-icon.vercel.app/icons/WeTV2.PNG"
     },
     {
       "name": "Variety_CN",
@@ -2007,7 +2003,11 @@
       "url": "https://emby-icon.vercel.app/icons/WeTV1.PNG"
     },
     {
-      "name": "Wed.",
+      "name": "VWeTV_2",
+      "url": "https://emby-icon.vercel.app/icons/WeTV2.PNG"
+    },
+    {
+      "name": "Wed",
       "url": "https://emby-icon.vercel.app/icons/Wed.PNG"
     },
     {
@@ -2027,12 +2027,12 @@
       "url": "https://emby-icon.vercel.app/icons/Wenjian1.PNG"
     },
     {
-      "name": "Wenjian_115",
-      "url": "https://emby-icon.vercel.app/icons/Wenjian_115.PNG"
-    },
-    {
       "name": "Wenjian_2",
       "url": "https://emby-icon.vercel.app/icons/Wenjian2.PNG"
+    },
+    {
+      "name": "Wenjian_115",
+      "url": "https://emby-icon.vercel.app/icons/Wenjian_115.PNG"
     },
     {
       "name": "Wenjian_Audiobook",
@@ -2067,6 +2067,10 @@
       "url": "https://emby-icon.vercel.app/icons/X.PNG"
     },
     {
+      "name": "X_1",
+      "url": "https://emby-icon.vercel.app/icons/X1.PNG"
+    },
+    {
       "name": "XYZ",
       "url": "https://emby-icon.vercel.app/icons/XYZ.PNG"
     },
@@ -2081,10 +2085,6 @@
     {
       "name": "XYing",
       "url": "https://emby-icon.vercel.app/icons/XYing.PNG"
-    },
-    {
-      "name": "X_1",
-      "url": "https://emby-icon.vercel.app/icons/X1.PNG"
     },
     {
       "name": "XiGua",

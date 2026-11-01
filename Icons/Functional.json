@@ -1,11 +1,7 @@
 {
   "name": "Functional",
-  "description": "功能 81 图标",
+  "description": "功能类（直连 / 拒绝 / 邮件 / NAS ...） · 81 枚",
   "icons": [
-    {
-      "name": "NAS",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/NAS.png"
-    },
     {
       "name": "NAS(1)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/NAS(1).png"
@@ -15,8 +11,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/NAS(2).png"
     },
     {
-      "name": "ad",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/ad.png"
+      "name": "NAS",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/NAS.png"
     },
     {
       "name": "ad(2)",
@@ -43,16 +39,16 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/ad(7).png"
     },
     {
-      "name": "blacklist",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/blacklist.png"
+      "name": "ad",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/ad.png"
     },
     {
       "name": "blacklist(1)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/blacklist(1).png"
     },
     {
-      "name": "chaxun",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/chaxun.png"
+      "name": "blacklist",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/blacklist.png"
     },
     {
       "name": "chaxun(2)",
@@ -63,8 +59,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/chaxun(3).png"
     },
     {
-      "name": "direct",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/direct.png"
+      "name": "chaxun",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/chaxun.png"
     },
     {
       "name": "direct(1)",
@@ -75,24 +71,24 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/direct(2).png"
     },
     {
-      "name": "doudi",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/doudi.png"
+      "name": "direct",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/direct.png"
     },
     {
       "name": "doudi(1)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/doudi(1).png"
     },
     {
-      "name": "fuzai",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/fuzai.png"
+      "name": "doudi",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/doudi.png"
     },
     {
       "name": "fuzai(1)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/fuzai(1).png"
     },
     {
-      "name": "game",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/game.png"
+      "name": "fuzai",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/fuzai.png"
     },
     {
       "name": "game(1)",
@@ -107,8 +103,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/game(3).png"
     },
     {
-      "name": "home",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/home.png"
+      "name": "game",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/game.png"
     },
     {
       "name": "home(1)",
@@ -123,16 +119,16 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/home(3).png"
     },
     {
+      "name": "home",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/home.png"
+    },
+    {
       "name": "ip",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/ip.png"
     },
     {
       "name": "jichang",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/jichang.png"
-    },
-    {
-      "name": "lightning",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/lightning.png"
     },
     {
       "name": "lightning(1)",
@@ -159,8 +155,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/lightning(6).png"
     },
     {
-      "name": "liuliang",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/liuliang.png"
+      "name": "lightning",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/lightning.png"
     },
     {
       "name": "liuliang(1)",
@@ -187,8 +183,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/liuliang(6).png"
     },
     {
-      "name": "mail",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/mail.png"
+      "name": "liuliang",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/liuliang.png"
     },
     {
       "name": "mail(1)",
@@ -203,8 +199,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/mail(3).png"
     },
     {
-      "name": "play",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/play.png"
+      "name": "mail",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/mail.png"
     },
     {
       "name": "play(1)",
@@ -215,8 +211,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/play(2).png"
     },
     {
-      "name": "quanqiu",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/quanqiu.png"
+      "name": "play",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/play.png"
     },
     {
       "name": "quanqiu(1)",
@@ -235,12 +231,12 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/quanqiu(4).png"
     },
     {
-      "name": "qunhuiguanjia",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/qunhuiguanjia.png"
+      "name": "quanqiu",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/quanqiu.png"
     },
     {
-      "name": "rocket",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/rocket.png"
+      "name": "qunhuiguanjia",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/qunhuiguanjia.png"
     },
     {
       "name": "rocket(1)",
@@ -267,16 +263,16 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/rocket(6).png"
     },
     {
-      "name": "tianping",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/tianping.png"
+      "name": "rocket",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/rocket.png"
     },
     {
       "name": "tianping(1)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/tianping(1).png"
     },
     {
-      "name": "wangluo",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/wangluo.png"
+      "name": "tianping",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/tianping.png"
     },
     {
       "name": "wangluo(1)",
@@ -287,16 +283,16 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/wangluo(2).png"
     },
     {
-      "name": "xunhuan",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/xunhuan.png"
+      "name": "wangluo",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/wangluo.png"
     },
     {
       "name": "xunhuan(1)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/xunhuan(1).png"
     },
     {
-      "name": "yu",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/yu.png"
+      "name": "xunhuan",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/xunhuan.png"
     },
     {
       "name": "yu(1)",
@@ -307,8 +303,8 @@
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/yu(2).png"
     },
     {
-      "name": "zhuanyi",
-      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/zhuanyi.png"
+      "name": "yu",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/yu.png"
     },
     {
       "name": "zhuanyi(1)",
@@ -325,6 +321,10 @@
     {
       "name": "zhuanyi(4)",
       "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/zhuanyi(4).png"
+    },
+    {
+      "name": "zhuanyi",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/05icon/zhuanyi.png"
     }
   ]
 }
