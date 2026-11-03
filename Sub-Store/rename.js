@@ -2,20 +2,18 @@
  * Sub-Store 节点重命名
  *
  * @author Minis
- * @date   2026-10-30
+ * @date   2026-09-25
  *
  * 输出格式
  *
- *   🇨🇳 机场名 [香港01 0.1X 家宽 IPLC]
- *    │   │       └────────────────────── 方括号内全部内容，默认空格分隔
- *    │   │                                ├─ 地区名 + 两位补零序号
- *    │   │                                ├─ 倍率（1X 忽略；未开 bl 不显示）
- *    │   │                                └─ 其余标签，未启用则整段省略
- *    │   └────────────────────────────── 机场名（name）
- *    └────────────────────────────────── 国旗（flag）
+ *   🇭🇰[机场名]香港01-0.1XⅠ家宽ⅠIPLC
+ *    │  │         │  └─ 元数据：倍率与标签，用 sep 分隔（默认 Ⅰ），未启用则整段省略
+ *    │  │         └──── 地区名 + 两位补零序号，后接 - 再加元数据
+ *    │  └──────────────── 机场名（name），用方括号包裹
+ *    └─────────────────── 国旗（flag）
  *
- *   方括号内默认用单个空格分隔，可用 sep=· 或 sep=| 换成其他符号。
- *   未开启的段整段省略（不留空位）。地区默认输出中文；out=quan 可改为英文全称。
+ *   flag、[name]、地区序号、元数据紧凑拼接（无空格）；元数据为空时不出现 "-"。
+ *   sep 可换成其他符号，如 sep=· 或 sep=|；地区默认输出中文，out=quan 可改英文全称。
  *
  * 参数（$arguments，全部可选）
  *
@@ -41,7 +39,7 @@
  *
  *   地区别名表 rurekey 会把深港、Los Angeles 一类写法归一到标准地区名后再匹配。
  *   地区名匹配大小写不敏感（hk01 / RUSSIA01 / SINGAPORE01 均可识别）。
- *   节点排序：香港 → 台湾 → 日本 → 韩国 → 新加坡 → 美国 靠前，其余保持原有顺序。
+ *   节点排序：香港 → 台湾 → 韩国 → 日本 → 新加坡 → 美国 靠前，其余保持原有顺序。
  */
 const $a = $arguments,
   nx = !!$a.nx,
@@ -63,7 +61,7 @@ const $a = $arguments,
   },
   FNAME = $a.name == undefined ? "" : dec($a.name),
   BLKEY = $a.blkey == undefined ? "" : dec($a.blkey),
-  SEP = $a.sep == undefined ? " " : dec($a.sep),
+  SEP = $a.sep == undefined ? "\u2160" : dec($a.sep),
   blockquic = $a.blockquic == undefined ? "" : dec($a.blockquic),
   INMAP = {
     cn: "cn",
@@ -89,8 +87,8 @@ const nameclear = /(套餐|到期|有效|剩余|版本|已用|过期|失联|测�
   SORTMAP = [
     ["香港", /香港|HK|Hong|🇭🇰/],
     ["台湾", /台湾|TW|Taiwan|🇹🇼|🇨🇳/],
-    ["日本", /日本|JP|Japan|🇯🇵/],
     ["韩国", /韩国|KR|\bKorea\b|🇰🇷/],
+    ["日本", /日本|JP|Japan|🇯🇵/],
     ["新加坡", /新加坡|SG|Singapore|🇸🇬/],
     ["美国", /美国|US|United States|🇺🇸/],
   ],
@@ -233,7 +231,7 @@ function operator(pro) {
     tags.forEach(tag => {
       if (!extra.includes(tag)) extra.push(tag);
     });
-    const bracket = extra.length ? "[" + extra.join(SEP) + "]" : "",
+    const bracket = extra.length ? extra.join(SEP) : "",
       mm = PAT.exec(n);
 
     if (mm) {
@@ -244,7 +242,7 @@ function operator(pro) {
         flag = addflag && outname !== "gq" ? (FG[fi] === "🇹🇼" ? "🇨🇳" : FG[fi]) : "";
       e.name = region;
       e._base = region;
-      e._head = [nf ? FNAME : flag, nf ? flag : FNAME].filter(Boolean).join(" ");
+      e._head = [nf ? (FNAME ? "[" + FNAME + "]" : "") : flag, nf ? flag : (FNAME ? "[" + FNAME + "]" : "")].filter(Boolean).join("");
       e._bracket = bracket;
       e._sort = sortkey(region);
     } else if (nm) {
@@ -283,8 +281,8 @@ function operator(pro) {
       ["_base", "_head", "_bracket", "_sort"].forEach(f => delete q[f]);
       if (p._base) {
         const index = !(g.length === 1 && numone) ? String(i + 1).padStart(2, "0") : "",
-          content = [k + index, p._bracket.slice(1, -1)].filter(Boolean).join(SEP);
-        q.name = [p._head, "[" + content + "]"].filter(Boolean).join(" ");
+          content = k + index + (p._bracket ? "-" + p._bracket : "");
+        q.name = p._head + content;
       } else {
         q.name = p.name;
       }
