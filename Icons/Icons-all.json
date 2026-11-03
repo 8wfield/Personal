@@ -1,6 +1,6 @@
 {
   "name": "Icons-all",
-  "description": "全部分类合并 · 1898 枚",
+  "description": "全部分类合并 · 1900 枚",
   "icons": [
     {
       "name": "105°",
@@ -6415,8 +6415,16 @@
       "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TR.png"
     },
     {
+      "name": "trakt",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/trakt.png"
+    },
+    {
       "name": "Trakt",
       "url": "https://emby-icon.vercel.app/icons/Trakt.PNG"
+    },
+    {
+      "name": "trakt(1)",
+      "url": "https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/trakt(1).png"
     },
     {
       "name": "Trakt_1",
