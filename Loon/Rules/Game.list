@@ -1,7 +1,7 @@
 # 规则名称: Game
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Game_rules_87565f6ae4fd7d5b.list
-# 规则统计: 1269
-# 更新时间：2026-10-29 10:54:30
+# 规则统计: 1276
+# 更新时间：2026-11-05 00:15:15
 
 DOMAIN,a.ppy.sh
 DOMAIN,a4e8s8k3.map2.ssl.hwcdn.net
@@ -199,6 +199,7 @@ DOMAIN-SUFFIX,activisionblizzardmedia.com
 DOMAIN-SUFFIX,aki-game.com
 DOMAIN-SUFFIX,aki-game2.com
 DOMAIN-SUFFIX,aligames.com
+DOMAIN-SUFFIX,amdgaming.com
 DOMAIN-SUFFIX,amiibo.com
 DOMAIN-SUFFIX,anthemgame.com
 DOMAIN-SUFFIX,anthemthegame.com
@@ -603,6 +604,9 @@ DOMAIN-SUFFIX,ledu.com
 DOMAIN-SUFFIX,legendofzelda.cn
 DOMAIN-SUFFIX,legendofzelda.com.cn
 DOMAIN-SUFFIX,leyuansu.com
+DOMAIN-SUFFIX,limbuscompany.global
+DOMAIN-SUFFIX,limbuscompanyapi.com
+DOMAIN-SUFFIX,limbuscompanycdn.org
 DOMAIN-SUFFIX,lingxigames.com
 DOMAIN-SUFFIX,log-upload-os.hoyoverse.com
 DOMAIN-SUFFIX,log-upload.mihoyo.com
@@ -848,6 +852,7 @@ DOMAIN-SUFFIX,priconne-redive.jp
 DOMAIN-SUFFIX,prismlauncher.org
 DOMAIN-SUFFIX,productcard.gog-statics.com
 DOMAIN-SUFFIX,projectapex.com
+DOMAIN-SUFFIX,projectmoon.studio
 DOMAIN-SUFFIX,protondb.com
 DOMAIN-SUFFIX,proximabeta.com
 DOMAIN-SUFFIX,pubg.com
@@ -970,6 +975,7 @@ DOMAIN-SUFFIX,simcity-buildit.com
 DOMAIN-SUFFIX,simcity.com
 DOMAIN-SUFFIX,skate2.com
 DOMAIN-SUFFIX,sketchfab.com
+DOMAIN-SUFFIX,skinswap.com
 DOMAIN-SUFFIX,skydweller.cn
 DOMAIN-SUFFIX,skylanders.com
 DOMAIN-SUFFIX,sl916.com
@@ -1030,6 +1036,7 @@ DOMAIN-SUFFIX,steamgames.com
 DOMAIN-SUFFIX,steaminventoryhelper.com
 DOMAIN-SUFFIX,steammobile.akamaized.net
 DOMAIN-SUFFIX,steamos.cloud
+DOMAIN-SUFFIX,steampeek.hu
 DOMAIN-SUFFIX,steampipe-kr.akamaized.net
 DOMAIN-SUFFIX,steampipe-partner.akamaized.net
 DOMAIN-SUFFIX,steampipe.akamaized.net

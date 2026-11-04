@@ -1,7 +1,7 @@
 # 规则名称: Game
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Game_rules_87565f6ae4fd7d5b.list
-# 规则统计: 1269
-# 更新时间：2026-10-29 10:54:30
+# 规则统计: 1276
+# 更新时间：2026-11-05 00:15:15
 
 domain_set:
   - a.ppy.sh
@@ -198,6 +198,7 @@ domain_suffix_set:
   - aki-game.com
   - aki-game2.com
   - aligames.com
+  - amdgaming.com
   - amiibo.com
   - anthemgame.com
   - anthemthegame.com
@@ -602,6 +603,9 @@ domain_suffix_set:
   - legendofzelda.cn
   - legendofzelda.com.cn
   - leyuansu.com
+  - limbuscompany.global
+  - limbuscompanyapi.com
+  - limbuscompanycdn.org
   - lingxigames.com
   - log-upload-os.hoyoverse.com
   - log-upload.mihoyo.com
@@ -847,6 +851,7 @@ domain_suffix_set:
   - prismlauncher.org
   - productcard.gog-statics.com
   - projectapex.com
+  - projectmoon.studio
   - protondb.com
   - proximabeta.com
   - pubg.com
@@ -969,6 +974,7 @@ domain_suffix_set:
   - simcity.com
   - skate2.com
   - sketchfab.com
+  - skinswap.com
   - skydweller.cn
   - skylanders.com
   - sl916.com
@@ -1029,6 +1035,7 @@ domain_suffix_set:
   - steaminventoryhelper.com
   - steammobile.akamaized.net
   - steamos.cloud
+  - steampeek.hu
   - steampipe-kr.akamaized.net
   - steampipe-partner.akamaized.net
   - steampipe.akamaized.net

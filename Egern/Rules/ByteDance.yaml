@@ -1,7 +1,7 @@
 # 规则名称: ByteDance
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/ByteDance_rules_9aec738d4bf78204.list
-# 规则统计: 1064
-# 更新时间：2026-10-29 11:17:35
+# 规则统计: 1067
+# 更新时间：2026-11-05 00:17:12
 
 no_resolve: true
 
@@ -329,6 +329,7 @@ domain_suffix_set:
   - doubao-dev.com
   - doubao.cn
   - doubao.com
+  - doubaoapps.com
   - doubaocdn.com
   - doubo03.com
   - doudou.com
@@ -367,6 +368,7 @@ domain_suffix_set:
   - ecombdimg.com
   - ecombdstatic.com
   - ecombdvod.com
+  - edge-byted.com
   - edgeceler.com
   - editorjianying.com
   - editorjianyingk.com
@@ -446,6 +448,7 @@ domain_suffix_set:
   - goofy-edge.cn
   - gslbdns.com
   - gslbdns.net
+  - haimian.com
   - hapierxia.com
   - hapipixia.com
   - hapiyixia.com

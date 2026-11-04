@@ -1,7 +1,7 @@
 # 规则名称: ByteDance
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/ByteDance_rules_9aec738d4bf78204.list
-# 规则统计: 1064
-# 更新时间：2026-10-29 11:17:35
+# 规则统计: 1067
+# 更新时间：2026-11-05 00:17:12
 
 DOMAIN,ads3-normal-hl.zijieapi.com
 DOMAIN,ads3-normal.zijieapi.com
@@ -324,6 +324,7 @@ DOMAIN-SUFFIX,dou.top
 DOMAIN-SUFFIX,doubao-dev.com
 DOMAIN-SUFFIX,doubao.cn
 DOMAIN-SUFFIX,doubao.com
+DOMAIN-SUFFIX,doubaoapps.com
 DOMAIN-SUFFIX,doubaocdn.com
 DOMAIN-SUFFIX,doubo03.com
 DOMAIN-SUFFIX,doudou.com
@@ -362,6 +363,7 @@ DOMAIN-SUFFIX,ecombdapi.com
 DOMAIN-SUFFIX,ecombdimg.com
 DOMAIN-SUFFIX,ecombdstatic.com
 DOMAIN-SUFFIX,ecombdvod.com
+DOMAIN-SUFFIX,edge-byted.com
 DOMAIN-SUFFIX,edgeceler.com
 DOMAIN-SUFFIX,editorjianying.com
 DOMAIN-SUFFIX,editorjianyingk.com
@@ -441,6 +443,7 @@ DOMAIN-SUFFIX,goodluckcalendar.com
 DOMAIN-SUFFIX,goofy-edge.cn
 DOMAIN-SUFFIX,gslbdns.com
 DOMAIN-SUFFIX,gslbdns.net
+DOMAIN-SUFFIX,haimian.com
 DOMAIN-SUFFIX,hapierxia.com
 DOMAIN-SUFFIX,hapipixia.com
 DOMAIN-SUFFIX,hapiyixia.com

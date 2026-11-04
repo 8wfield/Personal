@@ -1,7 +1,7 @@
 # 规则名称: Scholar
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Scholar_rules_1b689dc1ea2227c6.list
-# 规则统计: 302
-# 更新时间：2026-10-29 10:42:16
+# 规则统计: 321
+# 更新时间：2026-11-04 23:51:04
 
 domain_set:
   - scholar.google.ae
@@ -206,6 +206,19 @@ domain_suffix_set:
   - literatumonline.com
   - ma1lib.org
   - madsrevolution.net
+  - mathematica.com
+  - mathworks.cn
+  - mathworks.co.jp
+  - mathworks.co.kr
+  - mathworks.co.uk
+  - mathworks.com
+  - mathworks.com.au
+  - mathworks.de
+  - mathworks.fr
+  - mathworks.in
+  - mathworks.nl
+  - mathworks.se
+  - matlab.com
   - mdpi.com
   - mit
   - mit.edu
@@ -300,6 +313,12 @@ domain_suffix_set:
   - westlawchina.com
   - wiley.com
   - wkap.nl
+  - wolfram.co.uk
+  - wolfram.com
+  - wolframalpha.com
+  - wolframalpha.net
+  - wolframcdn.com
+  - wolframcloud.com
   - worldbank.org
   - worldscientific.com
   - yale.edu

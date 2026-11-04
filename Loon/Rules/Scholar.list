@@ -1,7 +1,7 @@
 # 规则名称: Scholar
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Scholar_rules_1b689dc1ea2227c6.list
-# 规则统计: 302
-# 更新时间：2026-10-29 10:42:16
+# 规则统计: 321
+# 更新时间：2026-11-04 23:51:04
 
 DOMAIN,scholar.google.ae
 DOMAIN,scholar.google.at
@@ -203,6 +203,19 @@ DOMAIN-SUFFIX,liebertpub.com
 DOMAIN-SUFFIX,literatumonline.com
 DOMAIN-SUFFIX,ma1lib.org
 DOMAIN-SUFFIX,madsrevolution.net
+DOMAIN-SUFFIX,mathematica.com
+DOMAIN-SUFFIX,mathworks.cn
+DOMAIN-SUFFIX,mathworks.co.jp
+DOMAIN-SUFFIX,mathworks.co.kr
+DOMAIN-SUFFIX,mathworks.co.uk
+DOMAIN-SUFFIX,mathworks.com
+DOMAIN-SUFFIX,mathworks.com.au
+DOMAIN-SUFFIX,mathworks.de
+DOMAIN-SUFFIX,mathworks.fr
+DOMAIN-SUFFIX,mathworks.in
+DOMAIN-SUFFIX,mathworks.nl
+DOMAIN-SUFFIX,mathworks.se
+DOMAIN-SUFFIX,matlab.com
 DOMAIN-SUFFIX,mdpi.com
 DOMAIN-SUFFIX,mit
 DOMAIN-SUFFIX,mit.edu
@@ -297,6 +310,12 @@ DOMAIN-SUFFIX,westlaw.com
 DOMAIN-SUFFIX,westlawchina.com
 DOMAIN-SUFFIX,wiley.com
 DOMAIN-SUFFIX,wkap.nl
+DOMAIN-SUFFIX,wolfram.co.uk
+DOMAIN-SUFFIX,wolfram.com
+DOMAIN-SUFFIX,wolframalpha.com
+DOMAIN-SUFFIX,wolframalpha.net
+DOMAIN-SUFFIX,wolframcdn.com
+DOMAIN-SUFFIX,wolframcloud.com
 DOMAIN-SUFFIX,worldbank.org
 DOMAIN-SUFFIX,worldscientific.com
 DOMAIN-SUFFIX,yale.edu

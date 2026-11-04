@@ -1,7 +1,7 @@
 # 规则名称: Developer
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Developer_rules_1adf00c0c6256ea5.list
-# 规则统计: 721
-# 更新时间：2026-10-29 11:02:06
+# 规则统计: 736
+# 更新时间：2026-11-05 00:09:01
 
 domain_set:
   - amp.akamaized.net
@@ -143,6 +143,8 @@ domain_suffix_set:
   - bitvise.com
   - blazor.net
   - blogoverflow.com
+  - bmonkeys.net
+  - boldgrid.com
   - bootstrapcdn.com
   - botframework.com
   - botorch.org
@@ -164,6 +166,7 @@ domain_suffix_set:
   - chocolatey.org
   - clearlinux.org
   - clojure.org
+  - cloudwp.dev
   - cnpmjs.org
   - codeberg.org
   - codeberg.page
@@ -212,6 +215,7 @@ domain_suffix_set:
   - dotdeb.org
   - draftjs.org
   - ecr.aws
+  - editorx.com
   - elastic.co
   - elastic.com
   - electronjs.org
@@ -516,6 +520,7 @@ domain_suffix_set:
   - packagist.org
   - packer.io
   - paint.net
+  - parastorage.com
   - parse.com
   - pcre.org
   - perf-events.cloud.unity3d.com
@@ -702,12 +707,22 @@ domain_suffix_set:
   - w3schools.com
   - wapm.io
   - wasmer.io
+  - webflow-ext.com
   - webflow.com
+  - webflow.io
   - webkit.org
   - webkitgtk.org
   - weblate.org
   - webobjects.com
+  - website-files.com
   - wireshark.org
+  - wix-code.com
+  - wix.com
+  - wixanswers.com
+  - wixapps.net
+  - wixmp.com
+  - wixsite.com
+  - wixstatic.com
   - wordcamp.org
   - wordpress.com
   - wordpress.net

@@ -1,7 +1,7 @@
 # 规则名称: TikTok
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/TikTok_rules_822594139753b1c8.list
-# 规则统计: 63
-# 更新时间：2026-10-29 11:09:37
+# 规则统计: 66
+# 更新时间：2026-11-05 00:04:51
 
 domain_set:
   - lf16-effectcdn.byteeffecttos-g.com
@@ -51,11 +51,14 @@ domain_suffix_set:
   - tiktokminis.us
   - tiktokmusic.app
   - tiktokrow-cdn.com
+  - tiktokshop.com
+  - tiktokstaticb.com
   - tiktokv.com
   - tiktokv.com.edgekey.net
   - tiktokv.com.edgesuite.net
   - tiktokv.eu
   - tiktokv.us
+  - tiktokvapp.com
   - tiktokw.eu
   - tiktokw.us
   - trae.ai
