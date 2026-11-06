@@ -1,7 +1,7 @@
 # 规则名称: AI
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/GlobalAI_rules_4490d57f658179f9.list
-# 规则统计: 448
-# 更新时间：2026-10-29 11:23:33
+# 规则统计: 439
+# 更新时间：2026-11-06 18:29:17
 
 DOMAIN,ai.developer.meta.com
 DOMAIN,ai.meta.com
@@ -51,9 +51,10 @@ DOMAIN,idetoolkits-hostedfiles.amazonaws.com
 DOMAIN,idetoolkits.amazonwebservices.com
 DOMAIN,in.appcenter.ms
 DOMAIN,llama.developer.meta.com
+DOMAIN,location.microsoft.com
 DOMAIN,notebooklm-pa.googleapis.com
 DOMAIN,notebooklm.googleapis.com
-DOMAIN,o33249.ingest.us.sentry.io
+DOMAIN,odc.officeapps.live.com
 DOMAIN,openai-api.arkoselabs.com
 DOMAIN,openai.qualtrics.com
 DOMAIN,openaiassets.blob.core.windows.net
@@ -65,6 +66,7 @@ DOMAIN,production-openaicom-storage.azureedge.net
 DOMAIN,q-developer-integration.us-east-1.api.aws
 DOMAIN,qianfan.baidubce.com
 DOMAIN,qodercn-jb.oss-cn-hangzhou.aliyuncs.com
+DOMAIN,self.events.data.microsoft.com
 DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN,static.cloudflareinsights.com
 DOMAIN,storage.googleapis.com
@@ -239,13 +241,8 @@ DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,grok.x.com
 DOMAIN-SUFFIX,grokipedia.com
 DOMAIN-SUFFIX,groq.com
-DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,gvt1.com
-DOMAIN-SUFFIX,gvt2.com
-DOMAIN-SUFFIX,gvt3.com
 DOMAIN-SUFFIX,h2o.ai
 DOMAIN-SUFFIX,hailuoai.com
-DOMAIN-SUFFIX,hcaptcha.com
 DOMAIN-SUFFIX,hermes-agent.nousresearch.com
 DOMAIN-SUFFIX,heygen.com
 DOMAIN-SUFFIX,hf.co
@@ -277,7 +274,6 @@ DOMAIN-SUFFIX,lcicat.org
 DOMAIN-SUFFIX,lcicollections.org
 DOMAIN-SUFFIX,leonardo.ai
 DOMAIN-SUFFIX,lf3-static.bytednsdoc.com
-DOMAIN-SUFFIX,live.com
 DOMAIN-SUFFIX,liveperson.net
 DOMAIN-SUFFIX,llama.com
 DOMAIN-SUFFIX,llamameta.net
@@ -303,7 +299,6 @@ DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,metaaiusercontent.com
 DOMAIN-SUFFIX,metaaivm.com
 DOMAIN-SUFFIX,miaibox.com
-DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,midjourney.com
 DOMAIN-SUFFIX,minimax.io
 DOMAIN-SUFFIX,mistral.ai
@@ -316,7 +311,6 @@ DOMAIN-SUFFIX,modelscope.com
 DOMAIN-SUFFIX,moonshot.ai
 DOMAIN-SUFFIX,moonshot.cn
 DOMAIN-SUFFIX,mozilla.ai
-DOMAIN-SUFFIX,msftconnecttest.com
 DOMAIN-SUFFIX,muse.ai
 DOMAIN-SUFFIX,muthos.com
 DOMAIN-SUFFIX,notebook.google
@@ -367,7 +361,6 @@ DOMAIN-SUFFIX,qoder.com
 DOMAIN-SUFFIX,qoder.com.cn
 DOMAIN-SUFFIX,qwen.ai
 DOMAIN-SUFFIX,qwenlm.ai
-DOMAIN-SUFFIX,recaptcha.net
 DOMAIN-SUFFIX,recraft.ai
 DOMAIN-SUFFIX,repl.co
 DOMAIN-SUFFIX,repl.it
@@ -382,7 +375,6 @@ DOMAIN-SUFFIX,runwayml.com
 DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,sf16-short-sg.bytedapm.com
-DOMAIN-SUFFIX,sfx.ms
 DOMAIN-SUFFIX,sider.ai
 DOMAIN-SUFFIX,siliconflow.cn
 DOMAIN-SUFFIX,siliconflow.com
@@ -441,7 +433,6 @@ DOMAIN-SUFFIX,zed.dev
 DOMAIN-SUFFIX,zhipuai.cn
 DOMAIN-SUFFIX,zhipucn.com
 IP-ASN,14061,no-resolve
-IP-ASN,20473,no-resolve
 IP-ASN,399358,no-resolve
 IP-ASN,401518,no-resolve
 IP-CIDR,160.79.104.0/21,no-resolve

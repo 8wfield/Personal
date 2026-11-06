@@ -1,7 +1,7 @@
 # 规则名称: Lan
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Lan_rules_a7096f98ad43c9dc.list
-# 规则统计: 173
-# 更新时间：2026-10-29 11:16:39
+# 规则统计: 174
+# 更新时间：2026-11-06 18:57:05
 
 domain_set:
   - asusrouter.com
@@ -120,6 +120,7 @@ domain_suffix_set:
   - asusrouter.com
   - b.e.f.ip6.arpa
   - d.f.ip6.arpa
+  - dittocdn.com
   - hiwifi.com
   - home.arpa
   - huaweimobilewifi.com

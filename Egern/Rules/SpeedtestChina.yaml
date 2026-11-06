@@ -1,7 +1,7 @@
 # 规则名称: SpeedtestChina
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Speedtest_rules_6431e293aaca07be.list
-# 规则统计: 3482
-# 更新时间：2026-11-04 23:52:34
+# 规则统计: 3487
+# 更新时间：2026-11-06 18:54:09
 
 domain_set:
   - 1010.hkspeedtest.com
@@ -169,6 +169,7 @@ domain_set:
   - fla-st01.provenet.com.br
   - fla.brisanet.eu.org
   - fr-1.node.delton.ovh
+  - fra-de-008.xvperf.net
   - fra-eq5-tptest1.31173.se
   - fra.speedtest.csgobans.com
   - fra1speedtest01.skylogic.com
@@ -556,6 +557,7 @@ domain_set:
   - ookla3.1und1-mobilfunk.de
   - ooklaserver.aryk.fr
   - ooklaserver1-del1.skymaxbroadband.com
+  - ooklaspdtstsvr.zitel.com
   - ooklaspeed.statenet.in
   - ooklaspeed.ttron.eu
   - ooklaspeedtest-cdv.quebeccloud.com
@@ -1621,6 +1623,7 @@ domain_set:
   - speedtest.fbc-tele.com
   - speedtest.fc-fra4.as51202.net
   - speedtest.fehmer.tech
+  - speedtest.fenixtelecom.net.br
   - speedtest.fhsu.edu
   - speedtest.fiber91.com
   - speedtest.fibercast.net
@@ -2275,6 +2278,7 @@ domain_set:
   - speedtest.techminds.ca
   - speedtest.technobulut.com
   - speedtest.technofiber.co
+  - speedtest.tefenet.com.br
   - speedtest.teknosos.com.tr
   - speedtest.telbo.net
   - speedtest.telecablecr.com
@@ -3359,6 +3363,7 @@ domain_suffix_set:
   - backend.librespeed.org
   - cdnst.net
   - cellmaps.com
+  - dittocdn.com
   - ekahau.cloud
   - ekahau.com
   - fast.com

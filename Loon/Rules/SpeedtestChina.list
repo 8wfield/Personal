@@ -1,7 +1,7 @@
 # 规则名称: SpeedtestChina
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Speedtest_rules_6431e293aaca07be.list
-# 规则统计: 3482
-# 更新时间：2026-11-04 23:52:34
+# 规则统计: 3487
+# 更新时间：2026-11-06 18:54:09
 
 DOMAIN,1010.hkspeedtest.com
 DOMAIN,172673828273027382738738.de
@@ -168,6 +168,7 @@ DOMAIN,fl.speedtest.openinfra.com
 DOMAIN,fla-st01.provenet.com.br
 DOMAIN,fla.brisanet.eu.org
 DOMAIN,fr-1.node.delton.ovh
+DOMAIN,fra-de-008.xvperf.net
 DOMAIN,fra-eq5-tptest1.31173.se
 DOMAIN,fra.speedtest.csgobans.com
 DOMAIN,fra1speedtest01.skylogic.com
@@ -555,6 +556,7 @@ DOMAIN,ookla2.mbspeed.net
 DOMAIN,ookla3.1und1-mobilfunk.de
 DOMAIN,ooklaserver.aryk.fr
 DOMAIN,ooklaserver1-del1.skymaxbroadband.com
+DOMAIN,ooklaspdtstsvr.zitel.com
 DOMAIN,ooklaspeed.statenet.in
 DOMAIN,ooklaspeed.ttron.eu
 DOMAIN,ooklaspeedtest-cdv.quebeccloud.com
@@ -1620,6 +1622,7 @@ DOMAIN,speedtest.fastwebnetworks.in
 DOMAIN,speedtest.fbc-tele.com
 DOMAIN,speedtest.fc-fra4.as51202.net
 DOMAIN,speedtest.fehmer.tech
+DOMAIN,speedtest.fenixtelecom.net.br
 DOMAIN,speedtest.fhsu.edu
 DOMAIN,speedtest.fiber91.com
 DOMAIN,speedtest.fibercast.net
@@ -2274,6 +2277,7 @@ DOMAIN,speedtest.team-host.ru
 DOMAIN,speedtest.techminds.ca
 DOMAIN,speedtest.technobulut.com
 DOMAIN,speedtest.technofiber.co
+DOMAIN,speedtest.tefenet.com.br
 DOMAIN,speedtest.teknosos.com.tr
 DOMAIN,speedtest.telbo.net
 DOMAIN,speedtest.telecablecr.com
@@ -3357,6 +3361,7 @@ DOMAIN-KEYWORD,speedtest
 DOMAIN-SUFFIX,backend.librespeed.org
 DOMAIN-SUFFIX,cdnst.net
 DOMAIN-SUFFIX,cellmaps.com
+DOMAIN-SUFFIX,dittocdn.com
 DOMAIN-SUFFIX,ekahau.cloud
 DOMAIN-SUFFIX,ekahau.com
 DOMAIN-SUFFIX,fast.com
