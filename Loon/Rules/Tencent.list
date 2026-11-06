@@ -1,7 +1,7 @@
 # 规则名称: Tencent
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Tencent_rules_35800ebb1b397bb2.list
-# 规则统计: 2778
-# 更新时间：2026-11-05 00:06:06
+# 规则统计: 2781
+# 更新时间：2026-11-07 03:19:45
 
 DOMAIN,wetv.qq.com
 DOMAIN-SUFFIX,001dl.cn
@@ -900,6 +900,7 @@ DOMAIN-SUFFIX,l1xn.cn
 DOMAIN-SUFFIX,labycore.cn
 DOMAIN-SUFFIX,lazyaudio.com
 DOMAIN-SUFFIX,leshare.work
+DOMAIN-SUFFIX,levelinfinite.com
 DOMAIN-SUFFIX,lexiang-app.com
 DOMAIN-SUFFIX,lexiang-asset.com
 DOMAIN-SUFFIX,lexiang-asset.net
@@ -1030,6 +1031,7 @@ DOMAIN-SUFFIX,nextplayground.com
 DOMAIN-SUFFIX,nextplayground.com.cn
 DOMAIN-SUFFIX,nextstudios.com
 DOMAIN-SUFFIX,nextworkshop.net
+DOMAIN-SUFFIX,nikke-en.com
 DOMAIN-SUFFIX,nintendoswitch.cn
 DOMAIN-SUFFIX,nintendoswitch.com.cn
 DOMAIN-SUFFIX,nj-tencentclb.cloud
@@ -2001,6 +2003,7 @@ DOMAIN-SUFFIX,tencentfilm.com
 DOMAIN-SUFFIX,tencentfoundation.org
 DOMAIN-SUFFIX,tencentga.com
 DOMAIN-SUFFIX,tencentgames.co
+DOMAIN-SUFFIX,tencentgames.com
 DOMAIN-SUFFIX,tencentgames.us
 DOMAIN-SUFFIX,tencentgme.com
 DOMAIN-SUFFIX,tencentgoosefs.cn

@@ -1,7 +1,7 @@
 # 规则名称: SpeedtestChina
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Speedtest_rules_6431e293aaca07be.list
-# 规则统计: 3487
-# 更新时间：2026-11-06 18:54:09
+# 规则统计: 3486
+# 更新时间：2026-11-07 03:23:20
 
 DOMAIN,1010.hkspeedtest.com
 DOMAIN,172673828273027382738738.de
@@ -3361,7 +3361,6 @@ DOMAIN-KEYWORD,speedtest
 DOMAIN-SUFFIX,backend.librespeed.org
 DOMAIN-SUFFIX,cdnst.net
 DOMAIN-SUFFIX,cellmaps.com
-DOMAIN-SUFFIX,dittocdn.com
 DOMAIN-SUFFIX,ekahau.cloud
 DOMAIN-SUFFIX,ekahau.com
 DOMAIN-SUFFIX,fast.com

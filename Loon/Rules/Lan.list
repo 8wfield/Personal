@@ -1,7 +1,7 @@
 # 规则名称: Lan
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Lan_rules_a7096f98ad43c9dc.list
-# 规则统计: 174
-# 更新时间：2026-11-06 18:57:05
+# 规则统计: 173
+# 更新时间：2026-11-07 03:21:46
 
 DOMAIN,asusrouter.com
 DOMAIN,aterm.me
@@ -117,7 +117,6 @@ DOMAIN-SUFFIX,acl4.ssr
 DOMAIN-SUFFIX,asusrouter.com
 DOMAIN-SUFFIX,b.e.f.ip6.arpa
 DOMAIN-SUFFIX,d.f.ip6.arpa
-DOMAIN-SUFFIX,dittocdn.com
 DOMAIN-SUFFIX,hiwifi.com
 DOMAIN-SUFFIX,home.arpa
 DOMAIN-SUFFIX,huaweimobilewifi.com

@@ -1,7 +1,7 @@
 # 规则名称: Tencent
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Tencent_rules_35800ebb1b397bb2.list
-# 规则统计: 2778
-# 更新时间：2026-11-05 00:06:06
+# 规则统计: 2781
+# 更新时间：2026-11-07 03:19:45
 
 no_resolve: true
 
@@ -905,6 +905,7 @@ domain_suffix_set:
   - labycore.cn
   - lazyaudio.com
   - leshare.work
+  - levelinfinite.com
   - lexiang-app.com
   - lexiang-asset.com
   - lexiang-asset.net
@@ -1035,6 +1036,7 @@ domain_suffix_set:
   - nextplayground.com.cn
   - nextstudios.com
   - nextworkshop.net
+  - nikke-en.com
   - nintendoswitch.cn
   - nintendoswitch.com.cn
   - nj-tencentclb.cloud
@@ -2006,6 +2008,7 @@ domain_suffix_set:
   - tencentfoundation.org
   - tencentga.com
   - tencentgames.co
+  - tencentgames.com
   - tencentgames.us
   - tencentgme.com
   - tencentgoosefs.cn
