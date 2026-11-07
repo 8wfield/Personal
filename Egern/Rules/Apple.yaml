@@ -1,7 +1,7 @@
 # 规则名称: Apple
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Apple_rules_a498ae373471a17f.list
 # 规则统计: 2071
-# 更新时间：2026-10-29 10:44:13
+# 更新时间：2026-11-06 18:52:27
 
 no_resolve: true
 
@@ -1206,6 +1206,7 @@ domain_suffix_set:
   - discountbeatsbydre-us.com
   - discountbeatsstore.com
   - discussionsapple.com
+  - dittocdn.com
   - dkbeatsbydre.com
   - dl-iphone.com
   - doh.dns.apple.com
@@ -1391,7 +1392,6 @@ domain_suffix_set:
   - icloud-isupport.com
   - icloud-sandbox.com
   - icloud.ch
-  - icloud.cn
   - icloud.com
   - icloud.com.akadns.net
   - icloud.com.cn

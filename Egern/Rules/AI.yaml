@@ -1,11 +1,12 @@
 # 规则名称: AI
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/GlobalAI_rules_4490d57f658179f9.list
-# 规则统计: 448
-# 更新时间：2026-10-29 11:23:33
+# 规则统计: 1049
+# 更新时间：2026-11-06 15:33:40
 
 no_resolve: true
 
 domain_set:
+  - agb9r0ad.qllfkl.com
   - ai.developer.meta.com
   - ai.meta.com
   - aidemos.meta.com
@@ -41,52 +42,128 @@ domain_set:
   - copilot-telemetry.githubusercontent.com
   - copilot-workspace.githubnext.com
   - copilotprodattachments.blob.core.windows.net
+  - d1d0w7op819ely.cloudfront.net
+  - d1fijc56o1fzod.cloudfront.net
+  - d1nu566dreq9vj.cloudfront.net
+  - d1ugi9qonif2a2.cloudfront.net
+  - d20g4xwarzxagx.cloudfront.net
+  - d26rnz3bwp7rlk.cloudfront.net
+  - d28odxiw1asdj8.cloudfront.net
+  - d2be40xdoc0in8.cloudfront.net
+  - d2fg91fzjsrcv1.cloudfront.net
+  - d2j7e8uopcv07.cloudfront.net
+  - d2v9yioq9zuuq2.cloudfront.net
+  - d31dormfno8pk4.cloudfront.net
+  - d348twzf7a8p5.cloudfront.net
+  - d3lh5kkip965lj.cloudfront.net
+  - d3nwj80emtnjeo.cloudfront.net
+  - d3stzm2eumvgb4.cloudfront.net
+  - d3ucl0eqgl80l5.cloudfront.net
+  - d96jfp62lg3kj.cloudfront.net
   - daily-cloudcode-pa.googleapis.com
   - dashscope.aliyuncs.com
+  - dc.applicationinsights.azure.com
+  - dc.services.visualstudio.com
+  - dcb0z5ovq92mz.cloudfront.net
+  - ddpjwstwtpszg.cloudfront.net
   - developer.meta.com
+  - devforum-uploads.s3.dualstack.us-east-2.amazonaws.com
+  - disneyplus.com.ssl.sc.omtrdc.net
+  - doy2mn9upadnk.cloudfront.net
+  - dropbox.zendesk.com
+  - dstnzhnatv9pz.cloudfront.net
   - ernie.baidu.com
+  - firebaseappdistribution.googleapis.com
+  - firebaseapptesters.googleapis.com
+  - funko.my.site.com
   - gateway.bingviz.microsoft.net
   - gateway.bingviz.microsoftapp.net
   - geminiweb-pa.clients.google.com
   - geminiweb-pa.clients6.google.com
+  - hb4bbbbb.pmhcjk.com
   - hunyuan.tencentcloudapi.com
   - idetoolkits-hostedfiles.amazonaws.com
-  - idetoolkits.amazonwebservices.com
   - in.appcenter.ms
+  - incoming-telemetry.thunderbird.net
+  - incoming.telemetry.mozilla.org
+  - kp-config-smart-tv.akamaized.net
+  - kp-configs-smart-tv.s3.eu-central-1.amazonaws.com
+  - lastfm-img.freetls.fastly.net
+  - live.applicationinsights.azure.com
   - llama.developer.meta.com
+  - matsuridayo.github.io
+  - metacubex.github.io
+  - mozilla.map.fastly.net
+  - nbbb1bb7.pmhcjk.com
+  - nix-community.github.io
   - notebooklm-pa.googleapis.com
   - notebooklm.googleapis.com
-  - o33249.ingest.us.sentry.io
   - openai-api.arkoselabs.com
   - openai.qualtrics.com
   - openaiassets.blob.core.windows.net
   - openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
   - openaicomproductionae4b.blob.core.windows.net
+  - p16-tiktok-dm-sticker-sign-sg.ibyteimg.com
   - ppl-ai-file-upload.s3.amazonaws.com
   - pplx-res.cloudinary.com
   - production-openaicom-storage.azureedge.net
   - q-developer-integration.us-east-1.api.aws
+  - q676790b.pmhcjk.com
   - qianfan.baidubce.com
   - qodercn-jb.oss-cn-hangzhou.aliyuncs.com
+  - rabbit-hole-1.gitbook.io
+  - rt.services.visualstudio.com
   - servd-anthropic-website.b-cdn.net
   - static.cloudflareinsights.com
   - storage.googleapis.com
   - sydney.bing.com
+  - throneproj.github.io
+  - trojan-gfw.github.io
   - webchannel-alkalimakersuite-pa.clients6.google.com
+  - xtls.github.io
   - yiyan.baidu.com
 
 domain_suffix_set:
+  - 123av.com
+  - 123av.me
+  - 123av.org
+  - 18comic.ink
+  - 1password.dev
+  - 20thcenturystudios.com
+  - 24.place
+  - 2ch.life
+  - 2ch.org
+  - 2ch.su
+  - 2dust.link
+  - 5ch.io
+  - 7x24hrs.com
+  - abcnews.com
   - abtestvm-sg.bytedance.com
+  - actifio.com
+  - activision.com
+  - activisionblizzard.com
+  - activisionblizzardmedia.com
+  - addtodropbox.com
+  - adguardaccount.net
   - agentclientprotocol.com
+  - agroros.ru
+  - ai-bank.ru
   - ai.cloudflare.com
   - ai.com
   - ai.google.dev
   - ai.studio
   - aicode.googleapis.com
   - aida.googleapis.com
+  - aidc.com.tw
+  - aihub.top
   - aisandbox-pa.googleapis.com
   - aistudio.google.com
+  - akcept.ru
+  - akibank.ru
+  - albank.ru
   - algolia.net
+  - amazonwebservices.com
+  - amnezia.org
   - ampcode.com
   - ampworkers.com
   - ant.dev
@@ -98,24 +175,92 @@ domain_suffix_set:
   - antigravity.google.com
   - antspace.dev
   - anythingllm.com
+  - aolcdn.com
   - api.microsoftapp.net
+  - api.shuaiapi.com
   - api.statsig.com
+  - apiauto.ru
   - apis.google.com
+  - apkbank.ru
   - arena.ai
+  - aresbank.ru
   - artificialanalysis.ai
   - atmeta.com
   - augmentcode.com
   - auth0.com
+  - auto.ru
+  - autofinancebank.ru
+  - autoru.me
+  - avito.com
+  - avito.tech
+  - avto.ru
   - aws.dev
   - awsapps.com
   - awsstatic.com
+  - azureedge.us
+  - bamtech.net
+  - bancaintesa.ru
+  - bank-hlynov.ru
+  - bank131.ru
+  - bankofkazan.ru
+  - bankperm.ru
+  - bankstavr.ru
+  - bankvl.ru
   - bard.google.com
+  - beget.app
+  - beget.cloud
+  - beget.de
+  - beget.email
+  - beget.hosting
+  - beget.pro
+  - beget.tech
+  - begetcdn.cloud
+  - benefitsforeveryworld.com
+  - beru.ru
+  - beserver.ru
+  - best2pay.net
+  - bestchange.com
+  - bestchange.net
+  - bestchange.ru
   - bfl.ai
+  - bget.ru
   - bigmodel.cn
+  - bilibili.tv
   - bing-shopping.microsoft-falcon.io
+  - bingstatic.com
+  - blackedraw.com
+  - blockchair.com
+  - blockchair.net
+  - blue-plus.net
+  - blurams.app
+  - bmonkeys.net
+  - bmwbank.ru
+  - bnxz.net
+  - boc.ru
+  - boldgrid.com
   - bolt.new
+  - bookmate.ru
+  - briarproject.org
+  - bsky.chat
+  - builtwithnix.org
+  - bystrobank.ru
+  - bystys.tech
   - bytegate-sg.byteintlapi.com
   - byteoversea.com
+  - c.go-mpulse.net
+  - callofduty.com
+  - callofdutyendowment.com
+  - callofdutyendowment.org
+  - callofdutyleague.com
+  - callofdutymobile.com
+  - candycrush.com
+  - cangku.moe
+  - cdpred.services
+  - cdprojekt.com
+  - cdprojekt.red
+  - cdprojektred.com
+  - ceno.app
+  - centrinvest.ru
   - cerebras.ai
   - challenges.cloudflare.com
   - character.ai
@@ -125,11 +270,26 @@ domain_suffix_set:
   - chatgpt.com
   - chatgpt.livekit.cloud
   - chatgpt.site
+  - chelindbank.ru
+  - chelinvest.ru
+  - chess.com
+  - chesscomfiles.com
+  - chineseposters.net
   - chutes.ai
+  - cian.ru
+  - cian.site
+  - ciangroup.ru
+  - cibank.ru
   - cici.com
   - ciciai.com
   - ciciaicdn.com
+  - cifra-bank.ru
+  - circle19.org
   - civitai.com
+  - clashmi.app
+  - clashparty.org
+  - clashverge.dev
+  - clashyun.com
   - clau.de
   - claude.ai
   - claude.app
@@ -148,6 +308,13 @@ domain_suffix_set:
   - cline.bot
   - clipdrop.co
   - cloudcode-pa.googleapis.com
+  - cloudflare.app
+  - cloudflare.pay
+  - cloudwp.dev
+  - cm.expert
+  - cmrbank.ru
+  - coalmetbank.ru
+  - codebuff.com
   - codeium.com
   - codeiumdata.com
   - coderabbit.ai
@@ -176,13 +343,25 @@ domain_suffix_set:
   - cozefn.cn
   - cozeide.cn
   - cozesdk.com
+  - cpc.com.tw
+  - craftifyx.com
+  - crashbandicoot.com
+  - crediteurope.ru
+  - creditural.ru
   - crewai.com
   - crixet.com
+  - crocoblock.com
+  - cryptoid.info
+  - csc.com.tw
   - cursor-cdn.com
   - cursor.com
   - cursor.sh
   - cursorapi.com
   - cursorvm.com
+  - cyberpunk.net
+  - dash.ai
+  - databank.ru
+  - dcapital.ru
   - deepinfra.com
   - deepmind.com
   - deepmind.google
@@ -190,42 +369,126 @@ domain_suffix_set:
   - deepseeksvc.com
   - deepwiki.com
   - deepwiki.org
+  - delets.cash
+  - delets.online
+  - delivery-club.ru
+  - demonware.net
+  - derzhava.ru
   - descript.com
+  - detpress.com
   - devin.ai
+  - dh.net
+  - diablo.com
+  - diablo4.com
   - diabrowser.com
   - diabrowser.engineering
   - dify.ai
+  - disneyaccount.com
+  - disneyanimation.com
+  - disneylandparis.com
+  - disneyprivacycenter.com
+  - disneytermsofuse.com
+  - divdyn.com
+  - dmir.ru
+  - docs.rw
+  - docsend.com
   - dola.com
   - doubao.com
   - doudou.com
   - dreamgen.com
+  - drom.ru
+  - dropboxexperiment.com
+  - dropboxlegal.com
+  - dropboxteam.com
   - duck.ai
+  - dvbank.ru
+  - edadeal.ru
   - edgeservices.bing.com
+  - efbank.ru
   - eigent.ai
   - elevenlabs.com
   - elevenlabs.io
+  - emb.ru
+  - energobank.ru
+  - energotransbank.com
   - envato-static.com
   - envato.com
   - envatousercontent.com
+  - esim.redteago.com
+  - europeanwarzoneseries.com
   - events.statsigapi.net
+  - evrofinance.ru
+  - eximbank.com.tw
+  - eximbank.ru
+  - expobank.ru
+  - f1.com
+  - f1tv.com
   - factory.ai
+  - fanfiction.net
+  - fansly.com
   - featuregates.org
+  - finstarbank.ru
+  - firebase.dev
   - firefly.adobe.com
   - firefly.adobe.io
+  - firefox-portal-detection.com
   - fireworks.ai
+  - flclashx.app
   - flow.google
   - flow.google.com
+  - flowvy.io
+  - flowwow-images.com
+  - flowwow.com
+  - fluxer.app
+  - fluxer.com
+  - fluxer.dev
+  - fluxer.gg
+  - fluxer.gift
+  - fluxer.media
+  - fluxer.tools
+  - fluxerapp.com
+  - fluxerstatic.com
+  - fluxerstatus.com
+  - fluxerusercontent.com
+  - fly.dev
+  - fly.io
+  - flyio.net
+  - foodfox.ru
+  - forabank.ru
+  - formula1.com
+  - freebuff.com
+  - freeform.com
+  - funko.com
+  - funpay.com
+  - funpay.ru
+  - fuyin116.com
   - g.ai
+  - ga.jspm.io
+  - gamebanana.com
   - gamma.app
+  - gate.tv
+  - gateapi.io
   - gateway.ai.cloudflare.com
+  - gaztransbank.ru
+  - gebank.ru
   - geller-pa.googleapis.com
   - gemini.google
   - gemini.google.com
   - gemini.gstatic.com
+  - genbank.ru
   - generativeai.google
   - generativelanguage.googleapis.com
   - genspark.ai
+  - getmonero.org
+  - getsafety.com
+  - getsentry.com
   - githubcopilot.com
+  - githubhelp.com
+  - githubsupport.com
+  - glitchprod.com
+  - glitchproductions.store
+  - glitchwave.com
+  - googleplaycensorship.com
   - grammarly.com
   - grazie.ai
   - grazie.aws.intellij.net
@@ -237,69 +500,152 @@ domain_suffix_set:
   - gvt1.com
   - gvt2.com
   - gvt3.com
+  - h264.io
   - h2o.ai
   - hailuoai.com
+  - halvacard.ru
+  - hanime1.com
+  - hanimeone.me
+  - happ.info
+  - happ.su
   - hcaptcha.com
+  - hellofax.com
+  - hellosign.com
   - hermes-agent.nousresearch.com
   - heygen.com
   - hf.co
   - hf.space
+  - highmoonstudios.com
+  - historylines.net
+  - home.bank
+  - hongkongdisneyland.com
   - host.livekit.cloud
+  - huarun.win
   - huggingface.co
   - hunyuan.tencent.com
+  - hva.im
+  - icbcmoscow.ru
+  - icdf.org.tw
   - identrust.com
   - ideogram.ai
+  - in-bank.ru
+  - incy.cc
+  - indsr.org.tw
+  - infinityward.com
   - inflection.ai
+  - ingobank.ru
   - intercom.io
   - intercomcdn.com
   - interface.feedback
+  - investpay.ru
+  - ipac.global
+  - isnbank.ru
+  - itb.ru
+  - ivi.tv
+  - ivicdn.tv
   - jasper.ai
+  - javchu.com
   - jetbrains.ai
+  - jetbrains.dev
+  - jetbrains.org
+  - jetbrains.ru
   - jules.google
   - jules.google.com
+  - k-bnk.ru
+  - kamkombank.ru
+  - kards.com
+  - karing.app
+  - kbb.ru
+  - khc.edu.tw
+  - kick.com
   - kilo.ai
   - kilo.codes
   - kimi.ai
   - kimi.com
+  - kimootoko.net
+  - kinescopecdn.net
+  - king.com
   - kiro.dev
+  - kiwix.org
+  - koronapay.com
+  - koshelev-bank.ru
+  - kotl.in
+  - kotlinconf.com
+  - kremlinbank.ru
+  - ktor.io
+  - kurs.expert
+  - kuzbank.ru
   - labs.google
   - labs.google.com
   - labstailwind.pa.googleapis.com
+  - landbank.com.tw
   - langchain.com
+  - lanta.ru
   - launchdarkly.com
   - lcicat.org
   - lcicollections.org
   - leonardo.ai
+  - level-plus.net
   - lf3-static.bytednsdoc.com
+  - librewolf.dev
+  - like-video.com
+  - like.video
+  - likee.com
+  - likee.video
+  - likeeapp.ru
+  - likeevideo.com
+  - likeevideo.ru
+  - limbuscompany.global
+  - limbuscompanyapi.com
+  - limbuscompanycdn.org
+  - linux.sb
   - live.com
   - liveperson.net
   - llama.com
   - llamameta.net
   - lmarena.ai
   - lmstudio.ai
+  - lockobank.ru
+  - log.rw
   - lovable.dev
   - lovart.ai
   - lpsnmedia.net
+  - lucasfilm.com
   - lumalabs.ai
   - magnific.com
   - makersuite.google.com
+  - makeship.com
   - manus.im
   - manuscdn.com
+  - maritimebank.com
+  - market.ru
   - marscode.cn
   - marscode.com
   - marscode.com.cn
+  - matichon.co.th
   - mcbaas.work
+  - mcbank.ru
   - mcdemo.show
+  - mceindex.com
   - mchost.guru
   - mcprev.cn
   - mcpservertest.online
+  - megaad.nz
+  - megapay.nz
+  - megas4.com
   - meta.ai
   - metaaiusercontent.com
   - metaaivm.com
+  - metallinvestbank.ru
+  - metib.ru
+  - mhgui.com
   - miaibox.com
   - microsoft.com
   - midjourney.com
+  - milfy.com
   - minimax.io
+  - minkch.com
+  - mirdc.org.tw
   - mistral.ai
   - modelcontextprotocol.com
   - modelcontextprotocol.io
@@ -307,12 +653,47 @@ domain_suffix_set:
   - modelcontextprotocol.org
   - modelscope.cn
   - modelscope.com
+  - modulbank.ru
+  - moeli-desu.com
+  - moex.com
+  - moneta.ru
   - moonshot.ai
   - moonshot.cn
+  - motocms.com
   - mozilla.ai
   - msftconnecttest.com
+  - msftstatic.com
+  - mspbank.ru
+  - mts-link.ru
   - muse.ai
   - muthos.com
+  - myjetbrains.com
+  - mynixos.com
+  - nationalclearingcentre.ru
+  - nationthailand.com
+  - ncbi.nlm.nih.gov
+  - ned.org
+  - neigbuy.com
+  - netxh.blog
+  - ngfiles.com
+  - nico-bank.ru
+  - nico.ms
+  - nicochannel.jp
+  - nipbank.ru
+  - nix-community.org
+  - nix.dev
+  - nix.store
+  - nixcon.org
+  - nixcon2017.org
+  - nixlang.com
+  - nixos.wiki
+  - nixpkgs.org
+  - njav.com
+  - nkcbank.ru
+  - nodeseek.org
+  - nordcdn.com
+  - norvikbank.ru
+  - note.com
   - notebook.google
   - notebook.google.com
   - notebooklm.google
@@ -320,12 +701,25 @@ domain_suffix_set:
   - notegpt.io
   - nousresearch.com
   - novelai.net
+  - novikom.ru
   - novita.ai
+  - novobank.ru
+  - ns-bank.ru
+  - nsd.ru
+  - nskbl.ru
+  - nsloon.com
+  - nstc.org.tw
+  - nthlink.com
+  - o-uchi.ru
   - oaistatic.com
   - oaistatsig.com
   - oaiusercontent.com
   - observeit.net
+  - okbank.ru
+  - oldmapsonline.org
   - ollama.com
+  - onemoment.cc
+  - onexray.com
   - opal.google
   - opal.google.com
   - openai.com
@@ -338,31 +732,72 @@ domain_suffix_set:
   - opencode.ai
   - openrouter.ai
   - openspec.dev
+  - openxla.org
+  - orbank.ru
   - otter.ai
+  - ouryahoo.com
+  - ownaj.com
+  - owxd.xyz
   - oystermercury.top
+  - ozon.app
+  - ozon.global
+  - ozon.market
+  - pawchive.pw
+  - pawchive.st
+  - payget.pro
   - perplexity.ai
   - perplexity.com
+  - pervbank.ru
   - phind.com
   - pi.ai
   - pika.art
+  - pikhtabank.ru
+  - pixar.com
   - plannotator.ai
+  - platov.co
+  - playgwent.com
+  - playstationnetwork.com
+  - po-kaki-to.com
   - poe.com
   - poecdn.net
+  - poidem.ru
+  - poland.tw
+  - postman.com
+  - poudobnee.com
   - ppio.cn
   - ppio.com
   - pplx.ai
+  - priobye.ru
+  - priovtb.com
+  - prizrak.app
   - proactivebackend-pa.googleapis.com
+  - projectmoon.studio
+  - pskb.com
+  - pv-cdn.net
+  - pyup.io
   - q.eu-central-1.amazonaws.com
   - q.us-east-1.amazonaws.com
   - qianwen.aliyun.com
   - qianwen.com
+  - qnapsupport.net
   - qoder.cn
   - qoder.com
   - qoder.com.cn
+  - quakemachinex.com
   - qwen.ai
   - qwenlm.ai
+  - r2modman.com
+  - ramon.cash
+  - ramon.money
+  - ravensoftware.com
+  - rbsgate.com
+  - rbsuat.com
+  - rdb.ru
+  - rdrom.ru
+  - realtyverif.ru
   - recaptcha.net
   - recraft.ai
+  - remna.st
   - repl.co
   - repl.it
   - replicate.com
@@ -370,70 +805,236 @@ domain_suffix_set:
   - replit.app
   - replit.com
   - replit.dev
+  - resocreditbank.ru
+  - rncb.ru
   - robinfrontend-pa.googleapis.com
+  - roc-taiwan.org
+  - rocmgov.org
+  - rosdorbank.ru
+  - roushuwo.com
+  - rsb.ru
+  - rsg.ms
   - runway.com
   - runwayml.com
+  - rutaxi.ru
+  - rutracker.wiki
+  - rutube.sport
+  - rym.fm
+  - safetycli.com
+  - sbpvtb.ru
+  - sc-gw.com
+  - sc-static.net
+  - scb.ru
+  - scea.com
+  - schwabcdn.com
+  - sdm.ru
+  - searchlightpictures.com
   - segment.io
+  - sekirothegame.com
+  - sentry.dev
   - sentry.io
+  - sevnb.ru
   - sf16-short-sg.bytedapm.com
+  - sfunpay.com
   - sfx.ms
+  - shadowlaunch.com
+  - shedevrum.com
+  - shedevrum.ru
+  - sibsoc.ru
   - sider.ai
+  - sierragames.com
   - siliconflow.cn
   - siliconflow.com
   - sillylittleguy.org
+  - skinswap.com
+  - skylanders.com
+  - slayed.com
+  - slbank.ru
+  - sledgehammergames.com
+  - smbfin.ru
+  - snbank.ru
+  - sngb.ru
+  - snmc.io
+  - socium-bank.ru
+  - solidbank.ru
+  - solidstate.com
+  - sonematic.net
+  - sonemic.com
+  - sony.com.py
+  - sonyinteractive.com
+  - sonymusic.com.hk
   - sora.com
   - sourcegraph.com
+  - spbexchange.ru
   - spicywriter.com
+  - sprut.io
+  - spvb.ru
+  - spyrothedragon.com
   - sso.amazonaws.com
   - stability.ai
   - starling.zijieapi.com
+  - starlink.com
+  - stash.wiki
+  - stash.ws
   - statsigapi.net
+  - steamos.cloud
+  - steampeek.hu
   - stepfun.ai
   - stepfun.com
   - stitch.withgoogle.com
   - stripe.com
+  - stripe.dev
+  - stripe.events
+  - stripe.global
   - suno.ai
   - suno.com
+  - svoi.ru
   - synthesia.io
   - syntx.ai
+  - sysub.com
   - tabnine.com
+  - taiwanembassy.org
   - talkai.info
+  - talkingkotlin.com
   - tapnow.ai
   - tcwqqdy.guru
+  - templatemonster.com
+  - tfbnw.net
+  - tfd.org.tw
+  - tgtime.store
+  - thbank.ru
   - themeforest.net
+  - thequestion.ru
+  - thewaltdisneycompany.com
+  - thewitcher.com
+  - thinkorswim.com
+  - thunderstore.io
+  - thunderstore.org
+  - tiktokshop.com
+  - tiktokstaticb.com
+  - tiktokvapp.com
+  - tildacdn.net
+  - timerbank.ru
+  - timeweb.tech
+  - timewebcloud.kz
+  - tmimgcdn.com
   - together.ai
   - together.xyz
+  - tokenplus.app
+  - tokyodisneyresort.jp
   - tongyi.aliyun.com
   - tongyi.com
+  - tonyhawk.com
+  - tonyhawkthegame.com
+  - torrentleech.org
+  - toyota-bank.ru
   - trae-api-sg.mchost.guru
   - trae.ai
   - trae.cn
   - trae.com.cn
   - trae.guru
+  - transfer.it
+  - transstroybank.ru
+  - treyarch.com
   - tripo3d.ai
   - tron-sg.bytelemon.com
+  - try.rw
+  - tryai.dev
+  - tsbnk.ru
+  - ttl.com.tw
   - turn.livekit.cloud
+  - tushyraw.com
+  - twfhcsec.com.tw
+  - tybio.com.tw
   - typesafe.ai
+  - ubrr.ru
+  - uchilk.ru
   - udio.com
+  - umbank.ru
+  - unicredit.ru
+  - unicreditbank.ru
+  - united.ru
+  - uralfd.ru
+  - uralprombank.ru
+  - uxzw.club
+  - v.recipes
   - v0.app
   - v0.dev
+  - vava8.com
+  - vbrr.ru
+  - veb.ru
+  - venets-bank.ru
+  - vezet.ru
+  - vfbank.ru
+  - vixengroup.com
+  - vlbb.ru
+  - vodafoneziggo.nl
+  - vscc.org.tw
+  - vtb.com
+  - vtbbo.ru
+  - waltdisneystudios.com
+  - wbcontent.net
+  - webflow-ext.com
+  - webflow.io
+  - website-files.com
+  - wgtunnel.com
   - windsurf.build
   - windsurf.com
+  - wiresock.net
+  - worldofwarships.asia
+  - worldseriesofwarzone.com
+  - write.as
+  - wtfpass.com
   - x.ai
+  - x86.fr
   - xiaoaiassist.com
   - xiaomimimo.com
   - xingyeai.com
+  - xn----otbzjdu.xn--p1ai
+  - xn--80aaafbpzn5blfby1p.xn--p1ai
+  - xn--80aaeib8abrryx4k.xn--p1ai
+  - xn--90ab2c.xn--p1ai
+  - xn--90aefb9d.xn--p1ai
+  - xn--fiq80y.hk
+  - xn--fiq80y.xn--j6w193g
+  - xn--fiq80y3xbiwr.hk
+  - xn--fiq80y3xbiwr.xn--j6w193g
+  - xn--fiq80y3xbiwrs0kiu9d.hk
+  - xn--fiq80y3xbiwrs0kiu9d.xn--j6w193g
+  - xn--pssu7ci3q5oge0ai91q.xn--j6w193g
+  - xn--pssu7cz8nr8ibkx1e8a.xn--j6w193g
+  - xx.net
+  - yahooinc.com
+  - yandex-team.com
+  - yandex.it
+  - yandex.market
+  - yandex.net.ru
+  - yandex.pro
+  - yandex.taxi
+  - yandex.travel
+  - yandexdataschool.com
+  - yandexdataschool.ru
+  - ydb.tech
+  - yndx.net
   - yoma.cn
+  - yookassa.ru
+  - yoomoney.ru
   - you.com
   - youmind.ai
   - youmind.com
   - youmind.site
+  - youtooz.com
+  - youversionapi.com
   - yuanbao.tencent.com
   - yuanqi.tencent.com
+  - yucf.top
   - z.ai
   - zed.dev
+  - zenmux.ai
   - zhipuai.cn
   - zhipucn.com
+  - ziggo.nl
+  - zozovideo.com
 
 domain_keyword_set:
   - alkalimakersuite-pa.clients6.google.com
