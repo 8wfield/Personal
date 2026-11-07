@@ -73,7 +73,10 @@ jobs:
               "Spotify": ["https://magicrule.pages.dev/data/_shared/artifacts/Spotify_rules_bfbda1b4bcafcbf9.list"],
               "Netflix": ["https://magicrule.pages.dev/data/_shared/artifacts/Netflix_rules_f3bd3eb7f4910286.list"],
               "ChinaIPs": ["https://magicrule.pages.dev/data/_shared/artifacts/ChinaIPs_rules_34a9221fa066bb18.list"],
-              "BanAD": ["https://magicrule.pages.dev/data/_shared/artifacts/Advertising_rules_1b4972ff6ce10d00.list"],
+              "BanAD": [
+                  "https://raw.githubusercontent.com/217heidai/adblockfilters/refs/heads/main/rules/adblockloon.list",
+                  "https://anti-ad.net/surge.txt",
+                  "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/reject.txt"],
               "China": ["https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list"],
               "Apple": ["https://magicrule.pages.dev/data/_shared/artifacts/Apple_rules_a498ae373471a17f.list"],
               "AppleCN": ["https://magicrule.pages.dev/data/_shared/artifacts/AppleDirect_rules_f5e4fe91ff60b5d6.list"],
