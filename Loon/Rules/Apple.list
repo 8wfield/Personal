@@ -1,7 +1,7 @@
 # 规则名称: Apple
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Apple_rules_a498ae373471a17f.list
 # 规则统计: 2071
-# 更新时间：2026-11-06 18:52:27
+# 更新时间：2026-10-29 10:44:13
 
 DOMAIN,a1.mzstatic.com
 DOMAIN,a2.mzstatic.com
@@ -1206,7 +1206,6 @@ DOMAIN-SUFFIX,digitalhub.com
 DOMAIN-SUFFIX,discountbeatsbydre-us.com
 DOMAIN-SUFFIX,discountbeatsstore.com
 DOMAIN-SUFFIX,discussionsapple.com
-DOMAIN-SUFFIX,dittocdn.com
 DOMAIN-SUFFIX,dkbeatsbydre.com
 DOMAIN-SUFFIX,dl-iphone.com
 DOMAIN-SUFFIX,doh.dns.apple.com
@@ -1392,6 +1391,7 @@ DOMAIN-SUFFIX,icloud-content.com.cn
 DOMAIN-SUFFIX,icloud-isupport.com
 DOMAIN-SUFFIX,icloud-sandbox.com
 DOMAIN-SUFFIX,icloud.ch
+DOMAIN-SUFFIX,icloud.cn
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,icloud.com.akadns.net
 DOMAIN-SUFFIX,icloud.com.cn

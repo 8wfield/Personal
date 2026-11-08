@@ -1,13 +1,12 @@
 # 规则名称: Telegram
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Telegram_rules_08a293c0eb1a33b7.list
-# 规则统计: 63
-# 更新时间：2026-11-06 18:49:36
+# 规则统计: 62
+# 更新时间：2026-10-10 00:21:51
 
 DOMAIN-KEYWORD,telegram
 DOMAIN-SUFFIX,cdn-telegram.org
 DOMAIN-SUFFIX,comments.app
 DOMAIN-SUFFIX,contest.com
-DOMAIN-SUFFIX,dittocdn.com
 DOMAIN-SUFFIX,fragment.com
 DOMAIN-SUFFIX,graph.org
 DOMAIN-SUFFIX,legra.ph

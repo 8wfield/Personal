@@ -1,7 +1,7 @@
 # 规则名称: Global
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Global_rules_a5444ff2eb3168d2.list
-# 规则统计: 24439
-# 更新时间：2026-11-06 18:45:21
+# 规则统计: 24441
+# 更新时间：2026-11-04 23:44:16
 
 no_resolve: true
 
@@ -266,6 +266,7 @@ domain_set:
   - cache-05.filehippo.net
   - cache.hackedfreegames.com
   - cache.industry.siemens.com
+  - cache.ip-api.com
   - cache.mapcomplete.org
   - cache.omnicalculator.com
   - cached.rebuyengine.com
@@ -3325,6 +3326,7 @@ domain_suffix_set:
   - anthemgame.com
   - anthemthegame.com
   - anthonycalzadilla.com
+  - anthropic.auth0.com
   - anthropic.com
   - anthropic.team
   - anti1984.com
@@ -3379,6 +3381,7 @@ domain_suffix_set:
   - api.news
   - api.proxlet.com
   - api.shuaiapi.com
+  - api.themoviedb.org
   - apiary.io
   - apibay.org
   - apigee.com
@@ -8491,6 +8494,7 @@ domain_suffix_set:
   - edmontonservice.com
   - edninfo.com
   - edns.biz
+  - edns.ip-api.com
   - edoors.com
   - edu
   - edu-research.org
@@ -12716,7 +12720,6 @@ domain_suffix_set:
   - iotinactionevents.com
   - iownyour.biz
   - iownyour.org
-  - ip-api.com
   - ip-scan.adspower.net
   - ip73.com
   - ipa-iphone.net
@@ -14013,9 +14016,6 @@ domain_suffix_set:
   - lilhumpers.com
   - liliav.com
   - lilith-soft.com
-  - limbuscompany.global
-  - limbuscompanyapi.com
-  - limbuscompanycdn.org
   - limelight.com
   - limertw.cc
   - limeteensex.com
@@ -19572,7 +19572,7 @@ domain_suffix_set:
   - skillshare.com
   - skimtube.com
   - skinstrip.net
-  - skinswap.com
+  - skk.moe
   - skokka.com
   - sksarab.top
   - skunkgirl.cc
@@ -22386,6 +22386,7 @@ domain_suffix_set:
   - vocus.cc
   - vod360.net
   - vodafone.com
+  - vodafoneziggo.nl
   - voicettank.org
   - vokevr.com
   - vol.moe
@@ -24197,6 +24198,7 @@ domain_suffix_set:
   - zibacity.com
   - ziddu.com
   - ziffstatic.com
+  - ziggo.nl
   - ziglang.org
   - zillionk.com
   - zind.cloud
