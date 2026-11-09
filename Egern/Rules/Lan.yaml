@@ -1,28 +1,62 @@
 # 规则名称: Lan
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Lan_rules_a7096f98ad43c9dc.list
-# 规则统计: 301
-# 更新时间：2026-11-07 09:43:57
+# 规则统计: 1107
+# 更新时间：2026-11-10 01:42:33
 
 domain_set:
+  - analytics-fe.digital-cloud.medallia.eu
+  - api-engage-us.sitecorecloud.io
   - asusrouter.com
   - aterm.me
+  - bot.cdn.adeo.cloud
+  - cdn.ltba.io
+  - collection.cyberprocurement.com
   - console.gl-inet.com
+  - dn-analytics.alketech.eu
+  - http-intake.logs.us5.datadoghq.com
   - instant.arubanetworks.com
   - local.adguard.org
   - localhost.weixin.qq.com
   - localhost.work.weixin.qq.com
   - miwifi.com
+  - o1158394.ingest.us.sentry.io
   - oasisauth.h3c.com
+  - obs.protoroundprince.com
+  - ooklaserver.asbn.va.ogital.net
+  - ooklaserver.dlls.tx.ogital.net
+  - p.marktplaats.net
+  - pixel.optimeeze.data.adeo.cloud
+  - pixel.profound.click
+  - production-copilot-host-westus.webpubsub.azure.com
+  - pt.wisernotify.com
+  - qoeookla-seat-01.sys.comcast.net
   - repeater.asus.com
   - router.asus.com
   - routerlogin.com
+  - rum.haystack.es
+  - s4vrsde.www.arturia.com
   - setmeup.arubanetworks.com
+  - speedtest-din.rapidnet.co.in
+  - speedtest-par.flowhardware.ch
+  - speedtest.bgsi.io
+  - speedtest.dreamnetgigafiber.com
+  - speedtest1-phnyazjv.as20055.net
+  - speedtest2.honeybroadband.com
+  - sst.leroymerlin.pl
+  - tag.web.onesdata.com
+  - tagging.conde.digital
   - tplogin.cn
+  - track.adzeb.com
+  - tracking.optimeeze.data.adeo.cloud
+  - velocidade.danieltechpro.com
   - www.asusrouter.com
   - www.miwifi.com
   - www.routerlogin.com
 
 domain_suffix_set:
+  - 06aa7d6d80.com
+  - 0lluihle.xyz
+  - 0vpekhux1f.com
   - 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa
   - 10.in-addr.arpa
   - 100.100.in-addr.arpa
@@ -37,7 +71,9 @@ domain_suffix_set:
   - 108.100.in-addr.arpa
   - 109.100.in-addr.arpa
   - 110.100.in-addr.arpa
+  - 1106ca2ad4.e230ae5c2b.com
   - 111.100.in-addr.arpa
+  - 11112door.net
   - 112.100.in-addr.arpa
   - 113.0.203.in-addr.arpa
   - 113.100.in-addr.arpa
@@ -56,16 +92,23 @@ domain_suffix_set:
   - 126.100.in-addr.arpa
   - 127.100.in-addr.arpa
   - 127.in-addr.arpa
+  - 13tohng.h7fz84h7m2wmign5.cfd
   - 16.172.in-addr.arpa
   - 168.192.in-addr.arpa
   - 17.172.in-addr.arpa
   - 18.172.in-addr.arpa
   - 19.172.in-addr.arpa
+  - 1adda2699c.com
+  - 1d79e9c449.com
+  - 1o057bolbb.com
+  - 1okxxe67d.com
+  - 1ttxjgo7fd.com
   - 2.0.192.in-addr.arpa
   - 20.172.in-addr.arpa
   - 21.172.in-addr.arpa
   - 22.172.in-addr.arpa
   - 23.172.in-addr.arpa
+  - 23civw6cl.com
   - 24.172.in-addr.arpa
   - 25.172.in-addr.arpa
   - 254.169.in-addr.arpa
@@ -76,13 +119,31 @@ domain_suffix_set:
   - 29.172.in-addr.arpa
   - 30.172.in-addr.arpa
   - 31.172.in-addr.arpa
+  - 341nc5fxyvp9pgpejotftb32y.iekbntpibhr5wf.cfd
+  - 37rk0rihje.com
+  - 3gxlk4mizrtt56.cfd
+  - 4.xipgfr3juc49mcipo7r.cfd
+  - 43b0d022d5.com
+  - 49m2mwpb84qfctyk.cfd
+  - 4a75c45821.com
+  - 4ad9bqnjb.com
+  - 4hfm8gfow.com
+  - 4k1x3mkrus.com
+  - 4oiv13glf8cfb73qpwp8tb7l.cfd
+  - 4p74i5b6.de
+  - 4rqgug41g5uhw2uu39uzgwmlm7q.rest
+  - 5k52x9oeno4wuchg36l9c.rest
+  - 6060instruments.net
+  - 63b51241b6.com
   - 64.100.in-addr.arpa
   - 65.100.in-addr.arpa
   - 66.100.in-addr.arpa
   - 67.100.in-addr.arpa
   - 68.100.in-addr.arpa
   - 69.100.in-addr.arpa
+  - 6joxw2fjmuvowzx7mffw92u1.cfd
   - 70.100.in-addr.arpa
+  - 70eb07b991.com
   - 71.100.in-addr.arpa
   - 72.100.in-addr.arpa
   - 73.100.in-addr.arpa
@@ -92,6 +153,7 @@ domain_suffix_set:
   - 77.100.in-addr.arpa
   - 78.100.in-addr.arpa
   - 79.100.in-addr.arpa
+  - 7f8pmzuyz9qp1q3qo1ku.cfd
   - 8.b.d.0.1.0.0.2.ip6.arpa
   - 8.e.f.ip6.arpa
   - 80.100.in-addr.arpa
@@ -104,6 +166,7 @@ domain_suffix_set:
   - 87.100.in-addr.arpa
   - 88.100.in-addr.arpa
   - 89.100.in-addr.arpa
+  - 8ewwu7qug3guihu.rest
   - 8fjklyd4os.com
   - 9.e.f.ip6.arpa
   - 90.100.in-addr.arpa
@@ -111,129 +174,744 @@ domain_suffix_set:
   - 92.100.in-addr.arpa
   - 93.100.in-addr.arpa
   - 94.100.in-addr.arpa
+  - 942cyhjqm3zwh5c.cfd
   - 95.100.in-addr.arpa
   - 96.100.in-addr.arpa
   - 97.100.in-addr.arpa
   - 98.100.in-addr.arpa
   - 99.100.in-addr.arpa
+  - 9wqivit9xzx37qvejeqfw9u.rest
+  - a.alonte.xyz
   - a.e.f.ip6.arpa
+  - aaepddlontgge.online
+  - aaethdkdjzfod.online
+  - abortphecda.com
+  - abruptusers.com
+  - abslakpdotzst.site
   - acl4.ssr
+  - acqakhpico.in
+  - administerembodiment.com
   - adorableorchid.com
+  - afenildrapingdissect.cfd
+  - affsatsamotp.in
   - agkmngwhtwtni.site
+  - agnxvbmnjekvk.space
+  - ahobnjamvkafb.website
+  - ahvlyrqmxdhpr.website
+  - ahwgunvtlhefp.online
+  - airersalkyls.cfd
+  - aizgxeukmyojd.website
+  - ajtcqmlorjesx.site
   - akkashocwvu.in
+  - akqcrzyoqktvz.online
+  - aliveharbor.info
+  - alppbalwrsyyw.online
+  - alvmcwmdyspqc.site
+  - alypinehubbly.cyou
+  - amesacefoumart.cyou
+  - amirprinkskineses.cyou
+  - amorphouscomprise.com
+  - amplify.madison365.com
+  - amtkezsrxxmci.space
+  - anarchytyroma.click
+  - angasarum.cyou
+  - anrlfkpaweafl.online
+  - antrumciphers.click
+  - anxegytdedafg.site
+  - aphpgvbfcaiza.space
+  - api-engage-us.sitecorecloud.io
+  - aplasiabahaist.cyou
+  - aquaticsulpho.com
   - archeryhardies.qpon
+  - assmanphose.cyou
   - asusrouter.com
+  - atrgprhdzfhfb.online
   - auroazlgqmaop.online
+  - avouchlawsrethink.com
+  - awnvmxtaxtkcj.site
+  - ayyg.org
+  - azwktmcxzclyk.website
   - b.e.f.ip6.arpa
+  - baalizekoussogrommet.cfd
+  - babicheswivet.com
+  - baekbgmrnxbxb.site
+  - bailervirtue.click
+  - barbatehabeas.rest
+  - barycentre98.com
+  - bavoozimaxiev.website
+  - bayamosrepacetrichi.cfd
+  - bchvbpxvhiyu.com
+  - bdfrzlzxuibgx.online
+  - beauingmantramsynovia.cfd
+  - bedoyocrepey.cyou
   - beetfeedway.cfd
+  - befophumesklater.cyou
+  - behlgptkuyarn.space
+  - bellsgirdles.com
+  - betrayedjoltmethod.com
+  - bgohkhtfziepp.space
+  - bgqantksojipe.online
+  - bgxbervoatuvq.site
+  - billieshariana.com
+  - binioumusales.rest
+  - bionalmsful.cfd
+  - bionomysolera.com
+  - bkflfwqegazki.site
   - bkontegudnm.in
+  - blacklivesmatter1.org
+  - blungerfulgourdarien.cfd
   - bnyudysiqapdc.space
+  - bonducdetroit.com
+  - boomboxcleridchaffs.cyou
+  - borzoisunroost.cfd
+  - bosmjrzfssqus.site
+  - bqwtvcpkrrnlq.site
+  - branchorchid.mobi
+  - breathsfoamed.com
+  - brevityfurs.rest
+  - brinieryankspsalmic.cfd
+  - britmislen.click
+  - brookedmacaca.com
+  - broughyuca.cyou
+  - browsepantartful.com
+  - bspyoibtwrrc.com
+  - bylawskilnman.click
+  - bzukumwjttldq.site
+  - c11cpx8ole2qx2688boj21cy.rest
+  - cagcyjcznorpu.website
+  - callantlotriteamused.cyou
+  - calmcactus.pro
+  - carapussq.cyou
+  - carvonecerebra.cfd
+  - casalfinical.cfd
+  - cavzgoqiozmyc.space
+  - cbrsgkdqhftjt.website
+  - ccucnuuahikzz.online
+  - cemhlobja.com
   - cerrivvskghhs.space
+  - charmingtiger.me
+  - cheerercrackup.cfd
+  - cheveehantle.cyou
+  - chieflydecorationtreasure.com
+  - chstqexkitsce.com
+  - chulpagliffy.cyou
+  - cilwbiudkzyuy.website
+  - ckucufscmjrkq.site
+  - ckumwsftdvlqh.website
   - classicfern.com
+  - click-rtb2-useast.affinity.net
+  - clicknerd.com
+  - cliffedopinerbiles.cfd
+  - clothapprovegerman.com
+  - cnjlmpowthfmc.website
+  - cnkkfxajyvium.site
+  - coaqhbgliewbm.space
+  - coayahtscmjre.space
+  - collector.snowplow.supercell.com
+  - commandslikeable.com
+  - consentrecruit.com
   - contuselegator.com
+  - coolankle.com
   - cortahewt.com
+  - cosecant36.com
+  - coterekey.cfd
+  - couliertarotspariti.cfd
+  - courthousecadenceconsiderable.com
+  - courthousezoological.com
+  - cozaflrqyfapq.space
+  - cpwsfmxxdgwwt.space
+  - crbetfcijuhtw.site
+  - creenborsht.cfd
+  - cresamylategoony.cyou
+  - croshi.cyou
+  - crumblefilchactive.com
   - csebphyoobgko.website
+  - cudgelgateau.click
+  - culprithellman.cyou
+  - cunluxgqqhmsx.space
+  - curuleshanks.cyou
+  - cvpvhwygtmdve.website
+  - cwipnplaztyiv.space
+  - cxmuoewwxzczi.site
+  - cydskqupzdook.online
   - d.f.ip6.arpa
+  - d1e65c72ee.com
+  - d2jp0uspx797vc.cloudfront.net
+  - dandieamobyr.cfd
+  - dbnivsmljtdbk.space
+  - dbtstlfijmlqx.space
   - deerbreeze.com
+  - dekeifblwjuou.online
+  - deofleadyetca.org
   - devilyconches.cfd
+  - devzpntxzimzy.website
+  - dfdvhjuletrsh.site
+  - dhaagtotq.in
+  - dhdkptepdezia.space
+  - diltsnjkxnxev.website
+  - dimitydirks.cyou
+  - dirdumaigre.com
+  - dltcauxfnkcgg.website
   - dodderyatabals.cyou
+  - domesticrejoinedremark.com
+  - domzpbsymwbtf.online
+  - doorspondy.cyou
+  - dowpvxtbknqml.online
+  - dphheyqbwgaau.online
   - dqwdebmtifbey.online
+  - drammeshuttleplace.cyou
+  - drollydoddie.cyou
+  - dscqxvxlwbxpc.space
+  - dskgna.com
+  - dtswpgusucgfd.website
+  - dubioclawers.cfd
+  - dudsyeaning.rest
+  - dukhntrona.rest
+  - dulvxkusxdcpc.online
+  - dutyfestivegrieve.com
+  - duwifymkjfpnm.space
   - duxifxoollqvx.website
+  - dw9uc6c6b8nwx.cloudfront.net
+  - dwaiblyatternpitfold.cfd
   - dwxbwpqfevnvu.site
+  - dxaqcakgokcbe.online
+  - dxynbmrkwrvbj.space
+  - dyblpgaiomtdv.online
+  - e649fcmt4w54v8758cj8.rest
+  - easselyerth.cfd
+  - eaxemfcmapemq.space
+  - eccytygvbsnjh.space
+  - echistampoon.cyou
+  - edmondgroovy.com
+  - edyr2ip7zg.com
+  - egmoytcwvwfnc.website
+  - eightcontented.com
+  - eimqxukbomvl5x.cfd
+  - ekbndmhjnoxin.space
+  - elevationoutshout.net
+  - embusqugaumish.com
+  - enbzbycnwklzp.website
+  - endgamepinwing.rest
+  - enjezxfmmlorw.site
   - enmvvyoxasqbk.site
+  - eosuwgodaquxx.space
+  - eqhqnbjk.com
+  - erjw7px373983fgovelfjpnnnu6.cfd
+  - eryobprlmohkg.space
   - etouffehalutz.cyou
+  - etrader.kalahari.com
   - eujgdrvqhgrpv.site
+  - evkpkbwwmnfgj.site
+  - evomitlettuce.cfd
+  - evosuuirkzjhq.online
   - ewaxekpshwrid.space
+  - ewnpqbtouobrn.online
+  - eyfvknqqivkfs.site
   - eyukpdjlfivny.website
+  - f30fpad7.xyz
+  - fanbjeshwssbc.website
+  - fbfvlqsjqclep.website
   - fclvqcvpcxho.com
+  - fencingnora.click
+  - ffbqwmedfryqu.online
+  - fgvowyavmmcau.site
+  - fhgqrvoaikmjf.site
+  - fimxtefr.in
+  - fixagebiggety.rest
+  - fkhflzwmchgve.online
+  - fkjpanvarvmgr.space
+  - flavidwarwolf.cfd
+  - florealtriaxal.cfd
+  - flowsearch.info
+  - flxgshqougofo.space
   - fmyvtaydfeubb.online
+  - fnrvva9u4z.com
+  - fohztovjigukz.space
+  - foliesacantha.cyou
+  - foqtqtpkyy.com
+  - formicbine.com
   - fqiouceqvfjpa.website
+  - fqxcrzj9r7kotjuvh84iyqjrir5917.cfd
+  - frakturfasten.cyou
+  - frapptents.com
+  - freshporch.info
+  - froecagilyerects.cyou
+  - frzgerjccnf.com
+  - furiousvinyl.com
+  - fzehebhsdrwrk.online
+  - fzguyxpmpragr.site
+  - galahssucceedapraxia.cyou
+  - ganoinekubong.cfd
   - gapmeezmpklpd.website
+  - gbbqaanguyacx.website
+  - gbguqrbokfdlz.space
+  - geuvkatbkmlsn.space
   - ghanamolto.cyou
+  - ghostscholars.com
   - giftedbelt.com
+  - gifvqnylnssyg.website
   - gilylqiazyyei.site
+  - gkhtzvgekzcwk.space
+  - glnqkatlvqfzf.space
+  - gloatedmorcha.cyou
+  - glozedcozen.cyou
+  - glttyvioxw.com
+  - gnopfoaddfxto.website
+  - gnvuvnpgmvcsp.website
+  - gnxmvqfexzlnv.website
+  - gobelinlubbard.cfd
+  - goot2kvjzb9ej3hegytk53qouhmtbjt.cfd
+  - grabsmpropea.org
+  - gristyupcurls.rest
+  - grokbot.com
+  - grooveguides.com
+  - growthsrigging.com
+  - grqxqnacyjvxd.space
+  - guanaresubvert.cfd
+  - guigegoriest.click
+  - gummyability.com
+  - gvzfoohrojaqw.online
+  - gxvowjuaysvsa.site
+  - gypfdjupwdigr.website
+  - h1q2toonvbkfuf9lbpufre.rest
+  - h2m1op6zw.com
+  - haqgcjroiitgr.space
+  - hb287nh0w.com
+  - hbedtvugrfdgm.space
+  - hclkrrnvxeztm.space
   - hcotvwpasqknw.space
+  - heavengabbykatcina.cyou
   - hehfphznjarkd.online
+  - helpfulmusic.biz
+  - heronbeglueredates.cfd
+  - heshdewqlrdaj.online
+  - heyserves.com
+  - hfhlugtjuyegc.website
+  - hhskqxsqdsocm.site
+  - hiucoxmvcigcj.site
   - hiwifi.com
   - hjvewzbtkbetn.online
+  - hkhhrhulaarep.site
   - hkzqrnejnjizx.online
+  - hlooytbdgfmvl.site
+  - hmbubvqlpkeby.site
+  - hmixfbvzhnh.com
   - hmwxizsphgjul.site
+  - hnjohjorqaqea.site
+  - hnrjvgqeofzog.site
+  - hntixkyrwyiav.website
+  - hoghidejacusatine.cyou
   - holidamjails.cyou
   - home.arpa
+  - hooliredir.com
   - hoppledcpus.com
+  - horralvends.rest
+  - hrkbvfqhhgbju.website
+  - hssgozcmbeyet.site
   - huaweimobilewifi.com
+  - hugawhxusof.in
+  - hunneijvjgcqy.site
+  - hvryrpkrtiusl.com
+  - hvvfmnqzmylfp.website
+  - hxugzvxvfwam.com
+  - hyklujfryizpf.online
+  - i2g56iznvkwpfcn2q3y5q.rest
+  - i3594uli4.com
+  - iaoonfojwtujn.online
   - iavszerhxigkh.space
+  - icariablunker.com
+  - ifawj9hvvl.com
   - ikaeibrnztebr.site
+  - ilgosajlubqdg.space
+  - imprennets.rest
+  - imtvzvzihstno.online
   - inexeyxzouqzh.space
+  - intusepretry.rest
+  - iomaduexiqtho.space
+  - irisrainstorm.com
+  - irmjefamskvpb.site
   - irsuzniphzkkm.site
+  - islkwgohorhci.site
   - ismyagiosdiodont.cyou
   - ithmcpzviudjg.space
   - itvjqrhqhvorx.online
+  - iuwtsworgzl.com
+  - iycwqwgywlyyc.space
+  - j6lopifgpwo3nvm.cfd
+  - jaiiezpgtdvcm.website
+  - jbnizvqmwmnldg.com
+  - jcfsbpnyqiexp.site
+  - jcyjatacjo.in
+  - jeiwyjigntamf.website
+  - jetonmangeao.rest
+  - jewupyokehispano.cfd
+  - jexywyneljzny.space
+  - jgfkscpqbais.com
+  - jgsxwcwrdkiwk.website
   - jhljjsixvbxlo.space
+  - jipugfognzdco.site
+  - jisgwdtbqciof.site
   - jltpxzdwnnwuj.space
   - jlzzwb9ix8vpxk3.cfd
   - jpgxftqgnucg.com
+  - jqlxcdanyqbtz.online
+  - jrnplooafwfjn.space
+  - jsoedbrzgxpqb.online
+  - jubmxyrmpdthm.space
+  - juntol.xyz
+  - jusgrmawfbaqu.com
+  - jxqqtcjtiddxd.website
+  - jyhwlxpir7tevqxeuyh3vyfwptv2bjk.cfd
   - jymqhypdvvbra.space
+  - jzkiojvomdxeu.site
+  - jzuklhgekldnk.site
   - k8x3xjunl4ku9jh78z7tb6.cfd
+  - kabylepayed.rest
+  - karatesisaria.rest
+  - kartcalques.rest
+  - kasoyckcsmgal.online
+  - kayeowitzxvas.website
+  - kbxatopvgjpth.space
+  - kcnlbswxseble.online
+  - keenporch.org
+  - kenaimerls.com
+  - kfoznkqjlbkgo.website
   - khphzkhftgexp.site
+  - kimrurpf9.zmeo1qph9mc3r6pyhw8.cfd
   - kis.v2.scr.kaspersky-labs.com
+  - kjmeiivlmmygv.space
+  - kkdhbuydmbgyo.space
+  - klkmiwbofjnbr.site
+  - knurryanele.cyou
+  - kocletggrqkdh.site
+  - kokrabirddom.qpon
   - kp7xvkhgiwg9177gkuf4verl4.rest
+  - kpyktnhvzxzdb.online
+  - kuomxnlobnzvn.space
+  - kv4tzec84ouiv6.cfd
   - kwintravetoer.cyou
+  - kwxytrygpcmxu.space
+  - kxbhakvhkhmgy.website
+  - kxgdynrozodcv.online
+  - kylzuarxeyeli.online
+  - l1621l6lw8vcfrzo.xtrkyx5k52822om8igf89v47.cfd
   - l4y1o8l9wvejpnwc.rest
+  - labraskulmet.com
+  - labroidconfess.cyou
+  - lactidefessely.cfd
+  - lardonsshahidirecited.cyou
+  - lathielustly.click
+  - lbcljwreslalb.website
   - lcodijuiijzqu.site
+  - lcsdktmitfqlj.space
+  - lcusfjajbouks.site
+  - ldy5.com
+  - legerpirate.click
   - leike.cc
+  - lifnqxqfkpqcq.online
+  - lixwczxdqqxzw.space
+  - lkmodbikgcvbd.space
+  - lkseavjkzupfw.space
+  - llaaeuwepty.com
   - lmzvrkojtjxae.site
+  - lne8wvx2nmc8muoeq.cfd
   - localhost.ptlogin2.qq.com
   - localhost.sec.qq.com
+  - lochekurusalcyone.cfd
   - loftergunyahbolo.cyou
+  - loinwryneck.com
+  - lp70zi3ou3.com
   - ltmxbxlhlacvz.space
+  - ltwkibhnejbzw.space
+  - lunacyumpireunleave.cfd
+  - lupqvydgvcbjm.site
+  - lurepmmslkjmg.online
+  - lwgcyealvpkjz.website
   - lwiurn6bc5chegb2vc2wqoqczv66r.rest
+  - lxovrggqvtgxs.com
+  - lygjvxwmm7hcz8233v2mh3veo4melt.cfd
+  - lyzxmczrdbxsg.site
+  - lzbepgwrqyfpv.online
+  - lziawdwi.in
+  - lzspjfgzdqsoh.site
+  - lzuhuevdmlsjx.space
+  - m.89cz84fg8ibw1r8x5l4qm8q.cfd
+  - m2m3j338ky3kf7zl8y9v1p5xx.rest
+  - mangeyerr.rest
+  - manygramaoscines.cyou
+  - maturequart.com
+  - matzotipid.click
+  - mbyfhkzasrxbn.space
+  - mccjspwqbiiun.online
+  - meowkofbxivyi.space
+  - metabitbluffs.cyou
+  - mexbggrplusni.space
+  - mhstirljanfyy.website
+  - missiqcalqmu.in
   - miwifi.com
+  - mjkynfbvbikpl.site
+  - mjpauup21.com
+  - mkfshtuxymriq.space
+  - mkt.supercell.com
+  - mmzmhggnqdzbs.site
+  - mndftqopovamj.online
+  - mnqpiodhufoso.online
+  - moblgybqwdgul.space
+  - molttencoryzalanopia.cfd
+  - mooletsawfishyaup.cfd
+  - moppedtethery.com
+  - mqlmvbngmdmgr.site
+  - mqqxxswqtiohq.website
+  - mrfuesidvvckv.site
+  - mslbjzmzckcnk.site
   - mujnfamihqce.in
+  - mumggwcvchccq.space
   - muntinbeltmanunca.cyou
+  - mwrywqefemapj.website
+  - mwuekzwqdrnan.online
+  - mxhkadwedflsr.online
   - my.router
+  - myibyjkjwxsee.online
+  - n9kjrulfg9w.uy2h2i6m84cv495t4erlr.cfd
+  - nachashentingtidy.cfd
   - nakooverawn.cyou
+  - nandinedks.cyou
+  - narrowlychnic.cyou
+  - nastieruprivetrolls.cfd
+  - naturalotter.me
+  - nccxaolbtcpwg.space
   - ndmeubgotanac.space
+  - ne.8kjqhjz82xu6fb4b4516829.cfd
+  - nehhvajhrfibq.website
+  - newsyrheorailmen.cfd
+  - nfvhaykwspcus.website
+  - nguswfavipgqm.website
   - ngygsbpntbnkp.site
   - nichtsforay.cfd
+  - njzrirvxprspg.site
+  - nkghwccxeymyp.site
+  - nkrmvifnnztez.online
+  - nnnrnxdlmjpph.online
+  - nodctzeikfjzt.online
+  - nonlifelunts.cyou
+  - nopewrhyjbp.com
+  - nowmodulo.com
+  - nryrdmggbqsql.site
+  - nsewbdlfjeshr.space
+  - nslfxaqclyjdu.site
+  - ntwjm27481xfj9ivutww.cfd
+  - ntwufvfhovece.website
+  - nubfhfikrpdnw.online
+  - nwbahytjigjky.site
   - nxbpcvwdqczff.site
+  - nzuzubewkirgz.site
+  - nzxwekknfnfea.online
+  - oacsztduksuby.space
+  - oavgofyxwyryj.online
+  - obstinacysexist.com
+  - obzdiqozp.in
+  - odhxzvbnoliix.website
+  - oeazuwlqpysgq.space
+  - ofterdurwanencoder.cfd
+  - oftmnsrnhkmtu.site
+  - oftwxfnfhfjdy.site
+  - ogbunsxlxgowg.online
+  - ogvaktqu.in
+  - ohocleuchtealery.cfd
+  - oitlkzxcwdajm.website
   - ojsjretiks.in
+  - omnjlvarsxbxvz.com
+  - omnxfvxiwnsgv.site
+  - omqhizvmyzh.com
+  - omqjlqtbnomll.online
+  - omspokbliewrg.online
+  - onyvelamen.click
   - opsyburned.com
+  - oqdwsxdgbraas.website
+  - oqqzbccqxtfvf.online
+  - oryssuskimfourre.cyou
+  - oszfblxxhwozi.online
   - ouchdasyus.cyou
+  - outwakebinate.click
+  - overlypenful.rest
+  - overprotectivecriticizearable.com
+  - owalqwcmzucjs.space
   - owdkspzudzwnz.website
+  - oxberrygesnera.rest
+  - oxrnxzsihkeug.site
+  - ozarkuprears.click
+  - ozonizeardish.cfd
   - ozzzqizjpcwqd.site
   - p.to
+  - p9rxtik2.2qiqu4i14i24m4.cfd
+  - pacayanevoidwrester.cfd
+  - pacdhywzuo.in
+  - packingmolters.cfd
   - palterupcatchsmarty.cfd
+  - pangsoundpayback.com
+  - parvetrismus.cfd
+  - pdynrtubqauer.site
+  - pedxbqnadnebr.space
   - peiluyou.com
+  - peplessgroutsetym.cyou
+  - peqpazmweassq.website
   - perpentiatric.cfd
+  - pgebiaujvjkid.online
+  - pgvdhmjeqgkxy.site
   - phicomm.me
+  - pitpitharbi.cfd
+  - pixel.profound.click
+  - pjlgqycnxajzg.space
+  - pkp21ni51cqurgjgn3t9q.rest
   - plex.direct
+  - plxserve.com
+  - pmdpqgjqkfbor.online
+  - pmnfljkofbztx.website
+  - pochayuncs.com
+  - poleyntenia.rest
+  - pottylife.com
+  - pozvieqpeujtu.site
+  - ppskisjywrykz.online
+  - pqyqqqchhcqrv.site
   - presselhavedartoic.cfd
+  - projectglove.com
+  - ps2nsp6nz.com
+  - pscpurfwzktny.website
+  - pseudoinionnewcal.cfd
   - puamwfdfltwzp.space
+  - puckrietalioz.website
   - puncherr.com
+  - pursuitwomen.com
   - pvhlnalfjazfk.space
+  - pxpmnthwmqzcf.site
+  - qaxerpzgohvqv.online
+  - qbxdoahjiykjz.site
+  - qde87pge0.com
+  - qdubzbifbzclc.space
+  - qevdyjaxjruwm.online
   - qgauajujymtaw.site
   - qgelsuqzssxpl.space
+  - qhnxvxazilvdl.website
+  - qhuxuhlas.in
+  - qhypfpwzbaayj.website
+  - qneftuovurwsx.website
+  - qrymucpbbcdzf.space
+  - qsamoyqhggqsb.website
+  - qvfmpqrd.com
+  - qwyefmelmyubo.website
+  - randirtiddy.com
+  - raspiteteachyargyria.cfd
+  - ravenfarm.tech
   - rebootsuedebinomy.cfd
+  - recipediner.com
+  - redrawnpennamegruffer.cyou
   - reoiledgratin.cfd
+  - reopenshelly.cfd
+  - rgifxzvpuyjih.space
   - rhilxpozhkzrz.site
+  - rhoxtnbtarvry.site
+  - rhzdxgtpsgkhg.site
+  - rihxolbphoojn.space
+  - riymolmuythwx.online
+  - rjugiebxhvtwe.space
+  - roaxhlpvsivqn.online
+  - rocyapfkcoide.website
+  - rosolilongies.click
+  - rostraltonguy.rest
   - router.ctc
   - routerlogin.com
   - routerlogin.net
+  - roxyfervid.com
+  - rrxvkgvjhhioo.site
+  - rtb-useast.rnkclkres.com
   - rubwgmsgzacvf.site
+  - rudbpghbbucqg.online
+  - rufflefireballcherries.com
+  - rum.haystack.es
+  - rundeldefi.cyou
+  - runerskyfte.cyou
+  - rveuy6j1.776447822241qk4yjjkrj4mrh1z.cfd
+  - rvlbwciuyebwq.online
+  - rxazjsqlawiue.online
+  - rxflopfxnskez.online
   - rybatquick.com
   - ryivqamowwxxlk.com
   - ryvmfussmajcp.site
+  - rzxfrofoiamfl.website
+  - sacelasartors.cfd
+  - salmonsjudaize.com
+  - sciggfxnkmqai.website
+  - scoldsetamins.com
+  - scrabemuzo.cfd
+  - scxtnzdoeysvl.space
+  - sdlcbmlpmfbpj.site
+  - searingcavelet.rest
+  - seedpodflattop.qpon
+  - seizureblickie.rest
+  - sekanibake.click
+  - servedby.cherokeemediagroup2.com
+  - sfenuhakgotd.in
+  - sfnneengosvuw.space
+  - shankedunwindy.cyou
   - sharestallboyfouette.cyou
+  - shaversoutjumphobnobs.cyou
+  - sicijuxixeqiu.site
+  - sislpicznmdtj.site
+  - sjqssnmvmxcqw.website
+  - skjllrslooltb.online
+  - skydoveiodizershoved.cfd
+  - sljzidwidlgul.online
   - snazkmgnaprwj.website
+  - snhyvuzgaoxdh.space
+  - snortsrasters.cyou
+  - snowkpaplikeleyland.cfd
+  - softasitai.rest
+  - softbrass.com
+  - softlypacesock.com
+  - soubltxbnwhkt.space
+  - sovzblrwvwlim.space
+  - soyiaukojepqy.online
+  - spaniardinformationbookworm.com
+  - spenserustful.cfd
   - spkeokimt.com
+  - spzsynbvnudov.site
+  - sqjmykhwzoyod.site
+  - sqnoiupwiklmt.online
+  - ssbpnfksjic.com
+  - sshtqeuffizhw.site
+  - ssjdruvqwzppi.website
+  - stats.yootheme.com
+  - stickeltollage.rest
+  - stklvezvixdld.space
+  - stooperesdras.cyou
+  - subpdoojkuaze.space
+  - suburban-deposit.pro
   - swhyspqaijpjp.online
+  - sydfoutra.cfd
   - szxodjgapleiw.space
+  - t.pxb9nb3bghif9j8.cfd
+  - t7bxx94y1teo387r7k9l5puqj3m.rest
+  - tabershooplatrout.cfd
+  - tachsbmzlnkec.website
   - tallishteucer.cyou
+  - tandylists.cfd
+  - tannictipcatholl.cfd
+  - tarboxcoco.cyou
+  - tartarmatelot.rest
+  - tcbuorrdfuzwl.site
+  - temporaincreep.cyou
   - tendawifi.com
+  - terciohunting.cyou
+  - tfcnxspcpgorn.site
+  - tfhwtqlgesdry.site
+  - thifuwospdvev.site
   - thlghcrxpokrt.online
+  - thunkin.cfd
+  - tiyt4brz9c1r1u.cfd
   - tk9n49lolbtu1hlp7wgxz.cfd
+  - tllafmrvtuqco.site
   - tmltinnljmoll.online
+  - tonccw2o4fp729.rest
   - tplinkap.net
   - tplinkmodem.net
   - tplinkplclogin.net
@@ -243,42 +921,170 @@ domain_suffix_set:
   - trambelongedallure.com
   - trasygynura.cfd
   - ts.net
+  - ttp9juy356nnq5.cfd
+  - tungahlucite.com
+  - tupjatohvon.in
+  - tusehzdefdblz.space
+  - tvwofyvaksbuy.online
+  - twhevjwnibgsw.website
   - twlbjzoilwrse.site
+  - twpvnbyjstnwm.online
+  - typisttuckerspurt.com
+  - tzentalrheaejogtrot.cfd
+  - uepgyvbkuxafp.website
   - ui.direct
+  - uiefurzwybmbl.site
+  - uimcxlqcypqbt.online
+  - uixpannlphgvh.space
+  - ulfsgwtcrwgqm.online
+  - ulmusunkink.click
+  - ummgfbvdwgrhl.site
+  - unampleshrups.click
+  - uncitedpursilyinhumer.cyou
   - undrawsastral.cyou
+  - unhitchdusks.click
+  - unjoyedsnugify.cfd
+  - unmatedfrozesibyls.cfd
+  - unselybayous.com
+  - unthrobkeelfat.cfd
   - unwindmangeyobus.cfd
   - updfcisoyimay.space
+  - uqaymrtomzmfm.site
+  - urhikhwdttauq.online
   - urosomerevived.cyou
   - urticaponiard.com
+  - usitfbfndhvpa.site
+  - utjamzlkkmtpo.online
+  - utuphgiqeckzf.space
+  - uudanzrcuonlv.site
+  - uuozqpkdlqbkn.space
+  - uurrx91gvh7tn3ewjo6k.rest
+  - uuyfkmaacszat.space
+  - uwltvzdjmanin.space
+  - vabpfbbtzs.com
+  - vacatedfiants.cyou
+  - vaccarycalvous.cfd
+  - vagneraorison.rest
+  - vaidiceffendi.com
+  - verse-content.com
+  - vezdrabhdgbhj.website
+  - viandedisagio.cyou
+  - viiyutty.com
+  - virasoncotland.click
   - visor.sbrf.ru
+  - vkstgpdsqkues.site
+  - vkyieskdlavjt.space
+  - vueffikzsjewx.online
+  - vylivgbhjqkbl.online
+  - vzdfbajkrwede.site
+  - vzjibpjzejpfc.online
+  - vzpvaxcbwcx.com
   - w0c42chjph.com
   - wabgcqbhsvxgr.website
+  - wagatihobble.click
   - wakeupoecoid.cyou
+  - warslerufology.cyou
+  - warxattaj.in
+  - wavedsuspect.click
+  - wbfwvrhljnsgr.website
+  - wdahqumfpnmav.space
+  - weaveworkingheaviness.com
+  - wedchfyatktez.space
   - weznuihmrrshp.site
+  - wgotdxjymlfme.site
   - whalpbottu.cyou
+  - whuamiefcgeaq.website
   - wifi.cmcc
+  - winectr.cyou
+  - wiserunuredhiving.cyou
+  - wkxwoawiqphxb.website
   - wmlxmfjvnvwmq.space
+  - wmymtjaraeoxv.space
+  - womxwsnxadxtl.space
+  - woodfrost.info
+  - wsmxmyyznvsxc.space
+  - wtqhxggxngfad.site
+  - wumllfgjnzkqw.site
+  - wuos2fhox.com
+  - wvxapdctfaraf.website
+  - wvyzrjkcwqfut.site
+  - wxwrjkcqenmks.online
   - wyggbgqwzctxq.space
+  - xagmkdnfixmvz.website
+  - xanthanraison.rest
+  - xbrfbkjue8pkce9.rest
+  - xbylfjliltytf.space
+  - xdjrubbfsyrzq.site
+  - xfqlkrircukkg.website
+  - xfqyomuglbkcf.site
+  - xfurqyknhozeb.site
+  - xgtakdjivvjjz.online
+  - xgyhtexgsgvqt.site
   - xofnqfle.com
+  - xoihqoelmer384crqof.rest
+  - xoqeclyqarpjp.space
+  - xrnvpmqajqcme.online
+  - xrpxabvijnuoe.website
   - xtdpfhweiflzq.online
+  - xtmnvwyoeurbg.site
   - xtnltaiulkhid.site
+  - xugnlapldjrgy.space
+  - xxelg4lfzbnwv4b.rest
+  - xxtzyeiujzlnz.space
+  - xzesmujr.in
+  - y9cotr68yqemkhg.2ivv5h3p4uqc4pu8yv2.cfd
+  - yangtaotatar.cfd
+  - yapoksoncer.cyou
+  - yaxcheionised.cyou
   - yetherbeware.cfd
+  - yjlkcpxjdzlfb.site
+  - ykacgkgqmvxfn.site
+  - ykbrbfmlpoqkj.website
+  - ymdytifzfyxkv.website
+  - ynwnzoxxtaolq.website
+  - yojuanestorifycairned.cyou
+  - ypyryrauhherr.online
+  - yrdqlnkoipaaa.website
+  - yroclhudiwvcp.website
+  - yrzdrmkyhnfcg.website
+  - yrzrmvgzxteuq.site
+  - ytsa.net
+  - yucufnvxcgkfj.site
   - yukeweezlebended.cfd
+  - yvwvllpfuwsgm.site
+  - yxdvekvhidnfv.online
+  - yzizqzclmqeur.website
   - zcxcbcsjafdck.space
+  - zebracave.com
+  - zeroclampentice.com
+  - zextzccadpr.com
+  - zhtmxmrzgwltk.site
+  - ziramchaetae.cyou
+  - zjedmeoqtthd.com
+  - zlfiiacommoaq.website
+  - zmgttvqoqnsgz.space
   - zpglicukmfijq.site
+  - zqqydxzdxvwqs.online
   - zqtzhsergljag.online
+  - zrbezdaddiahk.space
   - zshuretjbswom.space
   - ztdtzegka.com
   - zte.home
+  - zubnixxayfzxf.website
+  - zunzjzxaaiwfj.space
+  - zvpspohvqnoqx.online
+  - zylmjmmemwkqq.website
+  - zyroybpkznwik.site
   - zzjgigxgomlde.site
 
 ip_cidr_set:
   - 0.0.0.0/8
   - 10.0.0.0/8
   - 100.64.0.0/10
-  - 103.36.28.0/22
-  - 112.73.96.0/19
   - 127.0.0.0/8
+  - 136.143.186.0/23
+  - 136.143.188.0/22
+  - 165.173.179.0/24
   - 169.254.0.0/16
   - 172.16.0.0/12
   - 192.0.0.0/24
@@ -291,10 +1097,10 @@ ip_cidr_set:
   - 198.18.0.0/16
   - 198.51.100.0/24
   - 203.0.113.0/24
-  - 218.98.111.0/24
+  - 204.141.42.0/23
   - 224.0.0.0/3
   - 224.0.0.0/4
-  - 43.240.56.0/21
+  - 43.240.60.0/22
 
 ip_cidr6_set:
   - 100::/64
