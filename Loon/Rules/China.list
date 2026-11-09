@@ -1,7 +1,7 @@
 # 规则名称: China
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list
-# 规则统计: 10336
-# 更新时间：2026-11-07 10:47:33
+# 规则统计: 10339
+# 更新时间：2026-11-09 10:51:09
 
 DOMAIN,api.alibabacloud.com
 DOMAIN,api.blipsandchitz.me
@@ -8282,6 +8282,8 @@ IP-CIDR,132.232.0.0/16,no-resolve
 IP-CIDR,132.237.134.0/24,no-resolve
 IP-CIDR,133.226.32.0/20,no-resolve
 IP-CIDR,134.175.0.0/16,no-resolve
+IP-CIDR,136.143.186.0/23,no-resolve
+IP-CIDR,136.143.188.0/22,no-resolve
 IP-CIDR,138.252.72.0/23,no-resolve
 IP-CIDR,139.129.0.0/16,no-resolve
 IP-CIDR,139.148.0.0/16,no-resolve
@@ -8496,6 +8498,7 @@ IP-CIDR,163.61.178.0/23,no-resolve
 IP-CIDR,163.61.202.0/23,no-resolve
 IP-CIDR,163.61.214.0/23,no-resolve
 IP-CIDR,165.101.70.0/24,no-resolve
+IP-CIDR,165.173.179.0/24,no-resolve
 IP-CIDR,166.111.0.0/16,no-resolve
 IP-CIDR,167.139.0.0/16,no-resolve
 IP-CIDR,167.220.244.0/22,no-resolve
@@ -9071,6 +9074,7 @@ IP-CIDR,203.99.21.0/24,no-resolve
 IP-CIDR,203.99.22.0/23,no-resolve
 IP-CIDR,203.99.26.0/23,no-resolve
 IP-CIDR,203.99.30.0/23,no-resolve
+IP-CIDR,204.141.42.0/23,no-resolve
 IP-CIDR,204.77.130.0/24,no-resolve
 IP-CIDR,205.198.19.0/24,no-resolve
 IP-CIDR,207.57.167.0/24,no-resolve
@@ -9430,7 +9434,6 @@ IP-CIDR,218.97.240.0/20,no-resolve
 IP-CIDR,218.98.0.0/18,no-resolve
 IP-CIDR,218.98.104.0/22,no-resolve
 IP-CIDR,218.98.108.0/23,no-resolve
-IP-CIDR,218.98.111.0/24,no-resolve
 IP-CIDR,218.98.160.0/24,no-resolve
 IP-CIDR,218.98.176.0/24,no-resolve
 IP-CIDR,218.98.192.0/24,no-resolve

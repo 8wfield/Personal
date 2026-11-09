@@ -1,44 +1,7 @@
 # 规则名称: Spotify
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Spotify_rules_bfbda1b4bcafcbf9.list
-# 规则统计: 39
-# 更新时间：2026-11-06 17:41:52
+# 规则统计: 2
+# 更新时间：2026-11-09 11:42:52
 
-DOMAIN,adeventtracker.spotify.com
-DOMAIN,adstudio-assets.scdn.co
-DOMAIN,audio-ak-spotify-com.akamaized.net
-DOMAIN,audio4-ak-spotify-com.akamaized.net
-DOMAIN,bloodhound.spotify.com
-DOMAIN,cdn-spotify-experiments.conductrics.com
-DOMAIN,heads-ak-spotify-com.akamaized.net
-DOMAIN,heads4-ak-spotify-com.akamaized.net
-DOMAIN,spotify.map.fastly.net
-DOMAIN,spotify.map.fastlylb.net
-DOMAIN-KEYWORD,-spotify-
-DOMAIN-KEYWORD,-spotify-com
-DOMAIN-KEYWORD,spotify
-DOMAIN-KEYWORD,spotify.com
-DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,byspotify.com
-DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,lifeatspotify.com
-DOMAIN-SUFFIX,pscdn.co
-DOMAIN-SUFFIX,scdn.co
-DOMAIN-SUFFIX,spoti.fi
-DOMAIN-SUFFIX,spotify-com.akamaized.net
-DOMAIN-SUFFIX,spotify-everywhere.com
-DOMAIN-SUFFIX,spotify.app.link
-DOMAIN-SUFFIX,spotify.com
-DOMAIN-SUFFIX,spotify.com.edgesuite.net
-DOMAIN-SUFFIX,spotify.design
-DOMAIN-SUFFIX,spotify.link
-DOMAIN-SUFFIX,spotifycdn.com
-DOMAIN-SUFFIX,spotifycdn.net
-DOMAIN-SUFFIX,spotifycharts.com
-DOMAIN-SUFFIX,spotifycodes.com
-DOMAIN-SUFFIX,spotifyforbrands.com
-DOMAIN-SUFFIX,spotifyforvendors.com
-DOMAIN-SUFFIX,spotifyjobs.com
-DOMAIN-SUFFIX,spotilocal.com
-DOMAIN-SUFFIX,tospotify.com
-IP-CIDR,35.186.224.47/32,no-resolve
-USER-AGENT,Spotify*
+<META NAME="ROBOTS" CONTENT="INDEX,follow" />
+<META NAME="VIEWPORT" CONTENT="WIDTH=DEVICE-WIDTH,initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
