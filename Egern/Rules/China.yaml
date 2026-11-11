@@ -1,15 +1,13 @@
 # 规则名称: China
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list
-# 规则统计: 10337
-# 更新时间：2026-11-10 09:58:29
+# 规则统计: 10280
+# 更新时间：2026-11-11 09:49:17
 
 no_resolve: true
 
 domain_set:
-  - api.alibabacloud.com
   - api.blipsandchitz.me
   - client.amplifi.com
-  - cn.alibabacloud.com
   - cn.download.nvidia.com
   - config.ubnt.com
   - ctdsb.clouddiffuse.xyz
@@ -24,8 +22,6 @@ domain_set:
   - media.cdn.queniuqe.com
   - ocsp.globalsign.com
   - ocsp2.globalsign.com
-  - status.alibabacloud.com
-  - steamcommunity-a.akamaihd.net
   - time.izatcloud.net
   - time.xtracloud.net
   - www.layuicdn.com
@@ -766,7 +762,6 @@ domain_suffix_set:
   - baozoumanhua.com
   - baseopendev.com
   - batchat.com
-  - battle.net
   - battlecare.net
   - baydn.com
   - bayescom.com
@@ -1506,7 +1501,6 @@ domain_suffix_set:
   - cmpassport.com
   - cmpay.com
   - cmread.com
-  - cn
   - cn.pool.ntp.org
   - cnanzhi.com
   - cnb.cool
@@ -1791,7 +1785,6 @@ domain_suffix_set:
   - didialift.com
   - didichuxing.com
   - didistatic.com
-  - digicert.com
   - digitalcnzz.com
   - digitaling.com
   - dili360.com
@@ -2296,8 +2289,6 @@ domain_suffix_set:
   - funnycore.com
   - funshion.com
   - funshion.net
-  - futu5.com
-  - futunn.com
   - fuwai.com
   - fuwj.com
   - fxbaogao.com
@@ -2337,7 +2328,6 @@ domain_suffix_set:
   - gameabc.com
   - gamebonfire.com
   - gameitop.com
-  - gameloft.com
   - gameloop.com
   - gamemei.com
   - gamepp.com
@@ -2640,7 +2630,6 @@ domain_suffix_set:
   - hismarttv.com
   - hitevision-solutions.com
   - hitv.com
-  - hiwifi.com
   - hiyd.com
   - hjapi.com
   - hkgcloudcs.com
@@ -3609,7 +3598,6 @@ domain_suffix_set:
   - liblib.cloud
   - liblib.tv
   - libvideo.com
-  - licdn.com
   - liepin.com
   - lietou-static.com
   - lietou.com
@@ -3641,8 +3629,6 @@ domain_suffix_set:
   - liunn.com
   - liuxiaoer.com
   - liuxing.com
-  - live.com
-  - live.net
   - live800.com
   - livecdnstatic.com
   - livechina.com
@@ -3950,16 +3936,13 @@ domain_suffix_set:
   - mrtdephoto.net
   - mrw.so
   - mryys.com
-  - ms
   - msanjia.com
   - msauth.net
   - mscbsc.com
   - msecnd.net
-  - msedge.net
   - mshare.cc
   - mslmc.net
   - msmartlife.com
-  - msn.com
   - msocdn.com
   - msstatic.com
   - mszdld.com
@@ -4079,6 +4062,7 @@ domain_suffix_set:
   - nfpeople.com
   - ngabbs.com
   - ngacn.cc
+  - nia-teams.com
   - nic.xin
   - nicaifu.com
   - nicezhuanye.com
@@ -4145,7 +4129,6 @@ domain_suffix_set:
   - oneapm.com
   - onedns.net
   - onegreen.net
-  - onenote.com
   - onenote.net
   - oneplus.com
   - oneplus.net
@@ -4890,7 +4873,6 @@ domain_suffix_set:
   - sxtvs.com
   - sxyygh.com
   - sydw8.com
-  - symcd.com
   - sys321.com
   - syxlgame.com
   - sz-jlc.com
@@ -5226,7 +5208,6 @@ domain_suffix_set:
   - tracup.com
   - trademessenger.com
   - trae.guru
-  - trello.com
   - trellocdn.com
   - tripcdn.com
   - tritoninfo.net
@@ -5953,7 +5934,6 @@ domain_suffix_set:
   - xsa239.com
   - xsgtvacct.com
   - xslb.net
-  - xteko.com
   - xuanchuanyi.com
   - xue51.com
   - xueche.com
@@ -6359,7 +6339,6 @@ domain_suffix_set:
   - znnu.com
   - znztv.com
   - zofund.com
-  - zoho.com
   - zol.com
   - zongheng.com
   - zpb365.com
@@ -6594,7 +6573,6 @@ ip_cidr_set:
   - 103.113.4.0/22
   - 103.114.100.0/22
   - 103.114.212.0/23
-  - 103.114.236.0/22
   - 103.115.120.0/24
   - 103.115.248.0/22
   - 103.116.120.0/23
@@ -6609,7 +6587,6 @@ ip_cidr_set:
   - 103.118.60.0/22
   - 103.12.184.0/22
   - 103.12.232.0/22
-  - 103.12.98.0/23
   - 103.120.72.0/22
   - 103.120.88.0/22
   - 103.121.164.0/23
@@ -6655,7 +6632,6 @@ ip_cidr_set:
   - 103.150.37.0/24
   - 103.151.148.0/23
   - 103.152.151.0/24
-  - 103.152.186.0/23
   - 103.152.209.0/24
   - 103.152.224.0/24
   - 103.152.28.0/23
@@ -6871,7 +6847,6 @@ ip_cidr_set:
   - 103.238.96.0/23
   - 103.238.98.0/24
   - 103.239.152.0/22
-  - 103.239.184.0/22
   - 103.239.192.0/22
   - 103.239.244.0/22
   - 103.239.68.0/22
@@ -7099,7 +7074,6 @@ ip_cidr_set:
   - 103.78.126.0/23
   - 103.78.228.0/22
   - 103.79.200.0/22
-  - 103.79.228.0/23
   - 103.79.24.0/22
   - 103.8.220.0/22
   - 103.8.33.0/24
@@ -7361,13 +7335,9 @@ ip_cidr_set:
   - 113.31.96.0/19
   - 113.44.0.0/16
   - 113.45.0.0/18
-  - 113.45.102.0/23
-  - 113.45.104.0/21
-  - 113.45.112.0/22
   - 113.45.120.0/22
   - 113.45.128.0/17
   - 113.45.64.0/19
-  - 113.45.96.0/22
   - 113.46.0.0/16
   - 113.47.0.0/18
   - 113.47.104.0/22
@@ -7432,7 +7402,6 @@ ip_cidr_set:
   - 114.113.221.0/24
   - 114.113.223.0/24
   - 114.113.224.0/20
-  - 114.113.66.0/24
   - 114.113.88.0/21
   - 114.114.112.0/21
   - 114.115.0.0/16
@@ -7921,7 +7890,6 @@ ip_cidr_set:
   - 119.80.200.0/22
   - 119.80.240.0/22
   - 119.80.248.0/21
-  - 119.80.56.0/24
   - 119.80.8.0/22
   - 119.84.0.0/14
   - 119.88.128.0/17
@@ -8260,7 +8228,6 @@ ip_cidr_set:
   - 125.208.46.0/23
   - 125.210.0.0/15
   - 125.213.32.0/20
-  - 125.214.96.0/19
   - 125.215.36.0/23
   - 125.215.40.0/24
   - 125.215.44.0/23
@@ -8288,8 +8255,6 @@ ip_cidr_set:
   - 132.237.134.0/24
   - 133.226.32.0/20
   - 134.175.0.0/16
-  - 136.143.186.0/23
-  - 136.143.188.0/22
   - 138.252.72.0/23
   - 139.129.0.0/16
   - 139.148.0.0/16
@@ -8336,10 +8301,8 @@ ip_cidr_set:
   - 14.134.0.0/15
   - 14.144.0.0/12
   - 14.16.0.0/12
-  - 14.167.176.0/20
   - 14.204.0.0/15
   - 14.208.0.0/12
-  - 14.241.232.0/21
   - 14.255.16.0/24
   - 14.255.238.0/24
   - 14.255.254.0/24
@@ -8438,7 +8401,6 @@ ip_cidr_set:
   - 156.107.179.0/24
   - 156.107.181.0/24
   - 156.227.239.0/24
-  - 156.232.10.0/23
   - 156.232.9.0/24
   - 157.0.0.0/16
   - 157.10.112.0/23
@@ -8486,7 +8448,6 @@ ip_cidr_set:
   - 162.105.0.0/16
   - 163.0.0.0/16
   - 163.125.0.0/16
-  - 163.128.254.0/23
   - 163.142.0.0/16
   - 163.177.0.0/16
   - 163.179.0.0/16
@@ -8504,15 +8465,12 @@ ip_cidr_set:
   - 163.61.202.0/23
   - 163.61.214.0/23
   - 165.101.70.0/24
-  - 165.173.179.0/24
   - 166.111.0.0/16
   - 167.139.0.0/16
   - 167.220.244.0/22
   - 168.160.0.0/17
-  - 168.160.152.0/24
   - 168.160.158.0/23
   - 168.160.160.0/21
-  - 168.160.168.0/24
   - 171.104.0.0/13
   - 171.112.0.0/12
   - 171.208.0.0/12
@@ -8530,7 +8488,6 @@ ip_cidr_set:
   - 175.102.178.0/23
   - 175.102.180.0/22
   - 175.102.184.0/24
-  - 175.102.196.0/24
   - 175.146.0.0/15
   - 175.148.0.0/14
   - 175.152.0.0/14
@@ -8669,7 +8626,6 @@ ip_cidr_set:
   - 192.144.128.0/17
   - 192.163.11.0/24
   - 192.232.97.0/24
-  - 192.51.173.0/24
   - 193.112.0.0/16
   - 193.9.44.0/24
   - 193.9.46.0/24
@@ -9080,7 +9036,6 @@ ip_cidr_set:
   - 203.99.22.0/23
   - 203.99.26.0/23
   - 203.99.30.0/23
-  - 204.141.42.0/23
   - 204.77.130.0/24
   - 205.198.19.0/24
   - 207.57.167.0/24
@@ -9362,9 +9317,7 @@ ip_cidr_set:
   - 211.97.176.0/20
   - 211.97.192.0/18
   - 211.98.0.0/16
-  - 211.99.12.0/24
   - 211.99.128.0/18
-  - 211.99.14.0/23
   - 211.99.16.0/23
   - 211.99.192.0/19
   - 211.99.25.0/24
@@ -9372,7 +9325,6 @@ ip_cidr_set:
   - 211.99.28.0/22
   - 211.99.32.0/19
   - 211.99.64.0/18
-  - 211.99.8.0/22
   - 212.103.62.0/24
   - 212.129.128.0/17
   - 212.64.0.0/17
@@ -9411,7 +9363,6 @@ ip_cidr_set:
   - 218.244.58.0/24
   - 218.245.0.0/17
   - 218.246.160.0/19
-  - 218.246.192.0/19
   - 218.246.21.0/24
   - 218.246.22.0/24
   - 218.246.32.0/22
@@ -9797,7 +9748,6 @@ ip_cidr_set:
   - 42.240.16.0/23
   - 42.240.20.0/22
   - 42.240.24.0/24
-  - 42.240.48.0/24
   - 42.240.8.0/22
   - 42.242.0.0/15
   - 42.244.0.0/16
@@ -9830,8 +9780,6 @@ ip_cidr_set:
   - 43.192.0.0/16
   - 43.193.0.0/18
   - 43.193.64.0/23
-  - 43.194.0.0/20
-  - 43.194.16.0/24
   - 43.196.0.0/16
   - 43.224.12.0/22
   - 43.224.24.0/22
@@ -9894,7 +9842,6 @@ ip_cidr_set:
   - 43.240.202.0/24
   - 43.240.204.0/22
   - 43.240.220.0/22
-  - 43.240.60.0/22
   - 43.240.72.0/22
   - 43.241.16.0/22
   - 43.241.180.0/22
@@ -10034,7 +9981,6 @@ ip_cidr_set:
   - 45.248.110.0/24
   - 45.248.8.0/22
   - 45.249.212.0/22
-  - 45.250.152.0/23
   - 45.250.180.0/23
   - 45.250.184.0/22
   - 45.250.188.0/24
@@ -10107,7 +10053,6 @@ ip_cidr_set:
   - 52.82.132.0/24
   - 52.82.134.0/23
   - 52.82.136.0/24
-  - 52.82.144.0/23
   - 52.82.148.0/22
   - 52.82.160.0/21
   - 52.82.170.0/23
@@ -10260,7 +10205,6 @@ ip_cidr_set:
   - 62.234.0.0/16
   - 63.140.0.0/24
   - 64.188.38.0/23
-  - 64.188.40.0/22
   - 64.188.44.0/24
   - 64.96.5.0/24
   - 68.79.0.0/18
@@ -10320,9 +10264,6 @@ ip_cidr6_set:
   - 2a0b:b581::/48
   - 2a0b:b582::/48
   - 2a0b:b583::/48
-
-geoip_set:
-  - CN
 
 user_agent_set:
   - '%E4%B8%AD%E5%9B%BD%E5%B7%A5%E5%95%86%E9%93%B6%E8%A1%8C*'

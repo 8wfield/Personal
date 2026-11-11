@@ -1,7 +1,7 @@
 # 规则名称: ChinaIPs
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/ChinaIPs_rules_34a9221fa066bb18.list
-# 规则统计: 23164
-# 更新时间：2026-11-10 10:00:57
+# 规则统计: 23161
+# 更新时间：2026-11-11 09:51:26
 
 IP-ASN,10111,no-resolve
 IP-ASN,10206,no-resolve
@@ -11287,8 +11287,6 @@ IP-CIDR,134.75.107.10/31,no-resolve
 IP-CIDR,134.75.107.14/31,no-resolve
 IP-CIDR,136.0.131.0/24,no-resolve
 IP-CIDR,136.0.133.0/24,no-resolve
-IP-CIDR,136.143.186.0/23,no-resolve
-IP-CIDR,136.143.188.0/22,no-resolve
 IP-CIDR,136.175.177.145/32,no-resolve
 IP-CIDR,137.59.59.0/24,no-resolve
 IP-CIDR,137.59.88.0/22,no-resolve
@@ -12037,7 +12035,7 @@ IP-CIDR,165.101.244.0/23,no-resolve
 IP-CIDR,165.101.4.0/23,no-resolve
 IP-CIDR,165.101.66.0/23,no-resolve
 IP-CIDR,165.101.70.0/24,no-resolve
-IP-CIDR,165.173.179.0/24,no-resolve
+IP-CIDR,165.173.176.0/24,no-resolve
 IP-CIDR,165.99.4.0/24,no-resolve
 IP-CIDR,166.111.0.0/16,no-resolve
 IP-CIDR,166.118.227.88/32,no-resolve
@@ -14650,7 +14648,6 @@ IP-CIDR,203.99.30.0/23,no-resolve
 IP-CIDR,203.99.8.0/21,no-resolve
 IP-CIDR,203.99.8.0/23,no-resolve
 IP-CIDR,203.99.80.0/20,no-resolve
-IP-CIDR,204.141.42.0/23,no-resolve
 IP-CIDR,204.217.160.0/23,no-resolve
 IP-CIDR,204.217.163.0/24,no-resolve
 IP-CIDR,204.44.111.103/32,no-resolve
