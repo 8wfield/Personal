@@ -1,7 +1,7 @@
 # 规则名称: NetEaseMusic
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/NetEaseMusic_rules_4f571247a2bee4d7.list
-# 规则统计: 3545
-# 更新时间：2026-11-11 22:35:34
+# 规则统计: 3731
+# 更新时间：2026-11-12 12:38:16
 
 no_resolve: true
 
@@ -12,6 +12,7 @@ domain_set:
   - cdn.ltba.io
   - collection.cyberprocurement.com
   - dn-analytics.alketech.eu
+  - e.muckrack.com
   - http-intake.logs.us5.datadoghq.com
   - ihgtelecom.brsserver.com.br
   - naxos.lastampausa.com
@@ -33,8 +34,10 @@ domain_set:
   - speedtest-din.rapidnet.co.in
   - speedtest-par.flowhardware.ch
   - speedtest-phoenix.resoundnetworks.com
+  - speedtest.alpenhost.at
   - speedtest.bgsi.io
   - speedtest.dreamnetgigafiber.com
+  - speedtest.internetarribes.es
   - speedtest.vel.as205941.net
   - speedtest.way2netbroadband.com
   - speedtest1-phnyazjv.as20055.net
@@ -83,6 +86,7 @@ domain_suffix_set:
   - 4a75c45821.com
   - 4ad9bqnjb.com
   - 4bjubv7lxvpch3.cfd
+  - 4gvlnlfx4qr67ulrn.rest
   - 4hfm8gfow.com
   - 4j9cjy80f.com
   - 4k1x3mkrus.com
@@ -101,6 +105,8 @@ domain_suffix_set:
   - 6joxw2fjmuvowzx7mffw92u1.cfd
   - 70eb07b991.com
   - 7ciiewbz2neo1g9q5y5.rest
+  - 7oavaac8i.com
+  - 7p329mu17cci85n3m.rest
   - 7ymrfgg6h54652e35f.rest
   - 858dfdc554.com
   - 8c2sxamc6w.com
@@ -133,6 +139,8 @@ domain_suffix_set:
   - aaethdkdjzfod.online
   - aagprboumamaz.space
   - aamunqjutjfiq.website
+  - abelianmxd.cfd
+  - abidetoucans.cyou
   - ablowbulchin.com
   - abortphecda.com
   - abpnow.xyz
@@ -161,16 +169,19 @@ domain_suffix_set:
   - airersalkyls.cfd
   - airtbpwzylosx.online
   - aiscsaxgwwdtj.online
+  - aivwuxzgcygjq.site
   - aizgxeukmyojd.website
   - ajtcqmlorjesx.site
   - akkashocwvu.in
   - akqcrzyoqktvz.online
   - alagaubarosmatearcat.cyou
   - alfionaupleap.com
+  - alglhogzeqhel.site
   - alimentashtray.click
   - aliveharbor.info
   - aliveharbor.me
   - alludesexptl.cyou
+  - allureddefenceculets.cfd
   - alppbalwrsyyw.online
   - alvmcwmdyspqc.site
   - alypinehubbly.cyou
@@ -395,6 +406,7 @@ domain_suffix_set:
   - angatholed.click
   - anptvosfntjlq.space
   - anrlfkpaweafl.online
+  - ansxwfkltrmyj.site
   - antrumciphers.click
   - anxegytdedafg.site
   - ap.delfi.ee
@@ -421,6 +433,7 @@ domain_suffix_set:
   - aqpkokeeyyncfl.com
   - aquaticsulpho.com
   - archeryhardies.qpon
+  - areekcookee.rest
   - arhhrgiwaecso.online
   - artjnley.com
   - arwpochlfvqoe.online
@@ -435,6 +448,7 @@ domain_suffix_set:
   - atrvcdsjuqcwi.online
   - atuudhyvlwexf.site
   - atwhiqmah.in
+  - auahobcnuyvwd.website
   - aura.fairyaura.com
   - auroazlgqmaop.online
   - autorepairworcester.com
@@ -503,6 +517,7 @@ domain_suffix_set:
   - bimaskeymen.rest
   - binioudaikers.cyou
   - binioumusales.rest
+  - binwfyodpaq.in
   - bionalmsful.cfd
   - bionomysolera.com
   - birotacours.click
@@ -533,7 +548,9 @@ domain_suffix_set:
   - bot.cdn.adeo.cloud
   - botchssu.cyou
   - boxfulironist.click
+  - boyyeykcleeza.website
   - bqbgshfmnhuza.space
+  - bquoheminqrp.com
   - bquskelcsmrvk.site
   - bqwtvcpkrrnlq.site
   - bqyrrwhnugwrp.website
@@ -551,17 +568,22 @@ domain_suffix_set:
   - browsepantartful.com
   - brphcvsebhffc.site
   - brpjhyovttcxc.site
+  - brujabaretmisterm.cyou
   - bspyoibtwrrc.com
   - btmail.di7.org
   - bubblygrain.biz
   - bucabjnocfjgu.website
+  - bucklesunmold.com
   - bukvwavcmonjv.space
+  - bvypp3rttivc1fq914v.cfd
   - bvzzcqfalsend.space
+  - bwanpzeajyoga.online
   - bwujpusmudu.in
   - bxkhuffkbmxln.space
   - byarjsfxfrove.space
   - byebyebaby.it.com
   - bylawskilnman.click
+  - bywsijvjatyfp.space
   - bzaykoxkpefyf.site
   - bzrgbresuhvrw.space
   - bzukumwjttldq.site
@@ -574,6 +596,7 @@ domain_suffix_set:
   - camailwhickerruddles.cyou
   - camaligraia.cyou
   - canliopenest.rest
+  - canrwhwfhzobw.space
   - caomddembovjm.site
   - capricsucci.cyou
   - carapussq.cyou
@@ -589,11 +612,13 @@ domain_suffix_set:
   - ccmoqobmauoqa.site
   - ccucnuuahikzz.online
   - ccvmhtybbbhir.website
+  - ccxcgbntafhsv.website
   - cdiscount.top
   - cdkiiioannygv.site
   - cdn.caffeine.ai
   - cdn.ltba.io
   - cdxwzqkuuacxl.site
+  - cegibxgxdkfuc.site
   - cembalicourts.click
   - cemhlobja.com
   - centassels.com
@@ -601,6 +626,7 @@ domain_suffix_set:
   - cerxwkmeywkdy.online
   - ceymmbgyqnnes.space
   - cfmbroselispers.cyou
+  - cfphzvdymxipz.online
   - cgcexsprstohm.online
   - cgcshlpzacjjg.site
   - chalinamajagga.click
@@ -619,9 +645,12 @@ domain_suffix_set:
   - chulpagliffy.cyou
   - chulpathrangreprise.cyou
   - cilwbiudkzyuy.website
+  - cingleanlagelollup.cyou
   - ciqhpbyoybhclr.rest
   - cirjoiqvewufy.online
+  - ciupqkbtklvb.com
   - cjvwedvpdnjsi.online
+  - ckbwbclddktqr.space
   - ckglrdomnwddc.online
   - ckucufscmjrkq.site
   - ckumwsftdvlqh.website
@@ -633,9 +662,12 @@ domain_suffix_set:
   - clicknerd.com
   - client-analytics.grigora.co
   - cliffedopinerbiles.cfd
+  - cloabobra.cyou
   - clothapprovegerman.com
   - cloyerpapaw.click
   - cmcojoetqgtnq.space
+  - cmdrqpsntamwk.space
+  - cmosdznhcybkr.site
   - cnjlmpowthfmc.website
   - cnkkfxajyvium.site
   - cnozgrimopoof.online
@@ -654,11 +686,13 @@ domain_suffix_set:
   - commandslikeable.com
   - conceitclevernessethic.com
   - condancing.com
+  - conjoinmollusk.click
   - consentrecruit.com
   - contenuardillaantigun.cyou
   - contuselegator.com
   - coolankle.com
   - coolaspen.me
+  - coolaspen.tech
   - coothcapling.cyou
   - copm.mayflower.de
   - cortahewt.com
@@ -691,7 +725,9 @@ domain_suffix_set:
   - ctvsxekypkaue.online
   - ctzzirfslkvcv.website
   - cubdomdwamish.qpon
+  - cubicalstoner.cyou
   - cucutoto.gastrack.live
+  - cuddyzuleika.cfd
   - cudgelgateau.click
   - cufmmuhibj.in
   - culprithellman.cyou
@@ -707,9 +743,11 @@ domain_suffix_set:
   - cxmuoewwxzczi.site
   - cyclopslicorn.com
   - cydskqupzdook.online
+  - czajzhhntppol.website
   - czapwobjmqucl.online
   - czeqjvr.com
   - czseliubfandv.site
+  - czuoszwava.in
   - d.kelviq.com
   - d.posy.co
   - d.studiogtm.ai
@@ -721,6 +759,7 @@ domain_suffix_set:
   - daccuegfendgo.site
   - damoselluggersketogen.cfd
   - dandieamobyr.cfd
+  - dardicvv.cfd
   - dash.cfworks.vip
   - data.bettkonzept.de
   - data.hamburgerkultursommer.de
@@ -728,6 +767,7 @@ domain_suffix_set:
   - data284.click
   - data741.click
   - datafast.yash.ceo
+  - datqtwusfdrdj.website
   - dawnsunset.me
   - dawnsunset.org
   - dbnivsmljtdbk.space
@@ -736,8 +776,10 @@ domain_suffix_set:
   - ddohiwvrhnife.site
   - ddyejopzyjxxzf.com
   - deashedungilt.cfd
+  - debugszinced.rest
   - deducedcallid.cfd
   - deerbreeze.com
+  - degustochroma.click
   - deixislathen.click
   - dekeifblwjuou.online
   - denyochred.cyou
@@ -745,10 +787,13 @@ domain_suffix_set:
   - depurgearomas.com
   - devilyconches.cfd
   - devzpntxzimzy.website
+  - dfcqsybwzgnzy.online
   - dfdvhjuletrsh.site
+  - dfjwmytrhzfsy.site
   - dhaagtotq.in
   - dhdkptepdezia.space
   - dhovqdnulcadz.site
+  - dillesksyruped.click
   - diloe.xyz
   - diltsnjkxnxev.website
   - dimitydirks.cyou
@@ -759,9 +804,11 @@ domain_suffix_set:
   - dkpmtrhnbjqzk.space
   - dlmbmjmplwepo.website
   - dltcauxfnkcgg.website
+  - dmaipdzphaasj.website
   - dn-analytics.alketech.eu
   - dnrrwrherpizl.space
   - dodderyatabals.cyou
+  - dolosehoggism.click
   - domesticrejoinedremark.com
   - domugthhpdtft.space
   - domzpbsymwbtf.online
@@ -769,18 +816,23 @@ domain_suffix_set:
   - doolfuscoloc.cfd
   - dooncorvee.cyou
   - doorspondy.cyou
+  - doumeqtimrllx.online
   - dowpvxtbknqml.online
   - dphheyqbwgaau.online
   - dqwdebmtifbey.online
   - dqwqglbiiealk.website
   - drammeshuttleplace.cyou
   - drhfybnsntsop.online
+  - drmgsqxgfhgtf.website
   - drollydoddie.cyou
+  - drtjzmceapgik.space
   - dryzwmskikisl.site
   - dscqxvxlwbxpc.space
   - dsznwssdfnylt.website
   - dt.louis.info
+  - dtqelcsqivmqj.online
   - dtswpgusucgfd.website
+  - dtuqzwvfgiphe.online
   - du9kcdusj.com
   - dubioclawers.cfd
   - dudsyeaning.rest
@@ -824,6 +876,7 @@ domain_suffix_set:
   - earringmavin.cyou
   - easselyerth.cfd
   - eaxemfcmapemq.space
+  - ebzzilrmoithf.space
   - eccytygvbsnjh.space
   - eccztfkgzgean.site
   - echistampoon.cyou
@@ -836,6 +889,7 @@ domain_suffix_set:
   - eewqlmtwdsron.space
   - eeztfgqkdagfl.online
   - efgkjtkupbqqs.site
+  - efvcxevyy9lqbf.cfd
   - egmoytcwvwfnc.website
   - egqbgoqmqiuoc.website
   - eh1vuqrlpyku62uic.rest
@@ -871,6 +925,8 @@ domain_suffix_set:
   - epigeumexpone.click
   - epizoanvick.rest
   - epnllezkjgpif.website
+  - eppeoiwixrnzt.site
+  - epskbyzwbmpra.online
   - eqhqnbjk.com
   - eqq91cgw2trehrp.rest
   - eqrzjerfwhcvx.space
@@ -900,9 +956,11 @@ domain_suffix_set:
   - evomitlettuce.cfd
   - evosuuirkzjhq.online
   - evrpzvsplmwzt.site
+  - evsfmzsdxilxd.site
   - ewaxekpshwrid.space
   - ewnpqbtouobrn.online
   - exdsogxhiatsx.space
+  - expelsgenoise.cyou
   - expertcoueism.cfd
   - extgpraeses.cyou
   - exulsundaes.cfd
@@ -911,6 +969,7 @@ domain_suffix_set:
   - ezkzzvzwfjasj.website
   - ezygwbeelptbx.site
   - f30fpad7.xyz
+  - f46281l9orhz3pgmzjkf.rest
   - f6b31898hlujrbob93rn99h9mu53y.rest
   - fabulousbreeze.com
   - faisanbiotype.cfd
@@ -920,6 +979,7 @@ domain_suffix_set:
   - favousshakha.cfd
   - faxopdow.in
   - fbfvlqsjqclep.website
+  - fbouuanxwspzh.website
   - fclvqcvpcxho.com
   - fcqxqbrhpduuk.space
   - fddmimp37.com
@@ -930,12 +990,14 @@ domain_suffix_set:
   - ffbqwmedfryqu.online
   - fflieipbhlgtl.online
   - ffluhsrpb.com
+  - fgcxmwiaayzmg.space
   - fgvowyavmmcau.site
   - fhgqrvoaikmjf.site
   - fhujkvxcgfv.com
   - fhylxvhtxpnwo.space
   - figglegrillpruned.cfd
   - fimxtefr.in
+  - finebucket.info
   - firstswynns.click
   - fixagebiggety.rest
   - fixpsemfjmejn.online
@@ -952,6 +1014,7 @@ domain_suffix_set:
   - fnrvva9u4z.com
   - fnyiktwkrptlh.space
   - fohztovjigukz.space
+  - foinedmtscmd.com
   - foliesacantha.cyou
   - fomgggkpmzlxo.site
   - foqtqtpkyy.com
@@ -959,8 +1022,11 @@ domain_suffix_set:
   - forexclub.ru
   - formicbine.com
   - forms.gpuslash.com
+  - foucqegmupzjw.site
   - fourlytics.foureyes.financial
+  - foyerspolaxis.rest
   - fqiouceqvfjpa.website
+  - fqqwubotkwynt.site
   - fqxcrzj9r7kotjuvh84iyqjrir5917.cfd
   - frakturfasten.cyou
   - frapptents.com
@@ -974,6 +1040,7 @@ domain_suffix_set:
   - fskamdkxhobeu.site
   - fsnndjtymruaf.space
   - ftdwnqyfhwihn.space
+  - ftflqcbjxbonu.space
   - ftkhknxsfimhp.site
   - fuahwnyxymhlq.site
   - functions.raabkarcher.de
@@ -994,18 +1061,22 @@ domain_suffix_set:
   - gangwaynumberprivacy.com
   - ganoinekubong.cfd
   - gapmeezmpklpd.website
+  - gaslikepipiri.rest
   - gawbctrhehzls.site
   - gbbqaanguyacx.website
   - gbguqrbokfdlz.space
   - gcp.distriktstandvarden.se
   - gcpczbniuuuoo.site
   - gdixalmotphku.online
+  - gebcgqxgcbote.website
   - genearcyanize.cfd
   - geordieizchak.cyou
   - gesupdfknxzae.website
   - geuvkatbkmlsn.space
+  - geyabxkpzbvsy.online
   - ggp7fwgmj7kvqeulw5335.cfd
   - ggvjgcqosjsiv.online
+  - ggymibegmsflu.space
   - ghanamolto.cyou
   - ghostscholars.com
   - ghrjyouvkdqwu.space
@@ -1017,6 +1088,7 @@ domain_suffix_set:
   - gifvqnylnssyg.website
   - gilylqiazyyei.site
   - givynlmumqzjd.online
+  - gjaetiklkqycy.online
   - gjfjmxslylmem.space
   - gjuf2qyz4u14x9ouo587z833.cfd
   - gkhtzvgekzcwk.space
@@ -1039,6 +1111,7 @@ domain_suffix_set:
   - gpxnb4xgtjmtxol34nbzzl5oex.rest
   - gqrvjbpmobsvi.online
   - grabsmpropea.org
+  - gradwcntoprvn.online
   - grafana.com
   - grafana.net
   - gristyupcurls.rest
@@ -1058,6 +1131,8 @@ domain_suffix_set:
   - guigegoriest.click
   - gummyability.com
   - gusbpwgmnekeg.site
+  - guxuxecuitddv.online
+  - gvxjqaciaxwvo.space
   - gvzfoohrojaqw.online
   - gwdkavydmyuf.com
   - gwj7zqwp2p9ioj7ku3jzrbr.rest
@@ -1074,6 +1149,7 @@ domain_suffix_set:
   - hagprepay.cyou
   - hahibrcxfjhjd.website
   - halvedsheds.click
+  - hamalnarrowfinnier.cyou
   - haqgcjroiitgr.space
   - harqfvbcnfpdb.site
   - hashabvervel.rest
@@ -1095,6 +1171,7 @@ domain_suffix_set:
   - heavengabbykatcina.cyou
   - hedge.jymbro.app
   - hehfphznjarkd.online
+  - hehsnanmlquyx.space
   - hehyznjjcnypx.space
   - hejdlnmicpblpm.com
   - helpfulmusic.biz
@@ -1114,6 +1191,7 @@ domain_suffix_set:
   - hhjagwizdqahy.space
   - hhskqxsqdsocm.site
   - hickeysideaful.com
+  - hickykacharinatural.cyou
   - hildiwblwfzpm.website
   - hiresbeakertubba.cfd
   - hispaforfearshim.cyou
@@ -1163,6 +1241,7 @@ domain_suffix_set:
   - hvryrpkrtiusl.com
   - hvvfmnqzmylfp.website
   - hwdfqfdu.com
+  - hwikmrenzqmva.online
   - hxugzvxvfwam.com
   - hxuxv7vx0.com
   - hxypzksqmlnor.online
@@ -1185,6 +1264,7 @@ domain_suffix_set:
   - idjypemjqnivb.space
   - ifawj9hvvl.com
   - ifcvmqaovxgit.site
+  - iffkhsuxcxnjv.online
   - ighygwmxzifwc.website
   - igkhupjtzyaaa.space
   - igoraodadkwlk.space
@@ -1197,11 +1277,14 @@ domain_suffix_set:
   - ijuvqzngmcnjo.website
   - ikaeibrnztebr.site
   - ilgosajlubqdg.space
+  - illfhpcxxmgel.space
+  - ilnsuyxbzrcqs.space
   - ilpfpxfkkkpqz.site
   - immitmalkite.click
   - imprennets.rest
   - imqnbnwqfmxqh.site
   - imtvzvzihstno.online
+  - imufhtdmngfkx.site
   - indieskills.com
   - inexeyxzouqzh.space
   - infonest.top
@@ -1253,6 +1336,7 @@ domain_suffix_set:
   - jexywyneljzny.space
   - jffpcvacalnrv.online
   - jgayqzye.com
+  - jgceudwlcveio.website
   - jgfkscpqbais.com
   - jgollcdgvgndi.website
   - jgsxwcwrdkiwk.website
@@ -1264,6 +1348,8 @@ domain_suffix_set:
   - jltpxzdwnnwuj.space
   - jlzzwb9ix8vpxk3.cfd
   - jocelyntururi.rest
+  - josephajewbushlauwine.cfd
+  - jotanngycjvxw.online
   - journey.gerresheim-serviert.de
   - jpeogzqizz.in
   - jpgxftqgnucg.com
@@ -1272,13 +1358,16 @@ domain_suffix_set:
   - jqrrbqfdjkazm.site
   - jrixwxojoccnm.com
   - jrnplooafwfjn.space
+  - jrqvkeudbdevm.space
   - js.matomotj.cc
   - jsdndfzpzrdt.com
   - jsipdfurro.com
   - jsoedbrzgxpqb.online
   - jsumdixbcmepv.site
+  - jtrqeevihpuau.site
   - jubmxyrmpdthm.space
   - juntol.xyz
+  - juoanvouymacf.site
   - jurjdpyqrgezo.site
   - jusgrmawfbaqu.com
   - jvelknhcjragq.space
@@ -1304,15 +1393,18 @@ domain_suffix_set:
   - karatesisaria.rest
   - kartcalques.rest
   - kasoyckcsmgal.online
+  - kaurqcckxtmxz.online
   - kayeowitzxvas.website
   - kbwakkvqlxmvp.space
   - kbxatopvgjpth.space
+  - kcfrfiwoqzwda.site
   - kcmneiugitzfg.website
   - kcnlbswxseble.online
   - kco3up8miwi1cqv.rest
   - kdlweeirjtofc.online
   - ke8me98qh.com
   - keenporch.org
+  - kejwsfsmcdvyd.space
   - kenaimerls.com
   - keodinh.net
   - kesfktgsfpdqx.site
@@ -1333,6 +1425,7 @@ domain_suffix_set:
   - kkdhbuydmbgyo.space
   - klkmiwbofjnbr.site
   - knelledzinged.cyou
+  - knickixodids.cfd
   - knopsdewfall.rest
   - knurryanele.cyou
   - kocletggrqkdh.site
@@ -1344,6 +1437,7 @@ domain_suffix_set:
   - kpveankjptsra.website
   - kpyktnhvzxzdb.online
   - kqprfqoezehja.site
+  - kraalscandidscrannia.cyou
   - krindtrdlmfvx.online
   - krpxzaxqykgwi.website
   - ksceuuupvjpes.space
@@ -1357,11 +1451,15 @@ domain_suffix_set:
   - kusjw4wqj.com
   - kv4tzec84ouiv6.cfd
   - kvjthavimymgk.online
+  - kvskvclkziqne.online
   - kwbomltgixbkn.space
   - kwintravetoer.cyou
+  - kwmomvbdrhrrg.site
   - kwxytrygpcmxu.space
   - kxbhakvhkhmgy.website
   - kxgdynrozodcv.online
+  - kxtzxsvtjpfev.website
+  - kxwzalqsecehl.website
   - kylzuarxeyeli.online
   - kyrjreyxdcmel.online
   - kzfvmhkubmlyn.online
@@ -1369,6 +1467,7 @@ domain_suffix_set:
   - kzvwrhgo.com
   - kzzbdsattavdw.space
   - l4y1o8l9wvejpnwc.rest
+  - laboresbracers.cyou
   - labraskulmet.com
   - labroidconfess.cyou
   - lacergrippy.click
@@ -1409,6 +1508,7 @@ domain_suffix_set:
   - livdnkbosjtwv.website
   - lixwczxdqqxzw.space
   - ljtolgrfnqhma.website
+  - ljxpbshzqmnxd.site
   - lkmodbikgcvbd.space
   - lkseavjkzupfw.space
   - llaaeuwepty.com
@@ -1421,12 +1521,14 @@ domain_suffix_set:
   - loftergunyahbolo.cyou
   - log.steffen-benecke.de
   - log.t-chat.vip
+  - logmancopist.cyou
   - loinwryneck.com
   - lonyfoj.com
   - loomingdulbertpolony.cfd
   - loosesection.com
   - lounderewererupsilon.cfd
   - lovablyablymilted.cfd
+  - loyaltymatrix.com
   - lp70zi3ou3.com
   - lqmixpyveuzqh.space
   - lr8znx4rnowrb5owqkq1kmh.cfd
@@ -1474,6 +1576,7 @@ domain_suffix_set:
   - m7xud9jqpu.com
   - m8hjt4bhchx7lcf2wy4qtk.cfd
   - maetqzgexzurh.website
+  - mafogmpacaps.in
   - mam.netease.com
   - mammazentrum-hamburg.de
   - mandalamutt.cyou
@@ -1481,6 +1584,7 @@ domain_suffix_set:
   - manygramaoscines.cyou
   - mappycentare.com
   - marlockpommergamed.cyou
+  - maskedadmin.com
   - mato.pruebasfondeo.com
   - matomo-elkwue.wbk-dev.de
   - matomo.100-kreative-ideen.de
@@ -1970,11 +2074,14 @@ domain_suffix_set:
   - maturequart.com
   - matzotipid.click
   - mbfo10wjf.com
+  - mbhgdthtfvwvf.space
   - mbyaaukeizite.online
   - mbyfhkzasrxbn.space
   - mccjspwqbiiun.online
+  - mcjtbmepmgrhy.space
   - mecgvgxgwqric.online
   - media.assets.dealeron.com
+  - mefkthnqxifjr.website
   - mendsionic.com
   - meowkofbxivyi.space
   - mesure.ad-works.fr
@@ -1993,19 +2100,24 @@ domain_suffix_set:
   - mgkcacokjqgft.website
   - mhstirljanfyy.website
   - miaowsskirl.cyou
+  - micatebumprewinds.cfd
   - migsbabishbolting.cyou
   - minerva.hypnova.ai
   - misformchipsggr.cyou
   - missiqcalqmu.in
   - mjkynfbvbikpl.site
+  - mjlrssyhioj.com
   - mjpauup21.com
+  - mjwlfprfdybal.online
   - mkdhwyqybkwqe.online
   - mkfshtuxymriq.space
   - mkkxyedstghhd.site
   - mkt.supercell.com
   - mletnkddrqios.space
+  - mljkzxrvtieeh.website
   - mlyynfnutrtvq.space
   - mmksracaonlsd.site
+  - mmmporlalokma.space
   - mmzmhggnqdzbs.site
   - mndftqopovamj.online
   - mnqpiodhufoso.online
@@ -2035,6 +2147,7 @@ domain_suffix_set:
   - mujnfamihqce.in
   - mumblealarmedrisen.cyou
   - mumggwcvchccq.space
+  - munbfoeocuheu.online
   - muntinbeltmanunca.cyou
   - music.126.com
   - music.126.net
@@ -2047,8 +2160,10 @@ domain_suffix_set:
   - mwsfhkhdkeelo.site
   - mwuekzwqdrnan.online
   - mxhkadwedflsr.online
+  - mxvlaoctzvwyb.website
   - myibyjkjwxsee.online
   - myvisites.com
+  - mzaqgfzlmlmhw.website
   - mzmkwyqvjpqgs.website
   - n.altitude.xyz
   - n.backacresrentals.com
@@ -2081,12 +2196,16 @@ domain_suffix_set:
   - nichtsforay.cfd
   - niismjhqtmqnq.space
   - niueiqsndsbcz.space
+  - niwrtodujaz.in
+  - nixnrpwbxhuza.website
   - njffqlgsccwff.online
   - njzrirvxprspg.site
+  - nkcdnydwkcmdp.site
   - nkghwccxeymyp.site
   - nkgmobguttncn.online
   - nkrmvifnnztez.online
   - nmdthrgpykmpo.website
+  - nmocqlujlilko.site
   - nmscpuyhwzuyb.website
   - nmsuhgiepzpqc.site
   - nneagmdjdshrf.online
@@ -2100,7 +2219,10 @@ domain_suffix_set:
   - nowmodulo.com
   - nozzleslaxate.com
   - nptsywyveaqfq.website
+  - nqejmuknzurfc.online
+  - nrdyxtmzbku.com
   - nryrdmggbqsql.site
+  - nrzqmdwfqfqse.space
   - nsewbdlfjeshr.space
   - nslfxaqclyjdu.site
   - nsswlifbkpvkg.online
@@ -2127,10 +2249,13 @@ domain_suffix_set:
   - nzxwekknfnfea.online
   - o4bk.yl5t41964nw9v2gmc9i82w9xihweozouvi4.cfd
   - o5ei2c69bm.centroabb.com
+  - o68u4mc85u7wribbcu9f3kwgpyj.cfd
   - oacsztduksuby.space
+  - oauntvabltxpu.online
   - oavgofyxwyryj.online
   - obdndfupmqoqs.online
   - obs.protoroundprince.com
+  - obslwycwddbbh.website
   - obstinacysexist.com
   - obtsbskplemtn.website
   - obzdiqozp.in
@@ -2178,6 +2303,7 @@ domain_suffix_set:
   - oqqzbccqxtfvf.online
   - oqrrrulukth.in
   - oqujaczroycoa.website
+  - ordfkfcnrrlzr.online
   - oryssuskimfourre.cyou
   - osgxzapi.in
   - oswincvpxrs.com
@@ -2192,6 +2318,7 @@ domain_suffix_set:
   - overprotectivecriticizearable.com
   - owalqwcmzucjs.space
   - owdkspzudzwnz.website
+  - ownwdfdghpxyk.website
   - owqjomwvssfdx.space
   - oxberrygesnera.rest
   - oxlabdapfxaw.in
@@ -2223,7 +2350,9 @@ domain_suffix_set:
   - parergygrates.com
   - parkishmozingediting.cfd
   - parvetrismus.cfd
+  - patclxqwxybvn.site
   - pdfdoyrcfev.com
+  - pdgifgpbfasrb.online
   - pdynrtubqauer.site
   - pe3hu7i6r8q4qe53w.rest
   - peakbeach.pro
@@ -2233,6 +2362,7 @@ domain_suffix_set:
   - peplessgroutsetym.cyou
   - peppedpiing.click
   - peqpazmweassq.website
+  - perlldmytuxyg.space
   - perpentiatric.cfd
   - personamaiefic.rest
   - pfcfngllppeol.site
@@ -2270,6 +2400,7 @@ domain_suffix_set:
   - pixel.profound.click
   - pjcmoaxftojjz.website
   - pjlgqycnxajzg.space
+  - pkcbqcfqhanxn.website
   - pkhpmpclulylm.site
   - pkp21ni51cqurgjgn3t9q.rest
   - pl.fastsheets.io
@@ -2305,7 +2436,11 @@ domain_suffix_set:
   - pqyqqqchhcqrv.site
   - prancesfrappcooed.cyou
   - presselhavedartoic.cfd
+  - priapicunbased.cyou
+  - prioralmatricrousing.cfd
   - projectglove.com
+  - propylamoile.com
+  - proxiessippleexodist.cfd
   - prudentcunas.rest
   - pryerssnuffed.cyou
   - przwyerclgags.online
@@ -2315,8 +2450,10 @@ domain_suffix_set:
   - pseudoinionnewcal.cfd
   - psychidwhoops.cfd
   - ptelnqutbqhfx.site
+  - pteyynqpqzbqn.space
   - puamwfdfltwzp.space
   - puckrietalioz.website
+  - puffinnashgab.rest
   - pulse.rasmlabs.com
   - pumanqahhb.in
   - puncherr.com
@@ -2330,12 +2467,15 @@ domain_suffix_set:
   - pxpmnthwmqzcf.site
   - pxuxlswadjlfu.space
   - pzeqrifnmbatb.space
+  - q1c1pmwv6uy5xk3j8rxq6t.cfd
   - qaegccfsfdqqr.website
   - qaxerpzgohvqv.online
   - qbxdoahjiykjz.site
+  - qbzdmkvtfjnkh.online
   - qcrydchpkzlbw.online
   - qcxavdkqorwri.space
   - qde87pge0.com
+  - qdgjpsiqkjiet.website
   - qdkjlaslytowm.space
   - qdubzbifbzclc.space
   - qevdyjaxjruwm.online
@@ -2350,6 +2490,7 @@ domain_suffix_set:
   - qjmpirxhmjrwk.website
   - qlakcpscdsvde.online
   - qlhbogdkshotr.website
+  - qlpvssymowjat.site
   - qmbevqclblwss.space
   - qmjkpfldtkvny.site
   - qmtdazupilzyt.space
@@ -2369,6 +2510,7 @@ domain_suffix_set:
   - qtuwrmjlwgkuv.space
   - queriesumm.cfd
   - questionablequesting.com
+  - qulpnrpviqvgg.website
   - qupbkhnlqgw5vyti5.cfd
   - qvfmpqrd.com
   - qvyxioimpckua.space
@@ -2377,9 +2519,11 @@ domain_suffix_set:
   - qwyefmelmyubo.website
   - qypgnzjkoawpe.online
   - qyqtjsefhymde.online
+  - qzrohlnbbyeft.website
   - qzwzbemuupzbl.space
   - r1owcxiy50.com
   - rabiseater.cfd
+  - raccapfzxzukl.space
   - raccooncorders.click
   - ragfishcleptavgases.cfd
   - rakefulseorita.cfd
@@ -2415,15 +2559,18 @@ domain_suffix_set:
   - reliableparrot.biz
   - reoiledgratin.cfd
   - resnubhardest.cfd
+  - respotcapered.cyou
   - ressctjygpsyx.website
   - restateeggedjutish.cyou
   - retoxo.com
   - revetetupik.click
+  - rftgwmifboelz.website
   - rftjsuwyyzrjf.site
   - rfwhdtsxfcwtd.space
   - rfxvxqcgsieib.site
   - rgifxzvpuyjih.space
   - rgkfuuhvmgquy.online
+  - rgoridetghmuz.website
   - rhdthcujhslgr.online
   - rhilxpozhkzrz.site
   - rhoxtnbtarvry.site
@@ -2491,6 +2638,7 @@ domain_suffix_set:
   - ryivqamowwxxlk.com
   - ryvmfussmajcp.site
   - rzxfrofoiamfl.website
+  - rzytwpkefeoyw.site
   - s.3gncloud.com
   - s.clim94.fr
   - s.filmcraft.online
@@ -2509,10 +2657,12 @@ domain_suffix_set:
   - sagsajijqpavd.space
   - salmonsjudaize.com
   - sandsnow.info
+  - sapelemoils.click
   - sapghpwbtrsjq.space
   - saqicbvtocmbo.online
   - saquarolunel.rest
   - sawttmoujczwb.site
+  - sbigiumsjduxd.site
   - sciggfxnkmqai.website
   - scoldsetamins.com
   - scowlsdensus.cyou
@@ -2524,6 +2674,7 @@ domain_suffix_set:
   - sdlcbmlpmfbpj.site
   - sdoqnyfwqamhk.site
   - sdsakrbkquxdm.site
+  - sdvpvjlspoz.com
   - searingcavelet.rest
   - secure-analytics.com
   - seedpodflattop.qpon
@@ -2540,6 +2691,7 @@ domain_suffix_set:
   - servedby.cherokeemediagroup2.com
   - server-side-tagging-ycy2jyrtma-uc.a.run.app
   - serverside.myticket.de
+  - seyusxutyylve.site
   - sfenuhakgotd.in
   - sfnneengosvuw.space
   - sgbrftxioksgf.online
@@ -2560,6 +2712,7 @@ domain_suffix_set:
   - sitrepsoning.rest
   - sjqssnmvmxcqw.website
   - skdcbeacmhihb.website
+  - sketchpodcast.com
   - skjllrslooltb.online
   - skydoveiodizershoved.cfd
   - sljzidwidlgul.online
@@ -2568,11 +2721,13 @@ domain_suffix_set:
   - slwzbjciejyhy.space
   - smlapllabrpny.website
   - smvxwnlahkdea.online
+  - snaooicdnsuas.space
   - snazkmgnaprwj.website
   - sneerscuartel.com
   - sngpyudhhdjca.space
   - snhyvuzgaoxdh.space
   - snortsrasters.cyou
+  - snowdahlia.pro
   - snowkpaplikeleyland.cfd
   - snvsicdqsihlo.online
   - softasitai.rest
@@ -2581,6 +2736,7 @@ domain_suffix_set:
   - soillilac.com
   - solarscolder.cfd
   - solution97.com
+  - sommaconrail.com
   - sonic.productsense.com
   - soubltxbnwhkt.space
   - sourdeddcloster.cfd
@@ -2597,6 +2753,7 @@ domain_suffix_set:
   - spktmxycjeeke.site
   - sprighterogateputted.cfd
   - spxx7cb5jt.elmquist.info
+  - spyzdindnauks.site
   - spzsynbvnudov.site
   - sqjmykhwzoyod.site
   - sqnoiupwiklmt.online
@@ -2891,8 +3048,10 @@ domain_suffix_set:
   - subornscurlew.cfd
   - subpdoojkuaze.space
   - suburban-deposit.pro
+  - suezandaqui.rest
   - sunrosehippi.com
   - svmfpwebpfiwn.website
+  - swaggedstrepenlowmen.cfd
   - sweatsneozoic.com
   - swhyspqaijpjp.online
   - swirwnxtcvqwb.online
@@ -2904,6 +3063,7 @@ domain_suffix_set:
   - syvxbvuaibmaf.site
   - szpmhpaglacgw.website
   - szxodjgapleiw.space
+  - szzrkszzyg.com
   - t.92b94jt6icqlrxmoipg.cfd
   - t.92ng.com
   - t.arrhub.ro
@@ -2957,6 +3117,7 @@ domain_suffix_set:
   - tfhwtqlgesdry.site
   - tfqrifustrybg.store
   - tftxmcofqtcjs.space
+  - tggtudrdytkps.site
   - tgudxroftsego.site
   - thifuwospdvev.site
   - think.ugc.ink
@@ -3050,6 +3211,7 @@ domain_suffix_set:
   - tungahlucite.com
   - tunlandporotic.cyou
   - tupjatohvon.in
+  - tuqwuqqxflqxa.online
   - tusehzdefdblz.space
   - tuur.dxpr.com
   - tvwofyvaksbuy.online
@@ -3061,6 +3223,7 @@ domain_suffix_set:
   - tyjkblfitchsc.website
   - typisttuckerspurt.com
   - tzentalrheaejogtrot.cfd
+  - tzmaasbuxigix.online
   - u.kirkify.co
   - u.lanternbi.com
   - u.nosykettle.com
@@ -3126,8 +3289,10 @@ domain_suffix_set:
   - upsmwvpdtsvxi.space
   - upwardsdecreasecommitment.com
   - uqaymrtomzmfm.site
+  - uqrgdfwafkazi.space
   - urhikhwdttauq.online
   - urineyduools.com
+  - urjxessdbskvr.website
   - urkptdjgrquuw.online
   - urosomerevived.cyou
   - urticaponiard.com
@@ -3154,6 +3319,7 @@ domain_suffix_set:
   - uxrwxlja.com
   - uxviteyylmlj79jwlbm7kjl6.cfd
   - uyicwh6muelyyuxcrqcnhjnz.rest
+  - uyqhhxjylygof.site
   - uzvjbgknoijof.site
   - v.teamer.university
   - v2ex.co
@@ -3277,15 +3443,18 @@ domain_suffix_set:
   - vkyieskdlavjt.space
   - vlifpif.com
   - vligfctcykwng.website
+  - vmlfyrzyiaszj.online
   - vnbodehnermda.online
   - vnfelmhyftgeg.site
   - vofyheiohcrzv.site
   - vpbugplg.com
+  - vpyprkzguiqdj.online
   - vsqmwlmyyljyz.website
   - vtqrnirqxrqqq.site
   - vtvkpleqrkwty.site
   - vueffikzsjewx.online
   - vul4a3k0kt.com
+  - vvqpgzbwrzsuh.space
   - vwvxrfnsmwakf.online
   - vxnurbodyeces.space
   - vxwmwouqvuabr.site
@@ -3293,6 +3462,7 @@ domain_suffix_set:
   - vzdfbajkrwede.site
   - vzjibpjzejpfc.online
   - vzpvaxcbwcx.com
+  - vztmzgauqofc.com
   - w.1ecjbovmygj6ph8.cfd
   - w0c42chjph.com
   - w7u31ox8.xyz
@@ -3307,6 +3477,7 @@ domain_suffix_set:
   - wavedsuspect.click
   - waveletiricize.cfd
   - wbfwvrhljnsgr.website
+  - wbsmuenfbnsqk.site
   - wcunhtgrhdkdt.online
   - wdahqumfpnmav.space
   - weaveworkingheaviness.com
@@ -3327,6 +3498,7 @@ domain_suffix_set:
   - whalpbottu.cyou
   - whensobrehon.rest
   - whgezpjzhlfnq.online
+  - whimmedamies.cfd
   - whuamiefcgeaq.website
   - winectr.cyou
   - winvtpxbdwovc.website
@@ -3339,7 +3511,9 @@ domain_suffix_set:
   - wkmuiqnokrsji.site
   - wkxwoawiqphxb.website
   - wmlxmfjvnvwmq.space
+  - wmrzpmaekbwdy.space
   - wmymtjaraeoxv.space
+  - wnxrluoksntpw.website
   - womxwsnxadxtl.space
   - woodfrost.info
   - workplaceanticipatedtribe.com
@@ -3366,6 +3540,7 @@ domain_suffix_set:
   - wyessora.click
   - wyggbgqwzctxq.space
   - xagmkdnfixmvz.website
+  - xamarlwmbpylo.website
   - xanthanraison.rest
   - xatosmxz.in
   - xbrfbkjue8pkce9.rest
@@ -3386,10 +3561,12 @@ domain_suffix_set:
   - xgyhtexgsgvqt.site
   - xhbtuppqjdgpa.online
   - ximdoqxdrighn.space
+  - xjfjsqbyajuwg.space
   - xjsgturadzcgo.online
   - xjxlnrogiygnd.online
   - xjzkkbfqfotbc.space
   - xkdfimjqgpsyj.site
+  - xkx9oxlxblgpe78u.rest
   - xkysykhputthf.space
   - xldadwsosaqiq.site
   - xml.proxywood-box.online
@@ -3413,7 +3590,9 @@ domain_suffix_set:
   - xxelg4lfzbnwv4b.rest
   - xxezsifdsivsa.site
   - xxtzyeiujzlnz.space
+  - xxwzjxspkozgy.website
   - xybpbifpyzhtz.space
+  - xysiaydrbuzpd.website
   - xzesmujr.in
   - yananebibuv.cc
   - yangtaotatar.cfd
@@ -3426,11 +3605,13 @@ domain_suffix_set:
   - yetherbeware.cfd
   - yfqgyzuifmkjw.space
   - yglfrbwtjmbeg.online
+  - yhxpacevrlsmc.space
   - yicuhxojxgqju.space
   - yixiu.us
   - yjlkcpxjdzlfb.site
   - ykacgkgqmvxfn.site
   - ykbrbfmlpoqkj.website
+  - ykoppuvofidgr.website
   - ylqtjplsdrspb.space
   - ymdytifzfyxkv.website
   - ynwnzoxxtaolq.website
@@ -3462,8 +3643,10 @@ domain_suffix_set:
   - yzyqinvovcwyo.online
   - zamiaboort.com
   - zbnmyrdxthmbl.site
+  - zbrjapghdgvryv.com
   - zcxcbcsjafdck.space
   - zebracave.com
+  - zentnertuglike.cyou
   - zeroclampentice.com
   - zextzccadpr.com
   - zgaoczburrxqk.site
@@ -3472,7 +3655,9 @@ domain_suffix_set:
   - zhwsixguoj.com
   - zicocuuoabmkr.website
   - zigptycmiycjn.space
+  - ziipgrpkhbigq.space
   - zioshdvobbgim.website
+  - zippkkqlxvxws.site
   - ziramchaetae.cyou
   - zjedmeoqtthd.com
   - zjownvjdhfqub.site
@@ -3490,6 +3675,7 @@ domain_suffix_set:
   - zoxlzvrqeqadk.site
   - zpglicukmfijq.site
   - zpzocdawngoct.website
+  - zqbpgojxnbvzt.space
   - zqgkiobtofztc.site
   - zqhutmwasjdxd.website
   - zqqydxzdxvwqs.online
@@ -3518,6 +3704,7 @@ ip_cidr_set:
   - 103.126.92.132/31
   - 103.126.92.132/32
   - 103.126.92.133/32
+  - 104.251.176.0/22
   - 112.13.119.17/32
   - 112.13.119.18/32
   - 112.13.122.1/32
@@ -3530,7 +3717,6 @@ ip_cidr_set:
   - 118.24.63.156/32
   - 165.173.176.0/24
   - 182.92.170.253/32
-  - 192.51.172.0/24
   - 193.112.159.225/32
   - 223.252.192.0/19
   - 223.252.199.66/31

@@ -1,7 +1,7 @@
 # 规则名称: Github
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/GitHub_rules_02fb1aed89680882.list
-# 规则统计: 73
-# 更新时间：2026-10-16 22:24:20
+# 规则统计: 74
+# 更新时间：2026-11-12 10:44:25
 
 domain_set:
   - copilot-proxy.githubusercontent.com
@@ -16,6 +16,7 @@ domain_set:
   - github-production-repository-image-32fea6.s3.amazonaws.com
   - github-production-upload-manifest-file-7fdce7.s3.amazonaws.com
   - github-production-user-asset-6210df.s3.amazonaws.com
+  - production-copilot-host-westus.webpubsub.azure.com
   - productionresultssa0.blob.core.windows.net
   - productionresultssa1.blob.core.windows.net
   - productionresultssa10.blob.core.windows.net
