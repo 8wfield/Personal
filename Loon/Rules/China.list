@@ -1,7 +1,7 @@
 # 规则名称: China
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list
-# 规则统计: 10285
-# 更新时间：2026-11-13 23:09:10
+# 规则统计: 10286
+# 更新时间：2026-11-14 13:11:43
 
 DOMAIN,api.blipsandchitz.me
 DOMAIN,client.amplifi.com
@@ -8204,6 +8204,7 @@ IP-CIDR,124.71.0.0/17,no-resolve
 IP-CIDR,124.71.128.0/18,no-resolve
 IP-CIDR,124.71.192.0/19,no-resolve
 IP-CIDR,124.71.224.0/20,no-resolve
+IP-CIDR,124.71.241.0/24,no-resolve
 IP-CIDR,124.71.244.0/23,no-resolve
 IP-CIDR,124.71.250.0/24,no-resolve
 IP-CIDR,124.72.0.0/13,no-resolve
