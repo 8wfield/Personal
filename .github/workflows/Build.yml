@@ -22,7 +22,7 @@ env:
   RULE_WORKERS: '8'
   ICON_WORKERS: '16'
   ICON_BRANCH: main
-  MIRROR_ICONS: ${{ inputs.mirror_icons && '1' || '0' }}
+  MIRROR_ICONS: ${{ inputs.mirror_icons == 'true' && '1' || '0' }}
   README_BRANCH: main
 
 jobs:
@@ -56,7 +56,6 @@ jobs:
           import urllib.request
 
           TZ = dt.timezone(dt.timedelta(hours=8))
-          MR = "https://magicrule.pages.dev"
           WATERMARK = "7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"
 
           SOURCES = {
@@ -76,8 +75,8 @@ jobs:
               "BanAD": [
                   "https://raw.githubusercontent.com/217heidai/adblockfilters/refs/heads/main/rules/adblockloon.list",
                   "https://anti-ad.net/surge.txt",
-                  "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/reject.txt"
-                  "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list"
+                  "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/reject.txt",
+                  "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
               ],
               "China": ["https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list"],
               "Apple": ["https://magicrule.pages.dev/data/_shared/artifacts/Apple_rules_a498ae373471a17f.list"],
@@ -175,15 +174,21 @@ jobs:
           _REPO_TIME_CACHE = {}
 
           def github_repo_time(url):
-              m = re.match(r"https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/", url)
+              m = re.match(r"https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/(.+)$", url)
               if not m:
                   return None
-              key = f"{m.group(1)}/{m.group(2)}/{m.group(3)}"
+              owner, repo, rest = m.group(1), m.group(2), m.group(3)
+              parts = rest.split("/")
+              if parts[0] == "refs" and len(parts) > 2 and parts[1] in ("heads", "tags"):
+                  ref = parts[2]
+              else:
+                  ref = parts[0]
+              key = f"{owner}/{repo}/{ref}"
               if key not in _REPO_TIME_CACHE:
                   stamp = None
                   try:
-                      api = (f"https://api.github.com/repos/{m.group(1)}/{m.group(2)}"
-                             f"/commits?sha={m.group(3)}&per_page=1")
+                      api = (f"https://api.github.com/repos/{owner}/{repo}"
+                             f"/commits?sha={ref}&per_page=1")
                       headers = dict(UA)
                       token = os.environ.get("GITHUB_TOKEN")
                       if token:
@@ -222,53 +227,20 @@ jobs:
           IP_TYPES = ("IP-CIDR,", "IP-CIDR6,", "IP-ASN,")
           DROP_TYPES = ("PROCESS-NAME,", "SCRIPT,")
 
-          _MR_CACHE = {}
-
-
-          def mr_index():
-              if "idx" not in _MR_CACHE:
-                  text, _ = fetch(f"{MR}/data/index/Loon.json")
-                  data = json.loads(text) if text else {}
-                  _MR_CACHE["idx"] = {r["name"]: r for r in data.get("rules", [])}
-              return _MR_CACHE["idx"]
-
-
-          def mr_url(name):
-              key = "u:" + name
-              if key in _MR_CACHE:
-                  return _MR_CACHE[key]
-              meta = mr_index().get(name)
-              url = None
-              if meta:
-                  text, _ = fetch(meta["manifest"])
-                  try:
-                      for art in json.loads(text).get("artifacts", []):
-                          if art.get("key") == "rules" and art.get("ext") == "list":
-                              url = art["url"]
-                              break
-                  except (ValueError, TypeError):
-                      url = None
-              _MR_CACHE[key] = url
-              return url
-
 
           def resolve_sources():
-              resolved, missing = {}, []
-              for gname, rnames in SOURCES.items():
-                  urls = []
-                  for rname in rnames:
-                      if rname.startswith("http"):
-                          urls.append(rname)
-                          continue
-                      url = mr_url(rname)
-                      if url:
-                          urls.append(url)
+              resolved, invalid = {}, []
+              for gname, urls in SOURCES.items():
+                  good = []
+                  for url in urls:
+                      if url.startswith(("http://", "https://")):
+                          good.append(url)
                       else:
-                          missing.append(f"{gname}={rname}")
-                  if urls:
-                      resolved[gname] = urls
-              if missing:
-                  print(f"::warning::上游缺少对应规则: {', '.join(missing)}")
+                          invalid.append(f"{gname}={url[:60]}")
+                  if good:
+                      resolved[gname] = good
+              if invalid:
+                  print(f"::warning::非法上游条目已跳过: {', '.join(invalid)}")
               return resolved
 
 
@@ -708,7 +680,7 @@ jobs:
 
           lines = ["## Rules", "", "| Group | Rules | Upstream updated |", "| --- | --: | --- |"]
           for path in sorted(pathlib.Path("Loon/Rules").glob("*.list")):
-              text = "\n".join(path.read_text(encoding="utf-8", errors="replace").split("\n")[:4])
+              text = path.read_text(encoding="utf-8", errors="replace").split("\n\n", 1)[0]
               count = re.search(r"\u89c4\u5219\u7edf\u8ba1: (\d+)", text)
               stamp = re.search(r"\u66f4\u65b0\u65f6\u95f4\uff1a(.+)", text)
               lines.append(f"| {path.stem} | {count.group(1) if count else 0} | "
@@ -809,7 +781,7 @@ jobs:
 
           def read_header(path):
               try:
-                  head = "\n".join(path.read_text(encoding="utf-8", errors="replace").split("\n")[:4])
+                  head = path.read_text(encoding="utf-8", errors="replace").split("\n\n", 1)[0]
               except OSError:
                   return None, None
               count = re.search(r"规则统计: (\d+)", head)
