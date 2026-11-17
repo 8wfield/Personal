@@ -1,7 +1,7 @@
 # 规则名称: Developer
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Developer_rules_1adf00c0c6256ea5.list
-# 规则统计: 739
-# 更新时间：2026-11-10 12:54:09
+# 规则统计: 743
+# 更新时间：2026-11-17 19:06:38
 
 domain_set:
   - amp.akamaized.net
@@ -10,6 +10,7 @@ domain_set:
   - appleworldwidedeveloper.sc.omtrdc.net
   - az764295.vo.msecnd.net
   - bingsettingssearch.trafficmanager.net
+  - builds.dotnet.microsoft.com
   - cdn-cn.apple-mapkit.com
   - cdn-cn1.apple-mapkit.com
   - cdn-cn2.apple-mapkit.com
@@ -34,6 +35,7 @@ domain_set:
   - developers.facebook.com
   - docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com
   - docker-pinata-support.s3.amazonaws.com
+  - dotnetcli.trafficmanager.net
   - download.visualstudio.microsoft.com
   - dtlgalleryint.cloudapp.net
   - firebase-settings.crashlytics.com
@@ -90,10 +92,12 @@ domain_set:
   - psg-int-eastus.cloudapp.net
   - rink.hockeyapp.net
   - rt.services.visualstudio.com
+  - sundry-star-net-geo.trafficmanager.net
   - update.crashlytics.com
   - vscode-sync-insiders.trafficmanager.net
   - vscode-sync.trafficmanager.net
   - vscode.blob.core.windows.net
+  - vscode.download.prss.microsoft.com
   - vscode.search.windows.net
   - vsmarketplacebadge.apphb.com
 

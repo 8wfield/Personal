@@ -1,7 +1,7 @@
 # 规则名称: Crypto
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Cryptocurrency_rules_68269739f2640ae4.list
-# 规则统计: 240
-# 更新时间：2026-10-29 11:07:24
+# 规则统计: 241
+# 更新时间：2026-11-17 15:31:19
 
 DOMAIN,bybit-exchange.github.io
 DOMAIN,bybit.ada.support
@@ -114,6 +114,7 @@ DOMAIN-SUFFIX,cryptomus.com
 DOMAIN-SUFFIX,curve.fi
 DOMAIN-SUFFIX,cyberx.com
 DOMAIN-SUFFIX,debank.com
+DOMAIN-SUFFIX,debot.ai
 DOMAIN-SUFFIX,delets.cash
 DOMAIN-SUFFIX,delets.online
 DOMAIN-SUFFIX,deribit.com

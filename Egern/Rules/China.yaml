@@ -1,7 +1,7 @@
 # 规则名称: China
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list
-# 规则统计: 10286
-# 更新时间：2026-11-15 09:50:07
+# 规则统计: 10301
+# 更新时间：2026-11-17 19:56:07
 
 no_resolve: true
 
@@ -675,6 +675,7 @@ domain_suffix_set:
   - appsimg.com
   - appvipshop.com
   - arco.design
+  - arknights.com
   - arpun.com
   - asczwa.com
   - asczxcefsv.com
@@ -2599,6 +2600,7 @@ domain_suffix_set:
   - hf-aw.com
   - hftfund.com
   - hfx.net
+  - hgto.cc
   - hhtravel.com
   - hiaiabc.com
   - hiascend.com
@@ -2782,9 +2784,12 @@ domain_suffix_set:
   - hxnews.com
   - hxsd.com
   - hybiome.com
+  - hycdn.com
   - hydun.com
   - hypercachenet.com
   - hypercachenode.com
+  - hypergryph.com
+  - hypergryph.net
   - hzchengdun.com
   - hzchengdun.net
   - hzdtv.tv
@@ -4106,6 +4111,7 @@ domain_suffix_set:
   - obricclouddw.com
   - oceancloudapi.com
   - oceanengine.com
+  - octavedge.com
   - ocwms.com
   - oeeee.com
   - oend.net
@@ -4726,6 +4732,8 @@ domain_suffix_set:
   - sjfls6.com
   - sjwyx.com
   - skimit.net
+  - skland.com
+  - skland.net
   - sksight.com
   - skycn.com
   - skypixel.com
@@ -8256,6 +8264,8 @@ ip_cidr_set:
   - 132.237.134.0/24
   - 133.226.32.0/20
   - 134.175.0.0/16
+  - 135.84.80.0/22
+  - 136.143.176.0/23
   - 138.252.72.0/23
   - 139.129.0.0/16
   - 139.148.0.0/16
@@ -8469,7 +8479,10 @@ ip_cidr_set:
   - 163.61.202.0/23
   - 163.61.214.0/23
   - 165.101.70.0/24
+  - 165.173.128.0/23
+  - 165.173.174.0/23
   - 165.173.176.0/24
+  - 165.173.180.0/22
   - 166.111.0.0/16
   - 167.139.0.0/16
   - 167.220.244.0/22
@@ -8645,6 +8658,7 @@ ip_cidr_set:
   - 198.208.63.0/24
   - 198.208.67.0/24
   - 199.244.144.0/24
+  - 199.67.64.0/23
   - 2.56.255.0/24
   - 2.58.242.0/24
   - 2.59.151.0/24
@@ -10253,6 +10267,7 @@ ip_cidr_set:
   - 8.168.0.0/14
   - 8.176.0.0/17
   - 8.176.128.0/19
+  - 8.39.54.0/23
   - 81.173.18.0/23
   - 81.173.20.0/22
   - 81.23.208.0/20

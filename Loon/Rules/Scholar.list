@@ -1,7 +1,7 @@
 # 规则名称: Scholar
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Scholar_rules_1b689dc1ea2227c6.list
-# 规则统计: 321
-# 更新时间：2026-11-04 23:51:04
+# 规则统计: 320
+# 更新时间：2026-11-17 21:12:17
 
 DOMAIN,scholar.google.ae
 DOMAIN,scholar.google.at
@@ -217,7 +217,6 @@ DOMAIN-SUFFIX,mathworks.nl
 DOMAIN-SUFFIX,mathworks.se
 DOMAIN-SUFFIX,matlab.com
 DOMAIN-SUFFIX,mdpi.com
-DOMAIN-SUFFIX,mit
 DOMAIN-SUFFIX,mit.edu
 DOMAIN-SUFFIX,mit.net
 DOMAIN-SUFFIX,mitpressjournals.org

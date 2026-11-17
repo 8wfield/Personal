@@ -1,7 +1,7 @@
 # 规则名称: YouTube
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/YouTube_rules_329ca26de78c21fe.list
-# 规则统计: 190
-# 更新时间：2026-08-27 09:57:32
+# 规则统计: 189
+# 更新时间：2026-11-17 22:03:06
 
 DOMAIN,youtubei.googleapis.com
 DOMAIN,yt3.ggpht.com
@@ -17,7 +17,6 @@ DOMAIN-SUFFIX,video.google.com
 DOMAIN-SUFFIX,wide-youtube.l.google.com
 DOMAIN-SUFFIX,withyoutube.com
 DOMAIN-SUFFIX,youtu.be
-DOMAIN-SUFFIX,youtube
 DOMAIN-SUFFIX,youtube-nocookie.com
 DOMAIN-SUFFIX,youtube-ui.l.google.com
 DOMAIN-SUFFIX,youtube.ae

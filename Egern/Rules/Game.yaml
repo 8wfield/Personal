@@ -1,7 +1,7 @@
 # 规则名称: Game
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Game_rules_87565f6ae4fd7d5b.list
-# 规则统计: 1285
-# 更新时间：2026-11-06 22:57:25
+# 规则统计: 1298
+# 更新时间：2026-11-17 19:32:07
 
 no_resolve: true
 
@@ -209,6 +209,8 @@ domain_suffix_set:
   - appeeres.com
   - arcaea.cn
   - arcraiders.com
+  - arknights.com
+  - arknights.com.cn
   - arma3.com
   - armaplatform.com
   - artstation.com
@@ -338,6 +340,7 @@ domain_suffix_set:
   - cy.com
   - cyberpunk.net
   - cygames.co.jp
+  - cygames.com
   - cygames.jp
   - daoc.net
   - darkageofcamelot.com
@@ -525,6 +528,7 @@ domain_suffix_set:
   - heroesofthestorm.com
   - heroesports.com
   - herogame.com
+  - hgto.cc
   - highmoonstudios.com
   - historyofdota.com
   - historyofdota.net
@@ -538,6 +542,12 @@ domain_suffix_set:
   - humancoexperience.com
   - humblebundle.com
   - hutpromos.com
+  - hycdn.cn
+  - hycdn.com
+  - hypergryph.cn
+  - hypergryph.com
+  - hypergryph.com.cn
+  - hypergryph.net
   - hyprsense.com
   - i3839.com
   - ihappystudio.cn
@@ -778,6 +788,7 @@ domain_suffix_set:
   - nintendowii.com
   - noxygames.com
   - nzsiteres.com
+  - octavedge.com
   - offworldindustries.com
   - offworldindustries.net
   - ol.epicgames.com
@@ -973,6 +984,8 @@ domain_suffix_set:
   - skate2.com
   - sketchfab.com
   - skinswap.com
+  - skland.com
+  - skland.net
   - skydweller.cn
   - skylanders.com
   - sl916.com

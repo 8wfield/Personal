@@ -1,7 +1,7 @@
 # 规则名称: Crypto
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Cryptocurrency_rules_68269739f2640ae4.list
-# 规则统计: 240
-# 更新时间：2026-10-29 11:07:24
+# 规则统计: 241
+# 更新时间：2026-11-17 15:31:19
 
 domain_set:
   - bybit-exchange.github.io
@@ -117,6 +117,7 @@ domain_suffix_set:
   - curve.fi
   - cyberx.com
   - debank.com
+  - debot.ai
   - delets.cash
   - delets.online
   - deribit.com
