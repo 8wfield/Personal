@@ -1,7 +1,7 @@
 # 规则名称: SpeedtestChina
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Speedtest_rules_6431e293aaca07be.list
-# 规则统计: 3509
-# 更新时间：2026-11-17 22:21:17
+# 规则统计: 3511
+# 更新时间：2026-11-18 10:29:21
 
 domain_set:
   - 1010.hkspeedtest.com
@@ -107,6 +107,7 @@ domain_set:
   - dabwali.softechinfosol.com
   - dal-speedtest.net.sangoma.net
   - dal-speedtest.transtelco.net
+  - dallas.outboundrix.cloud
   - dallas1.cabospeed.com
   - dalspeedtest.rtatel.com
   - dc-spdtst.treas.host
@@ -1057,6 +1058,7 @@ domain_set:
   - speedtest-blacktown.optusnet.com.au
   - speedtest-bne-dn1.empower.net.au
   - speedtest-bne.vocus.net
+  - speedtest-bne0.encoo.com.au
   - speedtest-bom.melbicom.net
   - speedtest-bos.dish-wireless.com
   - speedtest-brendola.wifiweb.it
