@@ -1,7 +1,7 @@
 # 规则名称: Game
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Game_rules_87565f6ae4fd7d5b.list
-# 规则统计: 1298
-# 更新时间：2026-11-17 19:32:07
+# 规则统计: 1300
+# 更新时间：2026-11-20 17:52:22
 
 no_resolve: true
 
@@ -137,6 +137,8 @@ domain_suffix_set:
   - 17173.com
   - 17173cdn.com
   - 17roco.com
+  - 1y.com
+  - 1ycdn.com
   - 2k.com
   - 2kcoretech.online
   - 2kct.onl

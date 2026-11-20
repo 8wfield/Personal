@@ -1,7 +1,7 @@
 # 规则名称: Game
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/Game_rules_87565f6ae4fd7d5b.list
-# 规则统计: 1298
-# 更新时间：2026-11-17 19:32:07
+# 规则统计: 1300
+# 更新时间：2026-11-20 17:52:22
 
 DOMAIN,a.ppy.sh
 DOMAIN,a4e8s8k3.map2.ssl.hwcdn.net
@@ -136,6 +136,8 @@ DOMAIN-SUFFIX,100classicbooks.com
 DOMAIN-SUFFIX,17173.com
 DOMAIN-SUFFIX,17173cdn.com
 DOMAIN-SUFFIX,17roco.com
+DOMAIN-SUFFIX,1y.com
+DOMAIN-SUFFIX,1ycdn.com
 DOMAIN-SUFFIX,2k.com
 DOMAIN-SUFFIX,2kcoretech.online
 DOMAIN-SUFFIX,2kct.onl
