@@ -1,5 +1,5 @@
 {
-  "total": 1915,
+  "total": 1342,
   "mirrored": false,
   "categories": [
     {
@@ -56,11 +56,6 @@
       "category": "Airport",
       "count": 336,
       "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Airport.json"
-    },
-    {
-      "category": "Emby",
-      "count": 573,
-      "manifest": "https://cdn.jsdelivr.net/gh/8wfield/Personal@main/Icons/Emby.json"
     },
     {
       "category": "Other",
