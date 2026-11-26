@@ -1,7 +1,7 @@
 # 规则名称: ChinaIPs
 # 上游: https://magicrule.pages.dev/data/_shared/artifacts/ChinaIPs_rules_34a9221fa066bb18.list
-# 规则统计: 22996
-# 更新时间：2026-11-26 13:44:51
+# 规则统计: 22997
+# 更新时间：2026-11-26 17:58:57
 
 IP-ASN,10111,no-resolve
 IP-ASN,10206,no-resolve
@@ -13583,6 +13583,7 @@ IP-CIDR,203.161.0.0/22,no-resolve
 IP-CIDR,203.161.180.0/24,no-resolve
 IP-CIDR,203.161.183.0/24,no-resolve
 IP-CIDR,203.161.192.0/19,no-resolve
+IP-CIDR,203.162.166.0/23,no-resolve
 IP-CIDR,203.166.160.0/19,no-resolve
 IP-CIDR,203.166.160.0/22,no-resolve
 IP-CIDR,203.166.165.0/24,no-resolve
